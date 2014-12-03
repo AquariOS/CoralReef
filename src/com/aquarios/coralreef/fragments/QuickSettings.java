@@ -48,12 +48,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
 
     private ListPreference mQuickPulldown;
+    private ListPreference mSmartPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +93,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQuickPulldown.setValue(String.valueOf(qpmode));
         mQuickPulldown.setSummary(mQuickPulldown.getEntry());
         mQuickPulldown.setOnPreferenceChangeListener(this);
+
+        int smartPulldown = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+        mSmartPulldown.setValue(String.valueOf(smartPulldown));
+        mSmartPulldown.setSummary(mSmartPulldown.getEntry());
+        mSmartPulldown.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -122,6 +131,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int index = mQuickPulldown.findIndexOfValue((String) newValue);
             mQuickPulldown.setSummary(
                     mQuickPulldown.getEntries()[index]);
+            return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldown = Integer.valueOf((String) newValue);
+            int index = mSmartPulldown.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.QS_SMART_PULLDOWN,
+                    smartPulldown, UserHandle.USER_CURRENT);
+            mSmartPulldown.setSummary(mSmartPulldown.getEntries()[index]);
             return true;
         }
         return false;
