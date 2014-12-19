@@ -20,6 +20,17 @@
     <string name="coral_reef_title">Coral Reef</string>
     <string name="keywords_aquarios">AquariOS</string>
 
+<!-- General Integration -->
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+
 <!-- Tabs -->
   <!-- Buttons Tab-->
     <string name="buttons_tab_title">Buttons</string>
@@ -38,5 +49,4 @@
 
   <!-- System/Misc Tab -->
     <string name="system_misc_tab_title">System/Misc</string>
-
 </resources>
