@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 AquariOS
+<!--
+     Copyright (C) 2017 Benzo Rom
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,16 +14,16 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<resources>
 
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/buttons_tab_title"
-    android:layout="@layout/tab"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <!-- Power Menu -->
+    <string-array name="power_menu_actions_array" translatable="false">
+        <item>power</item>
+        <item>reboot</item>
+        <item>screenshot</item>
+        <item>airplane</item>
+        <item>users</item>
+        <item>bugreport</item>
+    </string-array>
 
-    <Preference
-        android:key="power_menu"
-        android:title="@string/power_menu_title"
-        android:fragment="com.aquarios.coralreef.fragments.PowerMenuActions" />
-
-</PreferenceScreen>
+</resources>

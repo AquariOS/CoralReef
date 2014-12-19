@@ -32,6 +32,8 @@ import com.android.settings.SettingsPreferenceFragment;
 public class ButtonsTab extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
+    private static final String TAG = ButtonSettings.class.getSimpleName();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
