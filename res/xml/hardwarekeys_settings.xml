@@ -21,6 +21,12 @@
                 android:key="keys_hwkeys"
                 android:title="@string/keys_hwkeys_title" >
 
+        <com.citrus.settings.fragments.ButtonBacklightBrightness
+                android:key="button_backlight"
+                android:title="@string/button_backlight_title"
+                android:dialogTitle="@string/button_backlight_title"
+                android:persistent="false" />
+
             <SwitchPreference
                 android:key="disable_hardware_keys"
                 android:title="@string/keys_disable_hwkeys_title"

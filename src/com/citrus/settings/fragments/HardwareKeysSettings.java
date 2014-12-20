@@ -50,6 +50,7 @@ import com.android.internal.util.slim.HwKeyHelper;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.citrus.settings.fragments.ButtonBacklightBrightness; 
 import com.citrus.settings.util.ShortcutPickerHelper;
 
 import java.util.HashMap;
@@ -62,6 +63,7 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "HardwareKeys";
 
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight"; 
     private static final String CATEGORY_KEYS = "button_keys";
     private static final String CATEGORY_BACK = "button_keys_back";
     private static final String CATEGORY_CAMERA = "button_keys_camera";
@@ -352,6 +354,13 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         } else {
             prefs.removePreference(keysAppSwitchCategory);
         }
+
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            prefScreen.removePreference(backlight);
+        }
+    }
 
         boolean disableHardwareKeys = Settings.System.getInt(getContentResolver(),
                 Settings.System.DISABLE_HARDWARE_KEYS, 0) == 1;
