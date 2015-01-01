@@ -103,6 +103,8 @@
 
     <!-- Reusable strings -->
     <string name="advanced_behavior_title">Advanced behavior</string>
+    <string name="appearance_category">APPEARANCE</string>
+    <string name="behavior_category">BEHAVIOR</string>
 
 <!-- FEATURES -->
     <!-- Screen Off animation -->
@@ -346,5 +348,9 @@
     <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
+
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
 </resources>
