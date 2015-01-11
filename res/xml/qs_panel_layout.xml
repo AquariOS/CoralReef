@@ -19,6 +19,16 @@
     android:title="@string/qs_panel_view_title" >
 
 	<PreferenceCategory
+		android:title="@string/brightness_control_category">
+			<com.android.settings.aquarios.SecureSettingSwitchPreference
+				android:key="qs_show_brightness"
+				android:title="@string/show_brightness_title"
+				android:summaryOn="@string/show_brightness_summary_on"
+				android:summaryOff="@string/show_brightness_summary_off"
+				android:defaultValue="true" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
         android:title="@string/category_qstiles_portrait">
 			<com.android.settings.aquarios.CustomSeekBarPreference
 				android:key="qs_rows_portrait"
