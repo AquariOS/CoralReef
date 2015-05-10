@@ -26,6 +26,12 @@
         android:fragment="com.aquarios.coralreef.fragments.PowerMenuActions" />
 
     <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_enable_power_menu"
+        android:title="@string/lockscreen_enable_power_menu_title"
+        android:summary="@string/lockscreen_enable_power_menu_summary"
+        android:defaultValue="true" />
+
+    <com.aquarios.settings.preference.SystemSettingSwitchPreference
         android:key="navigation_bar_show"
         android:title="@string/enable_navigation_bar_title"
         android:summary="@string/enable_navigation_bar_summary"
