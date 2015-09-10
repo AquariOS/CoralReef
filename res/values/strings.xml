@@ -506,4 +506,11 @@
     <string name="lockscreen_clock_selection_sammy">Sammy</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
 
+    <!-- On-The-Go -->
+    <string name="onthego_title">On-The-Go Mode</string>
+    <string name="global_actions_onthego_title">On-The-Go</string>
+    <string name="global_actions_onthego_summary">Add On-The-Go toggle to Power Menu</string>
+    <string name="onthego_alpha_title">On-The-Go Alpha</string>
+    <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay</string>
+
 </resources>
