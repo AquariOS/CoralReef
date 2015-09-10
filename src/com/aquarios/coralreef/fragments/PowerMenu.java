@@ -38,6 +38,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.util.aquarios.AquaUtils;
 import com.android.internal.logging.nano.MetricsProto;
+import com.aquarios.support.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,10 +48,12 @@ public class PowerMenu extends SettingsPreferenceFragment implements
 
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
     private static final String KEY_LOCKDOWN_IN_POWER_MENU = "lockdown_in_power_menu";
+    private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";
     private static final int MY_USER_ID = UserHandle.myUserId();
 
     private SwitchPreference mPowerMenuLockDown;
     private ListPreference mTorchPowerButton;
+    private CustomSeekBarPreference mOnTheGoAlphaPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +72,14 @@ public class PowerMenu extends SettingsPreferenceFragment implements
         } else {
             prefScreen.removePreference(mPowerMenuLockDown);
         }
+
+            mOnTheGoAlphaPref = (CustomSeekBarPreference) findPreference(PREF_ON_THE_GO_ALPHA);
+            float otgAlpha = Settings.System.getFloat(getContentResolver(),
+                Settings.System.ON_THE_GO_ALPHA, 0.5f);
+            final int alpha = ((int) (otgAlpha * 100));
+            mOnTheGoAlphaPref.setValue(alpha);
+            mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
+
         if (!AquaUtils.deviceHasFlashlight(getContext())) {
             Preference toRemove = prefScreen.findPreference(TORCH_POWER_BUTTON_GESTURE);
             if (toRemove != null) {
@@ -105,6 +116,12 @@ public class PowerMenu extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.LOCKDOWN_IN_POWER_MENU, value ? 1 : 0);
+            return true;
+            }
+             if (preference == mOnTheGoAlphaPref) {
+            float val = (Integer) newValue;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.ON_THE_GO_ALPHA, val / 100);
             return true;
         }
         return false;
