@@ -533,6 +533,7 @@
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_seconds_title">Show seconds</string>
 
+
     <!-- Battery Styles -->
     <string name="battery_style_title">Battery icon style</string>
     <string name="battery_style_summary">Change the look of the icon in the statusbar</string>

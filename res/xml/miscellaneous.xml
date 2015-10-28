@@ -51,4 +51,9 @@
         android:fragment="com.aquarios.coralreef.fragments.AmbientTicker"
         android:title="@string/force_ambient_for_media_pref_title"
         android:summary="@string/force_ambient_for_media_pref_summary"/>
+	
+    <Preference
+        android:key="expanded_desktop_category"
+        android:title="@string/expanded_desktop_title"
+        android:fragment="com.aquarios.coralreef.fragments.ExpandedDesktop"/>
 </PreferenceScreen>
