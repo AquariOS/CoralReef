@@ -245,6 +245,8 @@
     <!-- Lockscreen charging current indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display realtime charger current, voltage, and battery temperature on lockscreen while charging</string>
+    <!-- Lockscreen custom shortcuts -->
+    <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
