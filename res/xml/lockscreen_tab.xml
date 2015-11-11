@@ -28,6 +28,12 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.aquarios.LockscreenShortcutsActivity" />
         </PreferenceScreen>
+       
+        <com.aquarios.settings.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_anywhere"
+            android:title="@string/double_tap_sleep_anywhere_title"
+            android:summary="@string/double_tap_sleep_anywhere_summary"
+            android:defaultValue="false" /> 
 
         <com.aquarios.settings.preference.SystemSettingSwitchPreference
             android:key="keyguard_toggle_torch"

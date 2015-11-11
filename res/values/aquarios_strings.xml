@@ -260,6 +260,9 @@
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
+    <!-- Lockscreen double tap to sleep -->
+    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
+    <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
@@ -482,6 +485,5 @@
     <string name="recents_clear_all_location_top_center">Top center</string>
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
-    <string name="recents_clear_all_location_bottom_center">Bottom center</string>    
-
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>     
 </resources>
