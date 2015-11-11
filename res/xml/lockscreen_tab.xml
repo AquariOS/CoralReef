@@ -68,6 +68,12 @@
             android:title="@string/lockscreen_actions_category_title">
 
         <com.aquarios.settings.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_anywhere"
+            android:title="@string/double_tap_sleep_anywhere_title"
+            android:summary="@string/double_tap_sleep_anywhere_summary"
+            android:defaultValue="false" />
+
+        <com.aquarios.settings.preference.SystemSettingSwitchPreference
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_sucess_vib_title"
             android:summary="@string/fprint_sucess_vib_summary"

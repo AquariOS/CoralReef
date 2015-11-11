@@ -529,7 +529,10 @@
  
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>    
-
+    <!-- Lockscreen double tap to sleep -->
+    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
+    <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
+  
     <!-- Lockscreen double tap to sleep -->
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string> 
