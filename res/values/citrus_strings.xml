@@ -267,5 +267,9 @@
    <!-- Lock screen charging current -->
    <string name="lock_screen_show_current">Charging current</string>
    <string name="lock_screen_show_current_summary">Show charging current rate on the lock screen</string>
-   
+
+    <!--Time Contexual Header -->
+    <string name="status_bar_custom_header_title">Time Contextual Header</string>
+    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+
 </resources>
