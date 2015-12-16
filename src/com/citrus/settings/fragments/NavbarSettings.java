@@ -16,27 +16,19 @@
 
 package com.citrus.settings.fragments;
 
-import android.app.ActivityManagerNative;
 import android.content.Context;
 import android.content.ContentResolver;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.preference.Preference;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
+import android.preference.SwitchPreference;
+import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
-import android.util.Log;
-import android.view.WindowManagerGlobal;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
