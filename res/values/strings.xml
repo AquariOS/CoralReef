@@ -196,4 +196,8 @@
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at base of QS panel when network is monitored by external apps or VPN</string>
 
+    <!-- Brightness slider icon -->
+    <string name="brightness_icon_title">Auto Brightness Icon</string>
+    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
+
 </resources>
