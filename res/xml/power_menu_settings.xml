@@ -55,6 +55,11 @@
         android:defaultValue="false" />
 
     <SwitchPreference
+        android:key="torch"
+        android:title="@string/power_menu_torch"
+        android:defaultValue="false" />
+
+    <SwitchPreference
         android:key="silent"
         android:title="@string/power_menu_sound_title"
         android:defaultValue="true" />
