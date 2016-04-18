@@ -18,13 +18,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
         <PreferenceCategory
+                android:key="keys_hwkeys"
+                android:title="@string/keys_hwkeys_title" >
+
+            <SwitchPreference
+                android:key="disable_hardware_keys"
+                android:title="@string/keys_disable_hwkeys_title"
+                android:summary="@string/keys_disable_hwkeys_summary"
+		android:disableDependentsState="true" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
                 android:key="keys_cat"
                 android:title="@string/keys_bindings_title" >
 
             <SwitchPreference
                 android:key="enable_hardware_rebind"
                 android:title="@string/keys_enable_custom_title"
-                android:summary="@string/keys_enable_custom_summary" />
+                android:summary="@string/keys_enable_custom_summary" 
+                android:dependency="disable_hardware_keys" />
 
         </PreferenceCategory>
 
