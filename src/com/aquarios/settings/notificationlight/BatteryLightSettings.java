@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -36,6 +37,8 @@ import com.aquarios.settings.preference.SystemSettingSwitchPreference;
 public class BatteryLightSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "BatteryLightSettings";
+
+    private static final String GENERAL_CAT = "general_section";
 
     private static final String LOW_COLOR_PREF = "low_color";
     private static final String MEDIUM_COLOR_PREF = "medium_color";
@@ -58,9 +61,13 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.battery_light_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceCategory generalCategory = (PreferenceCategory) findPreference(GENERAL_CAT);
 
         mLightEnabledPref = (SystemSettingSwitchPreference) prefSet.findPreference(LIGHT_ENABLED_PREF);
         mPulseEnabledPref = (SystemSettingSwitchPreference) prefSet.findPreference(PULSE_ENABLED_PREF);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_ledCanPulse)) {
+            generalCategory.removePreference(prefSet.findPreference(PULSE_ENABLED_PREF));
+        }
 
         // Does the Device support changing battery LED colors?
         if (getResources().getBoolean(com.android.internal.R.bool.config_multiColorBatteryLed)) {
