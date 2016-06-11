@@ -34,6 +34,9 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuInflater;
+import android.util.Log;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.utils.du.ActionConstants;
@@ -47,8 +50,12 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private ListPreference mSmartBarContext;
     private ListPreference mImeActions;
     private ListPreference mButtonAnim;
-
+    private static final String NAVBAR_COLOR = "navbar_button_color";
     private static final int MENU_RESET = Menu.FIRST;
+	
+    private ColorPickerPreference mNavbuttoncolor;
+  
+    static final int DEFAULT = 0xffffffff;
     private static final int DIALOG_RESET_CONFIRM = 1;
 
     Context mContext;
@@ -57,6 +64,8 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.smartbar_settings);
+        int intColor;
+        String hexColor;
         mContext = (Context) getActivity();
 
         int contextVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
@@ -77,6 +86,14 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
         mButtonAnim.setValue(String.valueOf(buttonAnimVal));
         mButtonAnim.setOnPreferenceChangeListener(this);
 
+        mNavbuttoncolor = (ColorPickerPreference) findPreference(NAVBAR_COLOR);
+        mNavbuttoncolor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.NAVBAR_BUTTON_COLOR, DEFAULT);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mNavbuttoncolor.setSummary(hexColor);
+        mNavbuttoncolor.setNewPreviewColor(intColor);
+        
         setHasOptionsMenu(true);
     }
 
@@ -171,12 +188,41 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(), "smartbar_ime_hint_mode",
                     val);
             return true;
-        }
+        } else if (preference == mNavbuttoncolor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.NAVBAR_BUTTON_COLOR, intHex);
+            return true;
+         } 
         return false;
     }
 
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.CITRUS_SETTINGS;
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.reset);
+        alertDialog.setMessage(R.string.reset_message);
+        alertDialog.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                resetValues();
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
+    }
+
+    private void resetValues() {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.NAVBAR_BUTTON_COLOR, DEFAULT);
+        mNavbuttoncolor.setNewPreviewColor(DEFAULT);
+        mNavbuttoncolor.setSummary(R.string.default_string);
+
     }
 }

@@ -30,15 +30,26 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
+import android.preference.ListPreference;
 import android.provider.Settings;
 
 public class PulseSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = PulseSettings.class.getSimpleName();
+    private static final String CUSTOM_DIMEN = "pulse_custom_dimen";
+    private static final String CUSTOM_DIV = "pulse_custom_div";
+    private static final String PULSE_BLOCK = "pulse_filled_block_size";
+    private static final String EMPTY_BLOCK = "pulse_empty_block_size";
+    private static final String FUDGE_FACOR = "pulse_custom_fudge_factor";
 
     SwitchPreference mShowPulse;
     SwitchPreference mLavaLampEnabled;
     ColorPickerPreference mPulseColor;
+    ListPreference mCustomDimen;
+    ListPreference mCustomDiv;
+    ListPreference mFilled;
+    ListPreference mEmpty;
+    ListPreference mFudge;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +76,46 @@ public class PulseSettings extends SettingsPreferenceFragment implements
         mLavaLampEnabled.setChecked(Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.FLING_PULSE_LAVALAMP_ENABLED, 1) == 1);
         mLavaLampEnabled.setOnPreferenceChangeListener(this);
+        
+        mCustomDimen = (ListPreference) findPreference(CUSTOM_DIMEN);
+        int customdimen = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.PULSE_CUSTOM_DIMEN, 0,
+                    UserHandle.USER_CURRENT);
+        mCustomDimen.setValue(String.valueOf(customdimen));
+        mCustomDimen.setSummary(mCustomDimen.getEntry());
+        mCustomDimen.setOnPreferenceChangeListener(this);
+        
+        mCustomDiv = (ListPreference) findPreference(CUSTOM_DIV);
+        int customdiv = Settings.System.getIntForUser(getContentResolver(),
+                     Settings.System.PULSE_CUSTOM_DIV, 0,
+                    UserHandle.USER_CURRENT);
+        mCustomDiv.setValue(String.valueOf(customdiv));
+        mCustomDiv.setSummary(mCustomDiv.getEntry());
+        mCustomDiv.setOnPreferenceChangeListener(this);
+        
+        mFilled = (ListPreference) findPreference(PULSE_BLOCK);
+        int filled = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.PULSE_FILLED_BLOCK_SIZE, 0,
+                    UserHandle.USER_CURRENT);
+        mFilled.setValue(String.valueOf(filled));
+        mFilled.setSummary(mFilled.getEntry());
+        mFilled.setOnPreferenceChangeListener(this);
+        
+        mEmpty = (ListPreference) findPreference(EMPTY_BLOCK);
+        int empty = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.PULSE_EMPTY_BLOCK_SIZE, 0,
+                    UserHandle.USER_CURRENT);
+        mEmpty.setValue(String.valueOf(empty));
+        mEmpty.setSummary(mEmpty.getEntry());
+        mEmpty.setOnPreferenceChangeListener(this);
+        
+        mFudge = (ListPreference) findPreference(FUDGE_FACOR);
+        int fudge = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.PULSE_CUSTOM_FUDGE_FACTOR, 0,
+                    UserHandle.USER_CURRENT);
+        mFudge.setValue(String.valueOf(fudge));
+        mFudge.setSummary(mFudge.getEntry());
+        mFudge.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -84,7 +135,57 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.FLING_PULSE_LAVALAMP_ENABLED, enabled ? 1 : 0);
             return true;
-        }
+        } else if (preference == mCustomDimen) {
+                int customdimen = Integer.valueOf((String) newValue);
+                int index = mCustomDimen.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(
+                       getContentResolver(), 
+        Settings.System.PULSE_CUSTOM_DIMEN, customdimen,
+                        UserHandle.USER_CURRENT);
+                mCustomDimen.setSummary(
+                        mCustomDimen.getEntries()[index]);
+                return true;
+    }  else if (preference == mCustomDiv) {
+                int customdiv = Integer.valueOf((String) newValue);
+                int index = mCustomDiv.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(
+                       getContentResolver(), 
+        Settings.System.PULSE_CUSTOM_DIV, customdiv,
+                        UserHandle.USER_CURRENT);
+                mCustomDiv.setSummary(
+                        mCustomDiv.getEntries()[index]);
+                return true;
+    } else if (preference == mFilled) {
+                int filled = Integer.valueOf((String) newValue);
+                int index = mFilled.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(
+                       getContentResolver(), 
+        Settings.System.PULSE_FILLED_BLOCK_SIZE, filled,
+                        UserHandle.USER_CURRENT);
+                mFilled.setSummary(
+                        mFilled.getEntries()[index]);
+                return true;
+    }  else if (preference == mEmpty) {
+                int empty = Integer.valueOf((String) newValue);
+                int index = mEmpty.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(
+                       getContentResolver(), 
+        Settings.System.PULSE_EMPTY_BLOCK_SIZE, empty,
+                        UserHandle.USER_CURRENT);
+                mEmpty.setSummary(
+                        mEmpty.getEntries()[index]);
+                return true;
+    } else if (preference == mFudge) {
+                int fudge = Integer.valueOf((String) newValue);
+                int index = mFudge.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(
+                       getContentResolver(), 
+        Settings.System.PULSE_CUSTOM_FUDGE_FACTOR, fudge,
+                        UserHandle.USER_CURRENT);
+                mFudge.setSummary(
+                        mFudge.getEntries()[index]);
+                return true;
+    }
         return false;
     }
 
