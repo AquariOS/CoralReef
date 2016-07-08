@@ -4,5 +4,15 @@
         android:title="@string/status_bar_title" 
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+   <PreferenceCategory
+                android:key="carrier_label"
+                android:title="@string/carrier_label_title" >
+
+ <PreferenceScreen
+           android:key="carrierlabel"
+           android:fragment="com.citrus.settings.CarrierLabel"
+           android:title="@string/carrier_options" />
+</PreferenceCategory>
+
 </PreferenceScreen>
 
