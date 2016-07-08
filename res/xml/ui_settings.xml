@@ -29,4 +29,10 @@
             android:title="@string/lcd_density_title"
             android:fragment="com.citrus.settings.fragments.Density" />
 
+          <com.citrus.settings.preference.SystemSettingSwitchPreference
+           android:key="lock_screen_show_current"
+           android:title="@string/lock_screen_show_current"
+           android:summary="@string/lock_screen_show_current_summary"
+           android:defaultValue="false" />
+
 </PreferenceScreen>

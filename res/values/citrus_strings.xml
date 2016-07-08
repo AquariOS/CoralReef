@@ -264,5 +264,8 @@
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
-
+   <!-- Lock screen charging current -->
+   <string name="lock_screen_show_current">Charging current</string>
+   <string name="lock_screen_show_current_summary">Show charging current rate on the lock screen</string>
+   
 </resources>
