@@ -4,6 +4,11 @@
         android:title="@string/status_bar_title" 
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <com.android.settings.preference.SystemSettingSwitchPreference
+           android:key="double_tap_sleep_gesture"
+           android:title="@string/double_tap_to_sleep_title"
+           android:summary="@string/double_tap_to_sleep_summary" />
+
    <PreferenceCategory
                 android:key="carrier_label"
                 android:title="@string/carrier_label_title" >
