@@ -302,4 +302,8 @@
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
 
+   <!-- Show/Hide Search Bar -->
+   <string name="recents_show_searchbar">Recents panel Search bar</string>
+   <string name="recents_searchbar_summary_enabled">Search bar in recents menu is enabled</string>
+   <string name="recents_searchbar_summary_disabled">Search bar in recents menu is disabled</string>
 </resources>

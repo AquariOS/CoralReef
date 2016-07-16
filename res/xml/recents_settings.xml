@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) 2016 Citrus-AOSP
+<!--  Copyright (C) 2016 Citrus-AOSP Project
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -17,5 +17,12 @@
     android:title="@string/recents_title"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <com.citrus.settings.preference.SystemSettingSwitchPreference
+        android:key="recents_show_search_bar"
+        android:title="@string/recents_show_searchbar"
+        android:summaryOn="@string/recents_searchbar_summary_enabled"
+        android:summaryOff="@string/recents_searchbar_summary_disabled"
+        android:defaultValue="true" />
 
 </PreferenceScreen>
