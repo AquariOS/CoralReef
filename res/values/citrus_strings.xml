@@ -173,16 +173,25 @@
     <string name="smartbar_ime_action_none">None</string>
     <string name="smartbar_ime_action_arrows">Input arrows</string>
     <string name="smartbar_ime_action_switcher">Keyboard switcher</string>
+    
+    <string name="profiles_add">Add</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="profile_reset_title">Reset</string>
+    <string name="smartbar_backup_current_config_title">Save profile</string>
+    <string name="smartbar_restore_config_title">Restore profile</string>
+    <string name="smartbar_config_name_edit_dialog_title">Smartbar profile name</string>
+    <string name="smartbar_config_name_edit_dialog_message">Enter name or leave blank</string>
+    <string name="smartbar_config_dialog_title">Smartbar profiles</string>
+    <string name="smartbar_config_backup_success_toast">Smartbar profile successfully saved</string>
+    <string name="smartbar_config_restore_success_toast">Smartbar profile successfully restored</string>
+    <string name="smartbar_config_backup_error_toast">Error saving Smartbar profile</string>
+    <string name="smartbar_config_restore_error_toast">Error restoring Smartbar profile</string>
 
     <!-- Shortcut Picker -->
     <string name="picker_activities">Activities</string>
     <string name="profile_applist_title">Applications</string>
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="select_custom_app_title">Select custom app</string>
-
-    <string name="profiles_add">Add</string>
-    <string name="profile_choose_app">Choose app</string>
-    <string name="profile_reset_title">Reset</string>
 
     <!-- navbar tint/color -->
     <string name="color_picker_label">Color Picker</string>
@@ -191,10 +200,8 @@
 
     <!-- pulse custom options -->
     <string name="pulse_custom_dimen">Pulse Bar Width</string>
-
     <string name="pulse_custom_div">Pulse Bar Spacing</string>
     <string name="default_div">Default</string>
-
     <string name="pulse_bar_style">Pulse Bar Style</string>
     <string name="pulse_filled_block_size">Block Size</string>
     <string name="pulse_empty_block_size">Block Spacing</string>
