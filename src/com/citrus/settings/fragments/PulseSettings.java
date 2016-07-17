@@ -90,42 +90,37 @@ public class PulseSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.FLING_PULSE_LAVALAMP_ENABLED, 1) == 1);
         mLavaLampEnabled.setOnPreferenceChangeListener(this);
         
+        int customdimen = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_CUSTOM_DIMEN, 0, UserHandle.USER_CURRENT);
         mCustomDimen = (ListPreference) findPreference(CUSTOM_DIMEN);
-        int customdimen = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.PULSE_CUSTOM_DIMEN, 0,
-                    UserHandle.USER_CURRENT);
         mCustomDimen.setValue(String.valueOf(customdimen));
         mCustomDimen.setSummary(mCustomDimen.getEntry());
         mCustomDimen.setOnPreferenceChangeListener(this);
         
+        int customdiv = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_CUSTOM_DIV, 0, UserHandle.USER_CURRENT);
         mCustomDiv = (ListPreference) findPreference(CUSTOM_DIV);
-        int customdiv = Settings.System.getIntForUser(getContentResolver(),
-                     Settings.System.PULSE_CUSTOM_DIV, 0,
-                    UserHandle.USER_CURRENT);
         mCustomDiv.setValue(String.valueOf(customdiv));
         mCustomDiv.setSummary(mCustomDiv.getEntry());
         mCustomDiv.setOnPreferenceChangeListener(this);
         
+        int filled = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_FILLED_BLOCK_SIZE, 0, UserHandle.USER_CURRENT);
         mFilled = (ListPreference) findPreference(PULSE_BLOCK);
-        int filled = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.PULSE_FILLED_BLOCK_SIZE, 0,
-                    UserHandle.USER_CURRENT);
         mFilled.setValue(String.valueOf(filled));
         mFilled.setSummary(mFilled.getEntry());
         mFilled.setOnPreferenceChangeListener(this);
         
+        int empty = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_EMPTY_BLOCK_SIZE, 0, UserHandle.USER_CURRENT);
         mEmpty = (ListPreference) findPreference(EMPTY_BLOCK);
-        int empty = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.PULSE_EMPTY_BLOCK_SIZE, 0,
-                    UserHandle.USER_CURRENT);
         mEmpty.setValue(String.valueOf(empty));
         mEmpty.setSummary(mEmpty.getEntry());
         mEmpty.setOnPreferenceChangeListener(this);
         
+        int fudge = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_CUSTOM_FUDGE_FACTOR, 0, UserHandle.USER_CURRENT);
         mFudge = (ListPreference) findPreference(FUDGE_FACOR);
-        int fudge = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.PULSE_CUSTOM_FUDGE_FACTOR, 0,
-                    UserHandle.USER_CURRENT);
         mFudge.setValue(String.valueOf(fudge));
         mFudge.setSummary(mFudge.getEntry());
         mFudge.setOnPreferenceChangeListener(this);
