@@ -18,8 +18,9 @@
     <!-- Citrus Settings menus -->
     <string name="citrus_settings_title">Custom Squash</string>
     <string name="keywords_citrus">Citrus-CAF</string>
-    <!-- Navigation settings -->
+    
+    <!-- Tabs-->
     <string name="navigation_title">Navigation</string>
-    <!-- Status bar-->
     <string name="status_bar_title">Status bar</string>
+    <string name="ui_title">UI</string>
 </resources>

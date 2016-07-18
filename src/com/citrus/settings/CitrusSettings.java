@@ -17,12 +17,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.citrus.settings.tabs.StatusBarSettings;
-import com.citrus.settings.tabs.NavigationSettings;
-import com.citrus.settings.PagerSlidingTabStrip;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.citrus.settings.tabs.StatusBarSettings;
+import com.citrus.settings.tabs.NavigationSettings;
+import com.citrus.settings.tabs.UiSettings; 
+import com.citrus.settings.PagerSlidingTabStrip;
 
 import com.android.internal.logging.MetricsLogger;
 
@@ -80,8 +82,8 @@ public class CitrusSettings extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-	    frags[0] = new StatusBarSettings();
-          
+	    frags[0] = new UiSettings();
+        frags[1] = new StatusBarSettings();
         }
 
         @Override
@@ -103,20 +105,14 @@ public class CitrusSettings extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
+            getString(R.string.ui_title),
 		    getString(R.string.status_bar_title)};
-        return titleString;
-    }
-   
-    private String[] getTitles() {
-        String titleString[];
-        titleString = new String[]{
-            getString(R.string.navigation_title)};
         return titleString;
     }
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.APPLICATION;
+        return MetricsLogger.CITRUS_SETTINGS;
     }
 }
 
