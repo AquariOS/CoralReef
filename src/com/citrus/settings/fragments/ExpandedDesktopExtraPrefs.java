@@ -151,4 +151,5 @@ public class ExpandedDesktopExtraPrefs extends SettingsPreferenceFragment
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.CITRUS_SETTINGS;
+    }   
 }

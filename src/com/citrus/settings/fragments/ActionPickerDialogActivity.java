@@ -21,7 +21,7 @@ package com.citrus.settings.fragments;
 
 import com.android.internal.utils.du.Config.ActionConfig;
 import com.android.settings.R;
-import com.android.settings.widget.CustomActionListAdapter;
+import com.citrus.settings.widget.CustomActionListAdapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;

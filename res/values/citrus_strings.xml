@@ -172,4 +172,14 @@
     <string name="smartbar_ime_action_arrows">Input arrows</string>
     <string name="smartbar_ime_action_switcher">Keyboard switcher</string>
 
+    <!-- Shortcut Picker -->
+    <string name="picker_activities">Activities</string>
+    <string name="profile_applist_title">Applications</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
+    <string name="select_custom_app_title">Select custom app</string>
+
+    <string name="profiles_add">Add</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="profile_reset_title">Reset</string>
+
 </resources>
