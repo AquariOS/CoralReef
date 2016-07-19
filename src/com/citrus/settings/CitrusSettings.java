@@ -23,6 +23,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.citrus.settings.tabs.StatusBarSettings;
 import com.citrus.settings.tabs.NavigationSettings;
+import com.citrus.settings.tabs.RecentsSettings; 
 import com.citrus.settings.tabs.UiSettings; 
 import com.citrus.settings.PagerSlidingTabStrip;
 
@@ -84,6 +85,7 @@ public class CitrusSettings extends SettingsPreferenceFragment {
             super(fm);
 	    frags[0] = new UiSettings();
         frags[1] = new StatusBarSettings();
+        frags[2] = new StatusBarSettings();
         }
 
         @Override
@@ -106,7 +108,9 @@ public class CitrusSettings extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
             getString(R.string.ui_title),
-		    getString(R.string.status_bar_title)};
+		    getString(R.string.status_bar_title),
+            getString(R.string.recents_title)};
+
         return titleString;
     }
 

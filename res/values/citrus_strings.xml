@@ -23,7 +23,8 @@
     <string name="navigation_title">Navigation</string>
     <string name="status_bar_title">Status bar</string>
     <string name="ui_title">UI</string>
-   
+    <string name="recents_title">Recents</string>
+    
     <!-- Expanded desktop -->
     <string name="expanded_desktop_category">Expanded desktop</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
