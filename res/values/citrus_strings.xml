@@ -322,4 +322,9 @@
     <string name="recents_show_membar_title">RAM memory bar</string>
     <string name="recents_show_membar_summary_on">Available RAM memory bar will be displayed on recents view</string>
     <string name="recents_show_membar_summary_off">Toggle to display available RAM memory bar on recents view</string>
+
+  <!-- QS Tiles Columns -->
+   <string name="qs_num_columns_title">Number of tiles per row</string>
+   <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+
 </resources>
