@@ -4,14 +4,14 @@
         android:title="@string/status_bar_title" 
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.android.settings.preference.SystemSettingSwitchPreference
+        <com.citrus.settings.preference.SystemSettingSwitchPreference
            android:key="double_tap_sleep_gesture"
            android:title="@string/double_tap_to_sleep_title"
            android:summary="@string/double_tap_to_sleep_summary" />
 
  <PreferenceScreen
            android:key="carrierlabel"
-           android:fragment="com.citrus.settings.CarrierLabel"
+           android:fragment="com.citrus.settings.fragments.CarrierLabel"
            android:title="@string/carrier_options" />
 
  <ListPreference
@@ -21,7 +21,7 @@
         android:entryValues="@array/qs_num_columns_values"
         android:persistent="false" />
         
-       <com.citrus.settings.Preference.SystemSettingSwitchPreference
+       <com.citrus.settings.preference.SystemSettingSwitchPreference
            android:key="status_bar_custom_header"
            android:title="@string/status_bar_custom_header_title"
            android:summary="@string/status_bar_custom_header_summary"

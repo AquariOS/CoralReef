@@ -55,7 +55,7 @@
     <string name="navbar_mode">Navigation mode</string>
     <string name="navbar_visibility">Enable navigation bar</string>
     <string name="navigationbar_settings_title">Navigation</string>
-    <string name="aosp_navigation_bar">Navigation bar</string>
+    <string name="aosp_navigation_bar">AwesomeBar</string>
     <string name="aosp_navigation_bar_settings">Navigation bar settings</string>
     <string name="navigationbar_settings_summary">Customize navigation style and behavior</string>
     <string name="navbar_general_title">Advanced</string>
@@ -323,8 +323,8 @@
     <string name="recents_show_membar_summary_on">Available RAM memory bar will be displayed on recents view</string>
     <string name="recents_show_membar_summary_off">Toggle to display available RAM memory bar on recents view</string>
 
-  <!-- QS Tiles Columns -->
-   <string name="qs_num_columns_title">Number of tiles per row</string>
-   <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_title">Number of tiles per row</string>
+    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
 
 </resources>

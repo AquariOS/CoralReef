@@ -85,7 +85,8 @@ public class CitrusSettings extends SettingsPreferenceFragment {
             super(fm);
 	    frags[0] = new UiSettings();
         frags[1] = new StatusBarSettings();
-        frags[2] = new StatusBarSettings();
+        frags[2] = new NavigationSettings();
+        frags[3] = new RecentsSettings();
         }
 
         @Override
@@ -109,6 +110,7 @@ public class CitrusSettings extends SettingsPreferenceFragment {
         titleString = new String[]{
             getString(R.string.ui_title),
 		    getString(R.string.status_bar_title),
+            getString(R.string.navigation_title),
             getString(R.string.recents_title)};
 
         return titleString;
