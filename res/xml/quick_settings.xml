@@ -17,6 +17,16 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="systemui_tuner_qs"
+        android:title="@string/systemui_tuner_qs_title"
+        android:summary="@string/systemui_tuner_qs_summary" >
+            <intent
+        android:action="android.intent.action.MAIN"
+        android:targetPackage="com.android.systemui"
+        android:targetClass="com.android.systemui.tuner.QsActivity" />
+    </PreferenceScreen>
+
     <ListPreference
         android:key="sysui_qs_num_columns"
         android:title="@string/qs_num_columns_title"
@@ -42,6 +52,6 @@
         android:title="@string/qs_brightness_slider_title"
         android:summary="@string/qs_brightness_slider_summary"
         android:defaultValue="true"/>
-        
+
 </PreferenceScreen>
 
