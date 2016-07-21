@@ -24,5 +24,10 @@
         android:entryValues="@array/qs_num_columns_values"
         android:persistent="false" />
         
+    <com.citrus.settings.preference.SystemSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false"/>
 </PreferenceScreen>
 
