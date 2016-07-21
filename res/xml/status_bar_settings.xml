@@ -9,18 +9,11 @@
            android:title="@string/double_tap_to_sleep_title"
            android:summary="@string/double_tap_to_sleep_summary" />
 
- <PreferenceScreen
+        <PreferenceScreen
            android:key="carrierlabel"
            android:fragment="com.citrus.settings.fragments.CarrierLabel"
            android:title="@string/carrier_options" />
 
- <ListPreference
-        android:key="sysui_qs_num_columns"
-        android:title="@string/qs_num_columns_title"
-        android:entries="@array/qs_num_columns_entries"
-        android:entryValues="@array/qs_num_columns_values"
-        android:persistent="false" />
-        
        <com.citrus.settings.preference.SystemSettingSwitchPreference
            android:key="status_bar_custom_header"
            android:title="@string/status_bar_custom_header_title"

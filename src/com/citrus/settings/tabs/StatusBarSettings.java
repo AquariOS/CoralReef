@@ -40,9 +40,6 @@ import com.android.settings.Utils;
 
 public class StatusBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-
-    private ListPreference mNumColumns;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,14 +49,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mNumColumns = (ListPreference) findPreference("sysui_qs_num_columns");
-        int numColumns = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.QS_NUM_TILE_COLUMNS, getDefaultNumColums(),
-                UserHandle.USER_CURRENT);
-        mNumColumns.setValue(String.valueOf(numColumns));
-        updateNumColumnsSummary(numColumns);
-        mNumColumns.setOnPreferenceChangeListener(this);
-    }
+}
 
     @Override
     protected int getMetricsCategory() {
@@ -78,32 +68,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mNumColumns) {
-            int numColumns = Integer.valueOf((String) objValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.QS_NUM_TILE_COLUMNS,
-                    numColumns, UserHandle.USER_CURRENT);
-            updateNumColumnsSummary(numColumns);
-            return true;
-        }
         return false;
-    }
-
-    private void updateNumColumnsSummary(int numColumns) {
-        String prefix = (String) mNumColumns.getEntries()[mNumColumns.findIndexOfValue(String
-                .valueOf(numColumns))];
-        mNumColumns.setSummary(getResources().getString(R.string.qs_num_columns_showing, prefix));
-    }
-
-    private int getDefaultNumColums() {
-        try {
-            Resources res = getPackageManager()
-                    .getResourcesForApplication("com.android.systemui");
-            int val = res.getInteger(res.getIdentifier("quick_settings_num_columns", "integer",
-                    "com.android.systemui")); // better not be larger than 5, that's as high as the
-                                              // list goes atm
-            return Math.max(1, val);
-        } catch (Exception e) {
-            return 3;
-        }
-    }
+    } 
 }
