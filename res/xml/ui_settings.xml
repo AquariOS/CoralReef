@@ -21,7 +21,6 @@
          <Preference
             android:key="expanded_desktop"
             android:fragment="com.citrus.settings.fragments.ExpandedDesktop"
-            android:layout="@layout/preference_expanded_desktop"
             android:title="@string/expanded_desktop_category" />
 
          <PreferenceScreen

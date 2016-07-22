@@ -4,15 +4,21 @@
         android:title="@string/status_bar_title" 
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <PreferenceScreen
-            android:key="systemui_tuner_qs"
-            android:title="@string/systemui_tuner_qs_title"
-            android:summary="@string/systemui_tuner_qs_summary" >
-              <intent
+
+         <PreferenceScreen
+            android:key="systemui_tuner_statusbar"
+            android:title="@string/systemui_tuner_statusbar_title"
+            android:summary="@string/systemui_tuner_statusbar_summary" >
+          <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.QsActivity" />
+            android:targetClass="com.android.systemui.tuner.TunerActivity" />
         </PreferenceScreen>
+
+         <Preference
+            android:key="quick_settings"
+            android:fragment="com.citrus.settings.fragments.QuickSettings"
+            android:title="@string/qs_title" />
 
         <SwitchPreference
             android:key="status_bar_brightness_control"
