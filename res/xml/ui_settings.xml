@@ -23,6 +23,13 @@
             android:fragment="com.citrus.settings.fragments.ExpandedDesktop"
             android:title="@string/expanded_desktop_category" />
 
+          <com.android.settings.DropDownPreference
+            android:key="night_mode"
+            android:title="@string/night_mode_title"
+            android:summary="@string/night_mode_summary"
+            android:entries="@array/night_mode_entries"
+            android:entryValues="@array/night_mode_values" />
+ 
          <PreferenceScreen
             android:key="density_changer"
             android:title="@string/lcd_density_title"

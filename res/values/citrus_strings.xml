@@ -423,4 +423,11 @@
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Enabled</string>
 
+    <!-- Night Mode -->
+    <string name="night_mode_title">Theme</string>
+    <string name="night_mode_summary">%s</string>
+    <string name="night_mode_no">Light</string>
+    <string name="night_mode_yes">Dark</string>
+    <string name="night_mode_auto">Automatic</string>
+
 </resources>
