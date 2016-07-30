@@ -38,7 +38,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.android.settings.validus.navigation.NavigationButtonsCategory;
 import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
@@ -51,6 +50,7 @@ import com.android.internal.util.slim.HwKeyHelper;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.citrus.settings.fragments.ButtonBacklightBrightness; 
+import com.citrus.settings.fragments.NavbarSettings;
 import com.citrus.settings.util.ShortcutPickerHelper;
 
 import java.util.HashMap;
@@ -358,9 +358,8 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
         if (!backlight.isButtonSupported()) {
-            prefScreen.removePreference(backlight);
+        getPreferenceScreen().removePreference(backlight);
         }
-    }
 
         boolean disableHardwareKeys = Settings.System.getInt(getContentResolver(),
                 Settings.System.DISABLE_HARDWARE_KEYS, 0) == 1;
