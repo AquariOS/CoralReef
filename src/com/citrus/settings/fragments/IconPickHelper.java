@@ -30,7 +30,7 @@ public class IconPickHelper {
     public static final int REQUEST_PICK_ICON_PACK = 100;
     public static final int REQUEST_PICK_ICON_GALLERY = 101;
     public static final String INTENT_ACTION_EDIT_CLASS = "com.android.settings";
-    public static final String INTENT_ACTION_ICON_PICKER_COMPONENT = "com.android.settings.custom.IconPickerActivity";
+    public static final String INTENT_ACTION_ICON_PICKER_COMPONENT = "com.citrus.settings.fragments.IconPickerActivity";
     private static final int REQUEST_CODE_ICON_PACK = 420;
     private static final int REQUEST_CODE_GALLERY = 1337;
     private Activity mParent;
