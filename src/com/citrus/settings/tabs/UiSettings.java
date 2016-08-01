@@ -16,7 +16,6 @@
 
 package com.citrus.settings.tabs;
 
-import android.app.UiModeManager; 
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -29,10 +28,8 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
-import android.util.Log;
 
 import com.android.settings.R;
-import com.android.settings.DropDownPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.Utils;
@@ -40,12 +37,6 @@ import com.android.settings.Utils;
 public class UiSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "UiSettings";
-
-    private static final String KEY_NIGHT_MODE = "night_mode"; 
-
-    private DropDownPreference mNightModePreference; 
-   
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,30 +45,8 @@ public class UiSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
-       
-        mNightModePreference = (DropDownPreference) findPreference(KEY_NIGHT_MODE);
-        final UiModeManager uiManager = (UiModeManager) getSystemService(
-                Context.UI_MODE_SERVICE);
-        final int currentNightMode = uiManager.getNightMode();
-        mNightModePreference.setSelectedValue(String.valueOf(currentNightMode));
-        mNightModePreference.setCallback(new DropDownPreference.Callback() {
-            
-            @Override
-            public boolean onItemSelected(int pos, Object newValue) {
-                try {
-                    final int value = Integer.parseInt((String) newValue);
-                    final UiModeManager uiManager = (UiModeManager) getSystemService(
-                            Context.UI_MODE_SERVICE);
-                    uiManager.setNightMode(value);
-                    return true;
-                } catch (NumberFormatException e) {
-                    Log.e(TAG, "could not persist night mode setting", e);
-                    return false;
-                }
-            }
-        });
-     }
-    
+    }
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.CITRUS_SETTINGS;
