@@ -347,6 +347,9 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+    <!-- Bluetooth status -->
+    <string name="bluetooth_battery_title">Show Bluetooth battery status</string>
+    <string name="bluetooth_battery_summary">Show battery status for the currently connected bluetooth device, if available.</string>
     <!-- Battery customizations -->
     <string name="status_bar_battery_style_category">Battery style</string>
     <string name="status_bar_battery_style_summary">Customize the look of the status bar battery icon</string>
