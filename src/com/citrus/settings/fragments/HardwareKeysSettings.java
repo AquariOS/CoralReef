@@ -37,9 +37,6 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
-import android.widget.Toast;
-
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.util.slim.AppHelper;
 import com.android.internal.util.slim.ActionConstants;
@@ -50,7 +47,6 @@ import com.android.internal.util.slim.HwKeyHelper;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.citrus.settings.fragments.ButtonBacklightBrightness; 
-import com.citrus.settings.fragments.NavbarSettings;
 import com.citrus.settings.util.ShortcutPickerHelper;
 
 import java.util.HashMap;
@@ -71,9 +67,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_MENU = "button_keys_menu";
     private static final String CATEGORY_ASSIST = "button_keys_assist";
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
-
-    private static final String KEYS_CATEGORY_HWKEYS = "keys_hwkeys";
-    private static final String KEYS_DISABLE_HWKEYS = "disable_hardware_keys";
 
     private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
     private static final String KEYS_ENABLE_CUSTOM = "enable_hardware_rebind";
@@ -111,7 +104,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final int KEY_MASK_APP_SWITCH = 0x10;
     private static final int KEY_MASK_CAMERA     = 0x20;
 
-    private SwitchPreference mDisableHwKeys;
     private SwitchPreference mEnableCustomBindings;
     private Preference mBackPressAction;
     private Preference mBackLongPressAction;
@@ -138,8 +130,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private ShortcutPickerHelper mPicker;
     private String mPendingSettingsKey;
     private static FilteredDeviceFeaturesArray sFinalActionDialogArray;
-
-    Toast mHardwareKeysToast;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -198,9 +188,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefs.findPreference(CATEGORY_ASSIST);
         PreferenceCategory keysAppSwitchCategory =
                 (PreferenceCategory) prefs.findPreference(CATEGORY_APPSWITCH);
-
-        mDisableHwKeys = (SwitchPreference) prefs.findPreference(
-                KEYS_DISABLE_HWKEYS);
 
         mEnableCustomBindings = (SwitchPreference) prefs.findPreference(
                 KEYS_ENABLE_CUSTOM);
@@ -361,12 +348,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         getPreferenceScreen().removePreference(backlight);
         }
 
-        boolean disableHardwareKeys = Settings.System.getInt(getContentResolver(),
-                Settings.System.DISABLE_HARDWARE_KEYS, 0) == 1;
-        mDisableHwKeys = (SwitchPreference) findPreference(KEYS_DISABLE_HWKEYS);
-        mDisableHwKeys.setChecked(disableHardwareKeys);
-        mDisableHwKeys.setOnPreferenceChangeListener(this);
-
         boolean enableHardwareRebind = Settings.System.getInt(getContentResolver(),
                 Settings.System.HARDWARE_KEY_REBINDING, 0) == 1;
         mEnableCustomBindings = (SwitchPreference) findPreference(KEYS_ENABLE_CUSTOM);
@@ -497,31 +478,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         if (!mCheckPreferences) {
             return false;
         }
-        if (preference == mDisableHwKeys) {
-            boolean value = (Boolean) newValue;
-	    // Prema Chand Alugu (premaca@gmail.com)
-	    // We need to make sure the Navigation Bar presence if we are
-	    // disabling Hardware Keys. At least one of them should be present
-	    // for the device operation.
-            boolean navigationBarVisible = Settings.Secure.getInt(getContentResolver(), 
-	    Settings.Secure.NAVIGATION_BAR_VISIBLE, 0) == 1;
-
-	    if ((!navigationBarVisible) && (value)) {
-		    // check only while disabling the Hardware Keys 
-                    if (mHardwareKeysToast != null) {
-                        mHardwareKeysToast.cancel();
-                    }
-		    mHardwareKeysToast = Toast.makeText(getActivity(), 
-				    "Make sure Navigation Bar is present",
-				    Toast.LENGTH_LONG);
-		    mHardwareKeysToast.show();
-	    	return false;
-	    }
-
-            Settings.System.putInt(getContentResolver(), Settings.System.DISABLE_HARDWARE_KEYS,
-                    value ? 1 : 0);
-            return true;
-        }
         if (preference == mEnableCustomBindings) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEY_REBINDING,
@@ -550,8 +506,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
             }
         }
         Settings.System.putInt(getContentResolver(),
-                Settings.System.DISABLE_HARDWARE_KEYS, 1);
-        Settings.System.putInt(getContentResolver(),
                 Settings.System.HARDWARE_KEY_REBINDING, 1);
         reloadSettings();
     }
@@ -559,7 +513,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        mHardwareKeysToast = null;
     }
 
     @Override

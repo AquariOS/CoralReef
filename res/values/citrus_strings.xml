@@ -354,9 +354,6 @@
         <!-- Hardware keys -->
     <string name="button_keys_title">Hardware Buttons</string>
     <string name="keys_bindings_title">Key actions</string>
-    <string name="keys_hwkeys_title">Navigation Keys</string>
-    <string name="keys_disable_hwkeys_title">Disable navigation keys</string>
-    <string name="keys_disable_hwkeys_summary">Disable navigation bar keys completely</string>
     <string name="keys_enable_custom_title">Enable custom actions</string>
     <string name="keys_enable_custom_summary">Enable custom hardware key actions</string>
     <string name="keys_back_press_title">Back key</string>
