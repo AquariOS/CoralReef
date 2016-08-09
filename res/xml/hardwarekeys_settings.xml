@@ -27,6 +27,10 @@
                 android:dialogTitle="@string/button_backlight_title"
                 android:persistent="false" />
 
+       <SwitchPreference
+            android:key="hardware_keys_disable"
+            android:title="@string/hardware_keys_disable_title" />
+
         </PreferenceCategory>
 
         <PreferenceCategory
