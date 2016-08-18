@@ -34,6 +34,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.UserHandle;
+import android.preference.CustomSeekBarPreference; 
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -65,6 +66,8 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private ListPreference mSmartBarContext;
     private ListPreference mImeActions;
     private ListPreference mButtonAnim;
+    private CustomSeekBarPreference mButtonsAlpha; 
+
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
     private static final int MENU_RESTORE = Menu.FIRST + 2;
@@ -78,7 +81,8 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private static final String SMARTBAR_CONFIGS_PREFIX = "smartbar_config_";
     private static final String KEY_SMARTBAR_BACKUP = "smartbar_profile_save";
     private static final String KEY_SMARTBAR_RESTORE = "smartbar_profile_restore";
- 
+    private static final String PREF_NAVBAR_BUTTONS_ALPHA = "navbar_buttons_alpha"; 
+
     Context mContext;
 
     @Override
@@ -104,6 +108,13 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
         mButtonAnim = (ListPreference) findPreference("smartbar_button_animation");
         mButtonAnim.setValue(String.valueOf(buttonAnimVal));
         mButtonAnim.setOnPreferenceChangeListener(this);
+
+        mButtonsAlpha =
+                (CustomSeekBarPreference) findPreference(PREF_NAVBAR_BUTTONS_ALPHA);
+        int bAlpha = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.NAVBAR_BUTTONS_ALPHA, 255, UserHandle.USER_CURRENT);
+        mButtonsAlpha.setValue(bAlpha / 1);
+        mButtonsAlpha.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
     }
@@ -244,6 +255,11 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
                 "smartbar_button_animation_style", 0);
         mButtonAnim.setValue(String.valueOf(0));
         mButtonAnim.setOnPreferenceChangeListener(this);
+
+        Settings.Secure.putInt(mContext.getContentResolver(),
+                "navbar_buttons_alpha", 255);
+        mButtonsAlpha.setValue(255);
+        mButtonsAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -262,6 +278,11 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
             int val = Integer.parseInt(((String) newValue).toString());
             Settings.Secure.putInt(getContentResolver(), "smartbar_ime_hint_mode",
                     val);
+            return true;
+        } else if (preference == mButtonsAlpha) {
+            int val = (Integer) newValue;
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.NAVBAR_BUTTONS_ALPHA, val * 1, UserHandle.USER_CURRENT);
             return true;
          } 
         return false;
