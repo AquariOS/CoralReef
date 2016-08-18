@@ -169,7 +169,18 @@
             android:title="@string/fling_trails_color_title"
             android:defaultValue="0xffffff"
             android:dependency="eos_fling_trails_enable" />
-     </PreferenceCategory>
+     
+        <CustomSeekBarPreference
+            android:key="du_fling_trails_width"
+            android:title="@string/fling_trails_width_title"
+            android:defaultValue="15"
+            android:max="25"
+            android:min="1"
+            android:unitsLeft=""
+            android:unitsRight="dp"
+            android:dependency="eos_fling_trails_enable"
+            android:persistent="false" />
+      </PreferenceCategory>
 
     <PreferenceCategory
         android:key="eos_long_swipe_category"
