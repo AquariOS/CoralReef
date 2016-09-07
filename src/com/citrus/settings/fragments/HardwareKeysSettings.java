@@ -151,7 +151,7 @@ public class HardwareKeysSettings extends ActionFragment implements OnPreference
     protected boolean usesExtendedActionsList() {
         return true;
     }
-
+    
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.CITRUS_SETTINGS;
