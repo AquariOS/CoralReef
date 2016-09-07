@@ -17,12 +17,10 @@ import com.android.internal.logging.MetricsLogger;
 public class NavigationSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
-
-    private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";         
+    private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
 
     private SwitchPreference mVolumeRockerWake;
-		
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,21 +29,13 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
 
         PreferenceScreen prefSet = getPreferenceScreen();
-       
+
 
         mVolumeRockerWake = (SwitchPreference) findPreference(VOLUME_ROCKER_WAKE);
         mVolumeRockerWake.setOnPreferenceChangeListener(this);
         int volumeRockerWake = Settings.System.getInt(getContentResolver(),
                 VOLUME_ROCKER_WAKE, 0);
         mVolumeRockerWake.setChecked(volumeRockerWake != 0);
-    
-        // Hide Hardware Keys menu if device doesn't have any
-        PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
-        int deviceKeys = getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-        if (deviceKeys == 0 && hardwareKeys != null) {
-            getPreferenceScreen().removePreference(hardwareKeys);
-        }
      }
 
     @Override
@@ -74,4 +64,3 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         return false;
     }
 }
-
