@@ -21,18 +21,14 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.citrus.settings.tabs.StatusBarSettings;
-import com.citrus.settings.tabs.NavigationSettings;
-import com.citrus.settings.tabs.RecentsSettings; 
-import com.citrus.settings.tabs.UiSettings; 
 import com.citrus.settings.PagerSlidingTabStrip;
 
-import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CitrusSettings extends SettingsPreferenceFragment {
+public class CustomSquash extends SettingsPreferenceFragment {
 
     ViewPager mViewPager;
     String titleString[];
@@ -43,16 +39,13 @@ public class CitrusSettings extends SettingsPreferenceFragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
-	final ActionBar actionBar = getActivity().getActionBar();
-        actionBar.setIcon(R.drawable.ic_settings_buttons);
-
-        View view = inflater.inflate(R.layout.citrus_settings, container, false);
+        View view = inflater.inflate(R.layout.custom_squash, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.pager);
 	mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
 
         StatusBarAdapter StatusBarAdapter = new StatusBarAdapter(getFragmentManager());
         mViewPager.setAdapter(StatusBarAdapter);
-       
+
 	mTabs.setViewPager(mViewPager);
         setHasOptionsMenu(true);
         return view;
@@ -72,9 +65,7 @@ public class CitrusSettings extends SettingsPreferenceFragment {
     @Override
     public void onResume() {
         super.onResume();
- 	if (!Utils.isPhone(getActivity())) {
-            mContainer.setPadding(0, 0, 0, 0);
-        }
+         mContainer.setPadding(30, 30, 30, 30);         }
     }
 
     class StatusBarAdapter extends FragmentPagerAdapter {
@@ -83,10 +74,6 @@ public class CitrusSettings extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-	    frags[0] = new UiSettings();
-        frags[1] = new StatusBarSettings();
-        frags[2] = new NavigationSettings();
-        frags[3] = new RecentsSettings();
         }
 
         @Override
@@ -108,17 +95,12 @@ public class CitrusSettings extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-            getString(R.string.ui_title),
-		    getString(R.string.status_bar_title),
-            getString(R.string.navigation_title),
-            getString(R.string.recents_title)};
 
         return titleString;
     }
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.CITRUS_SETTINGS;
+        return MetricsEvent.CUSTOM_SQUASH;
     }
 }
-
