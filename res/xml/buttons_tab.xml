@@ -19,6 +19,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
    <PreferenceCategory
+        android:key="navigationbar_settings"
+        android:title="@string/navigationbar_settings_title">
+
+   <PreferenceScreen
+             android:fragment="com.flash.settings.fragments.NavbarSettings"
+             android:key="flash_navbar_settings"
+             android:title="@string/navbar_settings_title"/>
+
+   <PreferenceCategory
         android:key="power_menu"
         android:title="@string/power_menu_title">
 
