@@ -614,4 +614,13 @@
     <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_title">Panel background transparency</string>
 
+    <!-- Quick Pulldown-->
+    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="quick_pulldown_summary">Enabled on right side of status bar</string>
+    <string name="quick_pulldown_summary_always">Always show Quick Settings on status bar pulldown</string>
+    <string name="quick_pulldown_off">Disable</string>
+    <string name="quick_pulldown_left">Left</string>
+    <string name="quick_pulldown_right">Enable (on right side)</string>
+    <string name="quick_pulldown_always">Always</string>
+    
 </resources>

@@ -38,6 +38,13 @@
         settings:units=""
         android:persistent="false" />
 
+    <ListPreference
+        android:key="quick_pulldown"
+        android:title="@string/quick_pulldown_title"
+        android:entries="@array/quick_pulldown_entries"
+        android:entryValues="@array/quick_pulldown_values"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="category_custom_header"
         android:title="@string/qs_appearance_category">
