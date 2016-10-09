@@ -42,13 +42,15 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
 
     private SwitchPreference mKeyguardTorch;
     private SwitchPreference mFpKeystore;
     private FingerprintManager mFingerprintManager;
     private SystemSettingSwitchPreference mFingerprintVib;
+    private ListPreference mLockClockFonts;
 
-   @Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -58,29 +60,58 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-    mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-    mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
-    mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                resolver, Settings.System.LOCK_CLOCK_FONTS, 4)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
+        mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
     if (!mFingerprintManager.isHardwareDetected()){
-    prefSet.removePreference(mFingerprintVib);
-    prefSet.removePreference(mFpKeystore);
-   } else {
-    mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
-            Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
-    mFpKeystore.setOnPreferenceChangeListener(this);
-    }
-
-    mKeyguardTorch = (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
-    mKeyguardTorch.setOnPreferenceChangeListener(this);
+        prefSet.removePreference(mFingerprintVib);
+        prefSet.removePreference(mFpKeystore);
+    } else {
+        mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
+                    Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
+        mFpKeystore.setOnPreferenceChangeListener(this);
+        mKeyguardTorch = (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
+        mKeyguardTorch.setOnPreferenceChangeListener(this);
     if (!Utils.deviceSupportsFlashLight(getActivity())) {
-    prefSet.removePreference(mKeyguardTorch);
-   } else {
-
-    mKeyguardTorch.setChecked((Settings.System.getInt(resolver,
-    Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
-
+        prefSet.removePreference(mKeyguardTorch);
+    } else {
+        mKeyguardTorch.setChecked((Settings.System.getInt(resolver,
+                    Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
+        }
     }
 }
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mLockClockFonts) {
+            Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_FONTS,
+                    Integer.valueOf((String) newValue));
+            mLockClockFonts.setValue(String.valueOf(newValue));
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+            return true;
+        } else if (preference == mFingerprintVib) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
+            return true;
+        } else if (preference == mFpKeystore) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
+            return true;
+        } else if (preference == mKeyguardTorch) {
+           boolean checked = ((SwitchPreference)preference).isChecked();
+           Settings.System.putInt(getActivity().getContentResolver(),
+                   Settings.System.KEYGUARD_TOGGLE_TORCH, checked ? 1:0);
+            return true;
+        }
+        return false;
+    }
+
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.AQUARIOS;
@@ -95,19 +126,5 @@ public class LockScreen extends SettingsPreferenceFragment implements
     public void onPause() {
         super.onPause();
     }
-
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-       if (preference == mKeyguardTorch) {
-           boolean checked = ((SwitchPreference)preference).isChecked();
-           Settings.System.putInt(getActivity().getContentResolver(),
-                   Settings.System.KEYGUARD_TOGGLE_TORCH, checked ? 1:0);
-         return true;
-     } else if (preference == mFpKeystore) {
-         boolean value = (Boolean) objValue;
-         Settings.System.putInt(getActivity().getContentResolver(),
-                  Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
-         return true;
-     }
-        return false;
-    }
+    
 }
