@@ -17,4 +17,10 @@
     android:title="@string/quick_settings_title"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+  <Preference
+    android:key="quicksettings"
+    android:fragment="com.aquarios.settings.fragments.QuickSettings"
+    android:title="@string/quicksettings_category" />
+
 </PreferenceScreen>
