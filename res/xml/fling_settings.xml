@@ -181,9 +181,9 @@
         <com.flash.settings.preferences.CustomSeekBarPreference
             android:key="du_fling_longpress_pref"
             android:title="@string/fling_longpress_title"
-            android:max="350"
-            settings:min="125"
-            settings:interval="5"
+            android:max="2500"
+            settings:min="200"
+            settings:interval="100"
             settings:units="ms"/>
     
         <Preference
