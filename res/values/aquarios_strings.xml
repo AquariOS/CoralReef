@@ -499,7 +499,7 @@
     <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
     <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
 
-  <!-- System/Misc -->
+    <!-- System/Misc -->
     <string name="system_settings_title">System/Misc</string>
     <!-- Recents -->
     <string name="recents_category">Recents</string>
@@ -514,4 +514,8 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+ 
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>    
+
 </resources>
