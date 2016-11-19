@@ -45,7 +45,7 @@
   <!-- Navbar fragment -->
     <string name="navbar_settings_title">Navigation bar</string>
     <string name="nav_bar_dynamic_title">Dynamic navbar color</string>
-    <string name="nav_bar_dynamic_summary">Automatically change the NavBar background color to your foreground app's primary dark color. Restart your desired app to see effect</string>
+    <string name="nav_bar_dynamic_summary">Automatically change the NavBar background color to your foreground app\'s primary dark color. Restart your desired app to see effect</string>
     <!-- Navigation Bar -->
     <string name="navbar_tint_switch">Navigation Button Tint</string>
     <string name="navbar_button_color">Navigation Bar Buttons</string>
@@ -602,6 +602,10 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+    <!-- Hide Apps from Recents -->
+    <string name="hide_apps_from_recents_title">Hidden apps</string>
+    <string name="hide_from_recents_add_app">Add App</string>
+    <string name="hide_apps_from_recents_summary">Pick which apps to exclude from the recents panel</string>
     <!-- Recents memory bar -->
     <string name="systemui_recents_mem_display_title">Show memory bar</string>
     <string name="systemui_recents_mem_display_summary">Display RAM usage under recents view</string>
