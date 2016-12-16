@@ -43,6 +43,12 @@
         android:entryValues="@array/smartbar_longpress_delay_values"
         android:summary="@string/smartbar_longpress_delay_summary" />
 
+    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="nav_bar_dynamic"
+        android:title="@string/nav_bar_dynamic_title"
+        android:summary="@string/nav_bar_dynamic_summary"
+        android:defaultValue="false" />
+
     <ListPreference
         android:key="smartbar_button_animation"
         android:title="@string/smartbar_button_animation_title"

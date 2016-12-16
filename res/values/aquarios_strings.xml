@@ -44,6 +44,8 @@
 <!-- Tabs -->
   <!-- Navbar fragment -->
     <string name="navbar_settings_title">Navigation bar</string>
+    <string name="nav_bar_dynamic_title">Dynamic navbar color</string>
+    <string name="nav_bar_dynamic_summary">Automatically change the NavBar background color to your foreground app's primary dark color. Restart your desired app to see effect</string>
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
