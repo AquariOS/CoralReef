@@ -49,6 +49,17 @@
         android:summary="@string/nav_bar_dynamic_summary"
         android:defaultValue="false" />
 
+    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="navbar_tint_switch"
+        android:title="@string/navbar_tint_switch"
+        android:defaultValue="false" />
+    
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="navbar_button_color"
+        android:title="@string/navbar_button_color"
+        android:defaultValue="0xffffffff"
+        android:dependency="navbar_tint_switch"/>
+
     <ListPreference
         android:key="smartbar_button_animation"
         android:title="@string/smartbar_button_animation_title"

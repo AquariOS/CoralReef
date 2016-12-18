@@ -47,6 +47,8 @@
     <string name="nav_bar_dynamic_title">Dynamic navbar color</string>
     <string name="nav_bar_dynamic_summary">Automatically change the NavBar background color to your foreground app's primary dark color. Restart your desired app to see effect</string>
     <!-- Navigation Bar -->
+    <string name="navbar_tint_switch">Navigation Button Tint</string>
+    <string name="navbar_button_color">Navigation Bar Buttons</string>
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
     <string name="navbar_mode">Navigation mode</string>
