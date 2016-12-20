@@ -28,6 +28,12 @@
             android:summary="@string/status_bar_battery_style_summary" />
 
         <PreferenceScreen
+            android:key="batterybar"
+            android:fragment="com.aquarios.settings.fragments.BatteryBar"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary" />
+
+        <PreferenceScreen
             android:fragment="com.aquarios.settings.fragments.CarrierLabelSettings"
             android:key="flash_carrier_label_settings"
             android:title="@string/carrier_label_settings_title"
