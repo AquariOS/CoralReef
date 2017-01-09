@@ -49,7 +49,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HeadsUpSettings extends SettingsPreferenceFragment
+public class HeadsUp extends SettingsPreferenceFragment
         implements Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 
     private static final int DIALOG_STOPLIST_APPS = 0;
@@ -75,7 +75,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get launch-able applications
-        addPreferencesFromResource(R.xml.heads_up_settings);
+        addPreferencesFromResource(R.xml.headsup);
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
