@@ -44,7 +44,10 @@ import com.android.settings.Utils;
 
 import com.aquarios.settings.preference.CustomSeekBarPreference;
 
-public class QuickSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+import java.util.List;
+import java.util.ArrayList;
+
+public class QuickSettings extends SettingsPreferenceFragment implements  Preference.OnPreferenceChangeListener {
 
     private static final String PREF_COLUMNS = "qs_layout_columns";
     private static final String PREF_LOCK_QS_DISABLED = "lockscreen_qs_disabled";
@@ -67,7 +70,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         addPreferencesFromResource(R.xml.quick_settings);
 
         final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefSet = getPreferenceScreen();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
         final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
 
         int defaultValue;
@@ -97,15 +100,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
                 Settings.Secure.LOCK_QS_DISABLED, 0) == 1));
             mLockQsDisabled.setOnPreferenceChangeListener(this);
         } else {
-            prefSet.removePreference(mLockQsDisabled);
+            prefScreen.removePreference(mLockQsDisabled);
         }
-        
+
         mSysuiQqsCount = (CustomSeekBarPreference) findPreference(PREF_SYSUI_QQS_COUNT);
-         int SysuiQqsCount = Settings.Secure.getInt(getContentResolver(),
+        int SysuiQqsCount = Settings.Secure.getInt(getContentResolver(),
                  Settings.Secure.QQS_COUNT, 6);
-         mSysuiQqsCount.setValue(SysuiQqsCount / 1);
-         mSysuiQqsCount.setOnPreferenceChangeListener(this);
+        mSysuiQqsCount.setValue(SysuiQqsCount / 1);
+        mSysuiQqsCount.setOnPreferenceChangeListener(this);
     }
+
 
     @Override
     protected int getMetricsCategory() {
@@ -118,13 +122,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         int intValue;
         int index;
 
         if (preference == mQsColumns) {
-        int qsColumns = (Integer) objValue;
+        int qsColumns = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.QS_LAYOUT_COLUMNS, qsColumns * 1);
             return true;
@@ -134,21 +138,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
                     Settings.Secure.LOCK_QS_DISABLED, checked ? 1:0);
             return true;
         } else if (preference == mRowsPortrait) {
-             int rowsPortrait = (Integer) objValue;
+             int rowsPortrait = (Integer) newValue;
              Settings.System.putInt(getActivity().getContentResolver(),
                      Settings.System.QS_ROWS_PORTRAIT, rowsPortrait * 1);
              return true;
          } else if (preference == mRowsLandscape) {
-             int rowsLandscape = (Integer) objValue;
+             int rowsLandscape = (Integer) newValue;
              Settings.System.putInt(getActivity().getContentResolver(),
                      Settings.System.QS_ROWS_LANDSCAPE, rowsLandscape * 1);
              return true;
         } else if (preference == mSysuiQqsCount) {
-             int SysuiQqsCount = (Integer) objValue;
+             int SysuiQqsCount = (Integer) newValue;
              Settings.Secure.putInt(getActivity().getContentResolver(),
                      Settings.Secure.QQS_COUNT, SysuiQqsCount * 1);
               return true;
-        }
+         }
         return false;
     }
 }
