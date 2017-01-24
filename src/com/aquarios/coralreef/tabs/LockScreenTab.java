@@ -28,15 +28,26 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.util.aquarios.AquaUtils;
+import com.aquarios.coralreef.preference.SystemSettingSwitchPreference;
 
 public class LockScreenTab extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
+
+    private static final String KEYGUARD_TORCH = "keyguard_toggle_torch";
+
+    private SystemSettingSwitchPreference mLsTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_tab);
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mLsTorch = (SystemSettingSwitchPreference) findPreference(KEYGUARD_TORCH);
+        if (!AquaUtils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mLsTorch);
+        }
     }
 
     @Override
