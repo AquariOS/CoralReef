@@ -306,6 +306,9 @@
     <!-- Quicks settings vibrate -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
+    <!-- QS easy toggles -->
+    <string name="qs_easy_toggle_title">Advanced Quick Setting easy toggle</string>
+    <string name="qs_easy_toggle_summary">one tap action to toggle bluetooth, data, or wifi</string>
 
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
