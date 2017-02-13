@@ -22,9 +22,15 @@
     android:title="@string/qstiles_category_title">
 
     <Preference
-       android:key="quicksettings"
-       android:fragment="com.aquarios.settings.fragments.QuickSettings"
-       android:title="@string/qstiles_layout_title" />
+        android:key="quicksettings"
+        android:fragment="com.aquarios.settings.fragments.QuickSettings"
+        android:title="@string/qstiles_layout_title" />
+
+    <com.aquarios.settings.preference.SecureSettingSwitchPreference
+        android:key="qs_easy_toggle"
+        android:title="@string/qs_easy_toggle_title"
+        android:summary="@string/qs_easy_toggle_summary"
+        android:defaultValue="false" />
 
     <com.aquarios.settings.preference.SystemSettingSwitchPreference
         android:key="quick_settings_vibrate"
