@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.aosip.owlsnest.dslv;
+package com.aquarios.settings.dslv;
 
 import android.content.Context;
 import android.view.Gravity;

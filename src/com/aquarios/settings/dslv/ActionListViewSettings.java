@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aosip.owlsnest.dslv;
+package com.aquarios.settings.dslv;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -53,18 +53,18 @@ import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.internal.util.aosip.ActionConfig;
-import com.android.internal.util.aosip.ActionConstants;
-import com.android.internal.util.aosip.ActionHelper;
-import com.android.internal.util.aosip.ImageHelper;
-import com.android.internal.util.aosip.DeviceUtils;
-import com.android.internal.util.aosip.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.slim.ActionConfig;
+import com.android.internal.util.slim.ActionConstants;
+import com.android.internal.util.slim.ActionHelper;
+import com.android.internal.util.slim.ImageHelper;
+import com.android.internal.util.slim.DeviceUtils;
+import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.aosip.owlsnest.dslv.DragSortListView;
-import com.aosip.owlsnest.dslv.DragSortController;
-import com.aosip.owlsnest.utils.ShortcutPickerHelper;
+import com.aquarios.settings.dslv.DragSortListView;
+import com.aquarios.settings.dslv.DragSortController;
+import com.aquarios.settings.utils.ShortcutPickerHelper;
 import com.android.settings.Utils;
 
 import java.io.File;

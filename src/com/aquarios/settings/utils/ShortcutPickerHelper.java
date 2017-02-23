@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aosip.owlsnest.utils;
+package com.aquarios.settings.utils;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -31,7 +31,7 @@ import android.util.Log;
 import com.android.settings.Utils;
 import com.android.settings.R;
 
-import com.android.internal.util.aosip.AppHelper;
+import com.android.internal.util.slim.AppHelper;
 import java.util.ArrayList;
 
 public class ShortcutPickerHelper {

@@ -19,7 +19,7 @@
 
         <PreferenceScreen
             android:key="lockscreen_shortcuts"
-            android:fragment="com.aosip.owlsnest.dslv.ActionListViewSettings"
+            android:fragment="com.aquarios.settings.dslv.ActionListViewSettings"
             android:summary="@string/lockscreen_shortcuts_summary"
             android:title="@string/lockscreen_shortcuts_title">
                 <extra android:name="actionMode" android:value="4" />

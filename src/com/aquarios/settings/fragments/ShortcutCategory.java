@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aosip.owlsnest.lockscreen;
+package com.aquarios.settings.fragments;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -44,14 +44,14 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.OWLSNEST;
+        return MetricsEvent.AQUARIOS;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.aosip_shortcut);
+        addPreferencesFromResource(R.xml.aquarios_shortcut);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
