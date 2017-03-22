@@ -69,4 +69,14 @@
         android:title="@string/status_bar_battery_style_tile_title"
         android:summary="@string/status_bar_battery_style_tile_summary"
         android:defaultValue="true" />
+
+    <ListPreference
+        android:key="battery_tile_style"
+        android:title="@string/battery_tile_style_title"
+        android:summary="%s"
+        android:dialogTitle="@string/battery_tile_style_title"
+        android:entries="@array/battery_tile_style_entries"
+        android:entryValues="@array/battery_tile_style_values"
+        android:defaultValue="2" />
+
 </PreferenceScreen>

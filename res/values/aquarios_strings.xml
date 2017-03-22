@@ -319,7 +319,7 @@
     <!-- Battery customizations -->
     <string name="status_bar_battery_style_category">Battery style</string>
     <string name="status_bar_battery_style_summary">Customize the look of the status bar battery icon</string>
-    <string name="status_bar_battery_style_title">Battery status style</string>
+    <string name="status_bar_battery_style_title">Status bar battery style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
     <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
     <string name="status_bar_battery_style_circle">Circle</string>
@@ -332,8 +332,7 @@
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
     <string name="status_bar_battery_percentage_low_only_title">Percent only when battery is low</string>
     <string name="status_bar_battery_percentage_low_only_summary">Show battery percentage only when the battery level is under %1$d%%</string>
-    <string name="status_bar_battery_style_tile_title">Custom battery tile style</string>
-    <string name="status_bar_battery_style_tile_summary">Allow to set the same icon style chosen for the statusbar battery</string>
+    <string name="battery_tile_style_title">Battery tile style</string>
     <string name="status_bar_charge_color_title">Status bar battery icon charging color</string>
     <string name="status_bar_charge_color_summary">Set the color of the statusbar battery icon while charging</string>
     <string name="force_charge_battery_text_title">Status bar battery charging percent</string>
