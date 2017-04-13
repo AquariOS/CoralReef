@@ -17,4 +17,16 @@
     android:title="@string/buttons_title"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+   <PreferenceCategory
+        android:key="power_menu"
+        android:title="@string/power_menu_title">
+
+   <PreferenceScreen
+	     android:key="power_menu"
+             android:title="@string/power_menu_title"
+             android:summary="@string/power_menu_title_summary"
+	     android:fragment="com.aquarios.settings.PowerMenuSettings" />
+   </PreferenceCategory>
+
 </PreferenceScreen>
