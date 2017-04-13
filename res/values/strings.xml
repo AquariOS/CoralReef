@@ -15,7 +15,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Cardinal Wings menus -->
-    <string name="cardinal_wings_title">The Wings!</string>
-    <string name="keywords_citrus">Cardinal-AOSP</string>
-    </resources>
+<!-- Coral Reef menus -->
+    <string name="coral_reef_title">Coral Reef</string>
+    <string name="keywords_aquarios">AquariOS</string>
+
+<!-- Tabs -->
+  <!-- Buttons -->
+    <string name="buttons_title">Buttons</string>
+
+  <!-- Lockscreen -->
+    <string name="lockscreen_title">Lock Screen</string>
+
+  <!-- Quick Settings -->
+    <string name="quick_settings_title">Quick Settings</string>
+
+  <!-- Status bar -->
+    <string name="statusbar_title">Status Bar</string>
+
+  <!-- System -->
+    <string name="system_settings_title">System Settings</string>
+
+</resources>

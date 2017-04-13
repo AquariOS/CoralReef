@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.citrus.settings;
+package com.aquarios.settings;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

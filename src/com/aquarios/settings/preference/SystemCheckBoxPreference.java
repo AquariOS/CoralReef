@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.citrus.settings.preference;
+package com.aquarios.settings.preference;
 
 import android.content.Context;
-import android.preference.CheckBoxPreference;
+import android.support.v7.preference.CheckBoxPreference;
 import android.provider.Settings;
 import android.util.AttributeSet;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod project
+ * Copyright (C) 2013 The CyanogenMod project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package com.citrus.settings.preference;
+package com.aquarios.settings.preference;
 
 import android.content.Context;
-import android.preference.SwitchPreference;
+import android.support.v7.preference.CheckBoxPreference;
 import android.provider.Settings;
 import android.util.AttributeSet;
 
-public class GlobalSettingSwitchPreference extends SwitchPreference {
-    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+public class GlobalCheckBoxPreference extends CheckBoxPreference {
+    public GlobalCheckBoxPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs) {
+    public GlobalCheckBoxPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public GlobalSettingSwitchPreference(Context context) {
+    public GlobalCheckBoxPreference(Context context) {
         super(context, null);
     }
 
@@ -41,6 +41,7 @@ public class GlobalSettingSwitchPreference extends SwitchPreference {
                 // It's already there, so the same as persisting
                 return true;
             }
+
             Settings.Global.putInt(getContext().getContentResolver(), getKey(), value ? 1 : 0);
             return true;
         }
@@ -52,6 +53,7 @@ public class GlobalSettingSwitchPreference extends SwitchPreference {
         if (!shouldPersist()) {
             return defaultReturnValue;
         }
+
         return Settings.Global.getInt(getContext().getContentResolver(),
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
