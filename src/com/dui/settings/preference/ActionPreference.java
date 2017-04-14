@@ -18,7 +18,7 @@
  * key is identical to the target ConfigMap tag in ActionConstants 
  */
 
-package com.flash.settings.preferences;
+package com.dui.settings.preference;
 
 import java.util.Map;
 

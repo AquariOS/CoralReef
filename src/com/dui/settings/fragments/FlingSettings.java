@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.flash.settings.fragments;
+package com.dui.settings.fragments;
 
 import java.util.ArrayList;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-import com.flash.settings.preferences.CustomSeekBarPreference;
+import com.dui.settings.preference.CustomSeekBarPreference;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -29,8 +29,8 @@ import com.android.internal.utils.du.ActionHandler;
 import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
-import com.flash.settings.IconPickHelper;
-import com.flash.settings.preferences.ActionPreference;
+import com.dui.settings.IconPickHelper;
+import com.dui.settings.preference.ActionPreference;
 
 import android.app.ActionBar;
 import android.content.Context;

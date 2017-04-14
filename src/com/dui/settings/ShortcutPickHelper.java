@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.flash.settings;
+package com.dui.settings;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.flash.settings.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
+import com.dui.settings.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
 
 public class ShortcutPickHelper {
 

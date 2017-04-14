@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.aquarios.settings.preferences;
+package com.aquarios.settings.preference;
 
 import android.content.Context;
 import android.content.res.TypedArray;

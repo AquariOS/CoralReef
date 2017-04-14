@@ -30,41 +30,41 @@
         android:key="eos_actions_swipe_category"
         android:title="@string/fling_swipe_actions" >
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="fling_short_right"
             android:title="@string/fling_short_swipe_right"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="fling_short_left"
             android:title="@string/fling_short_swipe_left"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="fling_long_right"
             android:title="@string/fling_long_swipe_right"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="fling_long_left"
             android:title="@string/fling_long_swipe_left"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="fling_right_up"
             android:title="@string/fling_right_up_swipe"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="fling_left_up"
             android:title="@string/fling_left_up_swipe"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
      </PreferenceCategory>
 
      <PreferenceCategory
@@ -78,41 +78,41 @@
             android:summary="@string/fling_split_bar_policy"
             android:title="@string/info_pref_note_title" />
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="single_right_tap"
             android:title="@string/fling_single_tap"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="single_left_tap"
             android:title="@string/fling_single_left_tap"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="double_right_tap"
             android:title="@string/fling_double_tap"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
         
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="double_left_tap"
             android:title="@string/fling_double_left_tap"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="long_right_press"
             android:title="@string/fling_long_press"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
 
-        <com.flash.settings.preferences.ActionPreference
+        <com.dui.settings.preference.ActionPreference
             android:key="long_left_press"
             android:title="@string/fling_long_left_press"
             android:summary="@string/fling_def_summary" >
-        </com.flash.settings.preferences.ActionPreference>
+        </com.dui.settings.preference.ActionPreference>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -163,7 +163,7 @@
             android:defaultValue="0xffffff"
             android:dependency="eos_fling_trails_enable" />
 
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_trails_width"
             android:title="@string/fling_trails_width_title"
             android:defaultValue="15"
@@ -178,7 +178,7 @@
         android:key="eos_long_swipe_category"
         android:title="@string/fling_advanced" >
 
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_longpress_pref"
             android:title="@string/fling_longpress_title"
             android:max="2500"
@@ -193,7 +193,7 @@
             android:summary="@string/fling_long_swipe_summary"
             android:title="@string/fling_long_swipe_title" />
             
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_longswipe_port_right"
             android:title="@string/portrait_right_swipe_title"
             android:defaultValue="40"
@@ -202,7 +202,7 @@
             settings:units="%"
             android:persistent="false" />
             
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_longswipe_port_left"
             android:title="@string/portrait_left_swipe_title"
             android:defaultValue="40"
@@ -211,7 +211,7 @@
             settings:units="%"
             android:persistent="false" />
             
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_longswipe_land_right"
             android:title="@string/landscape_right_swipe_title"
             android:defaultValue="25"
@@ -220,7 +220,7 @@
             settings:units="%"
             android:persistent="false" />
             
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_longswipe_land_left"
             android:title="@string/landscape_left_swipe_title"
             android:defaultValue="25"
@@ -229,7 +229,7 @@
             settings:units="%"
             android:persistent="false" />
             
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_longswipe_vert_up"
             android:title="@string/vertical_up_swipe_title"
             android:defaultValue="40"
@@ -238,7 +238,7 @@
             settings:units="%"
             android:persistent="false" />
             
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="du_fling_longswipe_vert_down"
             android:title="@string/vertical_down_swipe_title"
             android:defaultValue="40"

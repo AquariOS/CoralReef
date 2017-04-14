@@ -15,7 +15,7 @@
  *
  */
 
-package com.flash.settings;
+package com.dui.settings;
 
 import java.io.File;
 

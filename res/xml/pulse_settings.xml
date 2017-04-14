@@ -54,7 +54,7 @@
             android:key="pulse_fading_bars_category"
             android:title="@string/pulse_legacy_mode_advanced_category">
 
-           <com.flash.settings.preferences.CustomSeekBarPreference
+           <com.dui.settings.preference.CustomSeekBarPreference
                 android:key="pulse_custom_dimen"
                 android:title="@string/pulse_custom_dimen"
                 android:max="30"
@@ -62,7 +62,7 @@
                 settings:units="dp"
                 android:dependency="pulse_fading_bars_category"/>
 
-           <com.flash.settings.preferences.CustomSeekBarPreference
+           <com.dui.settings.preference.CustomSeekBarPreference
                 android:key="pulse_custom_div"
                 android:title="@string/pulse_custom_div"
                 android:max="44"
@@ -71,7 +71,7 @@
                 settings:units="dp"
                 android:dependency="pulse_fading_bars_category"/>
 
-           <com.flash.settings.preferences.CustomSeekBarPreference
+           <com.dui.settings.preference.CustomSeekBarPreference
                 android:key="pulse_filled_block_size"
                 android:title="@string/pulse_filled_block_size"
                 android:max="8"
@@ -79,7 +79,7 @@
                 settings:units="dp"
                 android:dependency="pulse_fading_bars_category"/>
 
-           <com.flash.settings.preferences.CustomSeekBarPreference
+           <com.dui.settings.preference.CustomSeekBarPreference
                 android:key="pulse_empty_block_size"
                 android:title="@string/pulse_empty_block_size"
                 android:max="4"
@@ -87,14 +87,14 @@
                 settings:units="dp"
                 android:dependency="pulse_fading_bars_category"/>
 
-           <com.flash.settings.preferences.CustomSeekBarPreference
+           <com.dui.settings.preference.CustomSeekBarPreference
                 android:key="pulse_custom_fudge_factor"
                 android:title="@string/pulse_custom_fudge_factor"
                 android:max="6"
                 settings:min="2"
                 android:dependency="pulse_fading_bars_category"/>
 
-           <com.flash.settings.preferences.CustomSeekBarPreference
+           <com.dui.settings.preference.CustomSeekBarPreference
                 android:key="fling_pulse_lavalamp_speed"
                 android:title="@string/lavamp_solid_speed_title"
                 android:max="30000"
@@ -108,14 +108,14 @@
         android:key="pulse_2"
         android:title="@string/pulse_solid_dimen_category" >
 
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="pulse_solid_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="7"
             settings:min="2"
             android:dependency="pulse_2"/>
 
-        <com.flash.settings.preferences.CustomSeekBarPreference
+        <com.dui.settings.preference.CustomSeekBarPreference
             android:key="lavamp_solid_speed"
             android:title="@string/lavamp_solid_speed_title"
             android:max="30000"

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 The Pure Nexus Project
-     Copyright (C) 2016 Flash ROM
+<!-- Copyright (C) 2016 Citrus-CAF Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +15,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Navbar fragment -->
+<!-- Coral Reef menus -->
+    <string name="coral_reef_title">Coral Reef</string>
+    <string name="keywords_aquarios">AquariOS</string>
+
+<!-- Tabs -->
+  <!-- Navbar fragment -->
     <string name="navbar_settings_title">Navigation bar</string>
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Interface</string>
@@ -39,13 +43,11 @@
     <string name="profile_applist_title">Applications</string>
     <string name="default_string">Default</string>
     <string name="reset">Reset</string>
-
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Choose action</string>
     <string name="action_entry_default_action">Default settings</string>
     <string name="action_entry_select_app">Select application</string>
     <string name="action_entry_custom_action">Select custom action</string>
-
     <string name="action_value_default_action" translatable="false">default</string>
     <string name="action_value_select_app" translatable="false">app</string>
     <string name="action_value_custom_action" translatable="false">custom</string>
@@ -55,7 +57,6 @@
     <string name="action_value_recent_apps" translatable="false">task_recents</string>
     <string name="action_value_voice_search" translatable="false">task_voice_search</string>
     <string name="action_value_menu" translatable="false">task_menu</string>
-
     <!-- Fling -->
     <string name="fling_settings">Fling settings</string>
     <string name="fling_interface">Fling</string>
@@ -110,11 +111,9 @@
     <string name="fling_longpress_timeout_label_right">More delay</string>
     <string name="fling_longpress_title">Long press delay</string>
     <string name="fling_longpress_summary">Increase or decrease the time it takes to execute a long press</string>
-
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">About Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer on the navigation bar when music plays. Pulse does not work with some audio sources when listening on 
-device speaker</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer on the navigation bar when music plays. Pulse does not work with some audio sources when listening on device speaker</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Navigation bar audio graphic equalizer</string>
     <string name="fling_show_pulse_title">Show Pulse</string>
@@ -130,20 +129,17 @@ device speaker</string>
     <string name="pulse_custom_fudge_factor">Sanity level</string>
     <string name="lavamp_solid_speed_title">Lava Lamp speed</string>
     <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
-
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Bar width</string>
     <string name="pulse_custom_div">Bar spacing</string>
     <string name="pulse_filled_block_size">Block size</string>
     <string name="pulse_empty_block_size">Block spacing</string>
-
     <!-- Navbar height -->
     <string name="navigation_bar_size_title">Bar size</string>
     <string name="portrait_title">Portrait height</string>
     <string name="land_vert_title">Landscape width</string>
     <string name="land_hor_title">Landscape height</string>
     <string name="positive_done">Done</string>
-
     <!-- SmartBar -->
     <string name="smartbar_category">Smartbar</string>
     <string name="smartbar_settings_title">Smartbar settings</string>
@@ -175,7 +171,6 @@ device speaker</string>
     <string name="smartbar_config_backup_error_toast">Error saving Smartbar profile</string>
     <string name="smartbar_config_restore_error_toast">Error restoring Smartbar profile</string>
     <string name="navbar_buttons_alpha_title">Button transparency</string>
-
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
@@ -185,5 +180,36 @@ device speaker</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+  <!-- Buttons -->
+    <string name="buttons_title">Buttons</string>
+    <!-- Power Menu fragment -->
+    <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_title_summary">View or change power menu entries</string>
+    <!-- Power menu customization -->
+    <string name="power_menu_reboot_title">Reboot</string>
+    <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_screenrecord_title">Screen record</string>
+    <string name="power_menu_torch_title">Flashlight</string>
+    <string name="power_menu_airplane_title">Airplane mode</string>
+    <string name="power_menu_users_title">User switcher</string>
+    <string name="power_menu_search_title">Search</string>
+    <string name="power_menu_voice_title">Voice search</string>
+    <string name="power_menu_settings_title">Settings shortcut</string>
+    <string name="power_menu_lockdown_title">Device lockdown</string>
+    <string name="power_menu_bug_report_title">Bug report</string>
+    <string name="power_menu_sound_title">Sound panel</string>
+    <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
+
+  <!-- Lockscreen -->
+    <string name="lockscreen_title">Lock Screen</string>
+
+  <!-- Quick Settings -->
+    <string name="quick_settings_title">Quick Settings</string>
+
+  <!-- Status bar -->
+    <string name="statusbar_title">Status Bar</string>
+
+  <!-- System -->
+    <string name="system_settings_title">System Settings</string>
 
 </resources>

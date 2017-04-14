@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.flash.settings.fragments;
+package com.dui.settings.fragments;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -60,7 +60,7 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.flash.settings.preferences.CustomSeekBarPreference;
+import com.dui.settings.preference.CustomSeekBarPreference;
 
 public class SmartbarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {

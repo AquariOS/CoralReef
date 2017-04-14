@@ -17,11 +17,11 @@
  * ActionHandler framework
  */
 
-package com.flash.settings;
+package com.dui.settings;
 
 import com.android.internal.utils.du.Config.ActionConfig;
 import com.android.settings.R;
-import com.flash.settings.CustomActionListAdapter;
+import com.dui.settings.CustomActionListAdapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;

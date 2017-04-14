@@ -16,7 +16,7 @@
  * Adapter for displaying custom actions in a list
  */
 
-package com.flash.settings;
+package com.dui.settings;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -22,7 +22,7 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
-    <com.citrus.settings.PagerSlidingTabStrip
+    <com.aquarios.settings.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="48dp" />

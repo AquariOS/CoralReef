@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.flash.settings.fragments;
+package com.dui.settings.fragments;
 
 import java.util.ArrayList;
 
@@ -41,7 +41,7 @@ import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
 
-import com.flash.settings.preferences.CustomSeekBarPreference;
+import com.dui.settings.preference.CustomSeekBarPreference;
 
 public class NavbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 

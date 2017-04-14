@@ -17,7 +17,7 @@
  * class that holds target widget state
  */
 
-package com.flash.settings.fragments;
+package com.dui.settings.fragments;
 
 import java.util.ArrayList;
 
@@ -29,9 +29,9 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.Config.ActionConfig;
 import com.android.internal.utils.du.Config.ButtonConfig;
 
-import com.flash.settings.ShortcutPickHelper;
-import com.flash.settings.preferences.ActionPreference;
-import com.flash.settings.CustomActionListAdapter;
+import com.dui.settings.ShortcutPickHelper;
+import com.dui.settings.preference.ActionPreference;
+import com.dui.settings.CustomActionListAdapter;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

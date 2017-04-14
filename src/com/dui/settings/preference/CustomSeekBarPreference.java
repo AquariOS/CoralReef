@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.flash.settings.preferences;
+package com.dui.settings.preference;
 
 import android.content.Context;
 import android.content.res.TypedArray;

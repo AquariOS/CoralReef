@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.flash.settings.fragments;
+package com.dui.settings.fragments;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -25,7 +25,7 @@ import android.app.ActionBar;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.UserHandle;
-import com.flash.settings.preferences.CustomSeekBarPreference;
+import com.dui.settings.preference.CustomSeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v14.preference.SwitchPreference;
