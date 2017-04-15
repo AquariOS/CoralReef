@@ -202,7 +202,9 @@
 
   <!-- Lockscreen -->
     <string name="lockscreen_title">Lock Screen</string>
-
+    <!-- Lockscreen torch -->
+    <string name="keyguard_torch_title">Lockscreen torch</string>
+    <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
 

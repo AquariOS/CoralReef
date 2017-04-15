@@ -32,6 +32,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.aquarios.settings.utils.Utils;
+import com.aquarios.settings.preference.SystemSettingSwitchPreference;
 
 import com.android.internal.util.aquarios.PowerMenuConstants;
 import static com.android.internal.util.aquarios.PowerMenuConstants.*;
@@ -40,6 +41,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PowerMenuSettings extends SettingsPreferenceFragment {
+
+    private static final String KEYGUARD_TORCH = "keyguard_toggle_torch";
+    private SystemSettingSwitchPreference mLsTorch;
 
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
@@ -65,6 +69,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.power_menu_settings);
         mContext = getActivity().getApplicationContext();
         PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mLsTorch = (SystemSettingSwitchPreference) findPreference(KEYGUARD_TORCH);
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mLsTorch);
+        }
 
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
