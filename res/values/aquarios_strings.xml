@@ -29,7 +29,7 @@
     <string name="lockscreen_display_category_title">LOCK SCREEN DISPLAY</string>
     <string name="qs_header_category_title">HEADER SHORTCUTS</string> 
     <string name="qstiles_category_title">QS TILES</string>
-    <string name="qs_omnijaws_category">WEATHER TILE</string>
+    <string name="qs_omnijaws_category">HEADER &amp; TILE WEATHER</string>
     <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string> 
     <string name="recents_category">RECENTS</string>
     <string name="other_category">OTHER</string>
@@ -389,6 +389,12 @@
     <string name="qs_multiuser_switch_summary">Remove the multi-user switch in the header</string>
     <string name="qs_expand_indicator_title">Hide expand indicator</string>
     <string name="qs_expand_indicator_summary">Remove the expand indicator in the header</string>
+    <!-- Header Weather -->
+    <string name="quicksettings_exp_weather_category">Weather</string>
+    <string name="header_weather_enabled_title">Weather Text</string>
+    <string name="header_weather_enabled_summary">Enable weather info in expanded header</string>
+    <string name="header_weather_image_enabled_title">Weather Image</string>
+    <string name="header_weather_image_enabled_summary">Enable weather image in expanded header</string>
 
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
