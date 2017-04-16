@@ -17,4 +17,15 @@
     android:title="@string/statusbar_title"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:title="@string/status_bar_clock_title">
+
+        <PreferenceScreen
+            android:key="statusbarclock"
+            android:fragment="com.aquarios.settings.fragments.StatusBarClock"
+            android:title="@string/status_bar_clock_title"
+            android:layout="@layout/preference_statusbarclock" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
