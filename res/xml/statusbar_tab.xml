@@ -28,4 +28,10 @@
             android:layout="@layout/preference_statusbarclock" />
     </PreferenceCategory>
 
+    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_to_sleep_title"
+        android:summary="@string/double_tap_to_sleep_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
