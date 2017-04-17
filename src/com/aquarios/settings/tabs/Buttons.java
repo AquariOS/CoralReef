@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Citrus-AOSP Project
+ * Copyright (C) 2017 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,12 +37,37 @@ import com.android.settings.Utils;
 public class Buttons extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+
+    private SwitchPreference mVolumeRockerWake;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.buttons_tab);
+
         ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources res = getResources();
+
+        //volume rocker wake
+        mVolumeRockerWake = (SwitchPreference) findPreference(VOLUME_ROCKER_WAKE);
+        mVolumeRockerWake.setOnPreferenceChangeListener(this);
+        int volumeRockerWake = Settings.System.getInt(getContentResolver(),
+                VOLUME_ROCKER_WAKE, 0);
+        mVolumeRockerWake.setChecked(volumeRockerWake != 0);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mVolumeRockerWake) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), VOLUME_ROCKER_WAKE,
+                    value ? 1 : 0);
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -59,10 +84,4 @@ public class Buttons extends SettingsPreferenceFragment implements
     public void onPause() {
         super.onPause();
     }
-
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
-    }
-
 }

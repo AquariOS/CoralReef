@@ -199,6 +199,10 @@
     <string name="power_menu_bug_report_title">Bug report</string>
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
+    <!-- Volume rocker wake -->
+    <string name="volume_rocker_title">Volume rocker</string>
+    <string name="volume_rocker_wake_title">Volume rocker wake</string>
+    <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
 
   <!-- Lockscreen -->
     <string name="lockscreen_title">Lock Screen</string>

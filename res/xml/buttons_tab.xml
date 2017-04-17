@@ -39,4 +39,14 @@
 	     android:fragment="com.aquarios.settings.fragments.PowerMenuSettings" />
    </PreferenceCategory>
 
+   <PreferenceCategory
+      android:key="volume_rocker"
+      android:title="@string/volume_rocker_title">
+
+   <SwitchPreference
+         android:key="volume_rocker_wake"
+         android:summary="@string/volume_rocker_wake_summary"
+         android:title="@string/volume_rocker_wake_title" />
+   </PreferenceCategory>
+
 </PreferenceScreen>
