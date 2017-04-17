@@ -245,6 +245,9 @@
     <!-- double tap to sleep - statusbar -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
+    <!-- statusbar brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
   <!-- System -->
     <string name="system_settings_title">System Settings</string>
