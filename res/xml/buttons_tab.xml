@@ -20,17 +20,18 @@
 
    <PreferenceCategory
       android:key="navigationbar_settings"
-      android:title="@string/navigationbar_settings_title">
+      android:title="@string/navbar_category_title">
 
    <PreferenceScreen
          android:fragment="com.dui.settings.fragments.NavbarSettings"
          android:key="flash_navbar_settings"
-         android:title="@string/navbar_settings_title"/>
+         android:summary="@string/navigationbar_settings_summary"
+         android:title="@string/navbar_settings_title" />
    </PreferenceCategory>
 
    <PreferenceCategory
       android:key="power_menu"
-      android:title="@string/power_menu_title">
+      android:title="@string/power_menu_category_title">
 
    <PreferenceScreen
 	     android:key="power_menu"
@@ -41,12 +42,21 @@
 
    <PreferenceCategory
       android:key="volume_rocker"
-      android:title="@string/volume_rocker_title">
+      android:title="@string/volume_rocker_category_title">
 
    <SwitchPreference
          android:key="volume_rocker_wake"
          android:summary="@string/volume_rocker_wake_summary"
-         android:title="@string/volume_rocker_wake_title" />
+         android:title="@string/volume_rocker_wake_title"
+         android:defaultValue="false"
+         android:disableDependentsState="true" />
+
+   <SwitchPreference
+         android:key="volume_rocker_music_controls"
+         android:summary="@string/volume_rocker_music_controls_summary"
+         android:title="@string/volume_rocker_music_controls_title"
+         android:defaultValue="true"
+         android:dependency="volume_rocker_wake" />
    </PreferenceCategory>
 
 </PreferenceScreen>

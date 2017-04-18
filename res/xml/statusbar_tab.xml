@@ -19,14 +19,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:title="@string/status_bar_clock_title">
+        android:title="@string/statusbar_clock_category_title">
 
         <PreferenceScreen
             android:key="statusbarclock"
             android:fragment="com.aquarios.settings.fragments.StatusBarClock"
             android:title="@string/status_bar_clock_title"
-            android:layout="@layout/preference_statusbarclock" />
+            android:summary="@string/status_bar_clock_summary" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/gestures_category_title">
 
     <com.aquarios.settings.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_gesture"
@@ -39,5 +42,6 @@
         android:title="@string/status_bar_toggle_brightness"
         android:summary="@string/status_bar_toggle_brightness_summary"
         android:defaultValue="false" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

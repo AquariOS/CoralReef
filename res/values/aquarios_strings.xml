@@ -15,9 +15,14 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-<!-- Coral Reef menus -->
+<!-- Coral Reef menus and categories -->
     <string name="coral_reef_title">Coral Reef</string>
     <string name="keywords_aquarios">AquariOS</string>
+    <string name="gestures_category_title">STATUS BAR GESTURES</string>
+    <string name="navbar_category_title">NAVBAR OPTIONS</string>
+    <string name="power_menu_category_title">POWER MENU</string>
+    <string name="volume_rocker_category_title">VOLUME ROCKER</string>
+    <string name="statusbar_clock_category_title">CLOCK SETTINGS</string>
 
 <!-- Tabs -->
   <!-- Navbar fragment -->
@@ -180,6 +185,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+
   <!-- Buttons -->
     <string name="buttons_title">Buttons</string>
     <!-- Power Menu fragment -->
@@ -212,6 +218,7 @@
     <!-- Lockscreen torch -->
     <string name="keyguard_torch_title">Lockscreen torch</string>
     <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
+
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
 
@@ -219,6 +226,7 @@
     <string name="statusbar_title">Status Bar</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Clock settings</string>
+    <string name="status_bar_clock_summary">Customize clock &amp; date in status bar (position, look, layout) </string>
     <string name="status_bar_clock_style_title">Clock style</string>
     <string name="status_bar_clock_style_right">Right</string>
     <string name="status_bar_clock_style_left">Left</string>
