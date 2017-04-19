@@ -25,9 +25,9 @@
         android:defaultValue="false" />
 
     <com.aquarios.settings.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_charging_current"
-        android:title="@string/lockscreen_charging_current_title"
-        android:summary="@string/lockscreen_charging_current_summary"
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
         android:defaultValue="true" />
 
 </PreferenceScreen>
