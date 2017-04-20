@@ -212,6 +212,9 @@
     <!-- Volume rocker music control -->
     <string name="volume_rocker_music_controls_title">Playback control</string>
     <string name="volume_rocker_music_controls_summary">When the screen is off, long-pressing the volume keys will seek music tracks</string>
+    <!-- Volume key orientation swap -->
+    <string name="swap_volume_buttons_title">Volume button swap</string>
+    <string name="swap_volume_buttons_summary">Swap volume buttons action when in landscape orientation</string>
 
   <!-- Lockscreen -->
     <string name="lockscreen_title">Lock Screen</string>

@@ -51,6 +51,12 @@
          android:defaultValue="false"
          android:disableDependentsState="true" />
 
+   <com.aquarios.settings.preference.SystemSettingSwitchPreference
+         android:key="swap_volume_buttons"
+         android:title="@string/swap_volume_buttons_title"
+         android:summary="@string/swap_volume_buttons_summary"
+         android:defaultValue="false"/>
+
    <SwitchPreference
          android:key="volume_rocker_music_controls"
          android:summary="@string/volume_rocker_music_controls_summary"
