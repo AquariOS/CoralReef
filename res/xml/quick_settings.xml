@@ -29,7 +29,7 @@
             settings:units=""
             android:persistent="false" />
 
-    <com.citrus.settings.preference.CustomSeekBarPreference
+    <com.aquarios.settings.preference.CustomSeekBarPreference
          android:key="qs_rows_portrait"
          android:title="@string/qs_rows_portrait_title"
          settings:max="7"
@@ -37,7 +37,7 @@
          settings:units=""
          android:persistent="false" />
  
-     <com.citrus.settings.preference.CustomSeekBarPreference
+     <com.aquarios.settings.preference.CustomSeekBarPreference
          android:key="qs_rows_landscape"
          android:title="@string/qs_rows_landscape_title"
          settings:max="3"
@@ -46,6 +46,14 @@
          android:persistent="false" />
 
     </PreferenceCategory>
+
+    <com.aquarios.settings.preference.CustomSeekBarPreference
+         android:key="sysui_qqs_count_key"
+         android:title="@string/qs_small_tiles_title"
+         settings:max="8"
+         settings:min="3"
+         settings:units=""
+         android:persistent="false" />
 
      <com.aquarios.settings.preference.SecureSettingSwitchPreference
             android:key="lockscreen_qs_disabled"
