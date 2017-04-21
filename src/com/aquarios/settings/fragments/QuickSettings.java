@@ -42,7 +42,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.Utils;
 
- import com.aquarios.settings.preference.CustomSeekBarPreference;
+import com.aquarios.settings.preference.CustomSeekBarPreference;
 
 public class QuickSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -64,7 +64,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.quicksettings);
+        addPreferencesFromResource(R.xml.quick_settings);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
@@ -109,7 +109,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.CUSTOM_SQUASH;
+        return MetricsEvent.AQUARIOS;
     }
 
     @Override

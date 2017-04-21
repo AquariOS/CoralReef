@@ -25,7 +25,7 @@ import com.aquarios.settings.PagerSlidingTabStrip;
 
 import com.aquarios.settings.tabs.Buttons;
 import com.aquarios.settings.tabs.LockScreen;
-import com.aquarios.settings.tabs.QuickSettings;
+import com.aquarios.settings.tabs.QuickSettingsTab;
 import com.aquarios.settings.tabs.StatusBar;
 import com.aquarios.settings.tabs.SystemSettings;
 
@@ -82,7 +82,7 @@ public class CoralReef extends SettingsPreferenceFragment {
             super(fm);
             frags[0] = new Buttons();
             frags[1] = new LockScreen();
-            frags[2] = new QuickSettings();
+            frags[2] = new QuickSettingsTab();
             frags[3] = new StatusBar();
             frags[4] = new SystemSettings();
         }

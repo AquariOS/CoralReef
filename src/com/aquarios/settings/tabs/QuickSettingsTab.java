@@ -34,7 +34,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
-public class QuickSettings extends SettingsPreferenceFragment implements
+public class QuickSettingsTab extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
