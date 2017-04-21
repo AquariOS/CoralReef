@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 Citrus-CAF Project
+<!-- Copyright (C) 2017 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
     <string name="navbar_category_title">NAVBAR OPTIONS</string>
     <string name="power_menu_category_title">POWER MENU</string>
     <string name="volume_rocker_category_title">VOLUME ROCKER</string>
-    <string name="statusbar_clock_category_title">CLOCK SETTINGS</string>
+    <string name="statusbar_display_category_title">STATUS BAR DISPLAY</string>
 
 <!-- Tabs -->
   <!-- Navbar fragment -->
@@ -281,7 +281,17 @@
     <string name="network_traffic_autohide">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
     <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
-
+    <!-- Custom carrier label and position -->
+    <string name="carrier_label_settings_title">Carrier label</string>
+    <string name="carrier_label_settings_summary">Customize the carrier label</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_title">Carrier label</string>
+    <string name="show_carrier_disabled">Disabled</string>
+    <string name="show_carrier_keyguard">Lockscreen only</string>
+    <string name="show_carrier_statusbar">Statusbar only</string>
+    <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
 
   <!-- System -->
     <string name="system_settings_title">System Settings</string>
