@@ -234,6 +234,9 @@
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_title">Columns</string>
     <string name="sysui_qqs_count_title">Small QS tiles</string>
+    <!-- Quick Settings on lockscreen -->
+    <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
+    <string name="lockscreen_qs_disabled_summary">Disable shortcuts and expanding quick settings on secure lock screens</string>
 
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
