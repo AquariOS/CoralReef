@@ -34,15 +34,46 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
-public class SystemSettings extends SettingsPreferenceFragment implements
+public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
+
+    private static final String CATEGORY_LEDS = "leds";
+
+    private Preference mNotifLedFrag;
+    private Preference mBattLedFrag;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.display_settings_tab);
+        PreferenceScreen prefScreen = getPreferenceScreen();
 
-        addPreferencesFromResource(R.xml.system_settings_tab);
-        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceCategory leds = (PreferenceCategory) findPreference(CATEGORY_LEDS);
+
+        mNotifLedFrag = findPreference(KEY_NOTIFICATION_LIGHT);
+        //remove notification led settings if device doesnt support it
+        if (!getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed)) {
+            leds.removePreference(findPreference(KEY_NOTIFICATION_LIGHT));
+        }
+
+        mBattLedFrag = findPreference(KEY_BATTERY_LIGHT);
+        //remove battery led settings if device doesnt support it
+        if (!getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            leds.removePreference(findPreference(KEY_BATTERY_LIGHT));
+        }
+
+        //remove led category if device doesnt support notification or battery
+        if (!getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed)
+                && !getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            prefScreen.removePreference(findPreference(CATEGORY_LEDS));
+        }
     }
 
     @Override

@@ -26,7 +26,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class DisplaySettings extends SettingsPreferenceFragment {
+public class LedLightSettings extends SettingsPreferenceFragment {
 
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";

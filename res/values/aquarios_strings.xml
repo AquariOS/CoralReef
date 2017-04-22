@@ -23,6 +23,7 @@
     <string name="power_menu_category_title">POWER MENU</string>
     <string name="volume_rocker_category_title">VOLUME ROCKER</string>
     <string name="statusbar_display_category_title">STATUS BAR DISPLAY</string>
+    <string name="screen_category_title">SCREEN</string>
 
     <!-- General strings -->
     <string name="cancel">Cancel</string>
@@ -316,13 +317,13 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
-  <!-- System -->
-    <string name="system_settings_title">System Settings</string>
+  <!-- Display -->
+    <string name="display_settings_title">Display</string>
     <!-- Wake when connected/disconnected -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
     <string name="wake_when_plugged_or_unplugged_summary">Turn on screen when connecting or disconnecting charger</string>
     <!-- Notification/Battery lights -->
-    <string name="led_category">Led controls</string>
+    <string name="led_category">LED CONTROLS</string>
     <string name="edit_light_settings">Edit light settings</string>
     <string name="pulse_speed_title">Pulse length and speed</string>
     <string name="default_time">Normal</string>
