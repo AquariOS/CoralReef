@@ -352,5 +352,6 @@
     <string name="notification_light_default_value">Default</string>
     <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
     <string name="allow_lights_title">Lights in do not disturb mode</string>
+    <string name="notification_light_screen_on">Lights with screen on</string>
 
 </resources>

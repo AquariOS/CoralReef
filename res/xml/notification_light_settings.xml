@@ -38,6 +38,11 @@
         android:title="@string/advanced">
 
         <com.aquarios.settings.preference.SystemSettingSwitchPreference
+            android:key="notification_light_screen_on_enable"
+            android:title="@string/notification_light_screen_on"
+            android:dependency="notification_light_pulse" />
+
+        <com.aquarios.settings.preference.SystemSettingSwitchPreference
             android:key="allow_lights"
             android:title="@string/allow_lights_title"
             android:dependency="notification_light_pulse"
