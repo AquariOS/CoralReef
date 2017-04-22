@@ -97,7 +97,7 @@ public class StatusbarBatteryStyle extends SettingsPreferenceFragment implements
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryValue = Settings.Secure.getInt(resolver,
-                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0);
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 2);
         mStatusBarBattery.setValue(Integer.toString(mStatusBarBatteryValue));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);

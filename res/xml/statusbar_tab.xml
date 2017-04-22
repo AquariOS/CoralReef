@@ -22,9 +22,10 @@
         android:title="@string/statusbar_display_category_title">
 
         <PreferenceScreen
+            android:fragment="com.aquarios.settings.fragments.StatusbarBatteryStyle"
             android:key="status_bar_battery_style"
             android:title="@string/status_bar_battery_style_category"
-            android:fragment="com.aquarios.settings.fragments.StatusbarBatteryStyle" />
+            android:summary="@string/status_bar_battery_style_summary" />
 
         <PreferenceScreen
             android:fragment="com.aquarios.settings.fragments.CarrierLabelSettings"
