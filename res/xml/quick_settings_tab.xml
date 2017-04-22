@@ -23,4 +23,10 @@
     android:fragment="com.aquarios.settings.fragments.QuickSettings"
     android:title="@string/quicksettings_category" />
 
+    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>

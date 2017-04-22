@@ -244,6 +244,9 @@
     <!-- Quick Settings on lockscreen -->
     <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
     <string name="lockscreen_qs_disabled_summary">Disable shortcuts and expanding quick settings on secure lock screens</string>
+    <!-- Quicks settings vibrate -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
 
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
