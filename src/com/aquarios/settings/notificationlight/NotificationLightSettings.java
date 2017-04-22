@@ -61,6 +61,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     private static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON = "notification_light_pulse_default_led_on";
     private static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF = "notification_light_pulse_default_led_off";
     private static final String DEFAULT_PREF = "default";
+    private static final String KEY_ALLOW_LIGHTS = "allow_lights";
     public static final int ACTION_TEST = 0;
     public static final int ACTION_DELETE = 1;
     private static final int MENU_ADD = 0;
@@ -92,6 +93,12 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
 
         mMultiColorNotificationLed = resources.getBoolean(
                 com.android.internal.R.bool.config_multiColorNotificationLed);
+
+        // Remove of the "Allow notification light" setting if an led is not supported
+            if (!getResources().getBoolean(
+                    com.android.internal.R.bool.config_intrusiveNotificationLed)) {
+                prefSet.removePreference(findPreference(KEY_ALLOW_LIGHTS));
+            }
 
         // Get the system defined default notification color
         mDefaultColor =
