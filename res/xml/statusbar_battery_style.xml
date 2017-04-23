@@ -35,7 +35,7 @@
         android:entryValues="@array/status_bar_battery_percentage_values"
         android:defaultValue="1" />
 
-    <com.flash.settings.preferences.SecureSettingSwitchPreference
+    <com.aquarios.settings.preference.SecureSettingSwitchPreference
         android:key="status_bar_show_battery_percent_low_only"
         android:title="@string/status_bar_battery_percentage_low_only_title"
         android:summary="@string/status_bar_battery_percentage_low_only_summary"

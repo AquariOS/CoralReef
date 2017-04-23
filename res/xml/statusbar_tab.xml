@@ -69,4 +69,17 @@
             android:defaultValue="false" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/general_category_title">
+
+    <PreferenceScreen
+            android:title="@string/status_bar_icon_blacklist_title"
+            android:summary="@string/status_bar_icon_blacklist_summary" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.TunerActivity" />
+    </PreferenceScreen>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

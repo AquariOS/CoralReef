@@ -24,6 +24,7 @@
     <string name="volume_rocker_category_title">VOLUME ROCKER</string>
     <string name="statusbar_display_category_title">STATUS BAR DISPLAY</string>
     <string name="screen_category_title">SCREEN</string>
+    <string name="general_category_title">GENERAL</string>
 
     <!-- General strings -->
     <string name="cancel">Cancel</string>
@@ -223,6 +224,18 @@
     <!-- Volume key orientation swap -->
     <string name="swap_volume_buttons_title">Volume button swap</string>
     <string name="swap_volume_buttons_summary">Swap volume buttons action when in landscape orientation</string>
+    <!-- Power notification controls -->
+    <string name="power_notification_title">Power notification controls</string>
+    <string name="power_notification_summary">Advanced notification controls and information</string>
+    <!-- Volume down enter do not disturb -->
+    <string name="volbtn_down_zen_title">Volume down for do not disturb</string>
+    <string name="volbtn_down_zen_summary">Allow volume down to enter do not disturb mode</string>
+    <!-- Volume up exit do not disturb -->
+    <string name="volbtn_up_zen_title">Volume up in do not disturb</string>
+    <string name="volbtn_up_zen_summary">Allow volume up to exit do not disturb mode</string>
+    <!-- Volume do not disturb switch -->
+    <string name="vol_zen_title">Do not disturb switch</string>
+    <string name="vol_zen_summary">Show do not disturb switch on volume panel</string>
 
   <!-- Lockscreen -->
     <string name="lockscreen_title">Lock Screen</string>
@@ -235,6 +248,9 @@
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
+    <!-- qs brightness slider -->
+    <string name="qs_brightness_slider_title">Brightness slider</string>
+    <string name="qs_brightness_slider_summary">Show brightness slider on quick settings panel</string> 
     <!-- Quick settings tiles columns and rows config -->
     <string name="quicksettings_category">Quick settings</string> 
     <string name="qs_layout_category">QS tiles layout</string>
@@ -252,6 +268,12 @@
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
     <!-- Status bar - Clock -->
+    <!-- Preference to show/hide embedded battery percentage -->
+    <string name="show_battery_percentage">Show battery percentage</string>
+    <string name="show_battery_percentage_summary">Show battery percentage when not charging</string>
+    <!-- statusbar icon blacklist -->
+    <string name="status_bar_icon_blacklist_title">Status bar icons</string>
+    <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
     <string name="status_bar_clock_title">Clock settings</string>
     <string name="status_bar_clock_summary">Customize clock &amp; date in status bar (position, look, layout) </string>
     <string name="status_bar_clock_style_title">Clock style</string>
@@ -332,12 +354,19 @@
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
     <string name="status_bar_battery_percentage_low_only_title">Percent only when battery is low</string>
     <string name="status_bar_battery_percentage_low_only_summary">Show battery percentage only when the battery level is under %1$d%%</string>
+    <string name="status_bar_battery_style_tile_title">Custom battery tile style</string>
+    <string name="status_bar_battery_style_tile_summary">Allow to set the same icon style chosen for the statusbar battery</string>
     <string name="battery_tile_style_title">Battery tile style</string>
     <string name="status_bar_charge_color_title">Status bar battery icon charging color</string>
     <string name="status_bar_charge_color_summary">Set the color of the statusbar battery icon while charging</string>
     <string name="force_charge_battery_text_title">Status bar battery charging percent</string>
     <string name="force_charge_battery_text_summary_on">Show the battery percentage outside the icon while charging</string>
     <string name="force_charge_battery_text_summary_off">Show the battery percentage inside the icon while charging</string>
+    <string name="text_charging_symbol_title">Charging symbol near percentage text</string>
+    <string name="text_charging_symbol_dialog">Show a symbol near percentage text outside the battery icon when charging</string>
+    <string name="text_charging_symbol_default">Disabled</string>
+    <string name="text_charging_symbol_flash">Flash</string>
+    <string name="text_charging_symbol_tilde">Tilde</string>
 
   <!-- Display -->
     <string name="display_settings_title">Display</string>
