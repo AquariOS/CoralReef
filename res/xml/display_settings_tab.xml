@@ -19,14 +19,6 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
-            android:title="@string/power_notification_title"
-            android:summary="@string/power_notification_summary">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.PowerNotificationControlsActivity" />
-    </PreferenceScreen>
-
     <PreferenceCategory
         android:key="leds"
         android:title="@string/led_category" >
@@ -51,6 +43,18 @@
             android:title="@string/wake_when_plugged_or_unplugged_title"
             android:summary="@string/wake_when_plugged_or_unplugged_summary"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/general_category_title" >
+
+        <PreferenceScreen
+            android:title="@string/power_notification_title"
+            android:summary="@string/power_notification_summary">
+          <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.android.systemui.tuner.PowerNotificationControlsActivity" />
 
     </PreferenceCategory>
 
