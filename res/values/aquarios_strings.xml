@@ -25,6 +25,8 @@
     <string name="statusbar_display_category_title">STATUS BAR DISPLAY</string>
     <string name="screen_category_title">SCREEN</string>
     <string name="general_category_title">GENERAL</string>
+    <string name="lockscreen_actions_category_title">LOCK SCREEN ACTIONS</string>
+    <string name="lockscreen_display_category_title">LOCK SCREEN DISPLAY</string>
 
     <!-- General strings -->
     <string name="cancel">Cancel</string>
