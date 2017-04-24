@@ -49,6 +49,11 @@
     <PreferenceCategory
         android:title="@string/general_category_title" >
 
+         <PreferenceScreen
+            android:id="@+id/dashboard_options"
+            android:fragment="com.aquarios.settings.fragments.DashboardOptions"
+            android:title="@string/dashboard_category" />
+
         <PreferenceScreen
             android:title="@string/power_notification_title"
             android:summary="@string/power_notification_summary">
