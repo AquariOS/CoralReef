@@ -255,6 +255,9 @@
     <!-- qs brightness slider -->
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Show brightness slider on quick settings panel</string> 
+    <!-- Auto brightness icon -->
+    <string name="brightness_icon_title">Brightness icon </string>
+    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
     <!-- Quick settings tiles columns and rows config -->
     <string name="quicksettings_category">Quick settings</string> 
     <string name="qs_layout_category">QS tiles layout</string>
