@@ -25,6 +25,10 @@
     <string name="statusbar_display_category_title">STATUS BAR DISPLAY</string>
     <string name="screen_category_title">SCREEN</string>
     <string name="general_category_title">GENERAL</string>
+    <string name="lockscreen_actions_category_title">LOCK SCREEN ACTIONS</string>
+    <string name="lockscreen_display_category_title">LOCK SCREEN DISPLAY</string>
+    <string name="qs_header_category_title">QS HEADER</string> 
+    <string name="qstiles_category_title">QS TILES</string>
 
     <!-- General strings -->
     <string name="cancel">Cancel</string>
@@ -245,14 +249,19 @@
     <!-- Lockscreen charging current indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display realtime charger current, voltage, and battery temperature on lockscreen while charging</string>
+    <!-- Lockscreen custom shortcuts -->
+    <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
+    <string name="qstiles_layout_title">QS tiles layout</string>
     <!-- qs brightness slider -->
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Show brightness slider on quick settings panel</string> 
+    <!-- Auto brightness icon -->
+    <string name="brightness_icon_title">Brightness icon </string>
+    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
     <!-- Quick settings tiles columns and rows config -->
-    <string name="quicksettings_category">Quick settings</string> 
     <string name="qs_layout_category">QS tiles layout</string>
     <string name="qs_rows_portrait_title">Rows (portrait)</string>
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
@@ -338,6 +347,9 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+    <!-- Bluetooth status -->
+    <string name="bluetooth_battery_title">Show Bluetooth battery status</string>
+    <string name="bluetooth_battery_summary">Show battery status for the currently connected bluetooth device, if available.</string>
     <!-- Battery customizations -->
     <string name="status_bar_battery_style_category">Battery style</string>
     <string name="status_bar_battery_style_summary">Customize the look of the status bar battery icon</string>
@@ -393,6 +405,7 @@
     <string name="pulse_speed_slow">Slow</string>
     <string name="pulse_speed_very_slow">Very slow</string>
     <string name="battery_light_title">Battery light</string>
+    <string name="battery_light_summary">Enable the option to show LED notifications based on the status of battery.</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
     <string name="battery_light_list_title">Colors</string>
     <string name="battery_light_low_color_title">Battery low</string>
@@ -400,6 +413,7 @@
     <string name="battery_light_full_color_title">Charged (90%)</string>
     <string name="battery_light_really_full_color_title">Charged (100%)</string>
     <string name="notification_light_title">Notification light</string>
+    <string name="notification_light_summary">Customize the functionality of the LED notification light. This controls color, pulse rate, app association, etc.</string>
     <string name="notification_light_general_title">General</string>
     <string name="notification_light_applist_title">Apps</string>
     <string name="advanced">Advanced</string>
@@ -408,5 +422,15 @@
     <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
     <string name="allow_lights_title">Lights in do not disturb mode</string>
     <string name="notification_light_screen_on">Lights with screen on</string>
-
+    <!-- Dashboard options -->
+    <string name="dashboard_category">Dashboard options</string>
+    <string name="dashboard_control_summary">Enable/disable some elements of the main settings dashboard.</string>
+    <string name="dashboard_suggestions_title">Dashboard suggestions</string>
+    <string name="summary_dashboard_suggestions_enabled">Dashboard suggestions are enabled</string>
+    <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string>
+    <string name="remove_tile_summaries_title">Remove tile summaries</string>
+    <string name="remove_tile_summaries_summary">Remove tiles summaries that display underneath tile titles</string>
+    <string name="dashboard_conditions_title">Dashboard conditions</string>
+    <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
+    <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
 </resources>

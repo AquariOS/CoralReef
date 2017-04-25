@@ -15,7 +15,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/quicksettings_category" >
+    android:title="@string/qstiles_layout_title" >
 
     <PreferenceCategory
         android:key="qs_layout_category"

@@ -18,16 +18,33 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.aquarios.settings.preference.SystemSettingSwitchPreference
-        android:key="keyguard_toggle_torch"
-        android:title="@string/keyguard_torch_title"
-        android:summary="@string/keyguard_torch_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:title="@string/lockscreen_display_category_title">
 
-    <com.aquarios.settings.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_battery_info"
-        android:title="@string/lockscreen_battery_info_title"
-        android:summary="@string/lockscreen_battery_info_summary"
-        android:defaultValue="true" />
+        <PreferenceScreen
+            android:title="@string/lockscreen_targets_message" >
+            <intent
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.aquarios.LockscreenShortcutsActivity" />
+        </PreferenceScreen>
+
+        <com.aquarios.settings.preference.SystemSettingSwitchPreference
+            android:key="keyguard_toggle_torch"
+            android:title="@string/keyguard_torch_title"
+            android:summary="@string/keyguard_torch_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/lockscreen_actions_category_title">
+
+        <com.aquarios.settings.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

@@ -26,11 +26,13 @@
         <PreferenceScreen
             android:key="notification_light"
             android:title="@string/notification_light_title"
+            android:summary="@string/notification_light_summary"
             android:fragment="com.aquarios.settings.notificationlight.NotificationLightSettings" />
 
         <PreferenceScreen
             android:key="battery_light"
             android:title="@string/battery_light_title"
+            android:summary="@string/battery_light_summary"
             android:fragment="com.aquarios.settings.notificationlight.BatteryLightSettings" />
 
     </PreferenceCategory>
@@ -49,10 +51,16 @@
     <PreferenceCategory
         android:title="@string/general_category_title" >
 
+         <PreferenceScreen
+            android:id="@+id/dashboard_options"
+            android:fragment="com.aquarios.settings.fragments.DashboardOptions"
+            android:title="@string/dashboard_category"
+            android:summary="@string/dashboard_control_summary" />
+
         <PreferenceScreen
             android:title="@string/power_notification_title"
             android:summary="@string/power_notification_summary">
-          <intent android:action="android.intent.action.MAIN"
+        <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
             android:targetClass="com.android.systemui.tuner.PowerNotificationControlsActivity" />
        </PreferenceScreen>
