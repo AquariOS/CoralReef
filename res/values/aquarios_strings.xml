@@ -284,10 +284,12 @@
     <string name="lockscreen_battery_info_summary">Display realtime charger current, voltage, and battery temperature on lockscreen while charging</string>
     <!-- Lockscreen custom shortcuts -->
     <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
+    <string name="lockscreen_targets_summary">Replace the stock shortcuts at the bottom of lockscreen with a different app or action.</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
     <string name="qstiles_layout_title">QS tiles layout</string>
+    <string name="qstiles_layout_summary">Configure the layout of the tiles panel (number of rows and columns).</string>
     <!-- qs brightness slider -->
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Show brightness slider on quick settings panel</string> 

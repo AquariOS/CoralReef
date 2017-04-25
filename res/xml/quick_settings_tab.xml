@@ -24,7 +24,8 @@
     <Preference
         android:key="quicksettings"
         android:fragment="com.aquarios.settings.fragments.QuickSettings"
-        android:title="@string/qstiles_layout_title" />
+        android:title="@string/qstiles_layout_title"
+        android:summary="@string/qstiles_layout_summary" />
 
     <com.aquarios.settings.preference.SecureSettingSwitchPreference
         android:key="qs_easy_toggle"
