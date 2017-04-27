@@ -19,6 +19,7 @@ package com.aquarios.settings.tabs;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
@@ -39,8 +40,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
 
     private SwitchPreference mKeyguardTorch;
+    private FingerprintManager mFingerprintManager;
+    private SystemSettingSwitchPreference mFingerprintVib;
 
    @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+    mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+    mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
+    if (!mFingerprintManager.isHardwareDetected()){
+    prefSet.removePreference(mFingerprintVib);
+   }
 
     mKeyguardTorch = (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
     mKeyguardTorch.setOnPreferenceChangeListener(this);
