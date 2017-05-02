@@ -18,6 +18,10 @@ package com.aquarios.settings.tabs;
 
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -32,18 +36,61 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
-import com.android.settings.Utils;
+
+import com.aquarios.settings.preference.CustomSeekBarPreference;
+import com.aquarios.settings.utils.Utils;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class QuickSettingsTab extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String CATEGORY_WEATHER = "weather_category";
+    private static final String WEATHER_ICON_PACK = "weather_icon_pack";
+    private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
+    private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+    private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
+
+private ListPreference mWeatherIconPack;
+private PreferenceCategory mWeatherCategory;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(R.xml.quick_settings_tab);
-
+        PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mWeatherCategory = (PreferenceCategory) findPreference(CATEGORY_WEATHER);
+        if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
+            prefScreen.removePreference(mWeatherCategory);
+        } else {
+            String settingJawsPackage = Settings.System.getString(getContentResolver(),
+                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK);
+            if (settingJawsPackage == null) {
+                settingJawsPackage = DEFAULT_WEATHER_ICON_PACKAGE;
+            }
+            mWeatherIconPack = (ListPreference) findPreference(WEATHER_ICON_PACK);
+
+            List<String> jawsentries = new ArrayList<String>();
+            List<String> jawsvalues = new ArrayList<String>();
+            getAvailableWeatherIconPacks(jawsentries, jawsvalues);
+            mWeatherIconPack.setEntries(jawsentries.toArray(new String[jawsentries.size()]));
+            mWeatherIconPack.setEntryValues(jawsvalues.toArray(new String[jawsvalues.size()]));
+
+            int jawsvalueIndex = mWeatherIconPack.findIndexOfValue(settingJawsPackage);
+            if (jawsvalueIndex == -1) {
+                // no longer found
+                settingJawsPackage = DEFAULT_WEATHER_ICON_PACKAGE;
+                Settings.System.putString(getContentResolver(),
+                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingJawsPackage);
+                jawsvalueIndex = mWeatherIconPack.findIndexOfValue(settingJawsPackage);
+            }
+            mWeatherIconPack.setValueIndex(jawsvalueIndex >= 0 ? jawsvalueIndex : 0);
+            mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
+            mWeatherIconPack.setOnPreferenceChangeListener(this);
+        }
     }
 
     @Override
@@ -61,8 +108,55 @@ public class QuickSettingsTab extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mWeatherIconPack) {
+            String value = (String) newValue;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);
+            int valueIndex = mWeatherIconPack.findIndexOfValue(value);
+            mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isOmniJawsServiceInstalled() {
+        return Utils.isAvailableApp(WEATHER_SERVICE_PACKAGE, getActivity());
+    }
+
+    private void getAvailableWeatherIconPacks(List<String> entries, List<String> values) {
+        Intent i = new Intent();
+        PackageManager packageManager = getPackageManager();
+        i.setAction("org.omnirom.WeatherIconPack");
+        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+            String packageName = r.activityInfo.packageName;
+            if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
+                values.add(0, r.activityInfo.name);
+            } else {
+                values.add(r.activityInfo.name);
+            }
+            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
+            if (label == null) {
+                label = r.activityInfo.packageName;
+            }
+            if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
+                entries.add(0, label);
+            } else {
+                entries.add(label);
+            }
+        }
+        i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(CHRONUS_ICON_PACK_INTENT);
+        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+            String packageName = r.activityInfo.packageName;
+            values.add(packageName + ".weather");
+            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
+            if (label == null) {
+                label = r.activityInfo.packageName;
+            }
+            entries.add(label);
+        }
     }
 }

@@ -301,7 +301,7 @@
     <string name="lock_clock_font_black_italic">Roboto Black Italic</string>
     <string name="lock_clock_font_condensed_light_normal">Roboto Condensed Light</string>
     <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
-    <string name="weather_config_title">Service settings</string>
+    <string name="weather_config_title">Weather service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
 
   <!-- Quick Settings -->
@@ -329,6 +329,11 @@
     <!-- QS easy toggles -->
     <string name="qs_easy_toggle_title">Advanced Quick Setting easy toggle</string>
     <string name="qs_easy_toggle_summary">one tap action to toggle bluetooth, data, or wifi</string>
+    <!-- OmniJaws -->
+    <string name="qs_omnijaws_category">Weather QS tile</string>
+    <string name="weather_config_summary">Set or change the weather settings to be displayed</string>
+    <string name="header_weather_title">Header view weather</string>
+    <string name="header_weather_summary">Enable notification panel header weather display</string>
 
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
