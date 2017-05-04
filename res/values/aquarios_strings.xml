@@ -786,4 +786,8 @@
     <string name="qs_multiuser_switch_summary">Remove the multi-user switch in the header</string>
     <string name="qs_expand_indicator_title">Hide expand indicator</string>
     <string name="qs_expand_indicator_summary">Remove the expand indicator in the header</string>
+
+    <!-- All tile scroller for quickbar settings -->
+    <string name="qqs_scroll_title">Scroll small QS tiles</string>
+    <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
 </resources>
