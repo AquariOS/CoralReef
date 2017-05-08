@@ -792,4 +792,8 @@
     <!-- All tile scroller for quickbar settings -->
     <string name="qqs_scroll_title">Scroll small QS tiles</string>
     <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
+
+    <!-- Recents memory bar -->
+    <string name="systemui_recents_mem_display_title">Show memory bar</string>
+    <string name="systemui_recents_mem_display_summary">Display RAM usage under recents view</string>
 </resources>
