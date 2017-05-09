@@ -262,12 +262,14 @@
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
+    <string name="lockscreen_visualizer_summary">Shows a live equalizer-like display of current audio frequencies on lock screen</string>
     <!-- Lockscreen double tap to sleep -->
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
     <!-- Lockscreen weather -->
     <string name="display_category_weather_title">Lockscreen weather options</string>
     <string name="lock_screen_weather_settings_title">Weather</string>
+    <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>
     <string name="weather_cat_notifications_title">Notifications</string>
     <string name="weather_show_weather_title">Show weather</string>
     <string name="weather_show_weather_summary">Enable to show weather information</string>
