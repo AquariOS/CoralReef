@@ -31,6 +31,8 @@
     <string name="qstiles_category_title">QS TILES</string>
     <string name="qs_omnijaws_category">WEATHER TILE</string>
     <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string> 
+    <string name="recents_category">RECENTS</string>
+    <string name="other_category">OTHER</string>
 
     <!-- General strings -->
     <string name="cancel">Cancel</string>
@@ -551,10 +553,9 @@
     <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
     <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
 
-    <!-- System/Misc -->
+  <!-- System/Misc -->
     <string name="system_settings_title">System/Misc</string>
     <!-- Recents -->
-    <string name="recents_category">Recents</string>
     <!-- Clear-All recents FAB -->
     <string name="show_clear_all_recents_button_title">Clear-all FAB</string>
     <string name="show_clear_all_recents_button_summary_on">Show clear all FAB</string>
@@ -569,5 +570,7 @@
     <!-- Recents memory bar -->
     <string name="systemui_recents_mem_display_title">Show memory bar</string>
     <string name="systemui_recents_mem_display_summary">Display RAM usage under recents view</string>
-
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to screenshot</string>
 </resources>
