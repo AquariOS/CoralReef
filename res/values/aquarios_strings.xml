@@ -32,6 +32,8 @@
     <string name="qstiles_category_title">QS TILES</string>
     <string name="qs_omnijaws_category">WEATHER TILE</string>
     <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string>
+    <string name="recents_category">RECENTS</string>
+    <string name="other_category">OTHER</string>
 
     <!-- General strings -->
     <string name="cancel">Cancel</string>
@@ -796,4 +798,8 @@
     <!-- Recents memory bar -->
     <string name="systemui_recents_mem_display_title">Show memory bar</string>
     <string name="systemui_recents_mem_display_summary">Display RAM usage under recents view</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to screenshot</string>
 </resources>
