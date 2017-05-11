@@ -27,4 +27,6 @@
     <color name="background_tab_pressed">#1AFFFFFF</color>
     <color name="material_deep_teal_500">@*android:color/material_deep_teal_500</color>
     <color name="action_picker_fab_background">@color/theme_accent</color> 
+    <color name="dt_tab_inactive_text_color">@color/dt_tab_text_color</color>
+
 </resources>

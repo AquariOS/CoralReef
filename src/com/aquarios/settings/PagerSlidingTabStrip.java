@@ -130,6 +130,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     private Locale locale;
 
+    private int tabActiveTextColor;
+    private int tabInactiveTextColor;
+
     public PagerSlidingTabStrip(Context context) {
         this(context, null);
     }
