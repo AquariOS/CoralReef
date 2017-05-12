@@ -536,11 +536,6 @@
     <string name="battery_light_medium_color_title">Charging</string>
     <string name="battery_light_full_color_title">Charged (90%)</string>
     <string name="battery_light_really_full_color_title">Charged (100%)</string>
-    <string name="battery_light_blend_color_title">Blend colors</string>
-    <string name="battery_light_blend_color_summary">Blend full/empty colors corresponding to battery percentage</string>
-    <string name="battery_light_blend_color_reverse_title">Reverse color direction</string>
-    <string name="battery_light_blend_color_reverse_summary_off">Full &#8594; empty: red &#8592; green &#8592; blue &#8592; red</string>
-    <string name="battery_light_blend_color_reverse_summary_on">Full &#8594; empty: red &#8594; green &#8594; blue &#8594; red</string>
     <string name="notification_light_title">Notification light</string>
     <string name="notification_light_summary">Customize the functionality of the LED notification light. This controls color, pulse rate, app association, etc.</string>
     <string name="notification_light_general_title">General</string>
