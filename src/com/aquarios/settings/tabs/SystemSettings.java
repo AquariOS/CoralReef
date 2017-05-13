@@ -16,8 +16,15 @@
 
 package com.aquarios.settings.tabs;
 
+import android.app.Activity;
+import android.app.ActivityManagerNative;
+import android.app.IActivityManager;
+import android.content.ContentResolver;
+import android.content.res.Configuration;
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.PreferenceCategory;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -28,19 +35,22 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.aquarios.settings.preference.CustomSeekBarPreference;
 
 public class SystemSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String SCREENSHOT_DELAY = "screenshot_delay";
 
     private ListPreference mRecentsClearAllLocation;
-
+    private CustomSeekBarPreference mScreenshotDelay;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_settings_tab);
-        ContentResolver resolver = getActivity().getContentResolver();
+
+        final ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefScreen = getPreferenceScreen();
 
         mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
@@ -49,7 +59,13 @@ public class SystemSettings extends SettingsPreferenceFragment
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
-    }
+
+        mScreenshotDelay = (CustomSeekBarPreference) findPreference(SCREENSHOT_DELAY);
+        int screenshotDelay = Settings.System.getInt(resolver,
+                Settings.System.SCREENSHOT_DELAY, 1000);
+        mScreenshotDelay.setValue(screenshotDelay / 1);
+        mScreenshotDelay.setOnPreferenceChangeListener(this);
+   }
 
     @Override
     protected int getMetricsCategory() {
@@ -65,6 +81,11 @@ public class SystemSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mScreenshotDelay) {
+            int screenshotDelay = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SCREENSHOT_DELAY, screenshotDelay * 1);
             return true;
         }
         return false;
