@@ -39,9 +39,11 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     public static final String VOLUME_ROCKER_MUSIC_CONTROLS = "volume_rocker_music_controls";
+    private static final String SCREENRECORD_CHORD_TYPE = "screenrecord_chord_type";
 
     private SwitchPreference mVolumeRockerWake;
     private SwitchPreference mVolumeRockerMusicControl;
+    private ListPreference mScreenrecordChordType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,12 @@ public class Buttons extends SettingsPreferenceFragment implements
         int volumeRockerMusicControl = Settings.System.getInt(getContentResolver(),
                 VOLUME_ROCKER_MUSIC_CONTROLS, 0);
         mVolumeRockerMusicControl.setChecked(volumeRockerMusicControl != 0);
+
+        //advanced screenshot options
+        int recordChordValue = Settings.System.getInt(resolver,
+                Settings.System.SCREENRECORD_CHORD_TYPE, 0);
+        mScreenrecordChordType = initActionList(SCREENRECORD_CHORD_TYPE,
+                recordChordValue);
     }
 
     @Override
@@ -80,6 +88,10 @@ public class Buttons extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), VOLUME_ROCKER_MUSIC_CONTROLS,
                     value ? 1 : 0);
             return true;
+        } else if  (preference == mScreenrecordChordType) {
+            handleActionListChange(mScreenrecordChordType, newValue,
+                    Settings.System.SCREENRECORD_CHORD_TYPE);
+            return true;
          }
         return false;
     }
@@ -87,6 +99,21 @@ public class Buttons extends SettingsPreferenceFragment implements
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.AQUARIOS;
+    }
+
+    private ListPreference initActionList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getActivity().getContentResolver(), setting, Integer.valueOf(value));
     }
 
     @Override

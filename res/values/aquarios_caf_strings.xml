@@ -54,6 +54,8 @@
     <string name="shortcut_category">Lockscreen shortcuts</string>
     <string name="lockscreen_corner_summary">Customize the shortcut icons in the corners</string>
      <!-- Lockscreen shortcuts -->
+    <string name="help">Help</string>
+    <string name="reset_message">Reset all entries to default?</string>
     <string name="lockscreen_shortcuts_title">Center screen Shortcuts</string>
     <string name="lockscreen_shortcuts_summary">Add center shortcuts on lockscreen</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>

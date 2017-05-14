@@ -24,13 +24,15 @@
         <PreferenceScreen
             android:key="lockscreen_shortcuts"
             android:title="@string/lockscreen_shortcuts_category"
+            android:summary="@string/lockscreen_targets_summary" 
             android:fragment="com.aquarios.settings.fragments.ShortcutCategory" />
-       
+
         <com.aquarios.settings.preference.SystemSettingSwitchPreference
             android:key="double_tap_sleep_anywhere"
             android:title="@string/double_tap_sleep_anywhere_title"
             android:summary="@string/double_tap_sleep_anywhere_summary"
             android:defaultValue="false" /> 
+
         <com.aquarios.settings.preference.SystemSettingSwitchPreference
             android:key="keyguard_toggle_torch"
             android:title="@string/keyguard_torch_title"

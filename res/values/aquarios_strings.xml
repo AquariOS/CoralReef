@@ -306,6 +306,13 @@
     <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
     <string name="weather_config_title">Weather service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
+    <!-- Screenshot delay -->
+    <string name="screenshot_delay_title">Screenshot delay</string>
+    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
+    <!-- Screen record chord behavior -->
+    <string name="screen_record_chord_title">Power + volume up behavior</string>
+    <string name="screen_record_chord_screenrecord">Start screen recording</string>
+    <string name="screen_record_chord_selscreenshot">Take screenshot of selectable area</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
@@ -533,11 +540,6 @@
     <string name="battery_light_medium_color_title">Charging</string>
     <string name="battery_light_full_color_title">Charged (90%)</string>
     <string name="battery_light_really_full_color_title">Charged (100%)</string>
-    <string name="battery_light_blend_color_title">Blend colors</string>
-    <string name="battery_light_blend_color_summary">Blend full/empty colors corresponding to battery percentage</string>
-    <string name="battery_light_blend_color_reverse_title">Reverse color direction</string>
-    <string name="battery_light_blend_color_reverse_summary_off">Full &#8594; empty: red &#8592; green &#8592; blue &#8592; red</string>
-    <string name="battery_light_blend_color_reverse_summary_on">Full &#8594; empty: red &#8594; green &#8594; blue &#8594; red</string>
     <string name="notification_light_title">Notification light</string>
     <string name="notification_light_summary">Customize the functionality of the LED notification light. This controls color, pulse rate, app association, etc.</string>
     <string name="notification_light_general_title">General</string>
