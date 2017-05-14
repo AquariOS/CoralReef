@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2017 AquariOS
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,7 +17,6 @@
     <string name="keywords_aquarios">AquariOS</string>
     <string name="gestures_category_title">STATUS BAR GESTURES</string>
     <string name="navbar_category_title">NAVBAR OPTIONS</string>
-    <string name="hwkey_category_title">HARDWARE KEYS OPTIONS</string>    
     <string name="power_menu_category_title">POWER MENU</string>
     <string name="volume_rocker_category_title">VOLUME ROCKER</string>
     <string name="statusbar_display_category_title">STATUS BAR DISPLAY</string>
@@ -31,7 +27,7 @@
     <string name="qs_header_category_title">HEADER SHORTCUTS</string> 
     <string name="qstiles_category_title">QS TILES</string>
     <string name="qs_omnijaws_category">WEATHER TILE</string>
-    <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string>
+    <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string> 
     <string name="recents_category">RECENTS</string>
     <string name="other_category">OTHER</string>
 
@@ -41,52 +37,8 @@
     <string name="reset">Reset</string>
     <string name="add">Add</string>
     <string name="choose_app">Choose app</string>
-    <string name="empty_title">Empty</string>
-    <string name="normal_title">Normal</string>
-    <string name="hidden_title">Hidden</string>
-    <string name="position_title">Position</string>
-    <string name="position_right_title">Right</string>
-    <string name="position_centered_title">Centered</string>
-    <string name="help">Help</string>
-    <string name="reset_message">Reset all entries to default?</string>
-    <string name="profiles_add">Add</string>
-    <string name="profile_choose_app">Choose app</string>
-    <string name="profile_reset_title">Reset</string>
-    <string name="show_title">Show</string>
 
 <!-- Tabs -->
-    <!-- HWKey settings -->
-    <string name="hwkey_settings_title">HWKey Options</string>
-    <string name="hwkey_settings_summary">Customize hardware keys behavior</string>
-    <!-- Hardware Keys fragment -->
-    <string name="hwkeys_settings_title">Hardware Keys</string>
-    <!-- Buttons backlight timeout -->
-    <string name="backlight_timeout_title">Buttons backlight timeout</string>
-    <string name="backlight_timeout_on">Enabled always</string>
-    <string name="backlight_timeout_default">5 sec (default)</string>
-    <string name="backlight_timeout_10s">10 sec</string>
-    <string name="backlight_timeout_15s">15 sec</string>
-    <string name="backlight_timeout_20s">20 sec</string>
-    <string name="backlight_timeout_30s">30 sec</string>
-
-    <!-- Enable keys backlight-->
-    <string name="button_brightness_title">Backlight</string>
-
-    <!-- Hardware button navigation -->
-    <string name="hardware_keys_volume_keys_title">Volume rocker</string>
-    <string name="hardware_keys_home_key_title">Home button</string>
-    <string name="hardware_keys_menu_key_title">Menu button</string>
-    <string name="hardware_keys_assist_key_title">Search button</string>
-    <string name="hardware_keys_appswitch_key_title">Overview button</string>
-    <string name="hardware_keys_back_key_title">Back button</string>
-    <string name="hardware_keys_double_tap_summary">Set double tap action</string>
-    <string name="hardware_keys_single_tap_summary">Set single tap action</string>
-    <string name="hardware_keys_long_press_summary">Set long press action</string>
-    <string name="hardware_keys_single_tap_title">Single tap action</string>
-    <string name="hardware_keys_long_press_title">Long press action</string>
-    <string name="hardware_keys_double_tap_title">Double tap action</string>
-    <string name="hardware_keys_category">Navigation buttons</string>
-    <string name="hardware_keys_disable_title">Disable navigation buttons</string>
   <!-- Navbar fragment -->
     <string name="navbar_settings_title">Navigation bar</string>
     <!-- Navigation Bar -->
@@ -307,6 +259,53 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
+    <string name="lockscreen_visualizer_summary">Shows a live equalizer-like display of current audio frequencies on lock screen</string>
+    <!-- Lockscreen double tap to sleep -->
+    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
+    <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
+    <!-- Lockscreen weather -->
+    <string name="display_category_weather_title">Lockscreen weather options</string>
+    <string name="lock_screen_weather_settings_title">Weather</string>
+    <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>
+    <string name="weather_cat_notifications_title">Notifications</string>
+    <string name="weather_show_weather_title">Show weather</string>
+    <string name="weather_show_weather_summary">Enable to show weather information</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Enable to show the location</string>
+    <string name="weather_hide_panel_title">Hide weather panel</string>
+    <string name="weather_hide_panel_dlg_title">Choose when the weather panel should be hidden</string>
+    <string name="weather_hide_panel_auto_title">Auto</string>
+    <string name="weather_hide_panel_custom_title">Custom</string>
+    <string name="weather_hide_panel_never_title">Never</string>
+    <string name="weather_hide_panel_auto_summary">The weather panel will be hidden when the visible notifications will reach the maximum allowed notifications on the lock screen</string>
+    <string name="weather_hide_panel_custom_summary">The weather panel will be hidden when the visible notifications will reach the chosen number of notifications</string>
+    <string name="weather_hide_panel_never_summary">The weather panel won\`t be hidden</string>
+    <string name="weather_number_of_notifications_title">Number of notifications</string>
+    <!-- Lockscreen clock fonts -->
+    <string name="lock_clock_font_title">Lockscreen clock font</string>
+    <string name="lock_clock_font_summary">Change the default font of the lockscreen clock widget</string>
+    <string name="lock_clock_font_normal">Roboto</string>
+    <string name="lock_clock_font_bold">Roboto Bold</string>
+    <string name="lock_clock_font_italic">Roboto Italic</string>
+    <string name="lock_clock_font_bold_italic">Roboto Bold Italic</string>
+    <string name="lock_clock_font_light_normal">Roboto Light (default)</string>
+    <string name="lock_clock_font_light_italic">Roboto Light Italic</string>
+    <string name="lock_clock_font_thin_normal">Roboto Thin</string>
+    <string name="lock_clock_font_thin_italic">Roboto Thin Italic</string>
+    <string name="lock_clock_font_condensed_normal">Roboto Condensed</string>
+    <string name="lock_clock_font_condensed_bold">Roboto Condensed Bold</string>
+    <string name="lock_clock_font_condensed_italic">Roboto Condensed Italic</string>
+    <string name="lock_clock_font_condensed_bold_italic">Roboto Condensed Bold Italic</string>
+    <string name="lock_clock_font_medium_normal">Roboto Medium</string>
+    <string name="lock_clock_font_medium_italic">Roboto Medium Italic</string>
+    <string name="lock_clock_font_black_normal">Roboto Black</string>
+    <string name="lock_clock_font_black_italic">Roboto Black Italic</string>
+    <string name="lock_clock_font_condensed_light_normal">Roboto Condensed Light</string>
+    <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
+    <string name="weather_config_title">Weather service settings</string>
+    <string name="weather_icon_pack_title">Condition icon pack</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
@@ -333,6 +332,37 @@
     <!-- QS easy toggles -->
     <string name="qs_easy_toggle_title">Advanced Quick Setting easy toggle</string>
     <string name="qs_easy_toggle_summary">one tap action to toggle bluetooth, data, or wifi</string>
+    <!-- OmniJaws -->
+    <string name="weather_config_summary">Set or change the weather settings to be displayed</string>
+    <string name="header_weather_title">Header view weather</string>
+    <string name="header_weather_summary">Enable notification panel header weather display</string>
+    <!-- QS headers -->
+    <string name="qs_header_category">Quick settings header</string>
+    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+    <string name="daylight_header_pack_title">Header image pack</string>
+    <string name="daylight_header_pack_summary">Select header pack from a list of packages</string>
+    <string name="status_bar_custom_header_shadow_title">Shadow header image</string>
+    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
+    <string name="static_header_provider" translatable="false">static</string>
+    <string name="daylight_header_provider" translatable="false">daylight</string>
+    <string name="static_header_provider_title">Static</string>
+    <string name="daylight_header_provider_title">Dynamic</string>
+    <string name="custom_header_provider_title">Header provider</string>
+    <string name="custom_header_provider_summary">Choose method of header imaging</string>
+    <string name="custom_header_browse_title">Browse installed headers</string>
+    <string name="custom_header_browse_summary">Long press on any image to use for static mode</string>
+    <string name="qqs_scroll_title">Scroll small QS tiles</string>
+    <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
+    <!-- QS Header Icons -->
+    <string name="qs_settings_icon_title">Hide settings shortcut</string>
+    <string name="qs_settings_icon_summary">Remove the settings shortcut in the header</string>
+    <string name="qs_edit_title">Hide edit icon</string>
+    <string name="qs_edit_summary">Remove the tile edit icon in the header</string>
+    <string name="qs_multiuser_switch_title">Hide multi-user switch</string>
+    <string name="qs_multiuser_switch_summary">Remove the multi-user switch in the header</string>
+    <string name="qs_expand_indicator_title">Hide expand indicator</string>
+    <string name="qs_expand_indicator_summary">Remove the expand indicator in the header</string>
 
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
@@ -530,10 +560,9 @@
     <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
     <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
 
-    <!-- System/Misc -->
+  <!-- System/Misc -->
     <string name="system_settings_title">System/Misc</string>
     <!-- Recents -->
-    <string name="recents_category">Recents</string>
     <!-- Clear-All recents FAB -->
     <string name="show_clear_all_recents_button_title">Clear-all FAB</string>
     <string name="show_clear_all_recents_button_summary_on">Show clear all FAB</string>
@@ -545,270 +574,9 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
- 
-    <!-- lock screen visualizer -->
-    <string name="lockscreen_visualizer_title">Display music visualizer</string>  
-    <string name="lockscreen_visualizer_summary">Shows a live equalizer-like display of current audio frequencies on lock screen</string>  
-    <!-- Lockscreen double tap to sleep -->
-    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
-    <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
-  
-    <!-- Lockscreen double tap to sleep -->
-    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
-    <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string> 
-
-    <!-- LockScreen targets -->
-    <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
-    <string name="shortcut_category">Lockscreen shortcuts</string>
-    <string name="lockscreen_corner_summary">Customize the shortcut icons in the corners</string>
-
-    <!-- Lockscreen shortcuts -->
-    <string name="lockscreen_shortcuts_title">Center screen Shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">Add center shortcuts on lockscreen</string>
-    <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
-    <string name="lockscreen_shortcuts_category">Lockscreen Shortcuts</string>
-    <string name="shortcut_action_none">None</string>
-    <string name="shortcut_action_app">Custom app</string>
-    <string name="shortcut_action_home">Home</string>
-    <string name="shortcut_action_back">Back</string>
-    <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Open IME Switcher</string>
-    <string name="shortcut_action_power_menu">Power menu</string>
-    <string name="shortcut_action_recent">Recents</string>
-    <string name="shortcut_action_power">Screen Off</string>
-    <string name="shortcut_action_search">Search in app</string>
-    <string name="shortcut_action_ring_vib">Ring/Vib</string>
-    <string name="shortcut_action_ring_silent">Ring/Silent</string>
-    <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
-    <string name="shortcut_action_camera">Camera</string>
-    <string name="shortcut_action_media_next">Music - next track</string>
-    <string name="shortcut_action_media_play_pause">Music - play/pause</string>
-    <string name="shortcut_action_media_previous">Music - previous track</string>
-    <string name="shortcut_action_wake_device">Wake up device</string>
-    <string name="shortcut_action_longpress">Longpress:</string>
-    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
-    <string name="shortcut_action_select_action">Choose action:</string>
-    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
-    <string name="shortcut_action_reset">Reset</string>
-    <string name="shortcut_action_add">Add</string>
-    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
-    <string name="shortcut_action_max">Maximum entries size has been reached</string>
-    <string name="shortcut_action_warning">Warning</string>
-    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
-    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
-    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
-    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
-    <string name="shortcut_action_help_shortcut">shortcut</string>
-    <string name="shortcut_action_help_button">button</string>
-    <string name="shortcut_action_help_app">app</string>
-    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
-    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the reset option.</string>
-    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
-    <!-- Slim DSLV -->
-    <string name="shortcut_action_none">None</string>
-    <string name="shortcut_action_longpress">Longpress:</string>
-    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
-    <string name="shortcut_action_select_action">Choose action:</string>
-    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
-    <string name="shortcut_action_reset">Reset</string>
-    <string name="shortcut_action_add">Add</string>
-    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
-    <string name="shortcut_action_max">Maximum entries size has been reached</string>
-    <string name="shortcut_action_warning">Warning</string>
-    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
-    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
-    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
-    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
-    <string name="shortcut_action_help_shortcut">shortcut</string>
-    <string name="shortcut_action_help_button">button</string>
-    <string name="shortcut_action_help_app">app</string>
-    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
-    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
-    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
-    <string name="shortcuts_applications">Applications</string>
-    <string name="shortcuts_select_custom_app_title">Select custom application</string>
-    <string name="shortcuts_icon_picker_type">Select icon type:</string>
-    <string name="shortcuts_icon_default">Default</string>
-    <string name="shortcuts_icon_presets">System icons</string>
-    <string name="shortcuts_icon_custom">Gallery</string>
-    <string name="shortcuts_icon_picker_choose_icon_title">Choose icon</string>
-    <string name="shortcuts_icon_picker_alarm">Alarm</string>
-    <string name="shortcuts_icon_picker_andy">Andy</string>
-    <string name="shortcuts_icon_picker_battery">Battery</string>
-    <string name="shortcuts_icon_picker_browser">Browser</string>
-    <string name="shortcuts_icon_picker_calendar">Calendar</string>
-    <string name="shortcuts_icon_picker_camera">Camera</string>
-    <string name="shortcuts_icon_picker_cloud">Cloud</string>
-    <string name="shortcuts_icon_picker_contact">Contact</string>
-    <string name="shortcuts_icon_picker_directdial">Direct Dial</string>
-    <string name="shortcuts_icon_picker_directmessage">Direct Message</string>
-    <string name="shortcuts_icon_picker_drive">Drive</string>
-    <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
-    <string name="shortcuts_icon_picker_email">Email</string>
-    <string name="shortcuts_icon_picker_email2">Email Alternate</string>
-    <string name="shortcuts_icon_picker_evernote">Evernote</string>
-    <string name="shortcuts_icon_picker_facebook">Facebook</string>
-    <string name="shortcuts_icon_picker_favorite">Favorite</string>
-    <string name="shortcuts_icon_picker_file_browser">File Browser</string>
-    <string name="shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
-    <string name="shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="shortcuts_icon_picker_gallery">Gallery</string>
-    <string name="shortcuts_icon_picker_gears">Gears</string>
-    <string name="shortcuts_icon_picker_google_small">Google</string>
-    <string name="shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
-    <string name="shortcuts_icon_picker_help">Help</string>
-    <string name="shortcuts_icon_picker_joystick">Joystick</string>
-    <string name="shortcuts_icon_picker_key">Keys/Accounts</string>
-    <string name="shortcuts_icon_picker_laptop">Laptop</string>
-    <string name="shortcuts_icon_picker_notes">Notes</string>
-    <string name="shortcuts_icon_picker_luggage">Travel</string>
-    <string name="shortcuts_icon_picker_maps">Maps</string>
-    <string name="shortcuts_icon_picker_market">Market</string>
-    <string name="shortcuts_icon_picker_movie">Movies</string>
-    <string name="shortcuts_icon_picker_music">Music</string>
-    <string name="shortcuts_icon_picker_nav">Navigation</string>
-    <string name="shortcuts_icon_picker_phone">Phone</string>
-    <string name="shortcuts_icon_picker_package">Package</string>
-    <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="shortcuts_icon_picker_play">Play</string>
-    <string name="shortcuts_icon_picker_pocket">Pocket</string>
-    <string name="shortcuts_icon_picker_quicksettings">Quick Settings</string>
-    <string name="shortcuts_icon_picker_rss">RSS Feed</string>
-    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
-    <string name="shortcuts_icon_picker_search">Search</string>
-    <string name="shortcuts_icon_picker_sms">Messaging</string>
-    <string name="shortcuts_icon_picker_tasks">Tasks</string>
-    <string name="shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="shortcuts_icon_picker_transit">Transit</string>
-    <string name="shortcuts_icon_picker_tv">TV</string>
-    <string name="shortcuts_icon_picker_twitter">Twitter</string>
-    <string name="shortcuts_icon_picker_unlock">Unlock</string>
-    <string name="shortcut_action_none">None</string>
-    <string name="shortcut_action_app">Custom app</string>
-    <string name="shortcut_action_home">Home</string>
-    <string name="shortcut_action_back">Back</string>
-    <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Open IME Switcher</string>
-    <string name="shortcut_action_power_menu">Power menu</string>
-    <string name="shortcut_action_recent">Recents</string>
-    <string name="shortcut_action_power">Screen Off</string>
-    <string name="shortcut_action_search">Search in app</string>
-    <string name="shortcut_action_ring_vib">Ring/Vib</string>
-    <string name="shortcut_action_ring_silent">Ring/Silent</string>
-    <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
-    <string name="shortcut_action_camera">Camera</string>
-    <string name="shortcut_action_media_next">Music - next track</string>
-    <string name="shortcut_action_media_play_pause">Music - play/pause</string>
-    <string name="shortcut_action_media_previous">Music - previous track</string>
-    <string name="shortcut_action_wake_device">Wake up device</string>
-
-    <string name="shortcut_action_longpress">Longpress:</string>
-    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
-    <string name="shortcut_action_select_action">Choose action:</string>
-    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
-    <string name="shortcut_action_reset">Reset</string>
-    <string name="shortcut_action_add">Add</string>
-    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
-    <string name="shortcut_action_max">Maximum entries size has been reached</string>
-    <string name="shortcut_action_warning">Warning</string>
-    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
-    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
-    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
-    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
-    <string name="shortcut_action_help_shortcut">shortcut</string>
-    <string name="shortcut_action_help_button">button</string>
-    <string name="shortcut_action_help_app">app</string>
-    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
-    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the reset option.</string>
-    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
-
-    <!-- Lockscreen weather -->
-    <string name="display_category_weather_title">Lockscreen weather options</string>
-    <string name="lock_screen_weather_settings_title">Weather</string>
-    <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>
-    <string name="weather_cat_notifications_title">Notifications</string>
-    <string name="weather_show_weather_title">Show weather</string>
-    <string name="weather_show_weather_summary">Enable to show weather information</string>
-    <string name="weather_show_location_title">Show location</string>
-    <string name="weather_show_location_summary">Enable to show the location</string>
-    <string name="weather_hide_panel_title">Hide weather panel</string>
-    <string name="weather_hide_panel_dlg_title">Choose when the weather panel should be hidden</string>
-    <string name="weather_hide_panel_auto_title">Auto</string>
-    <string name="weather_hide_panel_custom_title">Custom</string>
-    <string name="weather_hide_panel_never_title">Never</string>
-    <string name="weather_hide_panel_auto_summary">The weather panel will be hidden when the visible notifications will reach the maximum allowed notifications on the lock screen</string>
-    <string name="weather_hide_panel_custom_summary">The weather panel will be hidden when the visible notifications will reach the chosen number of notifications</string>
-    <string name="weather_hide_panel_never_summary">The weather panel won\`t be hidden</string>
-    <string name="weather_number_of_notifications_title">Number of notifications</string>
-    <!-- Lockscreen clock fonts -->
-    <string name="lock_clock_font_title">Lockscreen clock font</string>
-    <string name="lock_clock_font_summary">Change the default font of the lockscreen clock widget</string>
-    <string name="lock_clock_font_normal">Roboto</string>
-    <string name="lock_clock_font_bold">Roboto Bold</string>
-    <string name="lock_clock_font_italic">Roboto Italic</string>
-    <string name="lock_clock_font_bold_italic">Roboto Bold Italic</string>
-    <string name="lock_clock_font_light_normal">Roboto Light (default)</string>
-    <string name="lock_clock_font_light_italic">Roboto Light Italic</string>
-    <string name="lock_clock_font_thin_normal">Roboto Thin</string>
-    <string name="lock_clock_font_thin_italic">Roboto Thin Italic</string>
-    <string name="lock_clock_font_condensed_normal">Roboto Condensed</string>
-    <string name="lock_clock_font_condensed_bold">Roboto Condensed Bold</string>
-    <string name="lock_clock_font_condensed_italic">Roboto Condensed Italic</string>
-    <string name="lock_clock_font_condensed_bold_italic">Roboto Condensed Bold Italic</string>
-    <string name="lock_clock_font_medium_normal">Roboto Medium</string>
-    <string name="lock_clock_font_medium_italic">Roboto Medium Italic</string>
-    <string name="lock_clock_font_black_normal">Roboto Black</string>
-    <string name="lock_clock_font_black_italic">Roboto Black Italic</string>
-    <string name="lock_clock_font_condensed_light_normal">Roboto Condensed Light</string>
-    <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
-    <string name="weather_config_title">Weather service settings</string>
-    <string name="weather_icon_pack_title">Condition icon pack</string>
-
-    <!-- OmniJaws QS Tile -->
-    <string name="weather_config_summary">Set or change the weather settings to be displayed</string>
-    <string name="header_weather_title">Header view weather</string>
-    <string name="header_weather_summary">Enable notification panel header weather display</string>
-
-    <!-- QS headers -->
-    <string name="qs_header_category">Quick settings header</string>
-    <string name="status_bar_custom_header_title">Custom header image</string>
-    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
-    <string name="daylight_header_pack_title">Header image pack</string>
-    <string name="daylight_header_pack_summary">Select header pack from a list of packages</string>
-    <string name="status_bar_custom_header_shadow_title">Shadow header image</string>
-    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
-    <string name="static_header_provider_title">Static</string>
-    <string name="daylight_header_provider_title">Dynamic</string>
-    <string name="custom_header_provider_title">Header provider</string>
-    <string name="custom_header_provider_summary">Choose method of header imaging</string>
-    <string name="custom_header_browse_title">Browse installed headers</string>
-    <string name="custom_header_browse_summary">Long press on any image to use for static mode</string>
-
-    <!-- QS Header Icons -->
-    <string name="qs_settings_icon_title">Hide settings shortcut</string>
-    <string name="qs_settings_icon_summary">Remove the settings shortcut in the header</string>
-    <string name="qs_edit_title">Hide edit icon</string>
-    <string name="qs_edit_summary">Remove the tile edit icon in the header</string>
-    <string name="qs_multiuser_switch_title">Hide multi-user switch</string>
-    <string name="qs_multiuser_switch_summary">Remove the multi-user switch in the header</string>
-    <string name="qs_expand_indicator_title">Hide expand indicator</string>
-    <string name="qs_expand_indicator_summary">Remove the expand indicator in the header</string>
-
-    <!-- All tile scroller for quickbar settings -->
-    <string name="qqs_scroll_title">Scroll small QS tiles</string>
-    <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
-
     <!-- Recents memory bar -->
     <string name="systemui_recents_mem_display_title">Show memory bar</string>
     <string name="systemui_recents_mem_display_summary">Display RAM usage under recents view</string>
-
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to screenshot</string>
