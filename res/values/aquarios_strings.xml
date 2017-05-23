@@ -317,13 +317,6 @@
     <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
     <string name="weather_config_title">Weather service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
-    <!-- Screenshot delay -->
-    <string name="screenshot_delay_title">Screenshot delay</string>
-    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
-    <!-- Screen record chord behavior -->
-    <string name="screen_record_chord_title">Power + volume up behavior</string>
-    <string name="screen_record_chord_screenrecord">Start screen recording</string>
-    <string name="screen_record_chord_selscreenshot">Take screenshot of selectable area</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
