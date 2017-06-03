@@ -48,8 +48,15 @@
         <ListPreference
             android:key="clock_date_format"
             android:title="@string/clock_date_format"
+            android:summary="@string/clock_date_format_summary"
             android:entries="@array/clock_date_format_entries_values"
             android:entryValues="@array/clock_date_format_entries_values"
             android:dependency="clock_date_display" />
+
+       <com.aquarios.settings.preference.SystemSettingSwitchPreference
+            android:key="clock_use_second"
+            android:title="@string/status_bar_clock_second_title"
+            android:summary="@string/status_bar_clock_seconds_summary"
+            android:defaultValue="false" />
 
 </PreferenceScreen>
