@@ -342,6 +342,9 @@
     <!-- QS easy toggles -->
     <string name="qs_easy_toggle_title">Advanced Quick Setting easy toggle</string>
     <string name="qs_easy_toggle_summary">one tap action to toggle bluetooth, data, or wifi</string>
+    <string name="qs_tile_title_visibility_title">QS tile titles</string>
+    <string name="qs_tile_title_visibility_summary_on">QS tile titles are on</string>
+    <string name="qs_tile_title_visibility_summary_off">QS tile titles are off</string>
     <!-- OmniJaws -->
     <string name="weather_config_summary">Set or change the weather settings to be displayed</string>
     <string name="header_weather_title">Header view weather</string>

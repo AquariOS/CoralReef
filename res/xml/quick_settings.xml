@@ -24,7 +24,7 @@
         <com.aquarios.settings.preference.CustomSeekBarPreference
             android:key="qs_layout_columns"
             android:title="@string/qs_columns_title"
-            settings:max="7"
+            settings:max="9"
             settings:min="1"
             settings:units=""
             android:persistent="false" />
