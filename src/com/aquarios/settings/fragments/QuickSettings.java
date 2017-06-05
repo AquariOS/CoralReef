@@ -53,12 +53,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements  Prefer
     private static final String PREF_LOCK_QS_DISABLED = "lockscreen_qs_disabled";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
-    private static final String PREF_SYSUI_QQS_COUNT = "sysui_qqs_count_key";
 
     private CustomSeekBarPreference mQsColumns;
     private CustomSeekBarPreference mRowsPortrait;
     private CustomSeekBarPreference mRowsLandscape;
-    private CustomSeekBarPreference mSysuiQqsCount;
     private SwitchPreference mLockQsDisabled;
 
     private static final int MY_USER_ID = UserHandle.myUserId();
@@ -102,12 +100,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements  Prefer
         } else {
             prefScreen.removePreference(mLockQsDisabled);
         }
-
-        mSysuiQqsCount = (CustomSeekBarPreference) findPreference(PREF_SYSUI_QQS_COUNT);
-        int SysuiQqsCount = Settings.Secure.getInt(getContentResolver(),
-                 Settings.Secure.QQS_COUNT, 6);
-        mSysuiQqsCount.setValue(SysuiQqsCount / 1);
-        mSysuiQqsCount.setOnPreferenceChangeListener(this);
     }
 
 
@@ -147,11 +139,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements  Prefer
              Settings.System.putInt(getActivity().getContentResolver(),
                      Settings.System.QS_ROWS_LANDSCAPE, rowsLandscape * 1);
              return true;
-        } else if (preference == mSysuiQqsCount) {
-             int SysuiQqsCount = (Integer) newValue;
-             Settings.Secure.putInt(getActivity().getContentResolver(),
-                     Settings.Secure.QQS_COUNT, SysuiQqsCount * 1);
-              return true;
          }
         return false;
     }
