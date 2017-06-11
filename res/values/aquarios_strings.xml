@@ -700,4 +700,8 @@
     <string name="qs_set_animation_style">%1$s</string>
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
+    <!-- Heads up - ticker -->
+    <string name="heads_up_user_enabled_title">Heads up</string>
+    <string name="heads_up_user_enabled_summary">Toggle apps heads up without breaking system ones</string>
+
 </resources>
