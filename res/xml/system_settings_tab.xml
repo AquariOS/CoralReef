@@ -56,6 +56,7 @@
 
       <PreferenceScreen
 		android:key="animation_settings"
+		android:summary="@string/animation_settings_summary"
 		android:fragment="com.aquarios.settings.animation.AnimationSettings"
 		android:title="@string/animation_settings_title" />
 

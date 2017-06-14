@@ -596,6 +596,7 @@
     <string name="three_finger_gesture_summary">Swipe three fingers to screenshot</string>
 	<!-- Animation Settings -->
 	<string name="animation_settings_title">Animations</string>
+	<string name="animation_settings_summary">Set custom styles for system animations</string>
 	<string name="system_animation_tab">System</string>
 	<string name="toast_animation_tab">Toast</string>
 	<string name="listview_animation_tab">Listview</string>
