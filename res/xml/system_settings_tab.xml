@@ -54,6 +54,12 @@
         android:summary="@string/heads_up_user_enabled_summary"
         android:defaultValue="true" />
 
+      <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="force_expanded_notifications"
+        android:title="@string/force_expanded_notifications_title"
+        android:summary="@string/force_expanded_notifications_summary" />
+
+
       <PreferenceScreen
 		android:key="animation_settings"
 		android:summary="@string/animation_settings_summary"

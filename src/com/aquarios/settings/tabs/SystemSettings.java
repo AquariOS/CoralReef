@@ -16,13 +16,16 @@
 
 package com.aquarios.settings.tabs;
 
+import android.content.Context;
 import android.content.ContentResolver;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
+import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.provider.Settings;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
@@ -33,8 +36,11 @@ public class SystemSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
+
 
     private ListPreference mRecentsClearAllLocation;
+    private SwitchPreference mForceExpanded;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,11 @@ public class SystemSettings extends SettingsPreferenceFragment
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
+        mForceExpanded.setOnPreferenceChangeListener(this);
+        int ForceExpanded = Settings.System.getInt(getContentResolver(),
+                FORCE_EXPANDED_NOTIFICATIONS, 0);
+        mForceExpanded.setChecked(ForceExpanded != 0);
     }
 
     @Override
@@ -65,6 +76,11 @@ public class SystemSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mForceExpanded) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), FORCE_EXPANDED_NOTIFICATIONS,
+                    value ? 1 : 0);
             return true;
         }
         return false;
