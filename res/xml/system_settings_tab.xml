@@ -48,17 +48,16 @@
   <PreferenceCategory
       android:title="@string/other_category" >
 
-      <com.aquarios.settings.preference.SystemSettingSwitchPreference
-        android:key="heads_up_user_enabled"
-        android:title="@string/heads_up_user_enabled_title"
-        android:summary="@string/heads_up_user_enabled_summary"
-        android:defaultValue="true" />
+      <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:summary="@string/heads_up_notifications_summary"
+        android:fragment="com.aquarios.settings.fragments.HeadsUpSettings" />
 
       <com.aquarios.settings.preference.SystemSettingSwitchPreference
         android:key="force_expanded_notifications"
         android:title="@string/force_expanded_notifications_title"
         android:summary="@string/force_expanded_notifications_summary" />
-
 
       <PreferenceScreen
 		android:key="animation_settings"

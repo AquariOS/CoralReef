@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2016 Cardinal-AOSP Project
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/system_settings_title"
+    android:layout="@layout/tab"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="heads_up_notifications_user_enabled"
+        android:title="@string/heads_up_notifications_enabled_title"
+        android:summary="@string/heads_up_notifications_enabled_summary"
+        android:defaultValue="true" />
+
+    <ListPreference
+        android:key="heads_up_time_out"
+        android:title="@string/heads_up_time_out_title"
+        android:entries="@array/heads_up_time_out_entries"
+        android:entryValues="@array/heads_up_time_out_values"
+        android:dependency="heads_up_notifications_user_enabled"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="heads_up_snooze_time"
+        android:title="@string/heads_up_snooze_title"
+        android:entries="@array/heads_up_snooze_entries"
+        android:entryValues="@array/heads_up_snooze_values"
+        android:dependency="heads_up_notifications_user_enabled"
+        android:persistent="false" />
+
+      <PreferenceCategory
+        android:title="@string/heads_up_whitelist_title"
+        android:key="whitelist_applications"
+        android:dependency="heads_up_notifications_user_enabled" >
+
+      <Preference
+        android:key="add_whitelist_packages"
+        android:icon="@drawable/ic_menu_add"
+        android:title="@string/add_heads_up_package"
+        android:dependency="heads_up_notifications_user_enabled"
+        android:summary="@string/add_heads_up_whitelist_summary" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
