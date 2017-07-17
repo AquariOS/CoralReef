@@ -46,6 +46,12 @@
             android:summary="@string/wake_when_plugged_or_unplugged_summary"
             android:defaultValue="false" />
 
+        <com.aquarios.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_display_show_battery"
+            android:title="@string/ambient_display_show_battery_title"
+            android:summary="@string/ambient_display_show_battery_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -496,7 +496,6 @@
     <string name="status_bar_pulse_charging_battery_title">Pulse battery icon when charging</string>
     <string name="status_bar_pulse_charging_battery_summary_off">Only solid battery style will have pulsing icon</string>
     <string name="status_bar_pulse_charging_battery_summary_on">All battery styles will show pulsing animation</string>
-
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery Bar</string>
     <string name="battery_bar_summary">Horizontal bar indicating battery level</string>
@@ -582,6 +581,8 @@
     <string name="dashboard_conditions_title">Dashboard conditions</string>
     <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
     <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
+    <string name="ambient_display_show_battery_title">Battery Status</string>
+    <string name="ambient_display_show_battery_summary">Show battery indicator during pulse if ambient display enabled</string>
 
   <!-- System/Misc -->
     <string name="system_settings_title">System/Misc</string>
