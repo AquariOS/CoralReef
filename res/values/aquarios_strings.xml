@@ -210,6 +210,7 @@
     <string name="smartbar_longpress_delay_normal">Normal delay</string>
     <string name="smartbar_longpress_delay_long">Long delay</string>
     <string name="navbar_buttons_alpha_title">Button transparency</string>
+    <string name="smartbar_custom_icon_size_title">Custom icon scaling</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
