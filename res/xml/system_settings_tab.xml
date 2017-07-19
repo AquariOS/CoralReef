@@ -48,21 +48,34 @@
   <PreferenceCategory
       android:title="@string/other_category" >
 
+      <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:summary="@string/heads_up_notifications_summary"
+        android:fragment="com.aquarios.settings.fragments.HeadsUpSettings" />
+
+      <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="force_expanded_notifications"
+        android:title="@string/force_expanded_notifications_title"
+        android:summary="@string/force_expanded_notifications_summary" />
+
+      <PreferenceScreen
+		android:key="animation_settings"
+		android:summary="@string/animation_settings_summary"
+		android:fragment="com.aquarios.settings.animation.AnimationSettings"
+		android:title="@string/animation_settings_title" />
+
       <com.aquarios.settings.preference.SystemSettingSwitchPreference
           android:key="three_finger_gesture"
           android:title="@string/three_finger_gesture"
           android:summary="@string/three_finger_gesture_summary"
           android:defaultValue="false" />
 
-      <com.aquarios.settings.preference.CustomSeekBarPreference
-          android:key="screenshot_delay"
-          android:title="@string/screenshot_delay_title"
-          android:summary="@string/screenshot_delay_summary"
-          android:max="10000"
-          settings:min="100"
-          settings:interval="100"
-          settings:units="ms"
-          android:persistent="false" />
+      <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="toast_icon"
+        android:title="@string/toast_icon_title"
+        android:summary="@string/toast_icon_summary"
+        android:defaultValue="true" />
   </PreferenceCategory>
 
 </PreferenceScreen>

@@ -148,6 +148,10 @@
     <string name="pulse_custom_fudge_factor">Sanity level</string>
     <string name="lavamp_solid_speed_title">Lava Lamp speed</string>
     <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
+    <string name="pulse_custom_buttons_opacity_title">Smartbar buttons opacity on Pulse</string>
+    <string name="pulse_solid_units_count">Solid lines count</string>
+    <string name="pulse_solid_lines_count">Solid lines count</string>
+    <string name="pulse_solid_units_opacity">Solid lines opacity</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Bar width</string>
     <string name="pulse_custom_div">Bar spacing</string>
@@ -173,13 +177,17 @@
     <string name="smartbar_button_animation_ripple">Ripple</string>
     <string name="smartbar_button_animation_spring">Spring</string>
     <string name="smartbar_button_animation_flip">Flip</string>
+    <string name="smartbar_button_animation_pixel">Pixel (all buttons)</string>
+    <string name="smartbar_button_animation_pixel_home">Pixel (Home button only)</string>
+    <string name="smartbar_button_animation_pixel_home_ripple">Pixel (Home button only) and Ripple</string>
     <string name="smartbar_factory_reset_title">Reset to stock</string>
     <string name="smartbar_factory_reset_confirm">Are you sure you want to reset Smartbar to stock settings?</string>
-    <string name="smartbar_ime_action_title">Input method actions</string>
-    <string name="smartbar_ime_action_summary">Set what buttons to show when a on-screen keyboard is showing</string>
+    <string name="smartbar_ime_action_title">Input method and media actions</string>
+    <string name="smartbar_ime_action_summary">Set what buttons to show when a on-screen keyboard is showing or music is playing</string>
     <string name="smartbar_ime_action_none">None</string>
     <string name="smartbar_ime_action_arrows">Input arrows</string>
     <string name="smartbar_ime_action_switcher">Keyboard switcher</string>
+    <string name="smartbar_ime_action_dynamic">Input/media arrows</string>
     <string name="smartbar_backup_current_config_title">Save profile</string>
     <string name="smartbar_restore_config_title">Restore profile</string>
     <string name="smartbar_config_name_edit_dialog_title">Smartbar profile name</string>
@@ -189,6 +197,11 @@
     <string name="smartbar_config_restore_success_toast">Smartbar profile successfully restored</string>
     <string name="smartbar_config_backup_error_toast">Error saving Smartbar profile</string>
     <string name="smartbar_config_restore_error_toast">Error restoring Smartbar profile</string>
+    <string name="smartbar_longpress_delay_title">Button longpress delay</string>
+    <string name="smartbar_longpress_delay_summary">Set how long the system will wait before triggering a longpress action</string>
+    <string name="smartbar_longpress_delay_default">Default delay (fast)</string>
+    <string name="smartbar_longpress_delay_normal">Normal delay</string>
+    <string name="smartbar_longpress_delay_long">Long delay</string>
     <string name="navbar_buttons_alpha_title">Button transparency</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -199,6 +212,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+    <!-- One handed mode -->
+    <string name="one_handed_mode_title">One handed mode</string>
+    <string name="one_handed_mode_summary">Allows swiping on the navigation bar to enable one handed mode</string>
 
   <!-- Buttons -->
     <string name="buttons_title">Buttons</string>
@@ -254,8 +270,8 @@
     <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
     <string name="lockscreen_targets_summary">Replace the stock shortcuts at the bottom of lockscreen with a different app or action.</string>
     <!-- Fingerprint unlock keystore -->
-    <string name="fp_unlock_keystore_title">FP unlock</string>
-    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without PIN/Password/Pattern\nNote: at your own risk!</string>
+    <string name="fp_unlock_keystore_title">Privileged fingerprint unlock</string>
+    <string name="fp_unlock_keystore_summary">Bypass additional security required with fingerprint unlock following a reboot (such as prompting for pin)\nNote: Use at your own risk!</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
@@ -306,13 +322,6 @@
     <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
     <string name="weather_config_title">Weather service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
-    <!-- Screenshot delay -->
-    <string name="screenshot_delay_title">Screenshot delay</string>
-    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
-    <!-- Screen record chord behavior -->
-    <string name="screen_record_chord_title">Power + volume up behavior</string>
-    <string name="screen_record_chord_screenrecord">Start screen recording</string>
-    <string name="screen_record_chord_selscreenshot">Take screenshot of selectable area</string>
 
   <!-- Quick Settings -->
     <string name="quick_settings_title">Quick Settings</string>
@@ -329,7 +338,6 @@
     <string name="qs_rows_portrait_title">Rows (portrait)</string>
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_title">Columns</string>
-    <string name="qs_small_tiles_title">Small QS tiles</string>
     <!-- Quick Settings on lockscreen -->
     <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
     <string name="lockscreen_qs_disabled_summary">Disable shortcuts and expanding quick settings on secure lock screens</string>
@@ -339,6 +347,9 @@
     <!-- QS easy toggles -->
     <string name="qs_easy_toggle_title">Advanced Quick Setting easy toggle</string>
     <string name="qs_easy_toggle_summary">one tap action to toggle bluetooth, data, or wifi</string>
+    <string name="qs_tile_title_visibility_title">QS tile titles</string>
+    <string name="qs_tile_title_visibility_summary_on">QS tile titles are on</string>
+    <string name="qs_tile_title_visibility_summary_off">QS tile titles are off</string>
     <!-- OmniJaws -->
     <string name="weather_config_summary">Set or change the weather settings to be displayed</string>
     <string name="header_weather_title">Header view weather</string>
@@ -403,8 +414,11 @@
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="clock_date_format">Date format</string>
+    <string name="clock_date_format_summary">Order in which date elements are displayed</string>
     <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
+    <string name="status_bar_clock_second_title">Clock seconds</string>
+    <string name="status_bar_clock_seconds_summary">Enable/disable seconds within clock view</string>
     <!-- double tap to sleep - statusbar -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
@@ -476,6 +490,10 @@
     <string name="text_charging_symbol_default">Disabled</string>
     <string name="text_charging_symbol_flash">Flash</string>
     <string name="text_charging_symbol_tilde">Tilde</string>
+    <string name="status_bar_pulse_charging_battery_title">Pulse battery icon when charging</string>
+    <string name="status_bar_pulse_charging_battery_summary_off">Only solid battery style will have pulsing icon</string>
+    <string name="status_bar_pulse_charging_battery_summary_on">All battery styles will show pulsing animation</string>
+
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery Bar</string>
     <string name="battery_bar_summary">Horizontal bar indicating battery level</string>
@@ -582,4 +600,150 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to screenshot</string>
+	<!-- Animation Settings -->
+	<string name="animation_settings_title">Animations</string>
+	<string name="animation_settings_summary">Set custom styles for system animations</string>
+	<string name="system_animation_tab">System</string>
+	<string name="toast_animation_tab">Toast</string>
+	<string name="listview_animation_tab">Listview</string>
+	<string name="power_menu_animation_tab">Power menu</string>
+	<string name="qs_animation_tab">Quick Settings</string>
+    <!-- Disable animations -->
+    <string name="disable_animations">Disable animations</string>
+    <string name="disable_animations_summary">Disables transition animations such as when launching an app</string>
+    <!-- AOKP custom system animations -->
+    <string name="animation_title">Animations</string>  
+    <string name="system_animation_title">System animations</string>
+    <string name="activity_open_title">Activity open animation</string>
+    <string name="activity_close_title">Activity close animation</string>
+    <string name="task_open_title">Task open animation</string>
+    <string name="task_open_behind_title">Task open behind animation</string>
+    <string name="task_close_title">Task close animation</string>
+    <string name="task_move_to_front_title">Move to front animation</string>
+    <string name="task_move_to_back_title">Move to back animation</string>
+    <string name="wallpaper_open_title">Wallpaper open animation</string>
+    <string name="wallpaper_close_title">Wallpaper close animation</string>
+    <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
+    <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
+    <string name="animation_duration_title">Animation duration</string>
+    <string name="title_animation_no_override">Prevent app overrides</string>
+    <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
+    <string name="animation_duration_default">Default</string>    
+    <!-- Toast Animation -->
+    <string name="toast_animation_title">Toast animation</string>
+    <string name="toast_none_animation">None</string>
+    <string name="toast_default_animation">Default</string>
+    <string name="toast_fade_animation">Fade</string>
+    <string name="toast_SlideRight_animation">Slide right</string>
+    <string name="toast_SlideLeft_animation">Slide left</string>
+    <string name="toast_Xylon_animation">Xylon</string>
+    <string name="toast_Toko_animation">Toko</string>
+    <string name="toast_Tn_animation">Tn</string>
+    <string name="toast_Honami_animation">Honami</string>
+    <string name="toast_FastFade_animation">Fast fade</string>
+    <string name="toast_GrowFade_animation">Grow fade</string>
+    <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
+    <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
+    <string name="toast_Translucent_animation">Translucent</string>
+    <string name="toast_SlideLeftRight_animation">Slide left to right</string>
+    <string name="toast_SlideRightLeft_animation">Slide right to left</string>
+    <!-- ListView animation -->
+    <string name="listview_animation_title">ListView animation</string>
+    <string name="listview_off">Default</string>
+    <string name="listview_wave_left">Wave (left)</string>
+    <string name="listview_wave_right">Wave (right)</string>
+    <string name="listview_alpha">Alpha</string>
+    <string name="listview_scale">Scale</string>
+    <string name="listview_stack_top">Stack (top)</string>
+    <string name="listview_stack_bottom">Stack (bottom)</string>
+    <string name="listview_unfold">Unfold</string>
+    <string name="listview_fold">Fold</string>
+    <string name="listview_translate_left">Translate (left)</string>
+    <string name="listview_translate_right">Translate (right)</string>
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">Interpolator</string>
+    <string name="listview_accelerate_interpolator">Accelerate</string>
+    <string name="listview_decelerate_interpolator">Decelerate</string>
+    <string name="listview_accelerate_decelerate_interpolator">Accelerate and decelerate</string>
+    <string name="listview_anticipate_interpolator">Anticipate</string>
+    <string name="listview_overshoot_interpolator">Overshoot</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
+    <string name="listview_bounce_interpolator">Bounce</string>
+    <!-- Power menu Animations  -->
+    <string name="power_menu_animation_title">Power menu animation</string>
+    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
+    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
+    <string name="power_menu_animation_aosp">AOSP (default)</string>
+    <string name="power_menu_animation_bottom">Bottom</string>
+    <string name="power_menu_animation_top">Top</string>
+    <string name="power_menu_animation_rotate">Rotation</string>
+    <string name="power_menu_animation_xylon">Fly</string>
+    <string name="power_menu_animation_slide">Slide</string>
+    <string name="power_menu_animation_turn">Turn</string>
+    <string name="power_menu_animation_fly">Glow</string>
+    <string name="power_menu_animation_card">3D</string>
+    <string name="power_menu_animation_translucent_top">Translucent (top)</string>
+    <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
+    <!-- Tiles animation style  -->
+	<string name="qs_tiles">QS Tiles</string>
+    <string name="qs_tile_animation_style_title">Animation style</string>
+    <string name="qs_tile_animation_duration_title">Animation duration</string>
+    <string name="qs_tile_animation_interpolator_title">Tiles animation interpolator</string>
+    <string name="qs_tile_animation_style_off">No animation</string>
+    <string name="qs_tile_animation_style_flip">Flip</string>
+    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_duration_low">Low</string>
+    <string name="qs_tile_animation_duration_default">Default</string>
+    <string name="qs_tile_animation_duration_fast">Fast</string>
+	<string name="qs_tile_animation_duration_superfast">Super fast</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_set_animation_style">%1$s</string>
+    <string name="qs_set_animation_duration">%1$s</string>
+    <string name="qs_set_animation_interpolator">%1$s</string>
+    <!-- Global heads-up toggle -->
+    <string name="heads_up_notifications_enabled_title">Enable all Heads-Up notifications </string>
+    <string name="heads_up_notifications_enabled_summary">Heads-Up for all notifications on/off globally</string>
+    <!-- Heads up settings -->
+    <string name="heads_up_notifications">Heads up</string>
+    <string name="heads_up_notifications_summary">Heads-Up notification options</string>
+    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
+    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
+    <string name="add_heads_up_package">Add app</string>
+    <string name="add_heads_up_whitelist_summary">Show notification as heads up from these applications</string>
+    <string name="heads_up_whitelist_title">Whitelist</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
+    <!-- Heads up timeout -->
+    <string name="heads_up_time_out_title">Time out</string>
+    <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
+    <string name="heads_up_time_out_2sec">2 seconds</string>
+    <string name="heads_up_time_out_4sec">4 seconds</string>
+    <string name="heads_up_time_out_5sec">5 seconds</string>
+    <string name="heads_up_time_out_6sec">6 seconds</string>
+    <string name="heads_up_time_out_8sec">8 seconds</string>
+    <string name="heads_up_time_out_10sec">10 seconds</string>
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">Snooze timer</string>
+    <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
+    <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
+    <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
+    <string name="heads_up_snooze_1min">1 minute</string>
+    <string name="heads_up_snooze_5min">5 minutes</string>
+    <string name="heads_up_snooze_10min">10 minutes</string>
+    <string name="heads_up_snooze_15min">15 minutes</string>
+    <string name="heads_up_snooze_20min">20 minutes</string>
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Force Expanded Notifications</string>
+    <string name="force_expanded_notifications_summary">Available only for apps that support expanded notifications</string>
+    <!-- Toast Icons -->
+    <string name="toast_icon_title">Toast icon</string>
+    <string name="toast_icon_summary">Display the app icon corresponding with the toast</string>
 </resources>

@@ -23,37 +23,37 @@ import android.app.ActivityManagerNative;
 import android.app.IActivityManager;
 import android.content.ContentResolver;
 import android.content.res.Configuration;
+import android.content.Context;
 import android.content.ContentResolver;
 import android.os.Bundle;
-import android.support.v14.preference.SwitchPreference;
-import android.support.v7.preference.PreferenceCategory;
-import android.provider.Settings;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
+import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.provider.Settings;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.aquarios.settings.preference.CustomSeekBarPreference;
 
 public class SystemSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
 
-    private static final String SCREENSHOT_DELAY = "screenshot_delay";
 
     private ListPreference mRecentsClearAllLocation;
-    private CustomSeekBarPreference mScreenshotDelay;
+    private SwitchPreference mForceExpanded;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_settings_tab);
-
-        final ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefScreen = getPreferenceScreen();
 
         mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
@@ -62,13 +62,12 @@ public class SystemSettings extends SettingsPreferenceFragment
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
-
-        mScreenshotDelay = (CustomSeekBarPreference) findPreference(SCREENSHOT_DELAY);
-        int screenshotDelay = Settings.System.getInt(resolver,
-                Settings.System.SCREENSHOT_DELAY, 1000);
-        mScreenshotDelay.setValue(screenshotDelay / 1);
-        mScreenshotDelay.setOnPreferenceChangeListener(this);
-   }
+        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
+        mForceExpanded.setOnPreferenceChangeListener(this);
+        int ForceExpanded = Settings.System.getInt(getContentResolver(),
+                FORCE_EXPANDED_NOTIFICATIONS, 0);
+        mForceExpanded.setChecked(ForceExpanded != 0);
+    }
 
     @Override
     protected int getMetricsCategory() {
@@ -85,10 +84,10 @@ public class SystemSettings extends SettingsPreferenceFragment
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
             return true;
-        } else if (preference == mScreenshotDelay) {
-            int screenshotDelay = (Integer) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SCREENSHOT_DELAY, screenshotDelay * 1);
+        } else if (preference == mForceExpanded) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), FORCE_EXPANDED_NOTIFICATIONS,
+                    value ? 1 : 0);
             return true;
         }
         return false;
