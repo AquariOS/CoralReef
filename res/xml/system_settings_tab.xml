@@ -72,10 +72,23 @@
           android:defaultValue="false" />
 
       <com.aquarios.settings.preference.SystemSettingSwitchPreference
+          android:key="screenshot_crop_and_share"
+          android:title="@string/screenshot_crop_and_share_title"
+          android:summary="@string/screenshot_crop_and_share_summary"
+          android:defaultValue="false" />
+
+      <com.aquarios.settings.preference.SystemSettingSwitchPreference
         android:key="toast_icon"
         android:title="@string/toast_icon_title"
         android:summary="@string/toast_icon_summary"
         android:defaultValue="true" />
+
+      <!-- Screen state -->
+      <PreferenceScreen
+        android:key="screenstate_category"
+        android:title="@string/screen_state_toggles_title" 
+        android:summary="@string/screen_state_toggles_summary"
+        android:fragment="com.aquarios.settings.fragments.ScreenStateToggles" />
   </PreferenceCategory>
 
 </PreferenceScreen>
