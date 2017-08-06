@@ -26,7 +26,7 @@
     <string name="lockscreen_display_category_title">LOCK SCREEN DISPLAY</string>
     <string name="qs_header_category_title">HEADER SHORTCUTS</string> 
     <string name="qstiles_category_title">QS TILES</string>
-    <string name="qs_omnijaws_category">WEATHER TILE</string>
+    <string name="qs_omnijaws_category">HEADER &amp; TILE WEATHER</string>
     <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string> 
     <string name="recents_category">RECENTS</string>
     <string name="other_category">OTHER</string>
@@ -41,7 +41,11 @@
 <!-- Tabs -->
   <!-- Navbar fragment -->
     <string name="navbar_settings_title">Navigation bar</string>
+    <string name="nav_bar_dynamic_title">Dynamic navbar color</string>
+    <string name="nav_bar_dynamic_summary">Automatically change the NavBar background color to your foreground app\'s primary dark color. Restart your desired app to see effect</string>
     <!-- Navigation Bar -->
+    <string name="navbar_tint_switch">Navigation Button Tint</string>
+    <string name="navbar_button_color">Navigation Bar Buttons</string>
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
     <string name="navbar_mode">Navigation mode</string>
@@ -203,6 +207,7 @@
     <string name="smartbar_longpress_delay_normal">Normal delay</string>
     <string name="smartbar_longpress_delay_long">Long delay</string>
     <string name="navbar_buttons_alpha_title">Button transparency</string>
+    <string name="smartbar_custom_icon_size_title">Custom icon scaling</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
@@ -381,6 +386,12 @@
     <string name="qs_multiuser_switch_summary">Remove the multi-user switch in the header</string>
     <string name="qs_expand_indicator_title">Hide expand indicator</string>
     <string name="qs_expand_indicator_summary">Remove the expand indicator in the header</string>
+    <!-- Header Weather -->
+    <string name="quicksettings_exp_weather_category">Weather</string>
+    <string name="header_weather_enabled_title">Weather Text</string>
+    <string name="header_weather_enabled_summary">Enable weather info in expanded header</string>
+    <string name="header_weather_image_enabled_title">Weather Image</string>
+    <string name="header_weather_image_enabled_summary">Enable weather image in expanded header</string>
 
   <!-- Status bar -->
     <string name="statusbar_title">Status Bar</string>
@@ -595,6 +606,10 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+    <!-- Hide Apps from Recents -->
+    <string name="hide_apps_from_recents_title">Hidden apps</string>
+    <string name="hide_from_recents_add_app">Add App</string>
+    <string name="hide_apps_from_recents_summary">Pick which apps to exclude from the recents panel</string>
     <!-- Recents memory bar -->
     <string name="systemui_recents_mem_display_title">Show memory bar</string>
     <string name="systemui_recents_mem_display_summary">Display RAM usage under recents view</string>
