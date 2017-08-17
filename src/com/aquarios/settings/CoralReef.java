@@ -27,7 +27,7 @@ import com.aquarios.settings.tabs.Buttons;
 import com.aquarios.settings.tabs.LockScreen;
 import com.aquarios.settings.tabs.QuickSettingsTab;
 import com.aquarios.settings.tabs.StatusBar;
-import com.aquarios.settings.tabs.DisplaySettings;
+import com.aquarios.settings.tabs.NotificationsSettings;
 import com.aquarios.settings.tabs.SystemSettings;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -85,7 +85,7 @@ public class CoralReef extends SettingsPreferenceFragment {
             frags[1] = new LockScreen();
             frags[2] = new QuickSettingsTab();
             frags[3] = new StatusBar();
-            frags[4] = new DisplaySettings();
+            frags[4] = new NotificationsSettings();
             frags[5] = new SystemSettings();
         }
 
@@ -112,7 +112,7 @@ public class CoralReef extends SettingsPreferenceFragment {
             getString(R.string.lockscreen_title),
             getString(R.string.quick_settings_title),
             getString(R.string.statusbar_title),
-            getString(R.string.display_settings_title),
+            getString(R.string.notifications_settings_title),
             getString(R.string.system_settings_title)};
         return titleString;
     }

@@ -23,50 +23,74 @@
       android:title="@string/recents_category" >
 
       <com.aquarios.settings.preference.SystemSettingSwitchPreference
-          android:key="systemui_recents_mem_display"
-          android:title="@string/systemui_recents_mem_display_title"
-          android:summary="@string/systemui_recents_mem_display_summary"
-          android:defaultValue="false" />
+        android:key="systemui_recents_mem_display"
+        android:title="@string/systemui_recents_mem_display_title"
+        android:summary="@string/systemui_recents_mem_display_summary"
+        android:defaultValue="false" />
 
       <com.aquarios.settings.preference.SystemSettingSwitchPreference
-          android:key="show_clear_all_recents"
-          android:title="@string/show_clear_all_recents_button_title"
-          android:summaryOn="@string/show_clear_all_recents_button_summary_on"
-          android:summaryOff="@string/show_clear_all_recents_button_summary_off"
-          android:defaultValue="false" />
+        android:key="show_clear_all_recents"
+        android:title="@string/show_clear_all_recents_button_title"
+        android:summaryOn="@string/show_clear_all_recents_button_summary_on"
+        android:summaryOff="@string/show_clear_all_recents_button_summary_off"
+        android:defaultValue="false" />
 
       <ListPreference
-          android:key="recents_clear_all_location"
-          android:title="@string/recents_clear_all_location_title"
-          android:entries="@array/recents_clear_all_location_entries"
-          android:entryValues="@array/recents_clear_all_location_values"
-          android:defaultValue="3"
-          android:dependency="show_clear_all_recents" />
+        android:key="recents_clear_all_location"
+        android:title="@string/recents_clear_all_location_title"
+        android:entries="@array/recents_clear_all_location_entries"
+        android:entryValues="@array/recents_clear_all_location_values"
+        android:defaultValue="3"
+        android:dependency="show_clear_all_recents" />
 
       <PreferenceScreen
-          android:key="hide_app_from_recents"
-          android:title="@string/hide_apps_from_recents_title"
-          android:summary="@string/hide_apps_from_recents_summary" >
-               <intent android:action="android.intent.action.MAIN"
-                   android:targetPackage="com.android.settings"
-                   android:targetClass="com.aquarios.settings.fragments.HAFRAppListActivity" />
-     </PreferenceScreen>
+        android:key="hide_app_from_recents"
+        android:title="@string/hide_apps_from_recents_title"
+        android:summary="@string/hide_apps_from_recents_summary" >
+          <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.aquarios.settings.fragments.HAFRAppListActivity" />
+      </PreferenceScreen>
+
+  </PreferenceCategory>
+
+  <PreferenceCategory
+      android:title="@string/screen_category_title" >
+
+      <com.aquarios.settings.preference.GlobalSettingSwitchPreference
+        android:key="wake_when_plugged_or_unplugged"
+        android:title="@string/wake_when_plugged_or_unplugged_title"
+        android:summary="@string/wake_when_plugged_or_unplugged_summary"
+        android:defaultValue="false" />
+
+      <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="ambient_display_show_battery"
+        android:title="@string/ambient_display_show_battery_title"
+        android:summary="@string/ambient_display_show_battery_summary"
+        android:defaultValue="true" />
+
+      <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="three_finger_gesture"
+        android:title="@string/three_finger_gesture"
+        android:summary="@string/three_finger_gesture_summary"
+        android:defaultValue="false" />
+
+      <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="screenshot_crop_and_share"
+        android:title="@string/screenshot_crop_and_share_title"
+        android:summary="@string/screenshot_crop_and_share_summary"
+        android:defaultValue="false" />
 
   </PreferenceCategory>
 
   <PreferenceCategory
       android:title="@string/other_category" >
 
-      <Preference
-        android:key="heads_up_notifications"
-        android:title="@string/heads_up_notifications"
-        android:summary="@string/heads_up_notifications_summary"
-        android:fragment="com.aquarios.settings.fragments.HeadsUpSettings" />
-
-      <com.aquarios.settings.preference.SystemSettingSwitchPreference
-        android:key="force_expanded_notifications"
-        android:title="@string/force_expanded_notifications_title"
-        android:summary="@string/force_expanded_notifications_summary" />
+      <PreferenceScreen
+        android:id="@+id/dashboard_options"
+        android:fragment="com.aquarios.settings.fragments.DashboardOptions"
+        android:title="@string/dashboard_category"
+        android:summary="@string/dashboard_control_summary" />
 
       <PreferenceScreen
 		android:key="animation_settings"
@@ -74,25 +98,6 @@
 		android:fragment="com.aquarios.settings.animation.AnimationSettings"
 		android:title="@string/animation_settings_title" />
 
-      <com.aquarios.settings.preference.SystemSettingSwitchPreference
-          android:key="three_finger_gesture"
-          android:title="@string/three_finger_gesture"
-          android:summary="@string/three_finger_gesture_summary"
-          android:defaultValue="false" />
-
-      <com.aquarios.settings.preference.SystemSettingSwitchPreference
-          android:key="screenshot_crop_and_share"
-          android:title="@string/screenshot_crop_and_share_title"
-          android:summary="@string/screenshot_crop_and_share_summary"
-          android:defaultValue="false" />
-
-      <com.aquarios.settings.preference.SystemSettingSwitchPreference
-        android:key="toast_icon"
-        android:title="@string/toast_icon_title"
-        android:summary="@string/toast_icon_summary"
-        android:defaultValue="true" />
-
-      <!-- Screen state -->
       <PreferenceScreen
         android:key="screenstate_category"
         android:title="@string/screen_state_toggles_title" 
