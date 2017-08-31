@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 AquariOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- Coral Reef menus and categories -->
+    <string name="coral_reef_title">Coral Reef</string>
+    <string name="keywords_aquarios">AquariOS</string>
+
+<!-- Tabs -->
+  <!-- Buttons Tab-->
+    <string name="buttons_tab_title">Buttons</string>
+
+  <!-- Lockscreen Tab-->
+    <string name="lockscreen_tab_title">Lock Screen</string>
+
+  <!-- Quick Settings Tab -->
+    <string name="quick_settings_tab_title">Quick Settings</string>
+
+  <!-- Status bar Tab -->
+    <string name="status_bar_tab_title">Status Bar</string>
+
+  <!-- Notifications Tab -->
+    <string name="notifications_tab_title">Notifications</string>
+
+  <!-- System/Misc Tab -->
+    <string name="system_misc_tab_title">System/Misc</string>
+
+</resources>
