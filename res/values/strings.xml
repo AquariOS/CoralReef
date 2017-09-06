@@ -399,4 +399,8 @@
     <string name="qs_setting_button_title">Enable Setting Button Icon</string>
     <string name="qs_setting_button_summary">Enable settings button in non exapanded panel</string>
 
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">QS footer warnings</string>
+    <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
+
 </resources>
