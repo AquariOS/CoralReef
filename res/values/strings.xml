@@ -425,4 +425,9 @@
     <string name="brightness_side_buttons_title">Brightness control buttons</string>
     <string name="brightness_side_buttons_summary">Show buttons to increase or decrease the brightness</string>
 
+    <!-- QS tile titles -->
+    <string name="qs_tile_title_visibility_title">Display quick tile names</string>
+    <string name="qs_tile_titles_showing">Show quick tile names are showing</string>
+    <string name="qs_tile_titles_hidden">Show quick tile names are hidden</string>
+
 </resources>

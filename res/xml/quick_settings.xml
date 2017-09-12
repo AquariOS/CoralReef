@@ -77,6 +77,13 @@
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
 
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_title_visibility"
+            android:title="@string/qs_tile_title_visibility_title"
+            android:summaryOn="@string/qs_tile_titles_showing"
+            android:summaryOff="@string/qs_tile_titles_hidden"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
