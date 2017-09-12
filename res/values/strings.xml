@@ -291,4 +291,9 @@
     <string name="themer_title">Themer</string>
     <string name="themer_summary">Browse and select installed themes</string>
 
+    <!-- Network traffic -->
+    <string name="network_traffic_type">Select net activity type</string>
+    <string name="network_traffic_state_title">Show net activity in statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
 </resources>
