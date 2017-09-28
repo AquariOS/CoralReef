@@ -18,6 +18,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_display_title" >
 
+     <com.aquarios.support.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="false" />
+
      <com.aquarios.support.preferences.CustomSystemSeekBarPreference
         android:key="lockscreen_media_blur"
         android:title="@string/lockscreen_media_blur_title"
