@@ -121,4 +121,10 @@
             android:summary="@string/enable_mtp_dirtyhack_summary"
             android:defaultValue="true" />
 
+        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+            android:key="headset_connect_player"
+            android:title="@string/headset_connect_player_title"
+            android:summary="@string/headset_connect_player_summary"
+            android:defaultValue="false" />
+
 </PreferenceScreen>
