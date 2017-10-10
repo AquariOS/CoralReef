@@ -34,21 +34,22 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
-public class DisplaySettings extends SettingsPreferenceFragment implements
+public class NotificationsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
-
+    private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
     private static final String CATEGORY_LEDS = "leds";
 
     private Preference mNotifLedFrag;
     private Preference mBattLedFrag;
+    private SwitchPreference mForceExpanded;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.display_settings_tab);
+        addPreferencesFromResource(R.xml.notifications_settings_tab);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
         final PreferenceCategory leds = (PreferenceCategory) findPreference(CATEGORY_LEDS);
@@ -73,6 +74,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 && !getResources().getBoolean(
                 com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             prefScreen.removePreference(findPreference(CATEGORY_LEDS));
+
+        //force expanded notifications
+        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
+        mForceExpanded.setOnPreferenceChangeListener(this);
+        int ForceExpanded = Settings.System.getInt(getContentResolver(),
+                FORCE_EXPANDED_NOTIFICATIONS, 0);
+        mForceExpanded.setChecked(ForceExpanded != 0);
         }
     }
 
@@ -91,9 +99,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mForceExpanded) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), FORCE_EXPANDED_NOTIFICATIONS,
+                    value ? 1 : 0);
+            return true;
+        }
+        return false;
     }
-
 }
