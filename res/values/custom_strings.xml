@@ -19,6 +19,7 @@
 <!-- Coral Reef menus and categories -->
     <string name="coral_reef_title">Coral Reef</string>
     <string name="keywords_aquarios">AquariOS</string>
+    <string name="recents_category">RECENTS</string>
 
 <!-- General Integration -->
     <!-- Color Picker -->
@@ -62,4 +63,15 @@
 
   <!-- System/Misc Tab -->
     <string name="system_misc_tab_title">System/Misc</string>
+    <!-- Recents panel settings -->
+    <string name="clearall_recents_category">Clear-all button</string>
+    <string name="show_clear_all_recents_button_title">Enable clear-all button</string>
+    <string name="show_clear_all_recents_button_summary">Show the clear-all button when using recents</string>
+    <string name="recents_clear_all_location_title">Clear-all button location</string>
+    <string name="recents_clear_all_location_top_right">Top right</string>
+    <string name="recents_clear_all_location_top_left">Top left</string>
+    <string name="recents_clear_all_location_top_center">Top center</string>
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 </resources>
