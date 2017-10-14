@@ -20,6 +20,20 @@
     <string name="coral_reef_title">Coral Reef</string>
     <string name="keywords_aquarios">AquariOS</string>
     <string name="recents_category">RECENTS</string>
+    <string name="gestures_category_title">STATUS BAR GESTURES</string>
+    <string name="navbar_category_title">NAVBAR OPTIONS</string>
+    <string name="power_menu_category_title">POWER MENU</string>
+    <string name="volume_rocker_category_title">VOLUME ROCKER</string>
+    <string name="statusbar_display_category_title">STATUS BAR DISPLAY</string>
+    <string name="screen_category_title">SCREEN</string>
+    <string name="general_category_title">GENERAL</string>
+    <string name="lockscreen_actions_category_title">LOCK SCREEN ACTIONS</string>
+    <string name="lockscreen_display_category_title">LOCK SCREEN DISPLAY</string>
+    <string name="qs_header_category_title">HEADER SHORTCUTS</string> 
+    <string name="qstiles_category_title">QS TILES</string>
+    <string name="qs_omnijaws_category">HEADER &amp; TILE WEATHER</string>
+    <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string> 
+    <string name="other_category">OTHER</string>
 
 <!-- General Integration -->
     <!-- Color Picker -->
