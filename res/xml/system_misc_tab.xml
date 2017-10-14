@@ -21,7 +21,6 @@
         android:fragment="com.aquarios.coralreef.fragments.Recents"
         android:layout="@layout/recents" />
 
-
     <!--com.android.settings.applications.LayoutPreference
         android:key="device_extras_category"
         android:layout="@layout/device_extras">
