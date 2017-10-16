@@ -62,6 +62,9 @@
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
     <string name="power_menu_torch">Flashlight</string>
+    <!-- Navbar Settings -->
+    <string name="enable_navigation_bar_title">Enable navigation bar</string>
+    <string name="enable_navigation_bar_summary">Option to enable or disable the navigation bar</string>
 
   <!-- Lockscreen Tab-->
     <string name="lockscreen_tab_title">Lock Screen</string>

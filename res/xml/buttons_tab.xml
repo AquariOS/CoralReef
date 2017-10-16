@@ -25,4 +25,10 @@
         android:title="@string/power_menu_title"
         android:fragment="com.aquarios.coralreef.fragments.PowerMenuActions" />
 
+    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+        android:key="navigation_bar_show"
+        android:title="@string/enable_navigation_bar_title"
+        android:summary="@string/enable_navigation_bar_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
