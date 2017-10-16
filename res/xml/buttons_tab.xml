@@ -20,21 +20,30 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+  <PreferenceCategory
+      android:title="@string/power_menu_category_title">
+
     <Preference
         android:key="power_menu"
         android:title="@string/power_menu_title"
         android:fragment="com.aquarios.coralreef.fragments.PowerMenuActions" />
 
-    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="lockscreen_enable_power_menu"
         android:title="@string/lockscreen_enable_power_menu_title"
         android:summary="@string/lockscreen_enable_power_menu_summary"
         android:defaultValue="true" />
 
-    <com.aquarios.settings.preference.SystemSettingSwitchPreference
+  </PreferenceCategory>
+
+  <PreferenceCategory
+        android:title="@string/navbar_category_title">
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="navigation_bar_show"
         android:title="@string/enable_navigation_bar_title"
         android:summary="@string/enable_navigation_bar_summary"
         android:defaultValue="true" />
+  </PreferenceCategory>
 
 </PreferenceScreen>

@@ -16,9 +16,17 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-<!-- Coral Reef menus and categories -->
+<!-- Coral Reef menus and tabs -->
     <string name="coral_reef_title">Coral Reef</string>
     <string name="keywords_aquarios">AquariOS</string>
+    <string name="buttons_tab_title">Buttons</string>
+    <string name="lockscreen_tab_title">Lock Screen</string>
+    <string name="quick_settings_tab_title">Quick Settings</string>
+    <string name="status_bar_tab_title">Status Bar</string>
+    <string name="notifications_tab_title">Notifications</string>
+    <string name="system_misc_tab_title">System/Misc</string>
+
+<!-- Categories -->
     <string name="recents_category">RECENTS</string>
     <string name="gestures_category_title">STATUS BAR GESTURES</string>
     <string name="navbar_category_title">NAVBAR OPTIONS</string>
@@ -46,9 +54,7 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
-<!-- Tabs -->
-  <!-- Buttons Tab-->
-    <string name="buttons_tab_title">Buttons</string>
+<!-- Features -->
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_power_title">Power off</string>
@@ -62,24 +68,11 @@
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
     <string name="power_menu_torch">Flashlight</string>
+
     <!-- Navbar Settings -->
     <string name="enable_navigation_bar_title">Enable navigation bar</string>
     <string name="enable_navigation_bar_summary">Option to enable or disable the navigation bar</string>
 
-  <!-- Lockscreen Tab-->
-    <string name="lockscreen_tab_title">Lock Screen</string>
-
-  <!-- Quick Settings Tab -->
-    <string name="quick_settings_tab_title">Quick Settings</string>
-
-  <!-- Status bar Tab -->
-    <string name="status_bar_tab_title">Status Bar</string>
-
-  <!-- Notifications Tab -->
-    <string name="notifications_tab_title">Notifications</string>
-
-  <!-- System/Misc Tab -->
-    <string name="system_misc_tab_title">System/Misc</string>
     <!-- Recents panel settings -->
     <string name="clearall_recents_category">Clear-all button</string>
     <string name="show_clear_all_recents_button_title">Enable clear-all button</string>
