@@ -120,4 +120,13 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
+    <!-- Lockscreen weather -->
+    <string name="lock_screen_weather_settings_title">Weather</string>
+    <string name="weather_show_weather_title">Show weather</string>
+    <string name="weather_show_weather_summary">Enable to show weather information</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Enable to show the location</string>
+    <string name="weather_config_title">Service settings</string>
+    <string name="weather_icon_pack_title">Condition icon pack</string>
+
 </resources>
