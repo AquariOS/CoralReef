@@ -91,4 +91,14 @@
     <string name="recents_show_membar_title">Memory bar</string>
     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
 
+    <!-- Lockscreen weather -->
+    <string name="lock_screen_weather_settings_title">Weather options</string>
+    <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>
+    <string name="weather_show_weather_title">Show weather</string>
+    <string name="weather_show_weather_summary">Enable to show weather information</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Enable to show the location</string>
+    <string name="weather_config_title">Service settings</string>
+    <string name="weather_icon_pack_title">Condition icon pack</string>
+
 </resources>

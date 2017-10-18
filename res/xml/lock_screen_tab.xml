@@ -26,4 +26,9 @@
         android:fragment="com.aquarios.coralreef.fragments.LockscreenItems"
         android:layout="@layout/lockscreen_items" />
 
+    <com.android.settings.applications.LayoutPreference
+        android:key="lockscreen_weather"
+        android:fragment="com.aquarios.coralreef.fragments.LockScreenWeatherSettings"
+        android:layout="@layout/lockscreen_weather" />
+
 </PreferenceScreen>
