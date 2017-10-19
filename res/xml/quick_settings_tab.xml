@@ -20,6 +20,11 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="qs_rows_columns"
+        android:fragment="com.aquarios.coralreef.QsRowsColumns"
+        android:title="@string/qs_rows_columns_title"/>
+
         <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
             android:key="quick_settings_vibrate"
             android:title="@string/quick_settings_vibrate_title"
