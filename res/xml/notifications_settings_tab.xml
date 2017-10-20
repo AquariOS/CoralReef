@@ -23,9 +23,16 @@
      <PreferenceCategory
          android:title="@string/led_light_category"/>
 
+     <Preference
+        android:key="notification_light"
+        android:fragment="com.android.settings.applications.NotificationApps"
+        android:title="@string/notification_light_settings"
+        android:summary="@string/notification_light_settings_summary" />
+
     <Preference
         android:key="charging_light"
         android:fragment="com.aquarios.coralreef.fragments.BatteryLightSettings"
-        android:title="@string/battery_light_settings" />
+        android:title="@string/battery_light_settings"
+        android:summary="@string/battery_light_settings_summary" />
 
 </PreferenceScreen>
