@@ -131,7 +131,8 @@
     <string name="weather_icon_pack_title">Condition icon pack</string>
 
     <!-- QS rows and columns -->
-    <string name="qs_rows_columns_title">QS rows and columns</string>
+    <string name="qs_rows_columns_title">QS tiles layout (columns &amp; rows)</string>
+    <string name="qs_rows_columns_title_summary">Configure the layout of the tiles panel (number of rows and columns).</string>
     <string name="qs_rows_portrait_title">Tiles rows on portrait</string>
     <string name="qs_rows_landscape_title">Tiles rows on landscape</string>
     <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
@@ -162,7 +163,7 @@
     <string name="battery_light_reallyfull_color">Full (100) battery</string>
 
     <!-- Stock Notification Settings -->
-    <string name="notification_light_settings">Notifications light</string>
-    <string name="notification_light_settings_summary">Customize the functionality of the LED notification light. This controls color, pulse, app association, etc.</string>
+    <string name="notification_light_settings">Notification light</string>
+    <string name="notification_light_settings_summary">Customize the behavior of the notification light on a per-app basis (includes color and pulse timing)</string>
 
 </resources>
