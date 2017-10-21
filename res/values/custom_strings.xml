@@ -166,4 +166,9 @@
     <string name="notification_light_settings">Notification light</string>
     <string name="notification_light_settings_summary">Customize the behavior of the notification light on a per-app basis (includes color and pulse timing)</string>
 
+    <!-- Statusbar net monitor -->
+    <string name="network_traffic_state_title">Network traffic</string>
+    <string name="network_traffic_state_summary">Show net activity in statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
 </resources>
