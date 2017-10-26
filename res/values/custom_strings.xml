@@ -44,6 +44,7 @@
     <string name="other_category">OTHER</string>
     <string name="battery_bar_category_title">BATTERY BAR</string>
     <string name="led_light_category">LEDS</string>
+    <string name="system_display_category">SYSTEM DISPLAY</string>
 
 <!-- General Integration -->
     <!-- Color Picker -->
@@ -174,5 +175,9 @@
     <!-- Brightness control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
+    <!-- QS light/dark display -->
+    <string name="qs_style_dark_title">Dark SystemUI style</string>
+    <string name="qs_style_dark_summary">Reboot is required after changing</string>
 
 </resources>

@@ -38,10 +38,20 @@
             android:dependency="show_clear_all_recents" />
 
         <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-         android:key="systemui_recents_mem_display"
-         android:title="@string/recents_show_membar_title"
-         android:summary="@string/recents_show_membar_summary"
-         android:defaultValue="false" />
+            android:key="systemui_recents_mem_display"
+            android:title="@string/recents_show_membar_title"
+            android:summary="@string/recents_show_membar_summary"
+            android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key=""
+        android:title="@string/system_display_category"/>
+
+        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+            android:key="qs_style_dark"
+            android:title="@string/qs_style_dark_title"
+            android:summary="@string/qs_style_dark_summary"
+            android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="battery_bar"
