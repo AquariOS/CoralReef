@@ -60,6 +60,7 @@
 <!-- Features -->
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_summary">Select which actions/shortcuts will show in main power menu</string>
     <string name="power_menu_power_title">Power off</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
@@ -124,6 +125,7 @@
 
     <!-- Lockscreen weather -->
     <string name="lock_screen_weather_settings_title">Weather</string>
+    <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>
     <string name="weather_show_weather_title">Show weather</string>
     <string name="weather_show_weather_summary">Enable to show weather information</string>
     <string name="weather_show_location_title">Show location</string>
@@ -140,12 +142,12 @@
     <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
 
     <!-- Double Tap -->
-    <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
-    <string name="double_tap_sleep_navbar_summary">Double-tap status bar to put the device to sleep</string>
+    <string name="double_tap_sleep_navbar">DT2S on navbar</string>
+    <string name="double_tap_sleep_navbar_summary">Double-tap navigation bar to put the device to sleep</string>
 
     <!-- Double Tap Lockscreen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Lockscreen</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Double tap on the top third or bottom shortcut area of the lock screen to put the device to sleep</string>
+    <string name="double_tap_to_sleep_lockscreen_title">DT2S on lock screen</string>
+    <string name="double_tap_to_sleep_lockscreen_summary">Double-tap on the top third or bottom shortcut area of the lock screen to put the device to sleep</string>
 
     <!-- Quick pull-down -->
     <string name="status_bar_quick_qs_pulldown">Quick pulldown</string>
