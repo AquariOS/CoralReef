@@ -17,6 +17,7 @@
 package com. aquarios.coralreef.fragments;
 
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
@@ -30,75 +31,37 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.cm.PowerMenuConstants;
 
-import static com.android.internal.util.cm.PowerMenuConstants.*;
+import com.android.internal.util.aquarios.AquaUtils;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenuActions extends SettingsPreferenceFragment {
-    final static String TAG = "PowerMenuActions";
+public class PowerMenuActions extends SettingsPreferenceFragment
+                implements Preference.OnPreferenceChangeListener {
 
-    private SwitchPreference mPowerPref;
-    private SwitchPreference mRebootPref;
-    private SwitchPreference mScreenshotPref;
-    private SwitchPreference mAirplanePref;
-    private SwitchPreference mUsersPref;
-    private SwitchPreference mSettingsPref;
-    private SwitchPreference mLockdownPref;
-    private SwitchPreference mBugReportPref;
-    private SwitchPreference mFlashlightPref;
-    private SwitchPreference mSilentPref;
+    private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
 
-    Context mContext;
-    private ArrayList<String> mLocalUserConfig = new ArrayList<String>();
-    private String[] mAvailableActions;
-    private String[] mAllActions;
+    private SwitchPreference mPowermenuTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.power_menu_settings);
-        mContext = getActivity().getApplicationContext();
+        addPreferencesFromResource(R.xml.power_menu_actions);
 
-        mAvailableActions = getActivity().getResources().getStringArray(
-                R.array.power_menu_actions_array);
-        mAllActions = PowerMenuConstants.getAllActions();
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        for (String action : mAllActions) {
-        // Remove preferences not present in the overlay
-            if (!isActionAllowed(action)) {
-                getPreferenceScreen().removePreference(findPreference(action));
-                continue;
-            }
-
-            if (action.equals(GLOBAL_ACTION_KEY_POWER)) {
-                mPowerPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_POWER);
-            } else if (action.equals(GLOBAL_ACTION_KEY_REBOOT)) {
-                mRebootPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_REBOOT);
-            } else if (action.equals(GLOBAL_ACTION_KEY_SCREENSHOT)) {
-                mScreenshotPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
-            } else if (action.equals(GLOBAL_ACTION_KEY_AIRPLANE)) {
-                mAirplanePref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
-            } else if (action.equals(GLOBAL_ACTION_KEY_USERS)) {
-                mUsersPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_USERS);
-            } else if (action.equals(GLOBAL_ACTION_KEY_SETTINGS)) {
-                mSettingsPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SETTINGS);
-            } else if (action.equals(GLOBAL_ACTION_KEY_LOCKDOWN)) {
-                mLockdownPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_LOCKDOWN);
-            } else if (action.equals(GLOBAL_ACTION_KEY_BUGREPORT)) {
-                mBugReportPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_BUGREPORT);
-            } else if (action.equals(GLOBAL_ACTION_KEY_TORCH)) {
-                mFlashlightPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_TORCH);
-            } else if (action.equals(GLOBAL_ACTION_KEY_SILENT)) {
-                mSilentPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SILENT);
-            }
+        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
+        mPowermenuTorch.setOnPreferenceChangeListener(this);
+        if (!AquaUtils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mPowermenuTorch);
+        } else {
+        mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
+                Settings.System.POWERMENU_TORCH, 0) == 1));
         }
-
-        getUserConfig();
     }
 
     @Override
@@ -107,200 +70,13 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-
-        if (mPowerPref != null) {
-            mPowerPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_POWER));
-        }
-
-        if (mRebootPref != null) {
-            mRebootPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_REBOOT));
-        }
-
-        if (mScreenshotPref != null) {
-            mScreenshotPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SCREENSHOT));
-        }
-
-        if (mAirplanePref != null) {
-            mAirplanePref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_AIRPLANE));
-        }
-
-        if (mUsersPref != null) {
-            if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
-                getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
-            } else {
-                List<UserInfo> users = ((UserManager) mContext.getSystemService(
-                        Context.USER_SERVICE)).getUsers();
-                boolean enabled = (users.size() > 1);
-                mUsersPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_USERS) && enabled);
-                mUsersPref.setEnabled(enabled);
-            }
-        }
-
-        if (mSettingsPref != null) {
-            mSettingsPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SETTINGS));
-        }
-
-        if (mLockdownPref != null) {
-            mLockdownPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_LOCKDOWN));
-        }
-
-        if (mBugReportPref != null) {
-            mBugReportPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_BUGREPORT));
-        }
-
-        if (mFlashlightPref != null) {
-            mFlashlightPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_TORCH));
-        }
-
-        if (mSilentPref != null) {
-            mSilentPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SILENT));
-        }
-
-        updatePreferences();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        updatePreferences();
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        boolean value;
-
-        if (preference == mPowerPref) {
-            value = mPowerPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_POWER);
-
-        } else if (preference == mRebootPref) {
-            value = mRebootPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_REBOOT);
-
-        } else if (preference == mScreenshotPref) {
-            value = mScreenshotPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_SCREENSHOT);
-
-        } else if (preference == mAirplanePref) {
-            value = mAirplanePref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_AIRPLANE);
-
-        } else if (preference == mUsersPref) {
-            value = mUsersPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_USERS);
-
-        } else if (preference == mSettingsPref) {
-            value = mSettingsPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_SETTINGS);
-
-        } else if (preference == mLockdownPref) {
-            value = mLockdownPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_LOCKDOWN);
-
-        } else if (preference == mBugReportPref) {
-            value = mBugReportPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_BUGREPORT);
-
-        } else if (preference == mFlashlightPref) {
-            value = mFlashlightPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_TORCH);
-
-        } else if (preference == mSilentPref) {
-            value = mSilentPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_SILENT);
-
-        } else {
-            return super.onPreferenceTreeClick(preference);
-        }
-        return true;
-    }
-
-    private boolean settingsArrayContains(String preference) {
-        return mLocalUserConfig.contains(preference);
-    }
-
-    private boolean isActionAllowed(String action) {
-        if (Arrays.asList(mAvailableActions).contains(action)) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mPowermenuTorch) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWERMENU_TORCH, value ? 1 : 0);
             return true;
         }
         return false;
-    }
-
-    private void updateUserConfig(boolean enabled, String action) {
-        if (enabled) {
-            if (!settingsArrayContains(action)) {
-                mLocalUserConfig.add(action);
-            }
-        } else {
-            if (settingsArrayContains(action)) {
-                mLocalUserConfig.remove(action);
-            }
-        }
-        saveUserConfig();
-    }
-
-    private void updatePreferences() {
-        boolean bugreport = Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0;
-        if (mBugReportPref != null) {
-            mBugReportPref.setEnabled(bugreport);
-            if (bugreport) {
-                mBugReportPref.setSummary(null);
-            } else {
-                mBugReportPref.setSummary(R.string.power_menu_bug_report_disabled);
-            }
-        }
-    }
-
-    private void getUserConfig() {
-        mLocalUserConfig.clear();
-        String[] defaultActions;
-        String savedActions = Settings.Global.getStringForUser(mContext.getContentResolver(),
-                Settings.Global.POWER_MENU_ACTIONS, UserHandle.USER_CURRENT);
-
-        if (savedActions == null) {
-            defaultActions = mContext.getResources().getStringArray(
-                    com.android.internal.R.array.config_globalActionsList);
-            for (String action : defaultActions) {
-                mLocalUserConfig.add(action);
-            }
-        } else {
-            for (String action : savedActions.split("\\|")) {
-                mLocalUserConfig.add(action);
-            }
-        }
-    }
-
-    private void saveUserConfig() {
-        StringBuilder s = new StringBuilder();
-
-        // TODO: Use DragSortListView
-        ArrayList<String> setactions = new ArrayList<String>();
-        for (String action : mAllActions) {
-            if (settingsArrayContains(action) && isActionAllowed(action)) {
-                setactions.add(action);
-            } else {
-                continue;
-            }
-        }
-
-        for (int i = 0; i < setactions.size(); i++) {
-            s.append(setactions.get(i).toString());
-            if (i != setactions.size() - 1) {
-                s.append("|");
-            }
-        }
-
-        Settings.Global.putStringForUser(getContentResolver(),
-                 Settings.Global.POWER_MENU_ACTIONS, s.toString(), UserHandle.USER_CURRENT);
-        updatePowerMenuDialog();
-    }
-
-    private void updatePowerMenuDialog() {
-        Intent u = new Intent();
-        u.setAction(Intent.UPDATE_POWER_MENU);
-        mContext.sendBroadcastAsUser(u, UserHandle.ALL);
     }
 }
