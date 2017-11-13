@@ -40,17 +40,11 @@
   <PreferenceCategory
         android:title="@string/navbar_category_title">
 
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="navigation_bar_show"
-        android:title="@string/enable_navigation_bar_title"
-        android:summary="@string/enable_navigation_bar_summary"
-        android:defaultValue="true" />
-
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_navbar"
-        android:title="@string/double_tap_sleep_navbar"
-        android:summary="@string/double_tap_sleep_navbar_summary"
-        android:defaultValue="true" />
+    <Preference
+        android:key="dui"
+        android:title="@string/navigationbar_settings_title"
+        android:summary="@string/navigationbar_settings_summary"
+        android:fragment="com.aquarios.coralreef.fragments.NavigationBar" />
   </PreferenceCategory>
 
   <PreferenceCategory
