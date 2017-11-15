@@ -38,7 +38,7 @@
     <string name="lockscreen_actions_category_title">LOCK SCREEN ACTIONS</string>
     <string name="lockscreen_display_category_title">LOCK SCREEN DISPLAY</string>
     <string name="qs_header_category_title">HEADER SHORTCUTS</string> 
-    <string name="qstiles_category_title">QS TILES</string>
+    <string name="qstiles_category_title">LAYOUT</string>
     <string name="qs_omnijaws_category">HEADER &amp; TILE WEATHER</string>
     <string name="custom_header_category_title">CUSTOM HEADER IMAGE</string> 
     <string name="other_category">OTHER</string>
@@ -46,7 +46,7 @@
     <string name="led_light_category">LEDS</string>
     <string name="system_display_category">SYSTEM DISPLAY</string>
     <string name="behavior_category">BEHAVIOR</string>
-    <string name="weather_category">WEATHER TILE</string>
+    <string name="weather_category_title">WEATHER TILE</string>
 
 <!-- General Integration -->
     <!-- Color Picker -->
@@ -209,5 +209,8 @@
     <string name="smart_pulldown_dismissable">no dismissable</string>
     <string name="smart_pulldown_ongoing">no ongoing</string>
 
+    <!-- OmniJaws -->
+    <string name="qs_weather_title">Weather settings</string>
+    <string name="qs_weather_summary">Set or change the weather settings to be displayed</string>
 
 </resources>

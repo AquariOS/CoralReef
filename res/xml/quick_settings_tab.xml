@@ -21,7 +21,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
   <PreferenceCategory
-      android:title="@string/qstiles_category_title">
+      android:title="@string/qstiles_category_title"/>
 
         <Preference
             android:key="qs_rows_columns"
@@ -29,16 +29,8 @@
             android:title="@string/qs_rows_columns_title"
             android:summary="@string/qs_rows_columns_title_summary" />
 
-        <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
-            android:key="quick_settings_vibrate"
-            android:title="@string/quick_settings_vibrate_title"
-            android:summary="@string/quick_settings_vibrate_summary"
-            android:defaultValue="false"/>
-
-  </PreferenceCategory>
-
   <PreferenceCategory
-      android:title="@string/behavior_category">
+      android:title="@string/behavior_category"/>
 
         <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
             android:key="status_bar_quick_qs_pulldown"
@@ -53,6 +45,27 @@
             android:entryValues="@array/smart_pulldown_values"
             android:persistent="false" />
 
-  </PreferenceCategory>
+        <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
+            android:key="quick_settings_vibrate"
+            android:title="@string/quick_settings_vibrate_title"
+            android:summary="@string/quick_settings_vibrate_summary"
+            android:defaultValue="false" />
+
+  <PreferenceCategory
+      android:title="@string/weather_category_title"/>
+
+        <Preference
+            android:title="@string/qs_weather_title"
+            android:key="weather_category"
+            android:summary="@string/qs_weather_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.omnirom.omnijaws"
+                    android:targetClass="org.omnirom.omnijaws.SettingsActivityService" />
+        </Preference>
+
+        <ListPreference
+            android:key="weather_icon_pack"
+            android:title="@string/weather_icon_pack_title"
+            android:persistent="false" />
 
 </PreferenceScreen>
