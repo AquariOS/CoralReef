@@ -16,4 +16,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
+        android:key="qs_show_brightness"
+        android:title="@string/show_brightness_title"
+        android:summary="@string/show_brightness_summary"
+        android:defaultValue="true" />
+
+
 </PreferenceScreen>

@@ -132,4 +132,8 @@
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Bottom shortcuts</string>
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts in the keyguard</string>
 
+    <!-- Option to show brightness bar in quick settings -->
+    <string name="show_brightness_title">Brightness slider</string>
+    <string name="show_brightness_summary">Show the brightness slider</string>
+
 </resources>
