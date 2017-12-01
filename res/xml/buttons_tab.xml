@@ -48,6 +48,16 @@
   </PreferenceCategory>
 
   <PreferenceCategory
+        android:title="@string/navbar_category_title">
+
+    <Preference
+        android:key="hwbuttons"
+        android:title="@string/hwbuttons_settings_title"
+        android:summary="@string/hwbuttons_settings_summary"
+        android:fragment="com.aquarios.coralreef.fragments.HWButtonsSettings" />
+  </PreferenceCategory>
+
+  <PreferenceCategory
         android:key="volume_rocker"
         android:title="@string/volume_rocker_category_title">
 
