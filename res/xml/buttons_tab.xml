@@ -27,13 +27,14 @@
         android:layout="@layout/navigationbar" />
 
     <com.android.settings.applications.LayoutPreference
+        android:key="hwbuttons"
+        android:fragment="com.aquarios.coralreef.fragments.HWButtonsSettings"
+        android:layout="@layout/hw_keys" />
+
+    <com.android.settings.applications.LayoutPreference
         android:key="volume_rocker_category"
         android:fragment="com.aquarios.coralreef.fragments.VolumeRocker"
         android:layout="@layout/volume_rocker" />
 
-    <!--Preference
-        android:key="hw_keys_category"
-        android:fragment="com.aquarios.coralreef.fragments.HWKeys"
-        android:layout="@layout/hw_keys" /-->
 
 </PreferenceScreen>
