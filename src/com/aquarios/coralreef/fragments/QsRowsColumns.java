@@ -55,7 +55,7 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
         mQsRowsLand.setOnPreferenceChangeListener(this);
 
         value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_PORTRAIT, 5, UserHandle.USER_CURRENT);
+                Settings.System.QS_COLUMNS_PORTRAIT, 4, UserHandle.USER_CURRENT);
         mQsColumnsPort = (CustomSeekBarPreference) findPreference("qs_columns_portrait");
         mQsColumnsPort.setValue(value);
         mQsColumnsPort.setOnPreferenceChangeListener(this);
