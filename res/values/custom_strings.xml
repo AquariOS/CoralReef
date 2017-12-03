@@ -25,6 +25,7 @@
     <string name="status_bar_tab_title">Status Bar</string>
     <string name="notifications_tab_title">Notifications</string>
     <string name="system_misc_tab_title">System/Misc</string>
+    <string name="restart_systemui">Restart SystemUI</string>
 
 <!-- Categories -->
     <string name="recents_category">RECENTS</string>

@@ -14,6 +14,9 @@ import android.preference.PreferenceScreen;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,6 +25,7 @@ import com.android.settings.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.aquarios.coralreef.PagerSlidingTabStrip;
+import com.aquarios.coralreef.util.Root;
 
 import com.aquarios.coralreef.tabs.ButtonsTab;
 import com.aquarios.coralreef.tabs.LockScreenTab;
@@ -56,6 +60,22 @@ public class CoralReef extends SettingsPreferenceFragment {
 	mTabs.setViewPager(mViewPager);
         setHasOptionsMenu(true);
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main_menu,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.restart_ui:
+                Root.runCommand("pkill -f com.android.systemui");
+                return true;
+            default:
+                return false;
+        }
     }
 
    @Override
