@@ -44,4 +44,10 @@
          android:summary="@string/double_tap_to_sleep_lockscreen_summary"
          android:defaultValue="true" />
 
+     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+         android:key="keyguard_toggle_torch"
+         android:title="@string/keyguard_torch_title"
+         android:summary="@string/keyguard_torch_summary"
+         android:defaultValue="false" />
+
 </PreferenceScreen>
