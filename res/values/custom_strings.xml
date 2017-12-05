@@ -191,8 +191,8 @@
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
     <!-- QS light/dark display -->
-    <string name="qs_style_dark_title">Dark SystemUI style</string>
-    <string name="qs_style_dark_summary">Reboot is required after changing</string>
+    <string name="qs_style_dark_title">Dark UI for QS panel</string>
+    <string name="qs_style_dark_summary">Restart SystemUI or reboot for changes to take effect</string>
 
     <!-- Volume rocker music control -->
     <string name="volume_rocker_music_controls_title">Playback control</string>
