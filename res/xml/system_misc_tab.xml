@@ -115,4 +115,10 @@
             android:defaultValue="0xff99CC00"
             android:dialogTitle="@string/battery_bar_color" />
 
+        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+	    android:key="mtp_dirty_hack"
+            android:title="@string/enable_mtp_dirtyhack_title"
+            android:summary="@string/enable_mtp_dirtyhack_summary"
+            android:defaultValue="true" />
+
 </PreferenceScreen>
