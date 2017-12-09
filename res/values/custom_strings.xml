@@ -25,6 +25,7 @@
     <string name="status_bar_tab_title">Status Bar</string>
     <string name="notifications_tab_title">Notifications</string>
     <string name="system_misc_tab_title">System/Misc</string>
+    <string name="restart_systemui">Restart SystemUI</string>
 
 <!-- Categories -->
     <string name="recents_category">RECENTS</string>
@@ -107,6 +108,8 @@
     <string name="lockscreen_enable_power_menu_summary">This option will only disable the power menu on secure lock screens</string>
 
     <!-- Battery Bar -->
+    <string name="battery_bar_settings">Battery Bar</string>
+    <string name="battery_bar_settings_summary">Horizontal bar indicating battery level</string>
     <string name="battery_icon">Battery icon style</string>
     <string name="battery_not_title">Battery icon in notifications</string>
     <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
@@ -190,8 +193,8 @@
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
     <!-- QS light/dark display -->
-    <string name="qs_style_dark_title">Dark SystemUI style</string>
-    <string name="qs_style_dark_summary">Reboot is required after changing</string>
+    <string name="qs_style_dark_title">Dark UI for QS panel</string>
+    <string name="qs_style_dark_summary">Restart SystemUI or reboot for changes to take effect</string>
 
     <!-- Volume rocker music control -->
     <string name="volume_rocker_music_controls_title">Playback control</string>
