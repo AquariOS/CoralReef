@@ -247,6 +247,7 @@
     <string name="custom_header_title">Custom header image</string>
 
     <!-- DUI -->
+    <string name="navigation_category_title">Navigation Customization</string>
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
     <string name="navbar_mode">Navigation mode</string>

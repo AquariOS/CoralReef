@@ -38,17 +38,13 @@
   </PreferenceCategory>
 
   <PreferenceCategory
-        android:title="@string/navbar_category_title">
+        android:title="@string/navigation_category_title">
 
     <Preference
         android:key="dui"
         android:title="@string/navigationbar_settings_title"
         android:summary="@string/navigationbar_settings_summary"
         android:fragment="com.aquarios.coralreef.fragments.NavigationBar" />
-  </PreferenceCategory>
-
-  <PreferenceCategory
-        android:title="@string/navbar_category_title">
 
     <Preference
         android:key="hwbuttons"
