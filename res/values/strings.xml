@@ -66,13 +66,6 @@
     <string name="recents_title">Recents</string>
     <string name="recents_summary">Configure OmniSwitch or AOSP recents</string>
 
-    <!-- Power Menu -->
-    <string name="powermenu_reboot_title">Reboot</string>
-    <string name="powermenu_airplane_title">Airplane mode</string>
-    <string name="powermenu_settings_title">Settings</string>
-    <string name="powermenu_lockdown_title">Lock now</string>
-    <string name="powermenu_soundpanel_title">Sound panel</string>
-
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
