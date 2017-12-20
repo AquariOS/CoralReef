@@ -21,7 +21,7 @@
         android:fragment="com.aquarios.coralreef.fragments.PowerMenu"
         android:layout="@layout/powermenu" />
 
-    <Preference
+    <com.android.settings.applications.LayoutPreference
         android:key="navigation_category"
         android:fragment="com.aquarios.coralreef.fragments.NavigationBar"
         android:layout="@layout/navigationbar" />

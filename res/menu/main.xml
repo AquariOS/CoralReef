@@ -30,12 +30,6 @@
         app:showAsAction="ifRoom|withText"/>
 
     <item
-        android:id="@+id/quick_settings_tab"
-        android:icon="@drawable/bottomnav_quick_settings"
-        android:title="@string/bottom_nav_quick_settings_title"
-        app:showAsAction="ifRoom|withText"/>
-
-    <item
         android:id="@+id/status_bar_tab"
         android:icon="@drawable/bottomnav_status_bar"
         android:title="@string/bottom_nav_status_bar_title"

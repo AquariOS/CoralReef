@@ -31,4 +31,14 @@
         android:fragment="com.aquarios.coralreef.fragments.TrafficIndicators"
         android:layout="@layout/traffic" />
 
+    <com.android.settings.applications.LayoutPreference
+        android:key="quick_settings_category"
+        android:fragment="com.aquarios.coralreef.fragments.QuickSettings"
+        android:layout="@layout/quicksettings" />
+
+ <!--com.android.settings.applications.LayoutPreference
+        android:key="ticker_category"
+        android:fragment="com.aquarios.coralreef.fragments.Ticker"
+        android:layout="@layout/ticker" /-->
+
 </PreferenceScreen>

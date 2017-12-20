@@ -21,5 +21,9 @@
         android:fragment="com.aquarios.coralreef.fragments.HeadsUp"
         android:layout="@layout/headsup" />
 
+    <com.android.settings.applications.LayoutPreference
+        android:key="notifications_category"
+        android:fragment="com.aquarios.coralreef.fragments.Notifications"
+        android:layout="@layout/notifications" />
 
 </PreferenceScreen>

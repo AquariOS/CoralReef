@@ -35,7 +35,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.aquarios.coralreef.navigation.BottomNavigationViewCustom;
 import com.aquarios.coralreef.tabs.ButtonsTab;
 import com.aquarios.coralreef.tabs.LockScreenTab;
-import com.aquarios.coralreef.tabs.QuickSettingsTab;
 import com.aquarios.coralreef.tabs.StatusBarTab;
 import com.aquarios.coralreef.tabs.NotificationsTab;
 import com.aquarios.coralreef.tabs.SystemMiscTab;
@@ -73,14 +72,11 @@ public class CoralReef extends SettingsPreferenceFragment {
                     case R.id.lock_screen_tab:
                         viewPager.setCurrentItem(1);
                         return true;
-                    case R.id.quick_settings_tab:
+                    case R.id.status_bar_tab:
                         viewPager.setCurrentItem(2);
                         return true;
-                    case R.id.status_bar_tab:
-                        viewPager.setCurrentItem(3);
-                        return true;
                     case R.id.notifications_tab:
-                        viewPager.setCurrentItem(4);
+                        viewPager.setCurrentItem(3);
                         return true;
                     case R.id.system_misc_tab:
                         viewPager.setCurrentItem(4);
@@ -123,9 +119,8 @@ public class CoralReef extends SettingsPreferenceFragment {
             super(fm);
             frags[0] = new ButtonsTab();
             frags[1] = new LockScreenTab();
-            frags[2] = new QuickSettingsTab();
-            frags[3] = new StatusBarTab();
-            frags[4] = new NotificationsTab();
+            frags[2] = new StatusBarTab();
+            frags[3] = new NotificationsTab();
             frags[4] = new SystemMiscTab();
         }
 
@@ -150,7 +145,6 @@ public class CoralReef extends SettingsPreferenceFragment {
         titleString = new String[]{
                 getString(R.string.bottom_nav_buttons_title),
                 getString(R.string.bottom_nav_lock_screen_title),
-                getString(R.string.bottom_nav_quick_settings_title),
                 getString(R.string.bottom_nav_status_bar_title),
                 getString(R.string.bottom_nav_notifications_title),
                 getString(R.string.bottom_nav_system_misc_title)};

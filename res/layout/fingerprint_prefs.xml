@@ -18,20 +18,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fingerprint_prefs_layout"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="112dp"
     android:orientation="vertical"
     android:layout_marginBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:background="@color/preference_background_color">
 
         <ImageView
             android:id="@+id/fingerprint_prefs_imageview"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/dt_fingerprint_prefs"
+            android:layout_height="60dp"
+            android:src="@drawable/octopus_icon_vector"
             android:scaleType="center"/>
 
     </LinearLayout>
@@ -44,8 +44,8 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="15dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="22dp"
             android:textSize="20sp"
             android:textStyle="bold"
             android:text="@string/fingerprint_prefs_title" />
@@ -54,10 +54,10 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="5dip"
+            android:layout_marginStart="22dp"
+            android:layout_marginBottom="22dip"
             android:layout_below="@+id/textView1"
-            android:textSize="12sp"
+            android:textSize="13sp"
             android:text="@string/fingerprint_prefs_summary" />
 
     </RelativeLayout>

@@ -19,10 +19,9 @@
 <!-- BOTTOM NAVIGATION -->
     <string name="bottom_nav_buttons_title">Buttons</string>
     <string name="bottom_nav_lock_screen_title">Lock Screen</string>
-    <string name="bottom_nav_quick_settings_title">Quick Settings</string>
     <string name="bottom_nav_status_bar_title">Status Bar</string>
     <string name="bottom_nav_notifications_title">Notifications</string>
-    <string name="bottom_nav_system_misc_title">System &amp; Misc.</string>
+    <string name="bottom_nav_system_misc_title">System/Misc</string>
 
 <!-- CATEGORIES -->
     <!-- Buttons -->
@@ -39,9 +38,6 @@
     <string name="fingerprint_prefs_summary">Tweaks specific to the fingerprint scanner</string>
     <string name="lockscreen_items_title">Lockscreen items</string>
     <string name="lockscreen_items_summary">Remove or add items to your lockscreen</string>
-    <!-- Quick Settings -->
-    <string name="quicksettings_title">Quick settings</string>
-    <string name="quicksettings_summary">Configure the quick settings with options ranging from headers to weather</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize the statusbar or QS tile battery</string>
@@ -53,6 +49,8 @@
     <string name="ticker_summary">Enable the statusbar ticker and configure ticker related tweaks</string>
     <string name="traffic_title">Traffic indicators</string>
     <string name="traffic_summary">Enable traffic indicators on the statusbar and configure traffic related tweaks</string>
+    <string name="quicksettings_title">Quick settings</string>
+    <string name="quicksettings_summary">Configure the quick settings with options ranging from headers to weather</string>
     <!-- Notifications -->
     <string name="notifications_title">Notifications</string>
     <string name="notifications_summary">Optional adjustments to system notifications</string>
