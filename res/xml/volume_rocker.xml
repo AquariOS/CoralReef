@@ -22,4 +22,10 @@
         android:summary="@string/swap_volume_buttons_summary"
         android:defaultValue="true" />
 
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="volume_button_music_control"
+        android:title="@string/volume_button_music_control_title"
+        android:summary="@string/volume_button_music_control_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
