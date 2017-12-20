@@ -101,4 +101,8 @@
     <string name="weather_config_title">Service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
 
+    <!-- Volume key rotation -->
+    <string name="swap_volume_buttons_title">Reorient</string>
+    <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
+
 </resources>
