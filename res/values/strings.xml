@@ -124,4 +124,8 @@
     <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>
     <string name="headset_connect_player_both">When wired or BT headset is plugged in</string>
 
+    <!-- DT2S on lockscreen -->
+    <string name="double_tap_sleep_lockscreen">DT2S on lockscreen</string>
+    <string name="double_tap_sleep_lockscreen_summary">Double-tap the lockscreen to put the device to sleep</string>
+
 </resources>
