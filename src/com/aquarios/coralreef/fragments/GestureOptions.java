@@ -31,14 +31,14 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-public class DisplayOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class GestureOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.display_options);
+        addPreferencesFromResource(R.xml.gesture_options);
 
-        getActivity().getActionBar().setTitle(R.string.display_options_title);
+        getActivity().getActionBar().setTitle(R.string.gesture_options_title);
     }
 
     @Override
