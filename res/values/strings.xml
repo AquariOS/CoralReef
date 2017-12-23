@@ -61,6 +61,8 @@
     <string name="omniswitch_summary">Configure OmniSwitch options</string>
     <string name="recents_title">Recents</string>
     <string name="recents_summary">Configure OmniSwitch or AOSP recents</string>
+    <string name="display_options_title">Display options</string>
+    <string name="display_options_summary">Control display behavior of device</string>
     <string name="device_extras_title">Device extras</string>
     <string name="device_extras_summary">Tweaks specific to your device</string>
     <string name="miscellaneous_title">Miscellaneous</string>
