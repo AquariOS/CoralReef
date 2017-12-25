@@ -36,8 +36,8 @@
     <!-- Lockscreen -->
     <string name="fingerprint_prefs_title">Fingerprint prefs</string>
     <string name="fingerprint_prefs_summary">Tweaks specific to the fingerprint scanner</string>
-    <string name="lockscreen_items_title">Lockscreen items</string>
-    <string name="lockscreen_items_summary">Remove or add items to your lockscreen</string>
+    <string name="lockscreen_display_title">Lockscreen display</string>
+    <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize the statusbar or QS tile battery</string>

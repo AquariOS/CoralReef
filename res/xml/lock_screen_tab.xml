@@ -22,9 +22,9 @@
         android:layout="@layout/fingerprint_prefs" />
 
     <com.android.settings.applications.LayoutPreference
-        android:key="lockscreen_items_category"
-        android:fragment="com.aquarios.coralreef.fragments.LockscreenItems"
-        android:layout="@layout/lockscreen_items" />
+        android:key="lockscreen_display_category"
+        android:fragment="com.aquarios.coralreef.fragments.LockscreenDisplay"
+        android:layout="@layout/lockscreen_display" />
 
     <com.android.settings.applications.LayoutPreference
         android:key="lockscreen_weather"

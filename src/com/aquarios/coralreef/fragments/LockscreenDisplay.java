@@ -31,14 +31,14 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-public class LockscreenItems extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class LockscreenDisplay extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.lockscreen_items);
+        addPreferencesFromResource(R.xml.lockscreen_display);
 
-        getActivity().getActionBar().setTitle(R.string.lockscreen_items_title);
+        getActivity().getActionBar().setTitle(R.string.lockscreen_display_title);
     }
 
     @Override
