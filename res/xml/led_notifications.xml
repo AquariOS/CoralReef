@@ -17,6 +17,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<PreferenceCategory
+		android:title="@string/notification_light_main">
+        <Preference
+            android:key="abc_notification_light"
+            android:fragment="com.android.settings.applications.NotificationApps"
+            android:title="@string/notification_light_main"
+            android:summary="@string/notification_light_settings" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
 		android:title="@string/battery_led_options">
 		<com.aquarios.coralreef.preference.SystemSettingSwitchPreference
 			android:key="battery_light_allow_on_dnd"
@@ -27,9 +36,9 @@
 			android:key="battery_light_low_blinking"
 			android:title="@string/battery_light_low_blinking_title"
 			android:defaultValue="false" />
-    </PreferenceCategory>
+	</PreferenceCategory>
 
-    <PreferenceCategory
+	<PreferenceCategory
         android:key="battery_light_cat"
         android:title="@string/battery_led_color">
         <net.margaritov.preference.colorpicker.ColorPickerPreference
@@ -51,6 +60,6 @@
             android:key="battery_light_reallyfull_color"
             android:title="@string/battery_light_reallyfull_color"
             android:defaultValue="0xFF00FF00" />
-    </PreferenceCategory>
+		</PreferenceCategory>
 
 </PreferenceScreen>
