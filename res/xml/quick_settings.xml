@@ -16,6 +16,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Preference
+        android:key="qs_rows_columns"
+        android:fragment="com.aquarios.coralreef.fragments.QsRowsColumns"
+        android:title="@string/qs_rows_columns_title"/>
+
     <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
         android:key="qs_show_brightness"
         android:title="@string/show_brightness_title"
