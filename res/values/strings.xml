@@ -159,4 +159,9 @@
     <!-- Notification LED -->
     <string name="notification_light_main">Per-app LED options</string>
     <string name="notification_light_settings">Customize notification LED on a per-app basis</string>
+
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">QS footer warnings</string>
+    <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
+
 </resources>
