@@ -100,8 +100,10 @@
     <string name="weather_show_weather_summary">Enable to show weather information</string>
     <string name="weather_show_location_title">Show location</string>
     <string name="weather_show_location_summary">Enable to show the location</string>
-    <string name="weather_config_title">Service settings</string>
+    <string name="weather_config_title">Weather service settings</string>
+    <string name="weather_config_summary">Enable weather service and configure service options. This includes weather provider, location settings, update frequency, etc. </string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
+    <string name="enable_title">Enable weather service</string>
 
     <!-- Volume key rotation -->
     <string name="swap_volume_buttons_title">Reorient</string>
