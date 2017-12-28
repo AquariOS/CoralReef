@@ -60,7 +60,7 @@
     <string name="omniswitch_title">Omniswitch</string>
     <string name="omniswitch_summary">Configure OmniSwitch options</string>
     <string name="recents_title">Recents</string>
-    <string name="recents_summary">Configure OmniSwitch or AOSP recents</string>
+    <string name="recents_summary">Configure look and feel of recent apps view</string>
     <string name="gesture_options_title">Gestures</string>
     <string name="gesture_options_summary">Enable/disable certain device behaviors triggered by user actions</string>
     <string name="device_extras_title">Device extras</string>
