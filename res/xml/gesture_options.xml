@@ -14,7 +14,8 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
@@ -27,5 +28,11 @@
         android:title="@string/torch_power_button_gesture_title"
         android:entries="@array/torch_power_button_gesture_entries"
         android:entryValues="@array/torch_power_button_gesture_values" />
+
+    <Preference
+        android:key="gestures_dashboard"
+        android:title="@string/gesture_shortcut_title"
+        android:summary="@string/gesture_shortcut_summary"
+        android:fragment="com.android.settings.gestures.GestureSettings" />
 
 </PreferenceScreen>

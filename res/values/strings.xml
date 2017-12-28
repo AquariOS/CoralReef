@@ -384,4 +384,8 @@
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>  
 
+    <!-- Shortcut to gestures -->
+    <string name="gesture_shortcut_title">Available stock gestures</string>
+    <string name="gesture_shortcut_summary">A list of AOSP gestures to be enabled/disabled</string>
+
 </resources>
