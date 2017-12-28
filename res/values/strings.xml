@@ -67,6 +67,9 @@
     <string name="device_extras_summary">Tweaks specific to your device</string>
     <string name="miscellaneous_title">Miscellaneous</string>
     <string name="miscellaneous_summary">Tweaks that do not fit in other categories</string>
+    <!-- Empty Category -->
+    <string name="empty_category_title">No extra features yet...</string>
+    <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
