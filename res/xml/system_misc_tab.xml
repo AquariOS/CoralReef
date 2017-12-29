@@ -39,4 +39,9 @@
         android:fragment="com.aquarios.coralreef.fragments.Miscellaneous"
         android:layout="@layout/miscellaneous" />
 
+    <com.android.settings.applications.LayoutPreference
+        android:key="changelog"
+        android:fragment="com.aquarios.coralreef.fragments.Changelog"
+        android:layout="@layout/changelog" />
+
 </PreferenceScreen>
