@@ -65,8 +65,7 @@
     <string name="gesture_options_summary">Enable/disable certain device behaviors triggered by user actions</string>
     <string name="device_extras_title">Device extras</string>
     <string name="device_extras_summary">Tweaks specific to your device</string>
-    <string name="miscellaneous_title">Miscellaneous</string>
-    <string name="miscellaneous_summary">Tweaks that do not fit in other categories</string>
+
     <!-- Empty Category -->
     <string name="empty_category_title">No extra features yet...</string>
     <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
@@ -95,7 +94,12 @@
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
     <string name="recents_show_membar_title">Memory bar</string>
     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
-
+    <!-- Changelog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">See some of the recent commits.</string>
+    <string name="changelog_error">Unable to load changelog</string>
+    <string name="miscellaneous_title">Miscellaneous</string>
+    <string name="miscellaneous_summary">Tweaks that do not fit in other categories</string>
     <!-- Lockscreen weather -->
     <string name="lock_screen_weather_settings_title">Weather options</string>
     <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>
