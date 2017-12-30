@@ -62,6 +62,12 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
 
         mDisplay = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
         mDisplay.setTitle(R.string.gesture_options_title);
+
+        Preference DeviceExtras = findPreference("device_extras_category");
+
+        if (!getResources().getBoolean(R.bool.has_device_extras)) {
+            getPreferenceScreen().removePreference(DeviceExtras);
+        }
     }
 
     @Override
