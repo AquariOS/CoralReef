@@ -403,5 +403,8 @@
     <string name="powermenu_screenshot_summary">Shortcut to screenshot action</string>
     <string name="powermenu_airplane_title">Airplane mode</string>
     <string name="powermenu_airplane_summary">Shortcut to toggle airplane mode on/off</string>
+    <string name="powermenu_category_other">Other</string>
+    <string name="powermenu_lockscreen_title">Lockscreen visibility</string>
+    <string name="powermenu_lockscreen_summary">Enable the ability to show and use the power menu dialog while on the lockscreen</string>
 
 </resources>
