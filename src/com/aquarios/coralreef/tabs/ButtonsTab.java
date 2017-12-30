@@ -57,6 +57,12 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
 
         mVolumeRocker = (LayoutPreference) findPreference(VOLUME_ROCKER_CATEGORY);
         mVolumeRocker.setTitle(R.string.volume_rocker_title);
+
+        Preference HWButtonsSettings = findPreference("hwbuttons");
+
+        if (!getResources().getBoolean(R.bool.has_hwkeys)) {
+            getPreferenceScreen().removePreference(HWButtonsSettings);
+        }
     }
 
     @Override
