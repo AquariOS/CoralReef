@@ -40,6 +40,12 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.buttons_tab);
+
+        Preference HWButtonsSettings = findPreference("hwbuttons");
+
+        if (!getResources().getBoolean(R.bool.has_hwkeys)) {
+            getPreferenceScreen().removePreference(HWButtonsSettings);
+        }
     }
 
     @Override
