@@ -14,51 +14,37 @@
  * limitations under the License.
  */
 
-package com.aquarios.coralreef.tabs;
+package com.aquarios.coralreef.fragments;
 
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v14.preference.PreferenceFragment;
-import android.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
+import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.android.internal.util.aquarios.AquaUtils;
-
-public class SystemMiscTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class DeviceExtras extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.system_misc_tab);
+        addPreferencesFromResource(R.xml.device_extras);
 
-        Preference DeviceExtras = findPreference("device_extras_category");
-
-        if (!getResources().getBoolean(R.bool.has_device_extras)) {
-            getPreferenceScreen().removePreference(DeviceExtras);
-        }
+        getActivity().getActionBar().setTitle(R.string.device_extras_title);
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
     }
-
 
     @Override
     public int getMetricsCategory() {

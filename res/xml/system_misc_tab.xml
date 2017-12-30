@@ -21,13 +21,10 @@
         android:fragment="com.aquarios.coralreef.fragments.Recents"
         android:layout="@layout/recents" />
 
-    <!--com.android.settings.applications.LayoutPreference
+    <com.android.settings.applications.LayoutPreference
         android:key="device_extras_category"
-        android:layout="@layout/device_extras">
-        <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
-            android:targetPackage="com.aquarios.settings.device"
-            android:targetClass="com.aquarios.settings.device.TouchscreenGestureSettings" />
-    </com.android.settings.applications.LayoutPreference-->
+        android:fragment="com.aquarios.coralreef.fragments.DeviceExtras"
+        android:layout="@layout/device_extras"/>
 
     <com.android.settings.applications.LayoutPreference
         android:key="gesture_options"
