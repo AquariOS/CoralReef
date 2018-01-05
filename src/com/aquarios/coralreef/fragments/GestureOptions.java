@@ -26,7 +26,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
-
+import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -44,6 +44,11 @@ public class GestureOptions extends SettingsPreferenceFragment implements Prefer
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.gesture_options);
 
+         final String KEY_DEVICE_PART = "device_part";
+         final String KEY_DEVICE_PART_PACKAGE_NAME = "org.omnirom.device";
+
+        getActivity().getActionBar().setTitle(R.string.gesture_options_title);
+
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
@@ -59,6 +64,10 @@ public class GestureOptions extends SettingsPreferenceFragment implements Prefer
             mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
             mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
             mTorchPowerButton.setOnPreferenceChangeListener(this);
+        }
+        // DeviceParts
+        if (!DevelopmentSettings.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
         }
     }
 
