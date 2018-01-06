@@ -24,7 +24,7 @@
     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="qs_tile_title_visibility"
         android:title="@string/qs_tile_title_visibility_title"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
         android:key="qs_show_brightness"
