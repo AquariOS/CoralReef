@@ -16,11 +16,29 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="powermenu_reboot"
+        android:title="@string/powermenu_reboot_title"
+        android:defaultValue="true" />
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="powermenu_advanced_reboot"
+        android:title="@string/powermenu_advanced_reboot_title"
+        android:summary="@string/powermenu_advanced_reboot_summary"
+        android:dependency="powermenu_reboot"
+        android:defaultValue="false" />
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="powermenu_screenshot"
+        android:title="@string/powermenu_screenshot_title"
+        android:summary="@string/powermenu_screenshot_summary"
+        android:defaultValue="false" />
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="powermenu_airplane"
+        android:title="@string/powermenu_airplane_title"
+        android:summary="@string/powermenu_airplane_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
 
