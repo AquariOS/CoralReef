@@ -28,4 +28,10 @@
         android:summary="@string/wake_when_plugged_or_unplugged_summary"
         android:defaultValue="false" />
 
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="vibration_on_charge_state_changed"
+        android:title="@string/vibration_on_charge_state_changed_title"
+        android:summary="@string/vibration_on_charge_state_changed_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
