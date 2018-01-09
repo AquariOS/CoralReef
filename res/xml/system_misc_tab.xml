@@ -21,10 +21,15 @@
         android:fragment="com.aquarios.coralreef.fragments.Recents"
         android:layout="@layout/recents" />
 
-    <com.android.settings.applications.LayoutPreference
-        android:key="device_extras_category"
-        android:fragment="com.aquarios.coralreef.fragments.DeviceExtras"
-        android:layout="@layout/device_extras"/>
+     <!-- Device Part -->
+        <Preference
+            android:key="device_part"
+            android:persistent="false"
+            android:layout="@layout/device_extras">
+            <intent android:action="android.intent.action.MAIN"
+                 android:targetPackage="org.omnirom.device"
+                 android:targetClass="org.omnirom.device.DeviceSettings"/>
+        </Preference>
 
     <com.android.settings.applications.LayoutPreference
         android:key="gesture_options"

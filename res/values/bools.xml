@@ -16,9 +16,6 @@
 
 <resources>
 
-    <!-- Whether or not a device has device extras -->
-    <bool name="has_device_extras">false</bool>
-
     <!-- Whether or not a device has hardware keys -->
     <bool name="has_hwkeys">false</bool>
 
