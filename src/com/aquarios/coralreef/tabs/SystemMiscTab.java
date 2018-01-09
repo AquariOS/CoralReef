@@ -16,6 +16,7 @@
 
 package com.aquarios.coralreef.tabs;
 
+import android.content.ContentResolver;
 import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
@@ -24,6 +25,7 @@ import android.support.v14.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.applications.LayoutPreference;
+import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -63,10 +65,14 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
         mDisplay = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
         mDisplay.setTitle(R.string.gesture_options_title);
 
-        Preference DeviceExtras = findPreference("device_extras_category");
+         ContentResolver resolver = getActivity().getContentResolver();
+         final PreferenceScreen prefScreen = getPreferenceScreen();
+         final String KEY_DEVICE_PART = "device_part";
+         final String KEY_DEVICE_PART_PACKAGE_NAME = "org.omnirom.device";
 
-        if (!getResources().getBoolean(R.bool.has_device_extras)) {
-            getPreferenceScreen().removePreference(DeviceExtras);
+ // DeviceParts
+        if (!DevelopmentSettings.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
         }
     }
 

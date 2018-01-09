@@ -54,16 +54,6 @@
         android:defaultValue="true" />
     </PreferenceCategory>
 
-     <!-- Device Part -->
-        <Preference
-            android:key="device_part"
-            android:persistent="false"
-            android:title="@string/device_part_title">
-            <intent android:action="android.intent.action.MAIN"
-                 android:targetPackage="org.omnirom.device"
-                 android:targetClass="org.omnirom.device.DeviceSettings"/>
-        </Preference>
-
     <PreferenceCategory
         android:title="@string/stock_gestures_category">
 
