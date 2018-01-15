@@ -22,7 +22,7 @@
     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="network_traffic_state"
         android:title="@string/network_traffic_state_title"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <com.aquarios.coralreef.preference.CustomSeekBarPreference
         android:key="network_traffic_autohide_threshold"
