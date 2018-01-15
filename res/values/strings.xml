@@ -413,4 +413,9 @@
     <string name="vibration_on_charge_state_changed_title">Vibrate on plug</string>
     <string name="vibration_on_charge_state_changed_summary">Vibrate when connecting or disconnecting a power source</string>
 
+    <!-- Notification suppressor -->
+    <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
+    <string name="notification_sound_vib_screen_on_summary">Disable to block notifications sound and vibration when the screen is awake</string>
+
+
 </resources>
