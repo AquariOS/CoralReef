@@ -414,8 +414,9 @@
     <string name="vibration_on_charge_state_changed_summary">Vibrate when connecting or disconnecting a power source</string>
 
     <!-- Notification suppressor -->
-    <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
-    <string name="notification_sound_vib_screen_on_summary">Disable to block notifications sound and vibration when the screen is awake</string>
-
+    <string name="notification_sound_vib_screen_on_title">Notifications sound and vibration if screen is on</string>
+    <string name="notification_sound_vib_screen_on_never">Never</string>
+    <string name="notification_sound_vib_screen_on_always">Always (default)</string>
+    <string name="notification_sound_vib_screen_on_nomedia">If no media is playing</string>
 
 </resources>

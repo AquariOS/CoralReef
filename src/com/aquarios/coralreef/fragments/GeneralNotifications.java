@@ -16,7 +16,9 @@
 
 package com.aquarios.coralreef.fragments;
 
+import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -33,16 +35,36 @@ import com.android.internal.logging.nano.MetricsProto;
 
 public class GeneralNotifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+    private ListPreference mNoisyNotification;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.general_notifications);
 
         getActivity().getActionBar().setTitle(R.string.general_notifications_title);
+
+        mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
+        mNoisyNotification.setOnPreferenceChangeListener(this);
+        int mode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON,
+                1, UserHandle.USER_CURRENT);
+        mNoisyNotification.setValue(String.valueOf(mode));
+        mNoisyNotification.setSummary(mNoisyNotification.getEntry());
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference.equals(mNoisyNotification)) {
+            int mode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, mode, UserHandle.USER_CURRENT);
+            int index = mNoisyNotification.findIndexOfValue((String) newValue);
+            mNoisyNotification.setSummary(
+                    mNoisyNotification.getEntries()[index]);
+            return true;
+        }
         return false;
     }
 
