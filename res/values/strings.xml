@@ -56,6 +56,8 @@
     <string name="led_notifications_summary">Enable/disable the LED light, as well as asign specific LED colors to reflect battery levels and app notifications</string>
     <string name="headsup_title">Heads up</string>
     <string name="headsup_summary">Configure heads up options</string>
+    <string name="general_notifications_title">General notifications</string>
+    <string name="general_notifications_summary">Adjust some global settings of your device's notifications</string>
     <!-- System/ Misc -->
     <string name="omniswitch_title">Omniswitch</string>
     <string name="omniswitch_summary">Configure OmniSwitch options</string>

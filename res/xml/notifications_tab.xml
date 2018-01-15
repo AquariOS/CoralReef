@@ -26,4 +26,9 @@
         android:fragment="com.aquarios.coralreef.fragments.LedNotifications"
         android:layout="@layout/led_notifications" />
 
+    <com.android.settings.applications.LayoutPreference
+        android:key="general_notifications"
+        android:fragment="com.aquarios.coralreef.fragments.GeneralNotifications"
+        android:layout="@layout/general_notifications" />
+
 </PreferenceScreen>
