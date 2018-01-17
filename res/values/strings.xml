@@ -419,7 +419,7 @@
     <string name="notification_sound_vib_screen_on_always">Always (default)</string>
     <string name="notification_sound_vib_screen_on_nomedia">If no media is playing</string>
 
-    <!-- Header -->
+    <!-- Custom Headers -->
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Choose an image to be displayed at the top of the notification panel</string>
     <string name="qs_appearance_category">APPEARANCE</string>
@@ -440,5 +440,9 @@
     <string name="style_disabled_summary">Custom header image is OFF</string>
     <string name="header_provider_disabled">Disabled</string>
     <string name="custom_header_title">Header</string>
+
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Lock screen visualizer</string>
+    <string name="lockscreen_visualizer_summary">Displays a live design on lock screen while music is playing (works with most audio apps)</string>
 
 </resources>
