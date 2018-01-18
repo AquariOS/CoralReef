@@ -45,4 +45,10 @@
         android:title="@string/screen_off_animation_title"
         android:entries="@array/screen_off_animation_entries"
         android:entryValues="@array/screen_off_animation_values" />
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="force_ambient_for_media"
+        android:title="@string/force_ambient_for_media_title"
+        android:summary="@string/force_ambient_for_media_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
