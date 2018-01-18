@@ -56,6 +56,8 @@
     <string name="led_notifications_summary">Enable/disable the LED light, as well as asign specific LED colors to reflect battery levels and app notifications</string>
     <string name="headsup_title">Heads up</string>
     <string name="headsup_summary">Configure heads up options</string>
+    <string name="general_notifications_title">General notifications</string>
+    <string name="general_notifications_summary">Adjust some global settings of your device's notifications</string>
     <!-- System/ Misc -->
     <string name="omniswitch_title">Omniswitch</string>
     <string name="omniswitch_summary">Configure OmniSwitch options</string>
@@ -107,10 +109,8 @@
     <string name="weather_show_weather_summary">Enable to show weather information</string>
     <string name="weather_show_location_title">Show location</string>
     <string name="weather_show_location_summary">Enable to show the location</string>
-    <string name="weather_config_title">Weather service settings</string>
-    <string name="weather_config_summary">Enable weather service and configure service options. This includes weather provider, location settings, update frequency, etc. </string>
+    <string name="weather_config_title">Service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
-    <string name="enable_title">Enable weather service</string>
 
     <!-- Volume key rotation -->
     <string name="swap_volume_buttons_title">Reorient</string>
@@ -178,7 +178,7 @@
 
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Make heads up less annoying</string>
-    <string name="less_boring_heads_up_summary">Show heads up only for dialer or messaging app if they are not in foreground</string>
+    <string name="less_boring_heads_up_summary">Show heads up only for dialer or messaging app</string>
 
     <!-- QS rows and columns -->
     <string name="qs_rows_columns_title">QS rows and columns</string>
@@ -412,5 +412,63 @@
     <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
     <string name="vibration_on_charge_state_changed_title">Vibrate on plug</string>
     <string name="vibration_on_charge_state_changed_summary">Vibrate when connecting or disconnecting a power source</string>
+
+    <!-- Notification suppressor -->
+    <string name="notification_sound_vib_screen_on_title">Notifications sound and vibration if screen is on</string>
+    <string name="notification_sound_vib_screen_on_never">Never</string>
+    <string name="notification_sound_vib_screen_on_always">Always (default)</string>
+    <string name="notification_sound_vib_screen_on_nomedia">If no media is playing</string>
+
+    <!-- Custom Headers -->
+    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_summary">Choose an image to be displayed at the top of the notification panel</string>
+    <string name="qs_appearance_category">APPEARANCE</string>
+    <string name="daylight_header_pack_title">Header image pack</string>
+    <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
+    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
+    <string name="static_header_provider" translatable="false">static</string>
+    <string name="daylight_header_provider" translatable="false">daylight</string>
+    <string name="static_header_provider_title">Static</string>
+    <string name="daylight_header_provider_title">Dynamic</string>
+    <string name="custom_header_provider_title">Header provider</string>
+    <string name="custom_header_browse_title">Browse installed headers</string>
+    <string name="custom_header_browse_summary">Click on any image to use for static mode</string>
+    <string name="custom_header_browse_summary_new">Browse all available header packages</string>
+    <string name="custom_header_pick_title">Select header image</string>
+    <string name="custom_header_pick_summary">Select an image to use for static mode</string>
+    <string name="style_enabled_summary">Custom header image is ON</string>
+    <string name="style_disabled_summary">Custom header image is OFF</string>
+    <string name="header_provider_disabled">Disabled</string>
+    <string name="custom_header_title">Header</string>
+
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Lock screen visualizer</string>
+    <string name="lockscreen_visualizer_summary">Displays a live design on lock screen while music is playing (works with most audio apps)</string>
+
+    <!-- Battery Bar -->
+    <string name="battery_bar_settings">Battery Bar</string>
+    <string name="battery_bar_settings_summary">Horizontal bar indicating battery level</string>
+    <string name="battery_icon">Battery icon style</string>
+    <string name="battery_not_title">Battery icon in notifications</string>
+    <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
+    <string name="battery_bar_location">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_charging_color">Battery bar charging color</string>
+    <string name="battery_bar_battery_low_color">Battery bar low battery color</string>
+    <string name="battery_bar_style_title">Battery bar style</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="battery_bar_hide">Hide</string>
+    <string name="battery_bar_statusbar">Statusbar</string>
+    <string name="battery_bar_topnav">Top of navbar</string>
+    <string name="battery_bar_bottomnav">Bottom of navbar</string>
+    <string name="battery_bar_reg">Regular</string>
+    <string name="battery_bar_center">Center-mirrored</string>
+    <string name="battery_bar_reversed">Reversed</string>
+    <string name="battery_bar_use_gradient_color">Use gradient color</string>
+    <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
+    <string name="battery_bar_high_color">High level color"</string>
+    <string name="battery_bar_low_color">Low level color"</string>
 
 </resources>

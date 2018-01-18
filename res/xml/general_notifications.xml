@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Dirty Unicorns Project
+<!-- Copyright (C) 2017 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,14 +14,13 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/battery_options_title" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <Preference
-            android:key="battery_bar"
-            android:fragment="com.aquarios.coralreef.fragments.BatteryBar"
-            android:title="@string/battery_bar_settings"
-            android:summary="@string/battery_bar_settings_summary" />
+        <ListPreference
+            android:key="notification_sound_vib_screen_on"
+            android:title="@string/notification_sound_vib_screen_on_title"
+            android:entries="@array/notification_sound_vib_screen_on_entries"
+            android:entryValues="@array/notification_sound_vib_screen_on_values"
+            android:summary="%s" />
 
 </PreferenceScreen>
