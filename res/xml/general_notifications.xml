@@ -23,4 +23,10 @@
             android:entryValues="@array/notification_sound_vib_screen_on_values"
             android:summary="%s" />
 
+        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+            android:key="force_ambient_for_media"
+            android:title="@string/force_ambient_for_media_title"
+            android:summary="@string/force_ambient_for_media_summary"
+            android:defaultValue="false" />
+
 </PreferenceScreen>
