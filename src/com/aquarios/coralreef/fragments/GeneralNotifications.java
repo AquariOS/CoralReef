@@ -42,8 +42,6 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements 
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.general_notifications);
 
-        getActivity().getActionBar().setTitle(R.string.general_notifications_title);
-
         mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
         mNoisyNotification.setOnPreferenceChangeListener(this);
         int mode = Settings.System.getIntForUser(getContentResolver(),

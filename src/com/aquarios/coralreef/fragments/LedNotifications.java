@@ -49,8 +49,6 @@ public class LedNotifications extends SettingsPreferenceFragment implements Pref
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.led_notifications);
 
-        getActivity().getActionBar().setTitle(R.string.led_notifications_title);
-
         PreferenceScreen prefSet = getPreferenceScreen();
         mColorCategory = (PreferenceCategory) findPreference("battery_light_cat");
 

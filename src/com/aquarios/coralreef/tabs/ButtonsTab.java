@@ -28,13 +28,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.settings.applications.LayoutPreference;
 import com.android.settings.R;
-
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
 public class ButtonsTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+
+    private static final String POWERMENU_CATEGORY = "powermenu_category";
+    private static final String NAVIGATION_CATEGORY = "navigation_category";
+    private static final String VOLUME_ROCKER_CATEGORY = "volume_rocker_category";
+
+    private LayoutPreference mPowerMenu;
+    private LayoutPreference mNavigation;
+    private LayoutPreference mVolumeRocker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,15 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
         if (!getResources().getBoolean(R.bool.has_hwkeys)) {
             getPreferenceScreen().removePreference(HWButtonsSettings);
         }
+
+        mPowerMenu = (LayoutPreference) findPreference(POWERMENU_CATEGORY);
+        mPowerMenu.setTitle(R.string.powermenu_title);
+
+        mNavigation = (LayoutPreference) findPreference(NAVIGATION_CATEGORY);
+        mNavigation.setTitle(R.string.navigationbar_title);
+
+        mVolumeRocker = (LayoutPreference) findPreference(VOLUME_ROCKER_CATEGORY);
+        mVolumeRocker.setTitle(R.string.volume_rocker_title);
     }
 
     @Override

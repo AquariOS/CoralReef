@@ -28,18 +28,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.settings.applications.LayoutPreference;
 import com.android.settings.R;
-
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
 public class NotificationsTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+    private static final String HEADSUP_CATEGORY = "headsup_category";
+    private static final String NOTIFICATIONS_CATEGORY = "notifications_category";
+    private static final String GENERAL_NOTIFICATIONS = "general_notifications";
+
+    private LayoutPreference mHeadsup;
+    private LayoutPreference mLedNotifications;
+    private LayoutPreference mGeneral;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.notifications_tab);
+
+        mHeadsup = (LayoutPreference) findPreference(HEADSUP_CATEGORY);
+        mHeadsup.setTitle(R.string.headsup_title);
+
+        mLedNotifications = (LayoutPreference) findPreference(NOTIFICATIONS_CATEGORY);
+        mLedNotifications.setTitle(R.string.led_notifications_title);
+
+        mGeneral = (LayoutPreference) findPreference(GENERAL_NOTIFICATIONS);
+        mGeneral.setTitle(R.string.general_notifications_title);
     }
 
     @Override

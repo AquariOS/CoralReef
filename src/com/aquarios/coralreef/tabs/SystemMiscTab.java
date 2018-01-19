@@ -29,25 +29,49 @@ import com.android.settings.development.DevelopmentSettings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.android.settings.applications.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.applications.LayoutPreference;
 import com.android.internal.util.aquarios.AquaUtils;
 
+import com.android.internal.logging.nano.MetricsProto;
+
 public class SystemMiscTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+
+    private static final String RECENTS_CATEGORY = "recents_category";
+    private static final String GESTURE_OPTIONS_CATEGORY = "gesture_options";
+    private static final String MISCELLANEOUS_CATEGORY = "miscellaneous_category";
+    private static final String CHANGELOG_CATEGORY = "changelog";
+
+    private LayoutPreference mRecents;
+    private LayoutPreference mGestures;
+    private LayoutPreference mMiscellaneous;
+    private LayoutPreference mChangelog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_misc_tab);
-
          Preference DeviceExtras = findPreference("device_extras_category");
 
  // DeviceParts
        if (!getResources().getBoolean(R.bool.has_device_extras)) {
              getPreferenceScreen().removePreference(DeviceExtras);
         }
+
+        mRecents = (LayoutPreference) findPreference(RECENTS_CATEGORY);
+        mRecents.setTitle(R.string.recents_title);
+
+        mGestures = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
+        mGestures.setTitle(R.string.gesture_options_title);
+
+        mMiscellaneous = (LayoutPreference) findPreference(MISCELLANEOUS_CATEGORY);
+        mMiscellaneous.setTitle(R.string.miscellaneous_title);
+
+        mChangelog = (LayoutPreference) findPreference(CHANGELOG_CATEGORY);
+        mChangelog.setTitle(R.string.changelog_title);
     }
 
     @Override

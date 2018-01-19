@@ -37,8 +37,6 @@ public class HeadsUp extends SettingsPreferenceFragment implements Preference.On
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.headsup);
-
-        getActivity().getActionBar().setTitle(R.string.headsup_title);
     }
 
     @Override

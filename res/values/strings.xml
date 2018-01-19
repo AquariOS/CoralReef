@@ -59,18 +59,21 @@
     <string name="general_notifications_title">General notifications</string>
     <string name="general_notifications_summary">Adjust some global settings of your device's notifications</string>
     <!-- System/ Misc -->
-    <string name="omniswitch_title">Omniswitch</string>
-    <string name="omniswitch_summary">Configure OmniSwitch options</string>
     <string name="recents_title">Recents</string>
     <string name="recents_summary">Configure look and feel of recent apps view</string>
     <string name="gesture_options_title">Gestures</string>
     <string name="gesture_options_summary">Enable/disable certain device behaviors triggered by user actions</string>
+    <string name="miscellaneous_title">Miscellaneous</string>
+    <string name="miscellaneous_summary">Tweaks that do not fit in other categories</string>
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">See some of the recent commits.</string>
     <string name="device_extras_title">Device extras</string>
     <string name="device_extras_summary">Tweaks specific to your device</string>
 
     <!-- Empty Category -->
     <string name="empty_category_title">No extra features yet...</string>
     <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
@@ -97,11 +100,7 @@
     <string name="recents_show_membar_title">Memory bar</string>
     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
     <!-- Changelog -->
-    <string name="changelog_title">Changelog</string>
-    <string name="changelog_summary">See some of the recent commits.</string>
     <string name="changelog_error">Unable to load changelog</string>
-    <string name="miscellaneous_title">Miscellaneous</string>
-    <string name="miscellaneous_summary">Tweaks that do not fit in other categories</string>
     <!-- Lockscreen weather -->
     <string name="lock_screen_weather_settings_title">Weather options</string>
     <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>

@@ -37,8 +37,6 @@ public class VolumeRocker extends SettingsPreferenceFragment implements Preferen
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.volume_rocker);
-
-        getActivity().getActionBar().setTitle(R.string.volume_rocker_title);
     }
 
     @Override

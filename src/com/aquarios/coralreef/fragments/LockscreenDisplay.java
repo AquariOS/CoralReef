@@ -37,8 +37,6 @@ public class LockscreenDisplay extends SettingsPreferenceFragment implements Pre
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_display);
-
-        getActivity().getActionBar().setTitle(R.string.lockscreen_display_title);
     }
 
     @Override

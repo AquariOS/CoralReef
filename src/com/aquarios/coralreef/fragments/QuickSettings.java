@@ -71,8 +71,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.quick_settings);
 
-        getActivity().getActionBar().setTitle(R.string.quicksettings_title);
-
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
 

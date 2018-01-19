@@ -37,8 +37,6 @@ public class Ticker extends SettingsPreferenceFragment implements Preference.OnP
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.ticker);
-
-        getActivity().getActionBar().setTitle(R.string.ticker_title);
     }
 
     @Override
