@@ -23,24 +23,40 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
+import com.android.settings.applications.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.android.internal.util.aquarios.AquaUtils;
-
 public class SystemMiscTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+
+    private static final String RECENTS_CATEGORY = "recents_category";
+    private static final String GESTURE_OPTIONS_CATEGORY = "gesture_options";
+    private static final String MISCELLANEOUS_CATEGORY = "miscellaneous_category";
+    private static final String CHANGELOG_CATEGORY = "changelog";
+
+    private LayoutPreference mRecents;
+    private LayoutPreference mGestures;
+    private LayoutPreference mMiscellaneous;
+    private LayoutPreference mChangelog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_misc_tab);
 
-        Preference FingerprintPrefs = findPreference("fingerprint_prefs_category");
+        mRecents = (LayoutPreference) findPreference(RECENTS_CATEGORY);
+        mRecents.setTitle(R.string.recents_title);
 
-        if (!AquaUtils.hasFingerprintSupport(getContext())) {
-            getPreferenceScreen().removePreference(FingerprintPrefs);
-        }
+        mGestures = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
+        mGestures.setTitle(R.string.gesture_options_title);
+
+        mMiscellaneous = (LayoutPreference) findPreference(MISCELLANEOUS_CATEGORY);
+        mMiscellaneous.setTitle(R.string.miscellaneous_title);
+
+        mChangelog = (LayoutPreference) findPreference(CHANGELOG_CATEGORY);
+        mChangelog.setTitle(R.string.changelog_title);
     }
 
     @Override

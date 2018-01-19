@@ -37,8 +37,6 @@ public class HWKeys extends SettingsPreferenceFragment implements Preference.OnP
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.hw_keys);
-
-        getActivity().getActionBar().setTitle(R.string.hw_keys_title);
     }
 
     @Override

@@ -58,8 +58,6 @@ public class TrafficIndicators extends SettingsPreferenceFragment implements
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
         mThreshold.setEnabled(isNetMonitorEnabled);
-
-        getActivity().getActionBar().setTitle(R.string.traffic_title);
     }
 
     @Override

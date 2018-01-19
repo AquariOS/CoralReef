@@ -23,6 +23,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
+import com.android.settings.applications.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -31,16 +32,31 @@ import com.android.internal.util.aquarios.AquaUtils;
 
 public class LockScreenTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+    private static final String FINGERPRINT_PREFS_CATEGORY = "fingerprint_prefs_category";
+    private static final String LOCKSCREEN_DISPLAY_CATEGORY = "lockscreen_display_category";
+    private static final String LOCKSCREEN_WEATHER = "lockscreen_weather";
+
+    private LayoutPreference mFingerprintPrefs;
+    private LayoutPreference mLockscreenDisplay;
+    private LayoutPreference mLockscreenWeather;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lock_screen_tab);
 
-        Preference FingerprintPrefs = findPreference("fingerprint_prefs_category");
+        mFingerprintPrefs = (LayoutPreference) findPreference(FINGERPRINT_PREFS_CATEGORY);
+        mFingerprintPrefs.setTitle(R.string.fingerprint_prefs_title);
 
         if (!AquaUtils.hasFingerprintSupport(getContext())) {
-            getPreferenceScreen().removePreference(FingerprintPrefs);
+            getPreferenceScreen().removePreference(mFingerprintPrefs);
         }
+
+        mLockscreenDisplay = (LayoutPreference) findPreference(LOCKSCREEN_DISPLAY_CATEGORY);
+        mLockscreenDisplay.setTitle(R.string.lockscreen_display_title);
+
+        mLockscreenWeather = (LayoutPreference) findPreference(LOCKSCREEN_WEATHER);
+        mLockscreenWeather.setTitle(R.string.lock_screen_weather_settings_title);
     }
 
     @Override

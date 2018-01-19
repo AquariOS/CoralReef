@@ -44,8 +44,6 @@ public class GestureOptions extends SettingsPreferenceFragment implements Prefer
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.gesture_options);
 
-        getActivity().getActionBar().setTitle(R.string.gesture_options_title);
-
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
