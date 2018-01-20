@@ -37,11 +37,9 @@ public class Miscellaneous extends SettingsPreferenceFragment implements Prefere
 
     private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
-    private static final String FORCE_AMBIENT_FOR_MEDIA = "force_ambient_for_media";
 
     private ListPreference mLaunchPlayerHeadsetConnection;
     private ListPreference mScreenOffAnimation;
-    private ListPreference mAmbientTicker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,12 +62,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements Prefere
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
 
-        mAmbientTicker = (ListPreference) findPreference(FORCE_AMBIENT_FOR_MEDIA);
-        int mode = Settings.System.getIntForUser(resolver,
-                Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0, UserHandle.USER_CURRENT);
-        mAmbientTicker.setValue(Integer.toString(mode));
-        mAmbientTicker.setSummary(mAmbientTicker.getEntry());
-        mAmbientTicker.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -90,14 +82,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements Prefere
             int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
             return true;
-         } else if (preference == mAmbientTicker) {
-            int mode = Integer.valueOf((String) newValue);
-            int index = mAmbientTicker.findIndexOfValue((String) newValue);
-            mAmbientTicker.setSummary(
-                    mAmbientTicker.getEntries()[index]);
-            Settings.System.putIntForUser(resolver, Settings.System.FORCE_AMBIENT_FOR_MEDIA,
-                    mode, UserHandle.USER_CURRENT);
-             return true;
         }
         return false;
     }
