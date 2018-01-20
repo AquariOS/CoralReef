@@ -35,10 +35,7 @@ import com.android.internal.logging.nano.MetricsProto;
 
 public class GeneralNotifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private static final String FORCE_AMBIENT_FOR_MEDIA = "force_ambient_for_media";
-
     private ListPreference mNoisyNotification;
-    private ListPreference mAmbientTicker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,13 +49,6 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements 
                 1, UserHandle.USER_CURRENT);
         mNoisyNotification.setValue(String.valueOf(mode));
         mNoisyNotification.setSummary(mNoisyNotification.getEntry());
-
-        mAmbientTicker = (ListPreference) findPreference(FORCE_AMBIENT_FOR_MEDIA);
-        int mode = Settings.System.getIntForUser(resolver,
-                Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0, UserHandle.USER_CURRENT);
-        mAmbientTicker.setValue(Integer.toString(mode));
-        mAmbientTicker.setSummary(mAmbientTicker.getEntry());
-        mAmbientTicker.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -72,14 +62,6 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements 
             mNoisyNotification.setSummary(
                     mNoisyNotification.getEntries()[index]);
             return true;
-        } else if (preference == mAmbientTicker) {
-            int mode = Integer.valueOf((String) newValue);
-            int index = mAmbientTicker.findIndexOfValue((String) newValue);
-            mAmbientTicker.setSummary(
-                    mAmbientTicker.getEntries()[index]);
-            Settings.System.putIntForUser(resolver, Settings.System.FORCE_AMBIENT_FOR_MEDIA,
-                    mode, UserHandle.USER_CURRENT);
-             return true;
         }
         return false;
     }
