@@ -40,15 +40,13 @@
     <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
-    <string name="battery_options_summary">Customize the statusbar or QS tile battery</string>
+    <string name="battery_options_summary">Customize the status bar or QS tile battery</string>
     <string name="carrier_label_title">Carrier label</string>
-    <string name="carrier_label_summary">Customize your statusbar carrier label</string>
-    <string name="statusbar_items_title">Statusbar items</string>
-    <string name="statusbar_items_summary">Configure the visibility of statusbar items</string>
-    <string name="ticker_title">Ticker</string>
-    <string name="ticker_summary">Enable the statusbar ticker and configure ticker related tweaks</string>
+    <string name="carrier_label_summary">Customize your status bar carrier label</string>
+    <string name="status_bar_items_title">Status bar items</string>
+    <string name="status_bar_items_summary">Configure the visibilty of certain indicators in status bar </string>
     <string name="traffic_title">Traffic indicators</string>
-    <string name="traffic_summary">Enable traffic indicators on the statusbar and configure traffic related tweaks</string>
+    <string name="traffic_summary">Enable traffic indicators on the status bar and configure traffic related tweaks</string>
     <string name="quicksettings_title">Quick settings</string>
     <string name="quicksettings_summary">Configure the quick settings with options ranging from headers to weather</string>
     <!-- Notifications -->
@@ -184,8 +182,8 @@
     <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
     <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
 
-    <!-- Statusbar net monitor -->
-    <string name="network_traffic_state_title">Show net activity in statusbar</string>
+    <!-- Status bar net monitor -->
+    <string name="network_traffic_state_title">Show net activity in status bar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
 
     <!-- QS tile titles -->
@@ -457,7 +455,7 @@
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
     <string name="battery_bar_hide">Hide</string>
-    <string name="battery_bar_statusbar">Statusbar</string>
+    <string name="battery_bar_statusbar">Status bar</string>
     <string name="battery_bar_topnav">Top of navbar</string>
     <string name="battery_bar_bottomnav">Bottom of navbar</string>
     <string name="battery_bar_reg">Regular</string>
@@ -467,5 +465,9 @@
     <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
+
+    <!-- Status bar icons -->
+    <string name="status_bar_icons_title">Status bar icons</string>
+    <string name="status_bar_icons_summary">Choose which icons are able to be displayed in status bar</string>
 
 </resources>

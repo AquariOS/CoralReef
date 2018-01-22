@@ -31,12 +31,12 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-public class Ticker extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class StatusBarItems extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.ticker);
+        addPreferencesFromResource(R.xml.status_bar_items);
     }
 
     @Override

@@ -36,9 +36,9 @@
         android:fragment="com.aquarios.coralreef.fragments.QuickSettings"
         android:layout="@layout/quicksettings" />
 
- <!--com.android.settings.applications.LayoutPreference
-        android:key="ticker_category"
-        android:fragment="com.aquarios.coralreef.fragments.Ticker"
-        android:layout="@layout/ticker" /-->
+    <com.android.settings.applications.LayoutPreference
+        android:key="status_bar_items_category"
+        android:fragment="com.aquarios.coralreef.fragments.StatusBarItems"
+        android:layout="@layout/status_bar_items" />
 
 </PreferenceScreen>
