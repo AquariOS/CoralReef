@@ -472,4 +472,10 @@
     <string name="status_bar_icons_title">Status bar icons</string>
     <string name="status_bar_icons_summary">Choose which icons are able to be displayed in status bar</string>
 
+  <!-- Screen Off animation -->
+  <string name="screen_off_animation_title">Screen off animation</string>
+  <string name="screen_off_animation_default">Default</string>
+  <string name="screen_off_animation_crt">CRT</string>
+  <string name="screen_off_animation_scale">Scale</string>
+
 </resources>

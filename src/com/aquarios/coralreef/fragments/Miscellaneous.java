@@ -36,8 +36,10 @@ import com.android.internal.logging.nano.MetricsProto;
 public class Miscellaneous extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
+    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     private ListPreference mLaunchPlayerHeadsetConnection;
+    private ListPreference mScreenOffAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,13 @@ public class Miscellaneous extends SettingsPreferenceFragment implements Prefere
         mLaunchPlayerHeadsetConnection.setValue(Integer.toString(mLaunchPlayerHeadsetConnectionValue));
         mLaunchPlayerHeadsetConnection.setSummary(mLaunchPlayerHeadsetConnection.getEntry());
         mLaunchPlayerHeadsetConnection.setOnPreferenceChangeListener(this);
+
+        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
+        int screenOffStyle = Settings.System.getInt(resolver,
+                Settings.System.SCREEN_OFF_ANIMATION, 0);
+        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+        mScreenOffAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -64,6 +73,13 @@ public class Miscellaneous extends SettingsPreferenceFragment implements Prefere
                     mLaunchPlayerHeadsetConnection.getEntries()[index]);
             Settings.System.putIntForUser(resolver, Settings.System.HEADSET_CONNECT_PLAYER,
                     mLaunchPlayerHeadsetConnectionValue, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mScreenOffAnimation) {
+            String value = (String) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
+            int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
             return true;
         }
         return false;

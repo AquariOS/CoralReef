@@ -40,4 +40,9 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <ListPreference
+        android:key="screen_off_animation"
+        android:title="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values" />
 </PreferenceScreen>
