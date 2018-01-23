@@ -40,11 +40,13 @@ public class StatusBarTab extends SettingsPreferenceFragment implements Preferen
     private static final String CARRIER_LABEL_CATEGORY = "carrier_label_category";
     private static final String TRAFFIC_CATEGORY = "traffic_category";
     private static final String QUICK_SETTINGS_CATEGORY = "quick_settings_category";
+    private static final String STATUS_BAR_ITEMS_CATEGORY = "status_bar_items_category";
 
     private LayoutPreference mBattery;
     private LayoutPreference mCarrierLabel;
     private LayoutPreference mTraffic;
     private LayoutPreference mQuickSettings;
+    private LayoutPreference mStatusBarItems;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,9 @@ public class StatusBarTab extends SettingsPreferenceFragment implements Preferen
 
         mQuickSettings = (LayoutPreference) findPreference(QUICK_SETTINGS_CATEGORY);
         mQuickSettings.setTitle(R.string.quicksettings_title);
+
+        mStatusBarItems = (LayoutPreference) findPreference(STATUS_BAR_ITEMS_CATEGORY);
+        mStatusBarItems.setTitle(R.string.status_bar_items_title);
     }
 
     @Override
