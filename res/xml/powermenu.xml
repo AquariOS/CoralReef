@@ -18,25 +18,25 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/powermenu_title" >
 
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+    <SwitchPreference
         android:key="powermenu_reboot"
         android:title="@string/powermenu_reboot_title"
         android:defaultValue="true" />
 
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+    <SwitchPreference
         android:key="powermenu_advanced_reboot"
         android:title="@string/powermenu_advanced_reboot_title"
         android:summary="@string/powermenu_advanced_reboot_summary"
         android:dependency="powermenu_reboot"
         android:defaultValue="true" />
 
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+    <SwitchPreference
         android:key="powermenu_screenshot"
         android:title="@string/powermenu_screenshot_title"
         android:summary="@string/powermenu_screenshot_summary"
         android:defaultValue="false" />
 
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+    <SwitchPreference
         android:key="powermenu_airplane"
         android:title="@string/powermenu_airplane_title"
         android:summary="@string/powermenu_airplane_summary"
@@ -44,7 +44,7 @@
 
     <PreferenceCategory
         android:title="@string/powermenu_category_security">
-		<com.aquarios.coralreef.preference.SecureSettingSwitchPreference
+		<SwitchPreference
 			android:key="powermenu_lockscreen"
 			android:title="@string/lockscreen_power_menu_disabled_title"
 			android:summary="@string/lockscreen_power_menu_disabled_summary"
