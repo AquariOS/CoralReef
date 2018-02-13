@@ -48,6 +48,7 @@ public class ClockOptions extends SettingsPreferenceFragment implements Preferen
     private static final String STATUS_BAR_CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String STATUS_BAR_CLOCK_DATE_STYLE = "clock_date_style";
     private static final String STATUS_BAR_CLOCK_DATE_FORMAT = "clock_date_format";
+    private static final String STATUS_BAR_CLOCK_DATE_POSITION = "clock_date_position";
     private static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     private static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
@@ -59,6 +60,7 @@ public class ClockOptions extends SettingsPreferenceFragment implements Preferen
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private ListPreference mClockDatePosition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,7 @@ public class ClockOptions extends SettingsPreferenceFragment implements Preferen
         mClockDateDisplay = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_DISPLAY);
         mClockDateStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_STYLE);
         mClockDateFormat = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_FORMAT);
+        mClockDatePosition = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_POSITION);
 
         mStatusBarClockShow.setOnPreferenceChangeListener(this);
 
@@ -116,6 +119,11 @@ public class ClockOptions extends SettingsPreferenceFragment implements Preferen
         } else {
             mClockDateFormat.setValue(value);
         }
+
+		mClockDatePosition.setOnPreferenceChangeListener(this);
+		mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(getActivity().getContentResolver(),
+				Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0)));
+		mClockDatePosition.setSummary(mClockDatePosition.getEntry());
 
         parseClockDateFormats();
     }
@@ -207,6 +215,14 @@ public class ClockOptions extends SettingsPreferenceFragment implements Preferen
                 }
             }
             return true;
+		} else if (preference == mClockDatePosition) {
+			int val = Integer.parseInt((String) newValue);
+			int index = mClockDatePosition.findIndexOfValue((String) newValue);
+			Settings.System.putInt(getActivity().getContentResolver(), Settings.System.STATUSBAR_CLOCK_DATE_POSITION,
+					val);
+			mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
+			parseClockDateFormats();
+			return true;
         }
         return false;
     }

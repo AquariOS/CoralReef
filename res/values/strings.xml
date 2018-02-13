@@ -137,6 +137,7 @@
     <string name="clock_date_display_small">Small size</string>
     <string name="clock_date_display_normal">Normal size</string>
     <string name="clock_date_style">Date style</string>
+    <string name="clock_date_position">Date position</string>
     <string name="clock_date_style_normal">Normal</string>
     <string name="clock_date_style_lowercase">Lowercase</string>
     <string name="clock_date_style_uppercase">Uppercase</string>
@@ -144,6 +145,8 @@
     <string name="clock_date_format">Date format</string>
     <string name="clock_date_string_edittext_title">Format: MM/DD/YY</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
+    <string name="clock_date_right">Right of time</string>
+    <string name="clock_date_left">Left of time</string>
 
     <!-- Statusbar battery styles -->
     <string name="battery_style_category_title">Battery icon</string>
