@@ -31,12 +31,12 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-public class CarrierLabel extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class ClockOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.carrier_label);
+        addPreferencesFromResource(R.xml.clock_options);
     }
 
     @Override

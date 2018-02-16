@@ -41,8 +41,8 @@
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize the status bar or QS tile battery</string>
-    <string name="carrier_label_title">Carrier label</string>
-    <string name="carrier_label_summary">Customize your status bar carrier label</string>
+    <string name="clock_options_title">Clock options</string>
+    <string name="clock_options_summary">Set view options of time &amp date in status bar</string>
     <string name="status_bar_items_title">Status bar items</string>
     <string name="status_bar_items_summary">Configure the visibilty of certain indicators in status bar </string>
     <string name="traffic_title">Traffic indicators</string>
@@ -417,7 +417,6 @@
     <string name="notification_sound_vib_screen_on_always">Always (default)</string>
     <string name="notification_sound_vib_screen_on_nomedia">If no media is playing</string>
 
-<<<<<<< HEAD:res/values/strings.xml
     <!-- Custom Headers -->
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Choose an image to be displayed at the top of the notification panel</string>

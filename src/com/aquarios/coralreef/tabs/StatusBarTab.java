@@ -37,13 +37,13 @@ import com.android.internal.logging.nano.MetricsProto;
 public class StatusBarTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String BATTERY_CATEGORY = "battery_options_category";
-    private static final String CARRIER_LABEL_CATEGORY = "carrier_label_category";
+    private static final String CLOCK_OPTIONS_CATEGORY = "clock_options_category";
     private static final String TRAFFIC_CATEGORY = "traffic_category";
     private static final String QUICK_SETTINGS_CATEGORY = "quick_settings_category";
     private static final String STATUS_BAR_ITEMS_CATEGORY = "status_bar_items_category";
 
     private LayoutPreference mBattery;
-    private LayoutPreference mCarrierLabel;
+    private LayoutPreference mClockOptions;
     private LayoutPreference mTraffic;
     private LayoutPreference mQuickSettings;
     private LayoutPreference mStatusBarItems;
@@ -56,8 +56,8 @@ public class StatusBarTab extends SettingsPreferenceFragment implements Preferen
         mBattery = (LayoutPreference) findPreference(BATTERY_CATEGORY);
         mBattery.setTitle(R.string.battery_options_title);
 
-        mCarrierLabel = (LayoutPreference) findPreference(CARRIER_LABEL_CATEGORY);
-        mCarrierLabel.setTitle(R.string.carrier_label_title);
+        mClockOptions = (LayoutPreference) findPreference(CLOCK_OPTIONS_CATEGORY);
+        mClockOptions.setTitle(R.string.clock_options_title);
 
         mTraffic = (LayoutPreference) findPreference(TRAFFIC_CATEGORY);
         mTraffic.setTitle(R.string.traffic_title);
