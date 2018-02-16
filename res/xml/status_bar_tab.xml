@@ -22,9 +22,9 @@
         android:layout="@layout/battery_options" />
 
     <com.android.settings.applications.LayoutPreference
-        android:key="carrier_label_category"
-        android:fragment="com.aquarios.coralreef.fragments.CarrierLabel"
-        android:layout="@layout/carrier_label" />
+        android:key="clock_options_category"
+        android:fragment="com.aquarios.coralreef.fragments.ClockOptions"
+        android:layout="@layout/clock_options" />
 
     <com.android.settings.applications.LayoutPreference
         android:key="traffic_category"
