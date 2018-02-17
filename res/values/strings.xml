@@ -42,7 +42,7 @@
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize the status bar or QS tile battery</string>
     <string name="clock_options_title">Clock options</string>
-    <string name="clock_options_summary">Set view options of time &amp date in status bar</string>
+    <string name="clock_options_summary">Set view options of time &amp; date in status bar</string>
     <string name="status_bar_items_title">Status bar items</string>
     <string name="status_bar_items_summary">Configure the visibilty of certain indicators in status bar </string>
     <string name="traffic_title">Traffic indicators</string>
@@ -541,5 +541,8 @@
     <string name="show_battery_percent_title">Show battery percentage</string>
     <string name="show_battery_percent_summary">Show battery level percentage near the icon</string>
     <string name="battery_style_category_title">Battery icon</string>
+    <string name="battery_percent_none">Don\'t show</string>
+    <string name="battery_percent_outside">Show near icon</string>
+    <string name="battery_percent_inside">Show inside icon</string>
 
 </resources>
