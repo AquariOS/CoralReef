@@ -43,5 +43,7 @@
     <Preference
         android:key="expanded_desktop_category"
         android:title="@string/expanded_desktop_title"
+        android:summary="@string/expanded_desktop_summary"
         android:fragment="com.aquarios.coralreef.fragments.ExpandedDesktop"/>
+
 </PreferenceScreen>
