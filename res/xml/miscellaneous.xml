@@ -39,5 +39,9 @@
         android:title="@string/screen_off_animation_title"
         android:entries="@array/screen_off_animation_entries"
         android:entryValues="@array/screen_off_animation_values" />
-
+	
+    <Preference
+        android:key="expanded_desktop_category"
+        android:title="@string/expanded_desktop_title"
+        android:fragment="com.aquarios.coralreef.fragments.ExpandedDesktop"/>
 </PreferenceScreen>
