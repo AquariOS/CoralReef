@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2018 The Dirty Unicorns Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -33,13 +30,22 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/redAccent"
+                android:id="@+id/aquaAccent"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_columnWeight="1"
                 android:gravity="center"
                 android:layout_gravity="fill_horizontal"
-                android:background="#FF5252" />
+                android:background="#0DA0BA" />
+
+            <Button
+                android:id="@+id/darkredAccent"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:layout_gravity="fill_horizontal"
+                android:background="#9C0800" />
 
             <Button
                 android:id="@+id/pinkAccent"
@@ -78,13 +84,13 @@
                 android:background="#536DFE" />
 
             <Button
-                android:id="@+id/blueAccent"
+                android:id="@+id/redAccent"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_columnWeight="1"
                 android:gravity="center"
                 android:layout_gravity="fill_horizontal"
-                android:background="#448AFF" />
+                android:background="#FF0000" />
 
             <Button
                 android:id="@+id/lightblueAccent"
@@ -105,22 +111,13 @@
                 android:background="#00BCD4" />
 
             <Button
-                android:id="@+id/tealAccent"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:layout_gravity="fill_horizontal"
-                android:background="#009688" />
-
-            <Button
                 android:id="@+id/greenAccent"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_columnWeight="1"
                 android:gravity="center"
                 android:layout_gravity="fill_horizontal"
-                android:background="#4CAF50" />
+                android:background="#3EA055" />
 
             <Button
                 android:id="@+id/lightgreenAccent"

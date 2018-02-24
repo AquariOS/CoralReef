@@ -79,16 +79,31 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
     private void initView() {
         ContentResolver resolver = getActivity().getContentResolver();
 
-        Button redAccent = null;
+        Button aquaAccent = null;
         if (mView != null) {
-            redAccent = mView.findViewById(R.id.redAccent);
+            aquaAccent = mView.findViewById(R.id.aquaAccent);
         }
-        if (redAccent != null) {
-            redAccent.setOnClickListener(new View.OnClickListener() {
+        if (aquaAccent != null) {
+            aquaAccent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
                             Settings.System.ACCENT_PICKER, 1, UserHandle.USER_CURRENT);
+                    dismiss();
+                }
+            });
+        }
+
+        Button darkredAccent = null;
+        if (mView != null) {
+            darkredAccent = mView.findViewById(R.id.darkredAccent);
+        }
+        if (darkredAccent != null) {
+            darkredAccent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Settings.System.putIntForUser(resolver,
+                            Settings.System.ACCENT_PICKER, 2, UserHandle.USER_CURRENT);
                     dismiss();
                 }
             });
@@ -103,7 +118,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
-                            Settings.System.ACCENT_PICKER, 2, UserHandle.USER_CURRENT);
+                            Settings.System.ACCENT_PICKER, 3, UserHandle.USER_CURRENT);
                     dismiss();
                 }
             });
@@ -118,7 +133,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
-                            Settings.System.ACCENT_PICKER, 3, UserHandle.USER_CURRENT);
+                            Settings.System.ACCENT_PICKER, 4, UserHandle.USER_CURRENT);
                     dismiss();
                 }
             });
@@ -133,7 +148,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
-                            Settings.System.ACCENT_PICKER, 4, UserHandle.USER_CURRENT);
+                            Settings.System.ACCENT_PICKER, 5, UserHandle.USER_CURRENT);
                     dismiss();
                 }
             });
@@ -148,22 +163,22 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
-                            Settings.System.ACCENT_PICKER, 5, UserHandle.USER_CURRENT);
+                            Settings.System.ACCENT_PICKER, 6, UserHandle.USER_CURRENT);
                     dismiss();
                 }
             });
         }
 
-        Button blueAccent = null;
+        Button redAccent = null;
         if (mView != null) {
-            blueAccent = mView.findViewById(R.id.blueAccent);
+            redAccent = mView.findViewById(R.id.redAccent);
         }
-        if (blueAccent != null) {
-            blueAccent.setOnClickListener(new View.OnClickListener() {
+        if (redAccent != null) {
+            redAccent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
-                            Settings.System.ACCENT_PICKER, 6, UserHandle.USER_CURRENT);
+                            Settings.System.ACCENT_PICKER, 7, UserHandle.USER_CURRENT);
                     dismiss();
                 }
             });
@@ -178,7 +193,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
-                            Settings.System.ACCENT_PICKER, 7, UserHandle.USER_CURRENT);
+                            Settings.System.ACCENT_PICKER, 8, UserHandle.USER_CURRENT);
                     dismiss();
                 }
             });
@@ -190,21 +205,6 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
         }
         if (cyanAccent != null) {
             cyanAccent.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Settings.System.putIntForUser(resolver,
-                            Settings.System.ACCENT_PICKER, 8, UserHandle.USER_CURRENT);
-                    dismiss();
-                }
-            });
-        }
-
-        Button tealAccent = null;
-        if (mView != null) {
-            tealAccent = mView.findViewById(R.id.tealAccent);
-        }
-        if (tealAccent != null) {
-            tealAccent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Settings.System.putIntForUser(resolver,
