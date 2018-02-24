@@ -29,4 +29,8 @@
     <color name="expanded_button_color_close">#F44336</color>
     <color name="preference_background_color">@*android:color/accent_device_default_light</color>
 
+    <!-- Fruity Loops -->
+    <color name="accent_picker_white_accent">@android:color/white</color>
+    <color name="accent_picker_dark_accent">@android:color/black</color>
+
 </resources>
