@@ -22,4 +22,8 @@
     <color name="bottom_nav_text_icon_inactive">@*android:color/hint_foreground_light</color>
     <color name="preference_background_color">@*android:color/accent_device_default_light</color>
 
+    <!-- Fruity Loops -->
+    <color name="accent_picker_white_accent">@android:color/white</color>
+    <color name="accent_picker_dark_accent">@android:color/black</color>
+
 </resources>
