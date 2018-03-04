@@ -18,7 +18,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/headsup_title" >
 
-    <com.aquarios.coralreef.preference.GlobalSettingSwitchPreference
+    <com.aquarios.support.preferences.GlobalSettingSwitchPreference
             android:key="heads_up_notifications_enabled"
             android:title="@string/heads_up_notifications"
             android:summaryOn="@string/summary_heads_up_enabled"
@@ -30,6 +30,13 @@
         android:title="@string/heads_up_time_out_title"
         android:entries="@array/heads_up_time_out_entries"
         android:entryValues="@array/heads_up_time_out_values"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="heads_up_snooze_time"
+        android:title="@string/heads_up_snooze_title"
+        android:entries="@array/heads_up_snooze_entries"
+        android:entryValues="@array/heads_up_snooze_values"
         android:persistent="false" />
 
     <PreferenceCategory
