@@ -597,4 +597,8 @@
     <string name="heads_up_snooze_15min">15 minutes</string>
     <string name="heads_up_snooze_20min">20 minutes</string>
 
+    <!-- App Ops -->
+    <string name="app_ops_category">App Ops</string>
+    <string name="app_ops_settings_summary">Restrict/grant advanced permissions to user and system apps</string>
+
 </resources>

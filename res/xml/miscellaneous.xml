@@ -46,4 +46,10 @@
         android:summary="@string/expanded_desktop_summary"
         android:fragment="com.aquarios.coralreef.fragments.ExpandedDesktop"/>
 
+     <Preference
+        android:key="app_ops"
+        android:fragment="com.android.settings.applications.AppOpsSummary"
+        android:title="@string/app_ops_category"
+        android:summary="@string/app_ops_settings_summary" />
+
 </PreferenceScreen>
