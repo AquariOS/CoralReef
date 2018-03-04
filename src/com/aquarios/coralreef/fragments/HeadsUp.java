@@ -49,8 +49,8 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.aquarios.support.preference.PackageListAdapter;
-import com.aquarios.support.preference.PackageListAdapter.PackageItem;
+import com.aquarios.support.preferences.PackageListAdapter;
+import com.aquarios.support.preferences.PackageListAdapter.PackageItem;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -65,6 +65,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements Preference.On
     private static final int DIALOG_STOPLIST_APPS = 0;
     private static final int DIALOG_BLACKLIST_APPS = 1;
     private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
+    private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
 
     private PackageListAdapter mPackageAdapter;
     private PackageManager mPackageManager;
@@ -73,6 +74,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements Preference.On
     private Preference mAddStoplistPref;
     private Preference mAddBlacklistPref;
     private ListPreference mHeadsUpTimeOut;
+    private ListPreference mHeadsUpSnoozeTime;
 
     private String mStoplistPackageList;
     private String mBlacklistPackageList;
@@ -83,7 +85,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements Preference.On
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get launch-able applications
-        addPreferencesFromResource(R.xml.heads0up_settings);
+        addPreferencesFromResource(R.xml.headsup);
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
@@ -117,6 +119,15 @@ public class HeadsUp extends SettingsPreferenceFragment implements Preference.On
                 Settings.System.HEADS_UP_TIMEOUT, defaultTimeOut);
         mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
         updateHeadsUpTimeOutSummary(headsUpTimeOut);
+
+        int defaultSnooze = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_default_snooze_length_ms", null, null));
+        mHeadsUpSnoozeTime = (ListPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
+        mHeadsUpSnoozeTime.setOnPreferenceChangeListener(this);
+        int headsUpSnooze = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, defaultSnooze);
+        mHeadsUpSnoozeTime.setValue(String.valueOf(headsUpSnooze));
+        updateHeadsUpSnoozeTimeSummary(headsUpSnooze);
     }
 
     @Override
@@ -128,6 +139,13 @@ public class HeadsUp extends SettingsPreferenceFragment implements Preference.On
                     headsUpTimeOut);
             updateHeadsUpTimeOutSummary(headsUpTimeOut);
             return true;
+        } else if (preference == mHeadsUpSnoozeTime) {
+            int headsUpSnooze = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
+                    headsUpSnooze);
+            updateHeadsUpSnoozeTimeSummary(headsUpSnooze);
+            return true;
         }
         return false;
     }
@@ -136,6 +154,17 @@ public class HeadsUp extends SettingsPreferenceFragment implements Preference.On
         String summary = getResources().getString(R.string.heads_up_time_out_summary,
                 value / 1000);
         mHeadsUpTimeOut.setSummary(summary);
+    }
+
+    private void updateHeadsUpSnoozeTimeSummary(int value) {
+        if (value == 0) {
+            mHeadsUpSnoozeTime.setSummary(getResources().getString(R.string.heads_up_snooze_disabled_summary));
+        } else if (value == 60000) {
+            mHeadsUpSnoozeTime.setSummary(getResources().getString(R.string.heads_up_snooze_summary_one_minute));
+        } else {
+            String summary = getResources().getString(R.string.heads_up_snooze_summary, value / 60 / 1000);
+            mHeadsUpSnoozeTime.setSummary(summary);
+        }
     }
 
     @Override
