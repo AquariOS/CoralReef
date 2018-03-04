@@ -18,10 +18,22 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/headsup_title" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <com.aquarios.coralreef.preference.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:title="@string/heads_up_notifications"
+            android:summaryOn="@string/summary_heads_up_enabled"
+            android:summaryOff="@string/summary_heads_up_disabled"
+            android:defaultValue="true" />
+
+    <PreferenceCategory
+            android:title="@string/heads_up_stoplist_title"
+            android:key="stoplist_applications"
+            android:dependency="heads_up_notifications_enabled" >
+        <Preference
+            android:key="add_stoplist_packages"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/add_heads_up_package"
+            android:summary="@string/add_heads_up_stoplist_summary" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
