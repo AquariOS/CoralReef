@@ -601,4 +601,9 @@
     <string name="app_ops_category">App Ops</string>
     <string name="app_ops_settings_summary">Restrict/grant advanced permissions to user and system apps</string>
 
+    <!-- Screenshot editor -->
+    <string name="screenshot_edit_app">Screenshot editor</string>
+    <string name="screenshot_edit_app_summary">Select your preferred image editor for editing screenshots</string>
+    <string name="screenshot_edit_app_no_editor">No image editor available</string>
+
 </resources>

@@ -52,4 +52,9 @@
         android:title="@string/app_ops_category"
         android:summary="@string/app_ops_settings_summary" />
 
+    <Preference
+        android:key="screenshot_edit_app"
+        android:title="@string/screenshot_edit_app"
+        android:summary="@string/screenshot_edit_app_summary" />
+
 </PreferenceScreen>
