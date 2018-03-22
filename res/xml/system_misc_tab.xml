@@ -30,6 +30,11 @@
     </com.android.settings.applications.LayoutPreference-->
 
     <com.android.settings.applications.LayoutPreference
+        android:key="display_options"
+        android:fragment="com.aquarios.coralreef.fragments.DisplayOptions"
+        android:layout="@layout/display_options" />
+
+    <com.android.settings.applications.LayoutPreference
         android:key="gesture_options"
         android:fragment="com.aquarios.coralreef.fragments.GestureOptions"
         android:layout="@layout/gesture_options" />

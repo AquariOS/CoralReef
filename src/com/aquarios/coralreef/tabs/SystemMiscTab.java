@@ -35,11 +35,13 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
     private static final String GESTURE_OPTIONS_CATEGORY = "gesture_options";
     private static final String MISCELLANEOUS_CATEGORY = "miscellaneous_category";
     private static final String CHANGELOG_CATEGORY = "changelog";
+    private static final String DISPLAY_OPTIONS_CATEGORY = "display_options";
 
     private LayoutPreference mRecents;
     private LayoutPreference mGestures;
     private LayoutPreference mMiscellaneous;
     private LayoutPreference mChangelog;
+    private LayoutPreference mDisplay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,9 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
 
         mChangelog = (LayoutPreference) findPreference(CHANGELOG_CATEGORY);
         mChangelog.setTitle(R.string.changelog_title);
+
+        mDisplay = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
+        mDisplay.setTitle(R.string.display_options_title);
     }
 
     @Override
