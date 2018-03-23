@@ -608,4 +608,8 @@
     <string name="screenshot_edit_app_summary">Select your preferred image editor for editing screenshots</string>
     <string name="screenshot_edit_app_no_editor">No image editor available</string>
 
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
 </resources>
