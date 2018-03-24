@@ -35,6 +35,14 @@
         android:title="@string/double_tap_sleep_gesture_title"
         android:defaultValue="true" />
 
+	<com.aquarios.coralreef.preference.CustomSeekBarPreference
+        android:key="qs_panel_alpha"
+        android:title="@string/qs_panel_alpha_title"
+        android:max="255"
+        settings:min="0"
+        settings:units=""
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="category_custom_header"
         android:title="@string/qs_appearance_category">

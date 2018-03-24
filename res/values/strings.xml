@@ -614,4 +614,7 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
+    <!-- QuickSettings Panel Transparency -->
+    <string name="qs_panel_alpha_title">Panel background transparency</string>
+
 </resources>
