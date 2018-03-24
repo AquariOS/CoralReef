@@ -34,18 +34,6 @@
         android:summary="@string/vibration_on_charge_state_changed_summary"
         android:defaultValue="true" />
 
-    <ListPreference
-        android:key="screen_off_animation"
-        android:title="@string/screen_off_animation_title"
-        android:entries="@array/screen_off_animation_entries"
-        android:entryValues="@array/screen_off_animation_values" />
-	
-    <Preference
-        android:key="expanded_desktop_category"
-        android:title="@string/expanded_desktop_title"
-        android:summary="@string/expanded_desktop_summary"
-        android:fragment="com.aquarios.coralreef.fragments.ExpandedDesktop"/>
-
      <Preference
         android:key="app_ops"
         android:fragment="com.android.settings.applications.AppOpsSummary"

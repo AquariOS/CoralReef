@@ -13,10 +13,22 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <PreferenceCategory
+        android:title="@string/general_animations_category"/>
+
+        <ListPreference
+            android:key="screen_off_animation"
+            android:title="@string/screen_off_animation_title"
+            android:entries="@array/screen_off_animation_entries"
+            android:entryValues="@array/screen_off_animation_values" />
+
+    <PreferenceCategory
+        android:title="@string/general_display_options_category"/>
+
+        <Preference
+            android:key="expanded_desktop_category"
+            android:title="@string/expanded_desktop_title"
+            android:summary="@string/expanded_desktop_summary"
+            android:fragment="com.aquarios.coralreef.fragments.ExpandedDesktop"/>
 
 </PreferenceScreen>

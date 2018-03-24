@@ -52,11 +52,9 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
 
     private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
-    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final int DIALOG_SCREENSHOT_EDIT_APP = 1;
 
     private ListPreference mLaunchPlayerHeadsetConnection;
-    private ListPreference mScreenOffAnimation;
     private Preference mScreenshotEditAppPref;
     private ScreenshotEditPackageListAdapter mPackageAdapter;
 
@@ -73,13 +71,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         mLaunchPlayerHeadsetConnection.setValue(Integer.toString(mLaunchPlayerHeadsetConnectionValue));
         mLaunchPlayerHeadsetConnection.setSummary(mLaunchPlayerHeadsetConnection.getEntry());
         mLaunchPlayerHeadsetConnection.setOnPreferenceChangeListener(this);
-
-        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
-        int screenOffStyle = Settings.System.getInt(resolver,
-                Settings.System.SCREEN_OFF_ANIMATION, 0);
-        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
-        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
-        mScreenOffAnimation.setOnPreferenceChangeListener(this);
 
         mPackageAdapter = new ScreenshotEditPackageListAdapter(getActivity());
         mScreenshotEditAppPref = findPreference("screenshot_edit_app");
@@ -133,13 +124,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                     mLaunchPlayerHeadsetConnection.getEntries()[index]);
             Settings.System.putIntForUser(resolver, Settings.System.HEADSET_CONNECT_PLAYER,
                     mLaunchPlayerHeadsetConnectionValue, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mScreenOffAnimation) {
-            String value = (String) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
-            int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
-            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
             return true;
         }
         return false;

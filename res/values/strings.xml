@@ -480,6 +480,7 @@
     <string name="status_bar_icons_summary">Choose which icons are able to be displayed in status bar</string>
 
     <!-- Screen Off animation -->
+    <string name="general_animations_category">General animations</string>
     <string name="screen_off_animation_title">Screen off animation</string>
     <string name="screen_off_animation_default">Default</string>
     <string name="screen_off_animation_crt">CRT</string>
@@ -553,6 +554,7 @@
     <string name="battery_percent_inside">Show inside icon</string>
     
     <!-- Expanded desktop -->
+    <string name="general_display_options_category">General display options</string>
     <string name="expanded_desktop_title">Expanded desktop</string>
     <string name="expanded_desktop_summary">Per-app configuration of the status bar and navigation key view</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
