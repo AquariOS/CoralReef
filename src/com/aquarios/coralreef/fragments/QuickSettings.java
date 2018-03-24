@@ -77,6 +77,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.quick_settings);
+        final ContentResolver resolver = getActivity().getContentResolver();
 
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
 
@@ -177,7 +178,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
             updateHeaderProviderSummary(headerEnabled);   
             return true;        
         } else if (preference == mQsPanelAlpha) {
-            int bgAlpha = (Integer) newValue;
+            int bgAlpha = (Integer) objValue;
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
                     UserHandle.USER_CURRENT);

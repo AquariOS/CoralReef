@@ -18,6 +18,7 @@ package com.aquarios.coralreef.fragments;
 
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -46,10 +47,6 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
 
         getActivity().getActionBar().setTitle(R.string.display_options_title);
         ContentResolver resolver = getActivity().getContentResolver();
-
-        mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
-        int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
 
         mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
         int screenOffStyle = Settings.System.getInt(resolver,
