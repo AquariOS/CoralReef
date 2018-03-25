@@ -64,8 +64,8 @@
 
         <Preference
             android:key="custom_header_browse"
-            android:title="@string/custom_header_browse_title"
-            android:summary="@string/custom_header_browse_summary"
+            android:title="@string/custom_header_pick_title"
+            android:summary="@string/custom_header_pick_summary"
             android:persistent="false"
             android:dependency="status_bar_custom_header" >
             <intent android:action="android.intent.action.MAIN"

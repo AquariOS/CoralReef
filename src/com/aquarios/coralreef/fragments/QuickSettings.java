@@ -74,10 +74,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
     private CustomSeekBarPreference mQsPanelAlpha;
 
     @Override
+    public void onResume() {
+        super.onResume();
+        updateEnablement();
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.quick_settings);
         final ContentResolver resolver = getActivity().getContentResolver();
+
+        mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
+        mFileHeaderProvider = getResources().getString(R.string.file_header_provider);
 
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
 
@@ -103,24 +112,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
         mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
         mHeaderShadow.setOnPreferenceChangeListener(this);
 
-        mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
-        mFileHeaderProvider = getResources().getString(R.string.file_header_provider);
-        String providerName = Settings.System.getString(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER);
-        if (providerName == null) {
-            providerName = mDaylightHeaderProvider;
-        }
-        mHeaderBrowse.setEnabled(isBrowseHeaderAvailable() && !providerName.equals(mFileHeaderProvider));
-
         mHeaderProvider = (ListPreference) findPreference(CUSTOM_HEADER_PROVIDER);
-        int valueIndex = mHeaderProvider.findIndexOfValue(providerName);
-        mHeaderProvider.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-        mHeaderProvider.setSummary(mHeaderProvider.getEntry());
         mHeaderProvider.setOnPreferenceChangeListener(this);
-        mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
-
         mFileHeader = findPreference(FILE_HEADER_SELECT);
-        mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
 
         mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getIntForUser(resolver,
@@ -167,12 +161,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER, value);
             int valueIndex = mHeaderProvider.findIndexOfValue(value);
             mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
-            mDaylightHeaderPack.setEnabled(value.equals(mDaylightHeaderProvider));
-            mHeaderBrowse.setEnabled(!value.equals(mFileHeaderProvider));
-            mHeaderBrowse.setTitle(valueIndex == 0 ? R.string.custom_header_browse_title : R.string.custom_header_pick_title);
-            mHeaderBrowse.setSummary(valueIndex == 0 ? R.string.custom_header_browse_summary_new : R.string.custom_header_pick_summary);
-            mFileHeader.setEnabled(value.equals(mFileHeaderProvider));
-            return true;        
+            updateEnablement();       
         } else if (preference == mHeaderEnabled) {
             Boolean headerEnabled = (Boolean) objValue;
             updateHeaderProviderSummary(headerEnabled);   
@@ -240,8 +229,26 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
                 return;
             }
             final Uri imageUri = result.getData();
+            Settings.System.putString(getContentResolver(), Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER, "file");
             Settings.System.putString(getContentResolver(), Settings.System.STATUS_BAR_FILE_HEADER_IMAGE, imageUri.toString());
         }
+    }
+
+    private void updateEnablement() {
+        String providerName = Settings.System.getString(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER);
+        if (providerName == null) {
+            providerName = mDaylightHeaderProvider;
+        }
+        if (!providerName.equals(mDaylightHeaderProvider)) {
+            providerName = mFileHeaderProvider;
+        }
+        int valueIndex = mHeaderProvider.findIndexOfValue(providerName);
+        mHeaderProvider.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mHeaderProvider.setSummary(mHeaderProvider.getEntry());
+        mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
+        mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
+        mHeaderBrowse.setEnabled(isBrowseHeaderAvailable() && providerName.equals(mFileHeaderProvider));
     }
 
     @Override
