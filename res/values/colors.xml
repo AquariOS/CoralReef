@@ -33,7 +33,4 @@
     <color name="accent_picker_white_accent">@android:color/white</color>
     <color name="accent_picker_dark_accent">@android:color/black</color>
 
-    <!-- Changelog colors -->
-    <color name="changelog_title_color">@*android:color/accent_device_default_light</color>
-
 </resources>

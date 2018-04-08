@@ -17,6 +17,7 @@
 package com.aquarios.coralreef.fragments;
 
 import android.app.Fragment;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -25,13 +26,17 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -39,7 +44,14 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Changelog extends Fragment {
+import com.android.internal.logging.nano.MetricsProto;
+
+public class Changelog extends SettingsPreferenceFragment {
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.AQUA;
+    }
 
     private static final String CHANGELOG_PATH = "/system/etc/Changelog.txt";
 
@@ -49,9 +61,12 @@ public class Changelog extends Fragment {
         InputStreamReader inputReader = null;
         String text = null;
         StringBuilder data = new StringBuilder();
-        Pattern p = Pattern.compile("([a-f0-9]{7})\\s\\s(.*)\\s\\s\\[(.*)\\]"); //(?dms)
-        Pattern p2 = Pattern.compile("\\s+\\*\\s(([\\w_\\-]+/)+)");
-        Pattern p3 = Pattern.compile("(\\d\\d\\-\\d\\d\\-\\d{4})");
+
+        Pattern date = Pattern.compile("(={20}|\\d{4}-\\d{2}-\\d{2})");
+        Pattern commit = Pattern.compile("([a-f0-9]{7})");
+        Pattern committer = Pattern.compile("\\[(\\D.*?)]");
+        Pattern title = Pattern.compile("([\\*].*)");
+
         try {
             char tmp[] = new char[2048];
             int numRead;
@@ -72,24 +87,36 @@ public class Changelog extends Fragment {
             }
         }
 
-	SpannableStringBuilder sb = new SpannableStringBuilder(data);
-        Matcher m = p.matcher(data);
+        SpannableStringBuilder sb = new SpannableStringBuilder(data);
+        Resources.Theme theme = getContext().getTheme();
+        TypedValue typedValue = new TypedValue();
+        theme.resolveAttribute(android.R.attr.colorAccent, typedValue, true);
+        final int color = getContext().getColor(typedValue.resourceId);
+
+        Matcher m = date.matcher(data);
         while (m.find()){
-          sb.setSpan(new ForegroundColorSpan(Color.rgb(96,125,139)),m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-          sb.setSpan(new StyleSpan(Typeface.BOLD),m.start(1),m.end(1),Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-          sb.setSpan(new ForegroundColorSpan(Color.rgb(69,90,100)),m.start(3), m.end(3), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new ForegroundColorSpan(color), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.BOLD), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         }
-        m = p2.matcher(data);
+        m = commit.matcher(data);
         while (m.find()){
-          sb.setSpan(new StyleSpan(Typeface.BOLD),m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-           sb.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.changelog_title_color)),
-                    m.start(1),m.end(1),Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.NORMAL), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         }
-        m = p3.matcher(data);
+        m = committer.matcher(data);
         while (m.find()){
-          sb.setSpan(new StyleSpan(Typeface.BOLD+Typeface.ITALIC),m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new ForegroundColorSpan(color), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.ITALIC), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         }
+        m = title.matcher(data);
+        while (m.find()){
+            sb.setSpan(new ForegroundColorSpan(color), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.BOLD), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        }
+
         final TextView textView = new TextView(getActivity());
+        LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        llp.setMargins(20, 0, 0, 0); // llp.setMargins(left, top, right, bottom);
+        textView.setLayoutParams(llp);
         textView.setText(sb);
 
         final ScrollView scrollView = new ScrollView(getActivity());
