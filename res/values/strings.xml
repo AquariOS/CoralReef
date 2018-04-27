@@ -28,45 +28,45 @@
     <string name="hw_keys_title">Buttons</string>
     <string name="hw_keys_summary">Configure hardware keys and/or volume rocker options</string>
     <string name="navigationbar_title">Navigation bar</string>
-    <string name="navigationbar_summary">Configure smartbar, fling or pulse</string>
+    <string name="navigationbar_summary">Configure SmartBar, Fling or Pulse</string>
     <string name="powermenu_title">Power menu</string>
-    <string name="powermenu_summary">Configure power menu options such as flashlight, airplane mode or screenshot</string>
-    <string name="volume_rocker_title">Volume Rocker</string>
+    <string name="powermenu_summary">Configure additional power menu options</string>
+    <string name="volume_rocker_title">Volume rocker</string>
     <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
     <!-- Lockscreen -->
-    <string name="fingerprint_prefs_title">Fingerprint prefs</string>
+    <string name="fingerprint_prefs_title">Fingerprint options</string>
     <string name="fingerprint_prefs_summary">Tweaks specific to the fingerprint scanner</string>
     <string name="lockscreen_display_title">Lockscreen display</string>
     <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
-    <string name="battery_options_summary">Customize the status bar or QS tile battery</string>
+    <string name="battery_options_summary">Customize how battery is displayed</string>
     <string name="clock_options_title">Clock options</string>
     <string name="clock_options_summary">Set view options of time &amp; date in status bar</string>
     <string name="status_bar_items_title">Status bar items</string>
-    <string name="status_bar_items_summary">Configure the visibilty of certain indicators in status bar </string>
-    <string name="traffic_title">Traffic indicators</string>
-    <string name="traffic_summary">Enable traffic indicators on the status bar and configure traffic related tweaks</string>
+    <string name="status_bar_items_summary">Configure status bar indicators</string>
+    <string name="traffic_title">Network indicator</string>
+    <string name="traffic_summary">Enable &amp; configure network indicator in status bar</string>
     <string name="quicksettings_title">Quick settings</string>
-    <string name="quicksettings_summary">Configure the quick settings with options ranging from headers to weather</string>
+    <string name="quicksettings_summary">Customize the overall view &amp; functionality</string>
     <!-- Notifications -->
     <string name="led_notifications_title">LED notifications</string>
-    <string name="led_notifications_summary">Enable/disable the LED light, as well as asign specific LED colors to reflect battery levels and app notifications</string>
-    <string name="headsup_title">Heads up</string>
-    <string name="headsup_summary">Configure heads up options</string>
+    <string name="led_notifications_summary">Enable/disable the LED light. Configure colors &amp; behavior</string>
+    <string name="headsup_title">Heads-up</string>
+    <string name="headsup_summary">Configure heads-up options</string>
     <string name="general_notifications_title">General notifications</string>
-    <string name="general_notifications_summary">Adjust some global settings of your device's notifications</string>
+    <string name="general_notifications_summary">Miscellaneous notification controls</string>
     <!-- System/ Misc -->
     <string name="recents_title">Recents</string>
-    <string name="recents_summary">Configure look and feel of recent apps view</string>
+    <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
     <string name="gesture_options_title">Gestures</string>
-    <string name="gesture_options_summary">Enable/disable certain device behaviors triggered by user actions</string>
+    <string name="gesture_options_summary">Enable/disable device specific user actions</string>
     <string name="miscellaneous_title">Miscellaneous</string>
-    <string name="miscellaneous_summary">Tweaks that do not fit in other categories</string>
+    <string name="miscellaneous_summary">Uncategorized options</string>
     <string name="changelog_title">Changelog</string>
-    <string name="changelog_summary">See some of the recent commits.</string>
+    <string name="changelog_summary">List of recent commits added to AquariOS</string>
     <string name="display_options_title">Display options</string>
-    <string name="display_options_summary">Set animation preferences as well other aspects of display</string>
+    <string name="display_options_summary">Set animation preferences and other display settings</string>
 
     <!-- Empty Category -->
     <string name="empty_category_title">No extra features yet...</string>
@@ -96,12 +96,12 @@
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
     <string name="recents_show_membar_title">Memory bar</string>
-    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+    <string name="recents_show_membar_summary">Horizontal bar indicating used/free memory</string>
     <!-- Changelog -->
     <string name="changelog_error">Unable to load changelog</string>
     <!-- Lockscreen weather -->
     <string name="lock_screen_weather_settings_title">Weather options</string>
-    <string name="lock_screen_weather_settings_summary">Set or change the weather to be displayed on the lockscreen</string>
+    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
     <string name="weather_show_weather_title">Show weather</string>
     <string name="weather_show_weather_summary">Enable to show weather information</string>
     <string name="weather_show_location_title">Show location</string>
@@ -122,25 +122,25 @@
     <string name="volume_keys_control_media_stream_summary">Force volume keys to control media stream</string>
 
     <!-- Launch music player when headset is connected -->
-    <string name="headset_connect_player_title">Launch music app on headset connection</string>
+    <string name="headset_connect_player_title">Launch music app upon headset connection</string>
     <string name="headset_connect_player_disabled">Disabled</string>
-    <string name="headset_connect_player_wired">When wired headset is plugged in</string>
-    <string name="headset_connect_player_bt_no_carkit">When BT headset (no carkit) is plugged in</string>
-    <string name="headset_connect_player_bt">When BT headset is plugged in</string>
-    <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>
-    <string name="headset_connect_player_both">When wired or BT headset is plugged in</string>
+    <string name="headset_connect_player_wired">With wired headset</string>
+    <string name="headset_connect_player_bt_no_carkit">With bluetooth headset (no car-kit)</string>
+    <string name="headset_connect_player_bt">With any bluetooth headset</string>
+    <string name="headset_connect_player_both_no_carkit">With bluetooth or wired headset (no car-kit)</string>
+    <string name="headset_connect_player_both">With any bluetooth or wired headset</string>
 
     <!-- DT2S on lockscreen -->
-    <string name="double_tap_sleep_lockscreen">DT2S on lockscreen</string>
-    <string name="double_tap_sleep_lockscreen_summary">Double-tap the lockscreen to put the device to sleep</string>
+    <string name="double_tap_sleep_lockscreen">Double-tap to sleep</string>
+    <string name="double_tap_sleep_lockscreen_summary">Double-tap lockscreen to put device to sleep</string>
 
     <!-- Bottom shortcuts -->
     <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Bottom shortcuts</string>
-    <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts in the keyguard</string>
+    <string name="systemui_tuner_lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts on lockscreen</string>
 
     <!-- Option to show brightness bar in quick settings -->
     <string name="show_brightness_title">Brightness slider</string>
-    <string name="show_brightness_summary">Show the brightness slider</string>
+    <string name="show_brightness_summary">Show brightness slider in QS panel</string>
 
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
@@ -149,47 +149,47 @@
     <!-- Torch Power button gestures -->
     <string name="torch_power_button_gesture_title">Screen off power button torch</string>
     <string name="torch_power_button_gesture_none">Disabled</string>
-    <string name="torch_power_button_gesture_dt">Double tap power to toggle torch (will add a small delay to single tap)</string>
-    <string name="torch_power_button_gesture_lp">Long press power to toggle torch</string>
+    <string name="torch_power_button_gesture_dt">Double-tap power to toggle torch (adds slight delay to single-tap)</string>
+    <string name="torch_power_button_gesture_lp">Long-press power to toggle torch</string>
 
     <!-- Battery light -->
     <string name="battery_led_options">Battery light options</string>
-    <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
+    <string name="battery_light_allow_on_dnd_title">Battery light in Do-Not-Disturb mode</string>
     <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
     <string name="battery_led_color">Battery light color when charging</string>
     <string name="battery_light_low_color">Low battery</string>
     <string name="battery_light_medium_color">Medium battery</string>
-    <string name="battery_light_full_color">Almost full battery</string>
-    <string name="battery_light_reallyfull_color">Full (100) battery</string>
+    <string name="battery_light_full_color">High battery</string>
+    <string name="battery_light_reallyfull_color">Full battery</string>
 
     <!-- Notification LED -->
-    <string name="notification_light_main">Per-app LED options</string>
-    <string name="notification_light_settings">Customize notification LED on a per-app basis</string>
+    <string name="notification_light_main">LED notifications</string>
+    <string name="notification_light_settings">Customize LED notifications on a per-app basis</string>
 
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
-    <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
+    <string name="qs_footer_warnings_summary">Display a warning at base of QS panel when network is monitored by external apps or VPN</string>
 
     <!-- Footer warnings -->
-    <string name="double_tap_sleep_gesture_title">Double tap status bar to sleep</string>
+    <string name="double_tap_sleep_gesture_title">Double-tap status bar to sleep</string>
 
     <!-- Heads up options -->
-    <string name="less_boring_heads_up_title">Make heads up less annoying</string>
-    <string name="less_boring_heads_up_summary">Show heads up only for dialer or messaging app</string>
+    <string name="less_boring_heads_up_title">Less intrusive heads-up</string>
+    <string name="less_boring_heads_up_summary">Show heads-up only for dialer or messaging app</string>
 
     <!-- QS rows and columns -->
-    <string name="qs_rows_columns_title">QS rows and columns</string>
-    <string name="qs_rows_portrait_title">Tiles rows on portrait</string>
-    <string name="qs_rows_landscape_title">Tiles rows on landscape</string>
-    <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
-    <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
+    <string name="qs_rows_columns_title">Quick tile layout</string>
+    <string name="qs_rows_portrait_title">Number of rows</string>
+    <string name="qs_columns_portrait_title">Number of columns</string>
+    <string name="qs_rows_landscape_title">Number of rows</string>
+    <string name="qs_columns_landscape_title">Number of columns</string>
 
     <!-- Status bar net monitor -->
-    <string name="network_traffic_state_title">Show net activity in status bar</string>
+    <string name="network_traffic_state_title">Network indicator</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
 
     <!-- QS tile titles -->
-    <string name="qs_tile_title_visibility_title">Show tiles title</string>
+    <string name="qs_tile_title_visibility_title">Show Quick tile names</string>
 
     <!-- Recents icon packs -->
     <string name="recents_icon_pack_title">Icon Pack</string>
@@ -216,7 +216,7 @@
     <string name="navigationbar_settings_summary">Customize navigation style and behavior</string>
     <string name="navbar_general_title">Advanced</string>
     <string name="navigation_bar_left_title">Left-handed mode</string>
-    <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+    <string name="navigation_bar_left_summary">Move navigation bar to the left when in landscape mode</string>
     <string name="smartbar_interface">SmartBar</string>
     <string name="icon_pack_picker_dialog_title">Icon packs</string>
     <string name="image_exceeds_max_allowed_size">Image must not exceed 512x512</string>
@@ -347,7 +347,7 @@
     <string name="smartbar_settings_summary">Fully-customizable navigation bar</string>
     <string name="smartbar_editor_title">Start edit mode</string>
     <string name="smartbar_editor_summary">Open smartbar buttons editor</string>
-    <string name="smartbar_help_policy_notice_summary">When in editor mode, medium press and drag a button to change its position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double tap action will delay single tap a bit.</string>
+    <string name="smartbar_help_policy_notice_summary">When in editor mode, medium-press and drag a button to change it\'s position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double tap action will delay single tap a bit.</string>
     <string name="smartbar_context_menu_position_title">Context buttons layout position</string>
     <string name="smartbar_context_menu_position_summary">Set the position of contextual buttons such as menu and ime selector</string>
     <string name="smartbar_right">Right</string>
@@ -389,7 +389,7 @@
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
-    <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>  
+    <string name="lockscreen_battery_info_summary">Display max current, voltage, and battery temperature on lockscreen while charging</string>  
 
     <!-- Shortcut to gestures -->
     <string name="gesture_shortcut_title">Available stock gestures</string>
@@ -398,7 +398,7 @@
     <!-- Power Menu -->
     <string name="powermenu_reboot_title">Reboot</string>
     <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
-    <string name="powermenu_advanced_reboot_summary">Enables the advanced reboot menu for options to reboot to recovery, bootloader, restart systemui or trigger a hot reboot</string>
+    <string name="powermenu_advanced_reboot_summary">Enables the advanced reboot menu (recovery, bootloader, restart SystemUI or trigger a hot reboot)</string>
     <string name="powermenu_screenshot_title">Screenshot</string>
     <string name="powermenu_screenshot_summary">Shortcut to screenshot action</string>
     <string name="powermenu_airplane_title">Airplane mode</string>
@@ -426,8 +426,8 @@
     <string name="daylight_header_pack_title">Header image collection</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
+    <string name="static_header_provider" translatable="false">Static</string>
+    <string name="daylight_header_provider" translatable="false">Daylight</string>
     <string name="static_header_provider_title">Static image</string>
     <string name="daylight_header_provider_title">Image collection</string>
     <string name="custom_header_provider_title">Header provider</string>
@@ -440,14 +440,14 @@
     <string name="file_header_select_title">Select local image</string>
     <string name="file_header_select_summary">Select image from storage</string>
     <string name="file_header_provider_title">Single image</string>
-    <string name="file_header_provider" translatable="false">file</string>
+    <string name="file_header_provider" translatable="false">File</string>
 
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Lock screen visualizer</string>
     <string name="lockscreen_visualizer_summary">Displays a live design on lock screen while music is playing (works with most audio apps)</string>
 
     <!-- Battery Bar -->
-    <string name="battery_bar_settings">Battery Bar</string>
+    <string name="battery_bar_settings">Battery bar</string>
     <string name="battery_bar_settings_summary">Horizontal bar indicating battery level</string>
     <string name="battery_icon">Battery icon style</string>
     <string name="battery_not_title">Battery icon in notifications</string>
@@ -474,7 +474,7 @@
 
     <!-- Status bar icons -->
     <string name="status_bar_icons_title">Status bar icons</string>
-    <string name="status_bar_icons_summary">Choose which icons are able to be displayed in status bar</string>
+    <string name="status_bar_icons_summary">Choose which icons to display in status bar</string>
 
     <!-- Screen Off animation -->
     <string name="general_animations_category">General animations</string>
@@ -484,13 +484,13 @@
     <string name="screen_off_animation_scale">Scale</string>
 
     <!-- DT2S on Smartbar -->
-    <string name="smartbar_double_tap_sleep_title">Double tap to sleep</string>
-    <string name="smartbar_double_tap_sleep_summary">Double tap on empty navbar areas to sleep</string>
+    <string name="smartbar_double_tap_sleep_title">Double-tap to sleep</string>
+    <string name="smartbar_double_tap_sleep_summary">Double-tap on empty navbar areas to sleep</string>
 
     <!-- Ambient display music ticker -->
     <string name="force_ambient_for_media_pref_title">Ambient music ticker</string>
-    <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
-    <string name="ambient_ticker_footer">This feature allows for the ability to show the current music track info on the lockscreen with or without Ambient display enabled.\n\nYou can select from two layouts, normal and minimal. While this feature takes advantage of ambient display, it does not depend on it. It can be triggered without having ambient display enabled by using the (forced) options.\n\nNormal view includes the lockscreen clock, date and ticker.\n\nMinimal view includes just the ticker at the center of the screen.</string>
+    <string name="force_ambient_for_media_pref_summary">Configure the ambient music ticker</string>
+    <string name="ambient_ticker_footer">This feature allows for the ability to show the current music track info on the lockscreen with or without ambient display enabled.\n\nYou can select from two layouts, normal and minimal. While this feature takes advantage of ambient display, it does not depend on it. It can be triggered without having ambient display enabled by using the (forced) options.\n\nNormal view includes the lockscreen clock, date and ticker.\n\nMinimal view includes just the ticker at the center of the screen.</string>
     <string name="force_ambient_for_media_title">Select layout</string>
     <string name="force_ambient_for_media_off">Disabled</string>
     <string name="force_ambient_for_media_on">Normal</string>
@@ -500,7 +500,7 @@
     <!-- Status bar clock options -->
     <string name="status_bar_title">Status bar</string>
     <string name="status_bar_style_title">Style</string>
-    <string name="status_bar_clock">Clock &amp; Date</string>
+    <string name="status_bar_clock">Clock &amp; date</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disabled</string>
@@ -559,19 +559,19 @@
     <string name="expanded_hide_status">Hide status bar</string>
     <string name="expanded_hide_navigation">Hide navigation bar</string>
     <string name="expanded_hide_both">Hide both</string>
-    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set "Enabled for all" to the off position</string>
+    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set "enabled for all" to the off position</string>
     <string name="expanded_desktop_state">Expanded state</string>
     <string name="expanded_enabled_for_all">Enabled for all</string>
     <string name="expanded_user_configurable">User configurable</string>
 
     <!-- Heads up -->
-    <string name="heads_up_notifications">Heads up</string>
+    <string name="heads_up_notifications">Heads-up</string>
     <string name="heads_up_general">General</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
     <string name="add_heads_up_package">Add app</string>
-    <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
-    <string name="add_heads_up_blacklist_summary">Disable heads up from these applications</string>
+    <string name="add_heads_up_stoplist_summary">Disable heads-up notifications in these applications</string>
+    <string name="add_heads_up_blacklist_summary">Disable heads-up from these applications</string>
     <string name="heads_up_stoplist_title">Stoplist</string>
     <string name="heads_up_blacklist_title">Blacklist</string>
     <string name="profile_choose_app">Choose app</string>
@@ -590,8 +590,8 @@
 
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Snooze timer</string>
-    <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
-    <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
+    <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads-up from that application for 1 minute</string>
+    <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads-up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
     <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
     <string name="heads_up_snooze_1min">1 minute</string>
     <string name="heads_up_snooze_5min">5 minutes</string>
@@ -616,9 +616,9 @@
     <string name="qs_panel_alpha_title">Panel background transparency</string>
 
     <!-- Quick Pulldown-->
-    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="quick_pulldown_title">Quick pull-down</string>
     <string name="quick_pulldown_summary">Enabled on right side of status bar</string>
-    <string name="quick_pulldown_summary_always">Always show Quick Settings on status bar pulldown</string>
+    <string name="quick_pulldown_summary_always">Always show Quick Settings upon status bar pull-down</string>
     <string name="quick_pulldown_off">Disable</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Enable (on right side)</string>
