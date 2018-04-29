@@ -179,8 +179,11 @@
 
     <!-- QS rows and columns -->
     <string name="qs_rows_columns_title">Quick tile layout</string>
+    <string name="qs_rows_columns_title_summary">Set the number of columns/rows for each view</string>
+    <string name="category_qstiles_portrait">PORTRAIT VIEW</string>
     <string name="qs_rows_portrait_title">Number of rows</string>
     <string name="qs_columns_portrait_title">Number of columns</string>
+    <string name="category_qstiles_landscape">LANDSCAPE VIEW</string>
     <string name="qs_rows_landscape_title">Number of rows</string>
     <string name="qs_columns_landscape_title">Number of columns</string>
 
@@ -420,9 +423,9 @@
     <string name="notification_sound_vib_screen_on_nomedia">If no media is playing</string>
 
     <!-- Custom Headers -->
-    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="qs_header_category">Custom headers</string>
+    <string name="status_bar_custom_header_title">Enable header image</string>
     <string name="status_bar_custom_header_summary">Choose an image to be displayed at the top of the notification panel</string>
-    <string name="qs_appearance_category">APPEARANCE</string>
     <string name="daylight_header_pack_title">Header image collection</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
@@ -616,6 +619,7 @@
     <string name="qs_panel_alpha_title">Panel background transparency</string>
 
     <!-- Quick Pulldown-->
+    <string name="general_options_category">GENERAL OPTIONS</string>
     <string name="quick_pulldown_title">Quick pull-down</string>
     <string name="quick_pulldown_summary">Enabled on right side of status bar</string>
     <string name="quick_pulldown_summary_always">Always show Quick Settings upon status bar pull-down</string>
