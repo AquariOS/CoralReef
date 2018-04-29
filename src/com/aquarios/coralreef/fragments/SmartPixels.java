@@ -24,12 +24,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
-import android.preference.ListPreference;
-import android.preference.SwitchPreference;
-import android.preference.Preference;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceManager;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v14.preference.SwitchPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
@@ -67,7 +68,6 @@ public class SmartPixels extends SettingsPreferenceFragment implements
 
         mSmartPixelsEnable = (SystemSettingSwitchPreference) findPreference(ENABLE);
         mSmartPixelsOnPowerSave = (SystemSettingSwitchPreference) findPreference(ON_POWER_SAVE);
-
         mSmartPixelsObserver = new SmartPixelsObserver(mHandler);
     }
 
@@ -133,5 +133,4 @@ public class SmartPixels extends SettingsPreferenceFragment implements
             updatePreferences();
         }
     }
-
 }
