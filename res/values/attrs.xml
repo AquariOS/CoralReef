@@ -39,6 +39,7 @@
         <attr name="defaultColorValue" format="integer" />
         <attr name="ledPreview" format="boolean" />
         <attr name="alphaSlider" format="boolean" />
+        <attr name="isledPicker" format="boolean" />
     </declare-styleable>
 
 </resources>

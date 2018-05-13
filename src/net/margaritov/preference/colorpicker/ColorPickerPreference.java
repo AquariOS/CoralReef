@@ -18,7 +18,11 @@
 
 package net.margaritov.preference.colorpicker;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -28,8 +32,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v7.preference.*;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.GridLayout;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -47,6 +54,7 @@ public class ColorPickerPreference extends Preference implements
 
     PreferenceViewHolder mView;
     ColorPickerDialog mDialog;
+    AlertDialog mSimpleDialog;
     LinearLayout widgetFrameView;
     private int mValue = Color.BLACK;
     private float mDensity = 0;
@@ -60,8 +68,11 @@ public class ColorPickerPreference extends Preference implements
     int mDefValue = -1;
 
     private boolean mShowLedPreview;
+    private boolean mIsLedColorPicker;
 
     private EditText mEditText;
+
+    private boolean mIsCrappyLedDevice;
 
     public ColorPickerPreference(Context context) {
         super(context);
@@ -89,6 +100,7 @@ public class ColorPickerPreference extends Preference implements
     }
 
     private void init(Context context, AttributeSet attrs) {
+        mIsCrappyLedDevice = getContext().getResources().getBoolean(R.bool.config_isCrappyLedDevice);
         mDensity = getContext().getResources().getDisplayMetrics().density;
         setOnPreferenceClickListener(this);
         if (attrs != null) {
@@ -99,6 +111,7 @@ public class ColorPickerPreference extends Preference implements
                 mDefValue = defVal;
             }
             mShowLedPreview = attrs.getAttributeBooleanValue(null, "ledPreview", false);
+            mIsLedColorPicker = attrs.getAttributeBooleanValue(null, "isledPicker", false);
         }
     }
 
@@ -264,12 +277,21 @@ public class ColorPickerPreference extends Preference implements
         }
     }
 
+    private void onSimpleColorChanged(int color) {
+        onColorChanged(color);
+    }
+
     public boolean onPreferenceClick(Preference preference) {
         //showDialog(null);
         return false;
     }
 
     protected void showDialog(Bundle state) {
+        if (mIsCrappyLedDevice && (mShowLedPreview || mIsLedColorPicker)) {
+            showSimplePickerDialog();
+            return;
+        }
+
         mDialog = new ColorPickerDialog(getContext(), mValue, mShowLedPreview);
         mDialog.setOnColorChangedListener(this);
         if (mAlphaSliderEnabled) {
@@ -283,6 +305,146 @@ public class ColorPickerPreference extends Preference implements
                 android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
+    private void showSimplePickerDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        View mView = LayoutInflater.from(getContext()).inflate(R.layout.color_picker_simple_dialog, null);
+        builder.setView(mView)
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            mSimpleDialog.dismiss();
+                        }
+                })
+                .setNeutralButton(R.string.color_default, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            onSimpleColorChanged(mDefValue != 1 ? mDefValue : Color.WHITE);
+                        }
+                })
+                .setCancelable(false);
+
+        Button white = null;
+        if (mView != null) {
+            white = mView.findViewById(R.id.white);
+        }
+        if (white != null) {
+            white.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.WHITE);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+        Button red = null;
+        if (mView != null) {
+            red = mView.findViewById(R.id.red);
+        }
+        if (red != null) {
+            red.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.RED);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+        Button yellow = null;
+        if (mView != null) {
+            yellow = mView.findViewById(R.id.yellow);
+        }
+        if (yellow != null) {
+            yellow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.YELLOW);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+        Button blue = null;
+        if (mView != null) {
+            blue = mView.findViewById(R.id.blue);
+        }
+        if (blue != null) {
+            blue.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.BLUE);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+        Button cyan = null;
+        if (mView != null) {
+            cyan = mView.findViewById(R.id.cyan);
+        }
+        if (cyan != null) {
+            cyan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.CYAN);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+        Button magenta = null;
+        if (mView != null) {
+            magenta = mView.findViewById(R.id.magenta);
+        }
+        if (magenta != null) {
+            magenta.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.MAGENTA);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+        Button green = null;
+        if (mView != null) {
+            green = mView.findViewById(R.id.green);
+        }
+        if (green != null) {
+            green.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.GREEN);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+        Button black = null;
+        if (mView != null) {
+            black = mView.findViewById(R.id.black);
+        }
+        if (black != null) {
+            black.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onSimpleColorChanged(Color.BLACK);
+                    mSimpleDialog.dismiss();
+                }
+            });
+        }
+
+        GridLayout gridlayout;
+        if (mView != null) {
+            int intOrientation = getContext().getResources().getConfiguration().orientation;
+            // Lets split this up instead of creating two different layouts
+            // just so we can change the columns
+            gridlayout = mView.findViewById(R.id.Gridlayout);
+            if (intOrientation == Configuration.ORIENTATION_PORTRAIT) {
+                gridlayout.setColumnCount(4);
+            } else {
+                gridlayout.setColumnCount(8);
+            }
+        }
+
+        mSimpleDialog = builder.create();
+        mSimpleDialog.show();
+
+    }
 
     /**
      * Toggle Alpha Slider visibility (by default it's disabled)
@@ -372,13 +534,21 @@ public class ColorPickerPreference extends Preference implements
     @Override
     protected Parcelable onSaveInstanceState() {
         final Parcelable superState = super.onSaveInstanceState();
-        if (mDialog == null || !mDialog.isShowing()) {
-            return superState;
+        if (mIsCrappyLedDevice && (mShowLedPreview || mIsLedColorPicker)) {
+            if (mSimpleDialog == null || !mSimpleDialog.isShowing()) {
+                return superState;
+            }
+            final SavedState myState = new SavedState(superState);
+            myState.dialogBundle = mSimpleDialog.onSaveInstanceState();
+            return myState;
+        } else {
+            if (mDialog == null || !mDialog.isShowing()) {
+                return superState;
+            }
+            final SavedState myState = new SavedState(superState);
+            myState.dialogBundle = mDialog.onSaveInstanceState();
+            return myState;
         }
-
-        final SavedState myState = new SavedState(superState);
-        myState.dialogBundle = mDialog.onSaveInstanceState();
-        return myState;
     }
 
     @Override
