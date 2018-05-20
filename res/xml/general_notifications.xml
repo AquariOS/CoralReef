@@ -23,12 +23,6 @@
             android:entryValues="@array/notification_sound_vib_screen_on_values"
             android:summary="%s" />
 
-        <Preference
-            android:key="force_ambient_for_media_pref"
-            android:fragment="com.aquarios.coralreef.fragments.AmbientTicker"
-            android:title="@string/force_ambient_for_media_pref_title"
-            android:summary="@string/force_ambient_for_media_pref_summary"/>
-
         <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
             android:key="force_expanded_notifications"
             android:title="@string/force_expanded_notifications_title"
