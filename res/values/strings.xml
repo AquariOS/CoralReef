@@ -38,6 +38,8 @@
     <string name="fingerprint_prefs_summary">Tweaks specific to the fingerprint scanner</string>
     <string name="lockscreen_display_title">Lockscreen display</string>
     <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
+    <string name="lock_screen_weather_settings_title">Weather options</string>
+    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize how battery is displayed</string>
@@ -99,15 +101,6 @@
     <string name="recents_show_membar_summary">Horizontal bar indicating used/free memory</string>
     <!-- Changelog -->
     <string name="changelog_error">Unable to load changelog</string>
-    <!-- Lockscreen weather -->
-    <string name="lock_screen_weather_settings_title">Weather options</string>
-    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
-    <string name="weather_show_weather_title">Show weather</string>
-    <string name="weather_show_weather_summary">Enable to show weather information</string>
-    <string name="weather_show_location_title">Show location</string>
-    <string name="weather_show_location_summary">Enable to show the location</string>
-    <string name="weather_config_title">Service settings</string>
-    <string name="weather_icon_pack_title">Condition icon pack</string>
 
     <!-- Volume key rotation -->
     <string name="swap_volume_buttons_title">Reorient</string>
