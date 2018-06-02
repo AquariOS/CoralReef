@@ -323,10 +323,8 @@ public class ColorPickerPreference extends Preference implements
                 })
                 .setCancelable(false);
 
-        Button white = null;
-        if (mView != null) {
-            white = mView.findViewById(R.id.white);
-        }
+        Button white;
+        white = mView.findViewById(R.id.white);
         if (white != null) {
             white.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -336,10 +334,8 @@ public class ColorPickerPreference extends Preference implements
                 }
             });
         }
-        Button red = null;
-        if (mView != null) {
-            red = mView.findViewById(R.id.red);
-        }
+        Button red;
+        red = mView.findViewById(R.id.red);
         if (red != null) {
             red.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -349,10 +345,8 @@ public class ColorPickerPreference extends Preference implements
                 }
             });
         }
-        Button yellow = null;
-        if (mView != null) {
-            yellow = mView.findViewById(R.id.yellow);
-        }
+        Button yellow;
+        yellow = mView.findViewById(R.id.yellow);
         if (yellow != null) {
             yellow.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -362,10 +356,8 @@ public class ColorPickerPreference extends Preference implements
                 }
             });
         }
-        Button blue = null;
-        if (mView != null) {
-            blue = mView.findViewById(R.id.blue);
-        }
+        Button blue;
+        blue = mView.findViewById(R.id.blue);
         if (blue != null) {
             blue.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -375,10 +367,8 @@ public class ColorPickerPreference extends Preference implements
                 }
             });
         }
-        Button cyan = null;
-        if (mView != null) {
-            cyan = mView.findViewById(R.id.cyan);
-        }
+        Button cyan;
+        cyan = mView.findViewById(R.id.cyan);
         if (cyan != null) {
             cyan.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -388,10 +378,8 @@ public class ColorPickerPreference extends Preference implements
                 }
             });
         }
-        Button magenta = null;
-        if (mView != null) {
-            magenta = mView.findViewById(R.id.magenta);
-        }
+        Button magenta;
+        magenta = mView.findViewById(R.id.magenta);
         if (magenta != null) {
             magenta.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -401,10 +389,8 @@ public class ColorPickerPreference extends Preference implements
                 }
             });
         }
-        Button green = null;
-        if (mView != null) {
-            green = mView.findViewById(R.id.green);
-        }
+        Button green;
+        green = mView.findViewById(R.id.green);
         if (green != null) {
             green.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -414,10 +400,8 @@ public class ColorPickerPreference extends Preference implements
                 }
             });
         }
-        Button black = null;
-        if (mView != null) {
-            black = mView.findViewById(R.id.black);
-        }
+        Button black;
+        black = mView.findViewById(R.id.black);
         if (black != null) {
             black.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -429,17 +413,11 @@ public class ColorPickerPreference extends Preference implements
         }
 
         GridLayout gridlayout;
-        if (mView != null) {
-            int intOrientation = getContext().getResources().getConfiguration().orientation;
-            // Lets split this up instead of creating two different layouts
-            // just so we can change the columns
-            gridlayout = mView.findViewById(R.id.Gridlayout);
-            if (intOrientation == Configuration.ORIENTATION_PORTRAIT) {
-                gridlayout.setColumnCount(4);
-            } else {
-                gridlayout.setColumnCount(8);
-            }
-        }
+        int intOrientation = getContext().getResources().getConfiguration().orientation;
+        // Lets split this up instead of creating two different layouts
+        // just so we can change the columns
+        gridlayout = mView.findViewById(R.id.Gridlayout);
+        gridlayout.setColumnCount(intOrientation == Configuration.ORIENTATION_PORTRAIT ? 4 : 8);
 
         mSimpleDialog = builder.create();
         mSimpleDialog.show();
