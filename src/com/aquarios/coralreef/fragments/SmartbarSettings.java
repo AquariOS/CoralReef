@@ -54,7 +54,14 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
 import com.aquarios.coralreef.preference.CustomSeekBarPreference;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 public class SmartbarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -125,7 +132,6 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
                 "smartbar_custom_icon_size", 60, UserHandle.USER_CURRENT);
         mCustomButtonScaling.setValue(size);
         mCustomButtonScaling.setOnPreferenceChangeListener(this);
-
 
         setHasOptionsMenu(true);
     }
@@ -321,7 +327,7 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
 
         Settings.Secure.putInt(getContentResolver(),
                 "navbar_buttons_alpha", 255);
-        mButtonsAlpha.setValue(255);
+        mButtonsAlpha.refresh(255);
         mButtonsAlpha.setOnPreferenceChangeListener(this);
 
         Settings.Secure.putInt(getContentResolver(),
@@ -331,8 +337,8 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
 
         Settings.Secure.putInt(getContentResolver(),
                 "smartbar_custom_icon_size", 60);
-        mButtonsAlpha.setValue(60);
-        mButtonsAlpha.setOnPreferenceChangeListener(this);
+        mCustomButtonScaling.refresh(60);
+        mCustomButtonScaling.setOnPreferenceChangeListener(this);
     }
 
     static class ConfigAdapter extends ArrayAdapter<File> {
