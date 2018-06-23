@@ -703,4 +703,8 @@
     <string name="lock_screen_ambient_weather_title">Ambient weather</string>
     <string name="lock_screen_ambient_weather_summary">Display weather on ambient screen</string>
 
+    <!-- Small QS tile scroller -->
+    <string name="qqs_scroll_title">Scrollable quick tiles</string>
+    <string name="qqs_scroll_summary">Make all enabled tiles accessible in collapsed view</string>
+
 </resources>
