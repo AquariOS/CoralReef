@@ -15,7 +15,8 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/gesture_options_title" >
 
     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"

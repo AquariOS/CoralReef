@@ -14,7 +14,9 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/lockscreen_display_title" >
 
     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="lockscreen_battery_info"

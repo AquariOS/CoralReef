@@ -11,7 +11,9 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/display_options_title" >
 
     <PreferenceCategory
         android:title="@string/general_animations_category"/>
