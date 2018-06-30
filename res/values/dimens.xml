@@ -32,4 +32,8 @@
     <dimen name="design_bottom_navigation_text_size">10dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">11dp</dimen>
 
+    <!-- Per App aspect Ratio -->
+    <dimen name="floating_widget_view_padding">10dp</dimen>
+    <dimen name="floating_widget_window_padding">10dp</dimen>
+
 </resources>
