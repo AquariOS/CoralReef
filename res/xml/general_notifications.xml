@@ -18,12 +18,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/general_notifications_title" >
 
-        <ListPreference
+        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
             android:title="@string/notification_sound_vib_screen_on_title"
-            android:entries="@array/notification_sound_vib_screen_on_entries"
-            android:entryValues="@array/notification_sound_vib_screen_on_values"
-            android:summary="%s" />
+            android:summary="@string/notification_sound_vib_screen_on_summary"
+            android:defaultValue="true" />
 
         <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
             android:key="force_expanded_notifications"
