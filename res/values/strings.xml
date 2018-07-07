@@ -683,4 +683,6 @@
     <string name="vol_zen_title">Do not disturb switch</string>
     <string name="vol_zen_summary">Show do not disturb swith on volume panel</string>
 
+    <!-- QS tuner settings -->
+    <string name="tuner_show_brightness_side_buttons">Show brightness buttons</string>
 </resources>
