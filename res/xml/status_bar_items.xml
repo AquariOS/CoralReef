@@ -19,12 +19,11 @@
     android:title="@string/status_bar_items_title" >
 
     <Preference
-        android:key="icon_manager_title"
         android:title="@string/status_bar_icons_title"
         android:summary="@string/status_bar_icons_summary">
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.TunerActivity" />
+            android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
     </Preference>
 
 </PreferenceScreen>

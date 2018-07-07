@@ -30,7 +30,7 @@
         android:summary="@string/systemui_tuner_lockscreen_bottom_shortcuts_summary">
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
+            android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
     </Preference>
 
     <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
