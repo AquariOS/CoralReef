@@ -31,7 +31,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.util.Log;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.aquarios.AquaUtils;
 
 import com.android.settings.R;
@@ -43,10 +43,10 @@ import com.android.settings.search.Indexable;
 import java.util.List;
 import java.util.ArrayList;
 
-public class OmniJawsSettings extends SettingsPreferenceFragment implements
+public class OmniJaws extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String TAG = "OmniJawsSettings";
+    private static final String TAG = "OmniJaws";
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
@@ -166,29 +166,29 @@ public class OmniJawsSettings extends SettingsPreferenceFragment implements
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider() {
-                @Override
-                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                        boolean enabled) {
-                    ArrayList<SearchIndexableResource> result =
-                            new ArrayList<SearchIndexableResource>();
+        new BaseSearchIndexProvider() {
+            @Override
+            public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                    boolean enabled) {
+                ArrayList<SearchIndexableResource> result =
+                        new ArrayList<SearchIndexableResource>();
 
-                    SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.omnijaws_settings;
-                    result.add(sir);
+                SearchIndexableResource sir = new SearchIndexableResource(context);
+                sir.xmlResId = R.xml.omnijaws_settings;
+                result.add(sir);
 
-                    return result;
-                }
+                return result;
+        }
 
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    ArrayList<String> result = new ArrayList<String>();
-                    return result;
-                }
+        @Override
+        public List<String> getNonIndexableKeys(Context context) {
+            ArrayList<String> result = new ArrayList<String>();
+            return result;
+        }
     };
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.AQUA;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.AQUA;
     }
 }

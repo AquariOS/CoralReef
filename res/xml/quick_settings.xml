@@ -70,9 +70,9 @@
 			<!-- OmniJaws -->
 			<PreferenceScreen
 				android:key="omnijaws_settings"
-				android:title="@string/omnijaws_settings_title"
-				android:summary="@string/omnijaws_settings_summary"
-				android:fragment="com.crdroid.settings.fragments.OmniJawsSettings" />
+				android:title="@string/weather_tile_title"
+				android:summary="@string/weather_tile_settings_summary"
+				android:fragment="com.aquarios.coralreef.fragments.OmniJaws" />
 
 			<com.aquarios.coralreef.preference.CustomSeekBarPreference
 				android:key="qs_panel_alpha"
