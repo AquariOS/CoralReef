@@ -67,11 +67,12 @@
 				android:summary="@string/qs_footer_warnings_summary"
 				android:defaultValue="true" />
 
+			<!-- OmniJaws -->
 			<PreferenceScreen
 				android:key="omnijaws_settings"
 				android:title="@string/omnijaws_settings_title"
 				android:summary="@string/omnijaws_settings_summary"
-				android:fragment="com.aquarios.coralreef.fragments.OmniJaws" />
+				android:fragment="com.crdroid.settings.fragments.OmniJawsSettings" />
 
 			<com.aquarios.coralreef.preference.CustomSeekBarPreference
 				android:key="qs_panel_alpha"
