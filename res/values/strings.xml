@@ -38,8 +38,6 @@
     <string name="fingerprint_prefs_summary">Tweaks specific to the fingerprint scanner</string>
     <string name="lockscreen_display_title">Lockscreen display</string>
     <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
-    <string name="lock_screen_weather_settings_title">Weather options</string>
-    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize how battery is displayed</string>
@@ -102,6 +100,7 @@
     <string name="recents_show_membar_summary">Horizontal bar indicating used/free memory</string>
     <!-- Changelog -->
     <string name="changelog_error">Unable to load changelog</string>
+
     <!-- Lockscreen weather -->
     <string name="lock_screen_weather_settings_title">Weather options</string>
     <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
@@ -111,6 +110,12 @@
     <string name="weather_show_location_summary">Enable to show the location</string>
     <string name="weather_config_title">Service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
+    <!-- OmniJaws -->
+    <string name="omnijaws_settings_title">OmniJaws weather</string>
+    <string name="weather_tile_title">Weather tile</string>
+    <string name="weather_tile_settings_summary">Configure weather settings</string>
+    <string name="weather_config_summary"></string>
+    <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
 
     <!-- Volume key rotation -->
     <string name="swap_volume_buttons_title">Reorient</string>
@@ -134,7 +139,7 @@
     <string name="headset_connect_player_both">With any bluetooth or wired headset</string>
 
     <!-- DT2S on lockscreen -->
-    <string name="double_tap_sleep_lockscreen">Double-tap to sleep</string>
+    <string name="double_tap_sleep_lockscreen">Lock screen</string>
     <string name="double_tap_sleep_lockscreen_summary">Double-tap lockscreen to put device to sleep</string>
 
     <!-- Bottom shortcuts -->
@@ -173,8 +178,9 @@
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at base of QS panel when network is monitored by external apps or VPN</string>
 
-    <!-- Footer warnings -->
-    <string name="double_tap_sleep_gesture_title">Double-tap status bar to sleep</string>
+    <!-- DT2S status bar -->
+    <string name="double_tap_sleep_statusbar_title">Status bar</string>
+    <string name="double_tap_sleep_statusbar_summary">Double-tap status bar to put device to sleep</string>
 
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Less intrusive heads-up</string>
@@ -255,7 +261,7 @@
     <string name="fling_settings_summary">A very unique and fully-customizable gesture-based navigation bar</string>
     <string name="fling_interface">Fling</string>
     <string name="fling_enable_title">Enable Fling</string>
-    <string name="fling_back_home_policy">Back and Home are required to be set at all times. To change a Back or Home assignment, set the desired assignment first.\n\nAlso, setting a double tap action will delay single tap a bit.</string>
+    <string name="fling_back_home_policy">Back and Home are required to be set at all times. To change a Back or Home assignment, set the desired assignment first.\n\nAlso, setting a double-tap action will delay single tap a bit.</string>
     <string name="fling_split_bar_policy">When only a right or left action is assigned, the action applies to the full bar.</string>
     <string name="fling_def_summary">No action set</string>
     <string name="fling_swipe_actions">Swipe gestures</string>
@@ -266,11 +272,11 @@
     <string name="fling_long_swipe_left">Left long swipe</string>
     <string name="fling_right_up_swipe">Right side swipe up</string>
     <string name="fling_left_up_swipe">Left side swipe up</string>
-    <string name="fling_single_tap">Single tap right</string>
-    <string name="fling_double_tap">Double tap right</string>
+    <string name="fling_single_tap">Single-tap right</string>
+    <string name="fling_double_tap">Double-tap right</string>
     <string name="fling_long_press">Long press right</string>
     <string name="fling_single_left_tap">Single tap left</string>
-    <string name="fling_double_left_tap">Double tap left</string>
+    <string name="fling_double_left_tap">Double-tap left</string>
     <string name="fling_long_left_press">Long press left</string>
     <string name="long_swipe_portrait_title">Portrait</string>
     <string name="long_swipe_landscape_title">Landscape</string>
@@ -353,7 +359,7 @@
     <string name="smartbar_settings_summary">Fully-customizable navigation bar</string>
     <string name="smartbar_editor_title">Start edit mode</string>
     <string name="smartbar_editor_summary">Open smartbar buttons editor</string>
-    <string name="smartbar_help_policy_notice_summary">When in editor mode, medium-press and drag a button to change it\'s position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double tap action will delay single tap a bit.</string>
+    <string name="smartbar_help_policy_notice_summary">When in editor mode, medium-press and drag a button to change it\'s position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double-tap action will delay single tap a bit.</string>
     <string name="smartbar_context_menu_position_title">Context buttons layout position</string>
     <string name="smartbar_context_menu_position_summary">Set the position of contextual buttons such as menu and ime selector</string>
     <string name="smartbar_right">Right</string>
@@ -398,6 +404,7 @@
     <string name="lockscreen_battery_info_summary">Display max current, voltage, and battery temperature on lockscreen while charging</string>  
 
     <!-- Shortcut to gestures -->
+    <string name="stock_gestures_category">Stock gestures</string>
     <string name="gesture_shortcut_title">Available stock gestures</string>
     <string name="gesture_shortcut_summary">A list of AOSP gestures to be enabled/disabled</string>
 
@@ -488,7 +495,8 @@
     <string name="screen_off_animation_scale">Scale</string>
 
     <!-- DT2S on Smartbar -->
-    <string name="smartbar_double_tap_sleep_title">Double-tap to sleep</string>
+    <string name="dt2s_category">Double-tap to sleep gestures</string>
+    <string name="smartbar_double_tap_sleep_title">Navigation bar</string>
     <string name="smartbar_double_tap_sleep_summary">Double-tap on empty navbar areas to sleep</string>
 
     <!-- Status bar clock options -->
@@ -603,6 +611,7 @@
     <string name="screenshot_edit_app_no_editor">No image editor available</string>
 
     <!-- Brightness control -->
+    <string name="misc_gestures_category">Miscellaneous gestures</string>
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
@@ -610,7 +619,7 @@
     <string name="qs_panel_alpha_title">Panel background transparency</string>
 
     <!-- Quick Pulldown-->
-    <string name="general_options_category">GENERAL OPTIONS</string>
+    <string name="general_options_category">General Options</string>
     <string name="quick_pulldown_title">Quick pull-down</string>
     <string name="quick_pulldown_summary">Enabled on right side of status bar</string>
     <string name="quick_pulldown_summary_always">Always show Quick Settings upon status bar pull-down</string>
@@ -646,14 +655,6 @@
     <string name="force_ambient_for_media_on">Enabled</string>
     <string name="force_ambient_for_media_on_forced">Enabled and forced</string>
     <string name="force_ambient_for_media_on_forced_clean">Enabled and forced minimal</string>
-
-    <!-- OmniJaws -->
-    <string name="weather_tile_title">Weather tile</string>
-    <string name="weather_tile_settings_summary">Configure weather settings</string>
-    <string name="weather_config_title">Service settings</string>
-    <string name="weather_config_summary"></string>
-    <string name="weather_icon_pack_title">Condition icon pack</string>
-    <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
 
     <!-- Small QS tile scroller -->
     <string name="qqs_scroll_title">Scrollable quick tiles</string>

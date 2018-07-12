@@ -18,6 +18,23 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/gesture_options_title" >
 
+    <PreferenceCategory
+        android:title="@string/misc_gestures_category">
+    <com.aquarios.coralreef.preference.SystemSettingListPreference
+        android:key="torch_power_button_gesture"
+        android:title="@string/torch_power_button_gesture_title"
+        android:entries="@array/torch_power_button_gesture_entries"
+        android:entryValues="@array/torch_power_button_gesture_values" />
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="status_bar_brightness_control"
+        android:title="@string/status_bar_toggle_brightness"
+        android:summary="@string/status_bar_toggle_brightness_summary"
+        android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/dt2s_category">
     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
         android:title="@string/double_tap_sleep_lockscreen"
@@ -32,25 +49,18 @@
 
     <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_gesture"
-        android:title="@string/double_tap_sleep_gesture_title"
+        android:title="@string/double_tap_sleep_statusbar_title"
+        android:summary="@string/double_tap_sleep_statusbar_summary"
         android:defaultValue="true" />
+    </PreferenceCategory>
 
-    <com.aquarios.coralreef.preference.SystemSettingListPreference
-        android:key="torch_power_button_gesture"
-        android:title="@string/torch_power_button_gesture_title"
-        android:entries="@array/torch_power_button_gesture_entries"
-        android:entryValues="@array/torch_power_button_gesture_values" />
-
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="status_bar_brightness_control"
-        android:title="@string/status_bar_toggle_brightness"
-        android:summary="@string/status_bar_toggle_brightness_summary"
-        android:defaultValue="false" />
-
+    <PreferenceCategory
+        android:title="@string/stock_gestures_category">
     <Preference
         android:key="gestures_dashboard"
         android:title="@string/gesture_shortcut_title"
         android:summary="@string/gesture_shortcut_summary"
         android:fragment="com.android.settings.gestures.GestureSettings" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

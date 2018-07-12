@@ -61,7 +61,7 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
         mChangelog.setTitle(R.string.changelog_title);
 
         mDisplay = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
-        mDisplay.setTitle(R.string.display_options_title);
+        mDisplay.setTitle(R.string.gesture_options_title);
     }
 
     @Override
