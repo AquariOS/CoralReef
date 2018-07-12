@@ -126,8 +126,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
 
         mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
-        int quickPulldownValue = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        int quickPulldownValue = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
     }
@@ -151,6 +151,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mDaylightHeaderPack) {
             String value = (String) objValue;
             Settings.System.putString(getContentResolver(),
@@ -183,7 +184,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
             return true;
         } else if (preference == mQuickPulldown) {
             int quickPulldownValue = Integer.valueOf((String) objValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     quickPulldownValue, UserHandle.USER_CURRENT);
             updatePulldownSummary(quickPulldownValue);
             return true;

@@ -621,9 +621,9 @@
     <!-- Quick Pulldown-->
     <string name="general_options_category">General Options</string>
     <string name="quick_pulldown_title">Quick pull-down</string>
-    <string name="quick_pulldown_summary">Enabled on right side of status bar</string>
+    <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
     <string name="quick_pulldown_summary_always">Always show Quick Settings upon status bar pull-down</string>
-    <string name="quick_pulldown_off">Disable</string>
+    <string name="quick_pulldown_off">Disabled</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Enable (on right side)</string>
     <string name="quick_pulldown_always">Always</string>
