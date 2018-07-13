@@ -44,6 +44,11 @@
 				android:title="@string/tuner_show_brightness_side_buttons"
 				android:defaultValue="true" />
 
+			<com.aquarios.coralreef.preference.SecureSettingSwitchPreference
+				android:key="qs_brightness_position_bottom"
+				android:title="@string/qs_brightness_position_title"
+				android:defaultValue="true" />
+
 			<com.aquarios.coralreef.preference.SystemSettingSwitchPreference
 				android:key="qs_tile_title_visibility"
 				android:title="@string/qs_tile_title_visibility_title"

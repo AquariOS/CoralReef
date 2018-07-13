@@ -684,4 +684,8 @@
 
     <!-- QS tuner settings -->
     <string name="tuner_show_brightness_side_buttons">Show brightness buttons</string>
+
+    <string name="qs_brightness_position_title">Show brightness slider on bottom</string>
+
+
 </resources>
