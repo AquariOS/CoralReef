@@ -148,7 +148,8 @@
 
     <!-- Option to show brightness bar in quick settings -->
     <string name="show_brightness_title">Brightness slider</string>
-    <string name="show_brightness_summary">Show brightness slider in QS panel</string>
+    <string name="show_brightness_summary_on">Showing brightness slider in QS panel</string>
+    <string name="show_brightness_summary_off">Brightness slider is hidden</string>
 
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
@@ -187,12 +188,12 @@
     <string name="less_boring_heads_up_summary">Show heads-up only for dialer or messaging app</string>
 
     <!-- QS rows and columns -->
-    <string name="qs_rows_columns_title">Quick tile layout</string>
-    <string name="qs_rows_columns_title_summary">Set the number of columns/rows for each view</string>
-    <string name="category_qstiles_portrait">PORTRAIT VIEW</string>
+    <string name="qs_panel_view_title">Quick settings panel view</string>
+    <string name="qs_rows_columns_title_summary">Set columns/rows for tiles. Add/remove settings from panel</string>
+    <string name="category_qstiles_portrait">Adjust tile layout for portait view</string>
     <string name="qs_rows_portrait_title">Number of rows</string>
     <string name="qs_columns_portrait_title">Number of columns</string>
-    <string name="category_qstiles_landscape">LANDSCAPE VIEW</string>
+    <string name="category_qstiles_landscape">Adjust tile layout for landscape view</string>
     <string name="qs_rows_landscape_title">Number of rows</string>
     <string name="qs_columns_landscape_title">Number of columns</string>
 
@@ -201,7 +202,9 @@
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
 
     <!-- QS tile titles -->
-    <string name="qs_tile_title_visibility_title">Show Quick tile names</string>
+    <string name="qs_tile_title_visibility_title">Show quick tile names</string>
+    <string name="qs_tile_titles_showing">Show quick tile names are showing</string>
+    <string name="qs_tile_titles_hidden">Show quick tile names are hidden</string>
 
     <!-- Recents icon packs -->
     <string name="recents_icon_pack_title">Icon Pack</string>
@@ -616,7 +619,8 @@
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
     <!-- QuickSettings Panel Transparency -->
-    <string name="qs_panel_alpha_title">Panel background transparency</string>
+    <string name="qs_panel_alpha_category">Advanced panel theming</string>
+    <string name="qs_panel_alpha_title">Background transparency</string>
 
     <!-- Quick Pulldown-->
     <string name="general_options_category">General Options</string>
@@ -625,7 +629,7 @@
     <string name="quick_pulldown_summary_always">Always show Quick Settings upon status bar pull-down</string>
     <string name="quick_pulldown_off">Disabled</string>
     <string name="quick_pulldown_left">Left</string>
-    <string name="quick_pulldown_right">Enable (on right side)</string>
+    <string name="quick_pulldown_right">Right</string>
     <string name="quick_pulldown_always">Always</string>
 
     <!-- Smart Pixels -->
@@ -683,9 +687,19 @@
     <string name="vol_zen_summary">Show do not disturb swith on volume panel</string>
 
     <!-- QS tuner settings -->
-    <string name="tuner_show_brightness_side_buttons">Show brightness buttons</string>
+    <string name="appearance_category">Appearance</string>
+    <string name="behavior_category">Behavior</string>
+    <string name="brightness_control_category">Brightness control</string>
+    <string name="tile_panel_appearance_category">Tile panel appearance</string>
+    <string name="qs_panel_layout_title">QS panel layout</string>
+    <string name="tile_panel_view_category">Tile panel view</string>
 
-    <string name="qs_brightness_position_title">Show brightness slider on bottom</string>
+    <string name="qs_brightness_side_buttons">Brightness buttons</string>
+    <string name="qs_brightness_side_buttons_on">Brightness control buttons are visible</string>
+    <string name="qs_brightness_side_buttons_off">Brightness control buttons are hidden</string>
 
+    <string name="qs_brightness_position_title">Move brightness slider to bottom</string>
+    <string name="qs_brightness_slider_bottom">Brightness slider is showing below tiles</string>
+    <string name="qs_brightness_slider_top">Brightness slider is showing above tiles</string>
 
 </resources>

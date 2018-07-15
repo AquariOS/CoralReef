@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Dirty Unicorns Project
+<!-- Copyright (C) 2018 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,40 +19,41 @@
     android:title="@string/quicksettings_title" >
 
     <PreferenceCategory
-        android:title="@string/general_options_category">	
+        android:title="@string/appearance_category">
+			<Preference
+				android:key="qs_rows_columns"
+				android:title="@string/qs_panel_layout_title"
+				android:summary="@string/qs_rows_columns_title_summary"
+				android:fragment="com.aquarios.coralreef.fragments.QsPanelLayout"/>
+
+			<com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+				android:key="qs_footer_warnings"
+				android:title="@string/qs_footer_warnings_title"
+				android:summary="@string/qs_footer_warnings_summary"
+				android:defaultValue="true" />
+
+			<com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+				android:key="qs_tile_title_visibility"
+				android:title="@string/qs_tile_title_visibility_title"
+				android:summaryOn="@string/qs_tile_titles_showing"
+				android:summaryOff="@string/qs_tile_titles_hidden"
+				android:defaultValue="true" />
+
+			<PreferenceScreen
+				android:key="omnijaws_settings"
+				android:title="@string/weather_tile_title"
+				android:summary="@string/weather_tile_settings_summary"
+				android:fragment="com.aquarios.coralreef.fragments.OmniJaws" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/behavior_category">
         	<ListPreference
 				android:key="quick_pulldown"
 				android:title="@string/quick_pulldown_title"
 				android:entries="@array/quick_pulldown_entries"
 				android:entryValues="@array/quick_pulldown_values"
 				android:persistent="false" />
-
-			<Preference
-				android:key="qs_rows_columns"
-				android:title="@string/qs_rows_columns_title"
-				android:summary="@string/qs_rows_columns_title_summary"
-				android:fragment="com.aquarios.coralreef.fragments.QsRowsColumns"/>
-
-			<com.aquarios.coralreef.preference.SecureSettingSwitchPreference
-				android:key="qs_show_brightness"
-				android:title="@string/show_brightness_title"
-				android:summary="@string/show_brightness_summary"
-				android:defaultValue="true" />
-
-			<com.aquarios.coralreef.preference.SecureSettingSwitchPreference
-				android:key="qs_show_brightness_side_buttons"
-				android:title="@string/tuner_show_brightness_side_buttons"
-				android:defaultValue="true" />
-
-			<com.aquarios.coralreef.preference.SecureSettingSwitchPreference
-				android:key="qs_brightness_position_bottom"
-				android:title="@string/qs_brightness_position_title"
-				android:defaultValue="true" />
-
-			<com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-				android:key="qs_tile_title_visibility"
-				android:title="@string/qs_tile_title_visibility_title"
-				android:defaultValue="true" />
 
 			<com.aquarios.coralreef.preference.SystemSettingSwitchPreference
 				android:key="qs_quickbar_scroll_enabled"
@@ -65,27 +66,6 @@
                 android:title="@string/quick_settings_vibrate_title"
                 android:summary="@string/quick_settings_vibrate_summary"
                 android:defaultValue="false" />
-
-			<com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-				android:key="qs_footer_warnings"
-				android:title="@string/qs_footer_warnings_title"
-				android:summary="@string/qs_footer_warnings_summary"
-				android:defaultValue="true" />
-
-			<!-- OmniJaws -->
-			<PreferenceScreen
-				android:key="omnijaws_settings"
-				android:title="@string/weather_tile_title"
-				android:summary="@string/weather_tile_settings_summary"
-				android:fragment="com.aquarios.coralreef.fragments.OmniJaws" />
-
-			<com.aquarios.coralreef.preference.CustomSeekBarPreference
-				android:key="qs_panel_alpha"
-				android:title="@string/qs_panel_alpha_title"
-				android:max="255"
-				settings:min="0"
-				settings:units=""
-				android:persistent="false" />
     </PreferenceCategory>
 
     <PreferenceCategory

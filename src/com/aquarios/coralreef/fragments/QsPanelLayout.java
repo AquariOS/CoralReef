@@ -28,18 +28,19 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class QsRowsColumns extends SettingsPreferenceFragment implements
+public class QsPanelLayout extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private CustomSeekBarPreference mQsRowsPort;
     private CustomSeekBarPreference mQsRowsLand;
     private CustomSeekBarPreference mQsColumnsPort;
     private CustomSeekBarPreference mQsColumnsLand;
+    private CustomSeekBarPreference mQsPanelAlpha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.qs_rows_columns);
+        addPreferencesFromResource(R.xml.qs_panel_layout);
         final ContentResolver resolver = getActivity().getContentResolver();
 
         int value = Settings.System.getIntForUser(resolver,
@@ -65,6 +66,12 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
         mQsColumnsLand = (CustomSeekBarPreference) findPreference("qs_columns_landscape");
         mQsColumnsLand.setValue(value);
         mQsColumnsLand.setOnPreferenceChangeListener(this);
+
+        value = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
+        mQsPanelAlpha = (CustomSeekBarPreference) findPreference("qs_panel_alpha");
+        mQsPanelAlpha.setValue(value);
+        mQsPanelAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -93,6 +100,11 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_COLUMNS_LANDSCAPE, val, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsPanelAlpha) {
+            int val = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_PANEL_BG_ALPHA, val, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

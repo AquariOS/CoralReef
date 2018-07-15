@@ -61,7 +61,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
     private static final String CUSTOM_HEADER_ENABLED = "status_bar_custom_header";
     private static final String FILE_HEADER_SELECT = "file_header_select";
     private static final int REQUEST_PICK_IMAGE = 0;
-    private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
 
     private CustomSeekBarPreference mHeaderShadow;
@@ -72,7 +71,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
     private SystemSettingSwitchPreference mHeaderEnabled;
     private Preference mFileHeader;
     private String mFileHeaderProvider;
-    private CustomSeekBarPreference mQsPanelAlpha;
     private ListPreference mQuickPulldown;
 
     @Override
@@ -117,12 +115,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
         mHeaderProvider = (ListPreference) findPreference(CUSTOM_HEADER_PROVIDER);
         mHeaderProvider.setOnPreferenceChangeListener(this);
         mFileHeader = findPreference(FILE_HEADER_SELECT);
-
-        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
-        int qsPanelAlpha = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
-        mQsPanelAlpha.setValue(qsPanelAlpha);
-        mQsPanelAlpha.setOnPreferenceChangeListener(this);
 
         mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
@@ -175,12 +167,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements Prefere
         } else if (preference == mHeaderEnabled) {
             Boolean headerEnabled = (Boolean) objValue;
             updateHeaderProviderSummary(headerEnabled);   
-            return true;        
-        } else if (preference == mQsPanelAlpha) {
-            int bgAlpha = (Integer) objValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
-                    UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQuickPulldown) {
             int quickPulldownValue = Integer.valueOf((String) objValue);
