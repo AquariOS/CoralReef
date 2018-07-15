@@ -18,5 +18,23 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_date_and_time_title" >
 
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_clock"
+        android:title="@string/hide_lockscreen_clock_title"
+        android:summary="@string/hide_lockscreen_clock_summary"
+        android:defaultValue="true" />
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_date"
+        android:title="@string/hide_lockscreen_date_title"
+        android:summary="@string/hide_lockscreen_date_summary"
+        android:defaultValue="true" />
+
+    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_alarm"
+        android:title="@string/hide_lockscreen_alarm_title"
+        android:summary="@string/hide_lockscreen_alarm_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
 
