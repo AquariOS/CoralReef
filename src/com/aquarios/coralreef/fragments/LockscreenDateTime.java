@@ -31,12 +31,12 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-public class FingerprintPrefs extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class LockscreenDateTime extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.fingerprint_prefs);
+        addPreferencesFromResource(R.xml.lockscreen_date_and_time);
     }
 
     @Override

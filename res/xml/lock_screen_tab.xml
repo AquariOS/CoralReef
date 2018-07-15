@@ -17,18 +17,18 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.android.settings.applications.LayoutPreference
-        android:key="fingerprint_prefs_category"
-        android:fragment="com.aquarios.coralreef.fragments.FingerprintPrefs"
-        android:layout="@layout/fingerprint_prefs" />
-
-    <com.android.settings.applications.LayoutPreference
-        android:key="lockscreen_display_category"
-        android:fragment="com.aquarios.coralreef.fragments.LockscreenDisplay"
-        android:layout="@layout/lockscreen_display" />
+        android:key="lockscreen_date_and_time_category"
+        android:fragment="com.aquarios.coralreef.fragments.LockscreenDateTime"
+        android:layout="@layout/lockscreen_date_and_time" />
 
     <com.android.settings.applications.LayoutPreference
         android:key="lockscreen_weather"
         android:fragment="com.aquarios.coralreef.fragments.LockScreenWeather"
         android:layout="@layout/lockscreen_weather" />
+
+    <com.android.settings.applications.LayoutPreference
+        android:key="lockscreen_display_category"
+        android:fragment="com.aquarios.coralreef.fragments.LockscreenDisplay"
+        android:layout="@layout/lockscreen_display" />
 
 </PreferenceScreen>

@@ -34,10 +34,12 @@
     <string name="volume_rocker_title">Volume rocker</string>
     <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
     <!-- Lockscreen -->
-    <string name="fingerprint_prefs_title">Fingerprint options</string>
-    <string name="fingerprint_prefs_summary">Tweaks specific to the fingerprint scanner</string>
+    <string name="lockscreen_date_and_time_title">Lockscreen clocks</string>
+    <string name="lockscreen_date_and_time_summary">Customize your view of date &amp; time on the lockscreen</string>
     <string name="lockscreen_display_title">Lockscreen display</string>
     <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
+    <string name="lock_screen_weather_settings_title">Weather options</string>
+    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize how battery is displayed</string>
@@ -102,8 +104,6 @@
     <string name="changelog_error">Unable to load changelog</string>
 
     <!-- Lockscreen weather -->
-    <string name="lock_screen_weather_settings_title">Weather options</string>
-    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
     <string name="weather_show_weather_title">Show weather</string>
     <string name="weather_show_weather_summary">Enable to show weather information</string>
     <string name="weather_show_location_title">Show location</string>

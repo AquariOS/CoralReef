@@ -28,15 +28,13 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.android.internal.util.aquarios.AquaUtils;
-
 public class LockScreenTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private static final String FINGERPRINT_PREFS_CATEGORY = "fingerprint_prefs_category";
+    private static final String LOCKSCREEN_DATE_AND_TIME_CATEGORY = "lockscreen_date_and_time_category";
     private static final String LOCKSCREEN_DISPLAY_CATEGORY = "lockscreen_display_category";
     private static final String LOCKSCREEN_WEATHER = "lockscreen_weather";
 
-    private LayoutPreference mFingerprintPrefs;
+    private LayoutPreference mLockscreenDateTime;
     private LayoutPreference mLockscreenDisplay;
     private LayoutPreference mLockscreenWeather;
 
@@ -45,12 +43,8 @@ public class LockScreenTab extends SettingsPreferenceFragment implements Prefere
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lock_screen_tab);
 
-        mFingerprintPrefs = (LayoutPreference) findPreference(FINGERPRINT_PREFS_CATEGORY);
-        mFingerprintPrefs.setTitle(R.string.fingerprint_prefs_title);
-
-        if (!AquaUtils.hasFingerprintSupport(getContext())) {
-            getPreferenceScreen().removePreference(mFingerprintPrefs);
-        }
+        mLockscreenDateTime = (LayoutPreference) findPreference(LOCKSCREEN_DATE_AND_TIME_CATEGORY);
+        mLockscreenDateTime.setTitle(R.string.lockscreen_date_and_time_title);
 
         mLockscreenDisplay = (LayoutPreference) findPreference(LOCKSCREEN_DISPLAY_CATEGORY);
         mLockscreenDisplay.setTitle(R.string.lockscreen_display_title);

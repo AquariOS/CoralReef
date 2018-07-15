@@ -16,7 +16,6 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fingerprint_prefs_layout"
     android:layout_width="match_parent"
     android:layout_height="112dp"
     android:orientation="vertical"
@@ -28,7 +27,7 @@
         android:background="@color/preference_background_color">
 
         <ImageView
-            android:id="@+id/fingerprint_prefs_imageview"
+            android:id="@+id/lockscreen_date_and_time_imageview"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:src="@drawable/octopus_icon_vector"
@@ -48,7 +47,7 @@
             android:layout_marginStart="22dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/fingerprint_prefs_title" />
+            android:text="@string/lockscreen_date_and_time_title" />
 
         <TextView
             android:id="@+id/textView2"
@@ -58,7 +57,7 @@
             android:layout_marginBottom="22dip"
             android:layout_below="@+id/textView1"
             android:textSize="13sp"
-            android:text="@string/fingerprint_prefs_summary" />
+            android:text="@string/lockscreen_date_and_time_summary" />
 
     </RelativeLayout>
 
