@@ -53,9 +53,10 @@
     <string name="hardware_keys_category">Hardware keys</string>
     <string name="hardware_keys_disable_title">Disable keys</string>
 
-    
     <!-- OnePlusParts -->
     <string name="device_part_title">Device features</string>
+    <string name="device_extras_title">Device extras</string>
+    <string name="device_extras_summary">Tweaks specific to your device</string>
 
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Pocket detection</string>
