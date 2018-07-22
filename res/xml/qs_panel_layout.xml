@@ -41,7 +41,7 @@
 				android:summaryOn="@string/qs_brightness_slider_bottom"
 				android:summaryOff="@string/qs_brightness_slider_top"
 				android:dependency="qs_show_brightness"
-				android:defaultValue="true" />
+				android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
