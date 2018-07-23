@@ -42,16 +42,15 @@
         android:summary="@string/powermenu_airplane_summary"
         android:defaultValue="false" />
 
+<!-- COMMENT OUT FOR NOW
     <PreferenceCategory
-        android:title="@string/powermenu_category_other">
-
-        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-            android:key="powermenu_lockscreen"
-            android:title="@string/powermenu_lockscreen_title"
-            android:summary="@string/powermenu_lockscreen_summary"
-            android:defaultValue="true" />
-
+        android:title="@string/powermenu_category_security">
+		<com.aquarios.coralreef.preference.SecureSettingSwitchPreference
+			android:key="lockscreen_power_menu_disabled"
+			android:title="@string/lockscreen_power_menu_disabled_title"
+			android:summary="@string/lockscreen_power_menu_disabled_summary"
+			android:defaultValue="true" />
     </PreferenceCategory>
-
+ -->
 </PreferenceScreen>
 
