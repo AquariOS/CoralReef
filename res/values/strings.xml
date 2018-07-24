@@ -433,6 +433,10 @@
     <string name="powermenu_category_security">Security</string>
     <string name="lockscreen_power_menu_disabled_title">Lockscreen visibility</string>
     <string name="lockscreen_power_menu_disabled_summary">Enable the ability to show and use the power menu dialog while on the lockscreen</string>
+    <string name="powermenu_ls_reboot_summary">Show the reboot option on the lockscreen</string>
+    <string name="powermenu_ls_advanced_reboot_summary">Show the advanced reboot option on the lockscreen</string>
+    <string name="powermenu_ls_screenshot_summary">Show the screenshot option on the lockscreen</string>
+    <string name="powermenu_ls_airplane_summary">Show the airplane mode option on the lockscreen</string>
 
     <!-- Power plug events -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
