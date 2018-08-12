@@ -18,19 +18,92 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/gesture_options_title" >
 
-   <SwitchPreference
-		android:key="double_tap_sleep_gesture"
-		android:title="@string/statusbar_dt2s_title"
-		android:summary="@string/statusbar_dt2s_summary" />
+    <PreferenceCategory
+		android:title="@string/custom_gestures_category">
 
-   <SwitchPreference
-		android:key="double_tap_sleep_anywhere"
-		android:title="@string/dt2s_lockscreen_title"
-		android:summary="@string/dt2s_lockscreen_summary" />
+        <SwitchPreference
+	        android:key="double_tap_sleep_gesture"
+	        android:title="@string/statusbar_dt2s_title"
+	        android:summary="@string/statusbar_dt2s_summary" />
 
-   <com.aquarios.support.preferences.SystemSettingSwitchPreference
-		android:key="status_bar_brightness_control"
-		android:title="@string/status_bar_toggle_brightness"
-		android:summary="@string/status_bar_toggle_brightness_summary"
-		android:defaultValue="false" />
-		</PreferenceScreen>
+        <SwitchPreference
+	        android:key="double_tap_sleep_anywhere"
+            android:title="@string/dt2s_lockscreen_title"
+            android:summary="@string/dt2s_lockscreen_summary" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="status_bar_brightness_control"
+            android:title="@string/status_bar_toggle_brightness"
+            android:summary="@string/status_bar_toggle_brightness_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="gesture_swipe_down_fingerprint_input_summary"
+            android:title="@string/fingerprint_swipe_for_notifications_title"
+            android:fragment="com.android.settings.gestures.SwipeToNotificationSettings"
+            settings:controller="com.android.settings.gestures.SwipeToNotificationPreferenceController" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+		android:title="@string/aosp_gestures_category">
+
+        <SwitchPreference
+            android:key="camera_gesture"
+            android:title="@string/camera_gesture_title"
+            android:summary="@string/camera_gesture_desc" />
+
+        <SwitchPreference
+            android:key="lift_to_wake"
+            android:title="@string/lift_to_wake_title" />
+
+        <SwitchPreference
+            android:key="tap_to_wake"
+            android:title="@string/tap_to_wake"
+            android:summary="@string/tap_to_wake_summary" />
+
+        <Preference
+            android:key="gesture_assist_input_summary"
+            android:title="@string/assist_gesture_title"
+            android:fragment="com.android.settings.gestures.AssistGestureSettings"
+            settings:controller="com.android.settings.gestures.AssistGestureSettingsPreferenceController" />
+
+        <Preference
+            android:key="gesture_double_tap_power_input_summary"
+            android:title="@string/double_tap_power_for_camera_title"
+            android:fragment="com.android.settings.gestures.DoubleTapPowerSettings"
+            settings:controller="com.android.settings.gestures.DoubleTapPowerPreferenceController" />
+
+        <Preference
+            android:key="gesture_double_twist_input_summary"
+            android:title="@string/double_twist_for_camera_mode_title"
+            android:fragment="com.android.settings.gestures.DoubleTwistGestureSettings"
+            settings:controller="com.android.settings.gestures.DoubleTwistPreferenceController" />
+
+        <Preference
+            android:key="gesture_swipe_up_input_summary"
+            android:title="@string/swipe_up_to_switch_apps_title"
+            android:fragment="com.android.settings.gestures.SwipeUpGestureSettings"
+            settings:controller="com.android.settings.gestures.SwipeUpPreferenceController" />
+
+        <Preference
+            android:key="gesture_double_tap_screen_input_summary"
+            android:title="@string/ambient_display_title"
+            android:fragment="com.android.settings.gestures.DoubleTapScreenSettings"
+            settings:controller="com.android.settings.gestures.DoubleTapScreenPreferenceController" />
+
+        <Preference
+            android:key="gesture_pick_up_input_summary"
+            android:title="@string/ambient_display_pickup_title"
+            android:fragment="com.android.settings.gestures.PickupGestureSettings"
+            settings:controller="com.android.settings.gestures.PickupGesturePreferenceController" />
+
+        <Preference
+            android:key="gesture_prevent_ringing_summary"
+            android:title="@string/gesture_prevent_ringing_screen_title"
+            android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
+            settings:controller="com.android.settings.gestures.PreventRingingPreferenceController" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
