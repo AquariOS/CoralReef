@@ -18,29 +18,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/general_notifications_title" >
 
-        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-            android:key="notification_sound_vib_screen_on"
-            android:title="@string/notification_sound_vib_screen_on_title"
-            android:summary="@string/notification_sound_vib_screen_on_summary"
-            android:defaultValue="true" />
-
-        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-            android:key="force_expanded_notifications"
-            android:title="@string/force_expanded_notifications_title"
-            android:summary="@string/force_expanded_notifications_summary"
-            android:defaultValue="false" />
-
-        <ListPreference
-            android:key="less_notification_sounds"
-            android:title="@string/less_notification_sounds_title"
-            android:summary="@string/less_notification_sounds_summary"
-            android:entries="@array/less_notification_sounds_entries"
-            android:entryValues="@array/less_notification_sounds_values" />
-
-        <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-            android:key="incall_notifications_vibrate"
-            android:title="@string/incall_notifications_vibrate"
-            android:summary="@string/incall_notifications_vibrate_summary"
-            android:defaultValue="false" />
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <com.android.settings.applications.LayoutPreference
+        android:key="empty_category_message"
+        android:layout="@layout/empty_category_message" />
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
 
 </PreferenceScreen>

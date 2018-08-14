@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Dirty Unicorns Project
+<!-- Copyright (C) 2018 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,33 +18,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/miscellaneous_title" >
 
-    <ListPreference
-        android:key="headset_connect_player"
-        android:title="@string/headset_connect_player_title"
-        android:entries="@array/headset_connect_player_entries"
-        android:entryValues="@array/headset_connect_player_values" />
-
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="wake_when_plugged_or_unplugged"
-        android:title="@string/wake_when_plugged_or_unplugged_title"
-        android:summary="@string/wake_when_plugged_or_unplugged_summary"
-        android:defaultValue="false" />
-
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="vibration_on_charge_state_changed"
-        android:title="@string/vibration_on_charge_state_changed_title"
-        android:summary="@string/vibration_on_charge_state_changed_summary"
-        android:defaultValue="true" />
-
-     <Preference
-        android:key="app_ops"
-        android:fragment="com.android.settings.applications.AppOpsSummary"
-        android:title="@string/app_ops_category"
-        android:summary="@string/app_ops_settings_summary" />
-
-    <Preference
-        android:key="screenshot_edit_app"
-        android:title="@string/screenshot_edit_app"
-        android:summary="@string/screenshot_edit_app_summary" />
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <com.android.settings.applications.LayoutPreference
+        android:key="empty_category_message"
+        android:layout="@layout/empty_category_message" />
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
 
 </PreferenceScreen>

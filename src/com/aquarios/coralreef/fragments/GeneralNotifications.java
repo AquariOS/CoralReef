@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 AquariOS
+ * Copyright (C) 2018 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,13 @@
 
 package com.aquarios.coralreef.fragments;
 
-import android.content.ContentResolver;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.settings.R;
@@ -34,30 +33,14 @@ import com.android.internal.logging.nano.MetricsProto;
 
 public class GeneralNotifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private ListPreference mAnnoyingNotification;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.general_notifications);
-
-        mAnnoyingNotification = (ListPreference) findPreference("less_notification_sounds");
-        mAnnoyingNotification.setOnPreferenceChangeListener(this);
-        int threshold = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
-                30000, UserHandle.USER_CURRENT);
-        mAnnoyingNotification.setValue(String.valueOf(threshold));
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference.equals(mAnnoyingNotification)) {
-            int mode = Integer.parseInt(((String) newValue).toString());
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, mode, UserHandle.USER_CURRENT);
-            return true;
-        }
         return false;
     }
 

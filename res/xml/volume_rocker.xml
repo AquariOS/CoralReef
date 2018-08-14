@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Dirty Unicorns Project
+<!-- Copyright (C) 2018 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,40 +18,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/volume_rocker_title" >
 
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="swap_volume_buttons"
-        android:title="@string/swap_volume_buttons_title"
-        android:summary="@string/swap_volume_buttons_summary"
-        android:defaultValue="true" />
-
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="volume_button_music_control"
-        android:title="@string/volume_button_music_control_title"
-        android:summary="@string/volume_button_music_control_summary"
-        android:defaultValue="true" />
-
-    <com.aquarios.coralreef.preference.SystemSettingSwitchPreference
-        android:key="volume_keys_control_media_stream"
-        android:title="@string/volume_keys_control_media_stream_title"
-        android:summary="@string/volume_keys_control_media_stream_summary"
-        android:defaultValue="false" />
-
-    <PreferenceCategory
-        android:key="vol_dnd_category"
-        android:title="@string/vol_dnd_category_title" >
-
-        <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
-            android:key="sysui_volume_down_silent"
-            android:title="@string/volbtn_down_zen_title"
-            android:summary="@string/volbtn_down_zen_summary"
-            android:defaultValue="true"/>
-
-        <com.aquarios.coralreef.preference.SecureSettingSwitchPreference
-            android:key="sysui_volume_up_silent"
-            android:title="@string/volbtn_up_zen_title"
-            android:summary="@string/volbtn_up_zen_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <com.android.settings.applications.LayoutPreference
+        android:key="empty_category_message"
+        android:layout="@layout/empty_category_message" />
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
 
 </PreferenceScreen>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 AquariOS
+ * Copyright (C) 2018 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,7 @@
 
 package com.aquarios.coralreef.fragments;
 
-import android.content.ContentResolver;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -35,47 +33,14 @@ import com.android.internal.logging.nano.MetricsProto;
 
 public class DisplayOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
-
-    private ListPreference mTileAnimationInterpolator;
-    private ListPreference mScreenOffAnimation;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.display_options);
-
-        getActivity().getActionBar().setTitle(R.string.display_options_title);
-        ContentResolver resolver = getActivity().getContentResolver();
-        PreferenceScreen prefSet = getPreferenceScreen();
-
-        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
-        int screenOffStyle = Settings.System.getInt(resolver,
-                Settings.System.SCREEN_OFF_ANIMATION, 0);
-        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
-        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
-        mScreenOffAnimation.setOnPreferenceChangeListener(this);
-
-        boolean enableSmartPixels = getContext().getResources().
-                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
-        Preference SmartPixels = findPreference("smart_pixels");
-
-        if (!enableSmartPixels){
-            prefSet.removePreference(SmartPixels);
-        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mScreenOffAnimation) {
-            String value = (String) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
-            int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
-            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
-            return true;
-       }
         return false;
     }
 

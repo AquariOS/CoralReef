@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Dirty Unicorns Project
+<!-- Copyright (C) 2018 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,28 +18,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/battery_options_title" >
 
-        <Preference
-            android:key="battery_bar"
-            android:fragment="com.aquarios.coralreef.fragments.BatteryBar"
-            android:title="@string/battery_bar_settings"
-            android:summary="@string/battery_bar_settings_summary" />
-
-  <PreferenceCategory
-        android:key="battery_style_category"
-        android:title="@string/battery_style_category_title" >
-
-        <ListPreference
-            android:key="battery_style"
-            android:title="@string/battery_style_title"
-            android:entries="@array/battery_style_entries"
-            android:entryValues="@array/battery_style_values" />
-
-        <ListPreference
-            android:key="show_battery_percent"
-            android:title="@string/show_battery_percent_title"
-            android:entries="@array/battery_percent_entries"
-            android:entryValues="@array/battery_percent_values" />
-
-  </PreferenceCategory>
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <com.android.settings.applications.LayoutPreference
+        android:key="empty_category_message"
+        android:layout="@layout/empty_category_message" />
+<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
 
 </PreferenceScreen>
