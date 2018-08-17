@@ -102,4 +102,11 @@
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
 
+    <!-- Torch Power button gestures -->
+    <string name="torch_power_button_gesture_title">Toggle torch when screen off</string>
+    <string name="torch_power_button_gesture_none">Disabled</string>
+    <string name="torch_power_button_gesture_dt">Double-tap power button</string>
+    <string name="torch_power_button_gesture_dt_toast">Jump to camera gesture is now disabled</string>
+    <string name="torch_power_button_gesture_lp">Hold power button</string>
+
 </resources>
