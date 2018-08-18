@@ -109,4 +109,8 @@
     <string name="torch_power_button_gesture_dt_toast">Jump to camera gesture is now disabled</string>
     <string name="torch_power_button_gesture_lp">Hold power button</string>
 
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Screen off playback control</string>
+    <string name="volume_rocker_music_controls_summary">Hold volume keys to seek audio tracks</string>
+
 </resources>
