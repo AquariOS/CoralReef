@@ -26,6 +26,13 @@
 				android:summaryOn="@string/show_brightness_summary_on"
 				android:summaryOff="@string/show_brightness_summary_off"
 				android:defaultValue="true" />
+
+			<com.android.settings.aquarios.SecureSettingSwitchPreference
+				android:key="qs_brightness_position_bottom"
+				android:title="@string/qs_brightness_position_bottom_title"
+				android:summary="@string/qs_brightness_position_bottom_summary"
+				android:defaultValue="false"
+				android:dependency="qs_show_brightness_slider" />
 	</PreferenceCategory>
 
 	<PreferenceCategory
