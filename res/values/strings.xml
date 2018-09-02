@@ -376,4 +376,11 @@
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
 
+    <!-- Option to show brightness bar in quick settings -->
+    <string name="show_brightness_title">Brightness slider</string>
+    <string name="brightness_slider_options">Brightness slider options</string>
+    <string name="brightness_slider_options_summary">Customize your brightness controls</string>
+    <string name="show_brightness_summary_on">Showing brightness slider in QS panel</string>
+    <string name="show_brightness_summary_off">Brightness slider is hidden</string>
+
 </resources>

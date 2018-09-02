@@ -18,4 +18,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/brightness_control_category" >
 
+    <PreferenceCategory
+        android:title="@string/brightness_control_category">
+        <com.aquarios.support.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_brightness"
+            android:title="@string/show_brightness_title"
+            android:summaryOn="@string/show_brightness_summary_on"
+            android:summaryOff="@string/show_brightness_summary_off"
+            android:defaultValue="true" />
+
+	</PreferenceCategory>
+
 </PreferenceScreen>
