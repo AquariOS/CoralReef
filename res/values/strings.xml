@@ -93,4 +93,8 @@
     <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
     <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader</string>
 
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Screen off playback control</string>
+    <string name="volume_rocker_music_controls_summary">Hold volume keys to seek audio tracks when screen is off</string>
+
 </resources>
