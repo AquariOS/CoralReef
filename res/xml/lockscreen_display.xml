@@ -24,4 +24,16 @@
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
         android:defaultValue="true" />
+
+    <PreferenceCategory
+        android:title="@string/lock_screen_security_category">
+
+        <com.android.settings.aquarios.SystemSettingSwitchPreference
+            android:key="lockscreen_scramble_pin_layout"
+            android:title="@string/unlock_scramble_pin_layout_title"
+            android:summary="@string/unlock_scramble_pin_layout_summary"
+            android:defaultValue="false" />
+
+     </PreferenceCategory>
+
 </PreferenceScreen>
