@@ -29,8 +29,8 @@
     <string name="hw_keys_summary">Configure hardware keys and/or volume rocker options</string>
     <string name="navigationbar_title">Navigation bar</string>
     <string name="navigationbar_summary">Configure SmartBar, Fling or Pulse</string>
-    <string name="powermenu_title">Power menu</string>
-    <string name="powermenu_summary">Configure additional power menu options</string>
+    <string name="powermenu_title">Power button</string>
+    <string name="powermenu_summary">Configure additional options &amp; actions</string>
     <string name="volume_rocker_title">Volume rocker</string>
     <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
     <!-- Lockscreen -->
@@ -146,5 +146,12 @@
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max currentvoltage and battery temperature on lockscreen while charging</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="global_actions_screen_off_cat">Screen-off actions</string>
+    <string name="torch_power_button_gesture_title">Flashlight toggle</string>
+    <string name="torch_power_button_gesture_none">Disabled</string>
+    <string name="torch_power_button_gesture_dt">Double-tap power button (adds slight delay to single-tap)</string>
+    <string name="torch_power_button_gesture_lp">Long-press power button</string>
 
 </resources>
