@@ -36,6 +36,8 @@
     <string name="navigationbar_summary">Configure system navigation options</string>
     <string name="gesture_options_title">Custom gestures</string>
     <string name="gesture_options_summary">Enable/disable device specific user actions</string>
+    <string name="powermenu_title">Power button</string>
+    <string name="powermenu_summary">Configure additional options &amp; actions</string>
     <string name="volume_rocker_title">Volume rocker</string>
     <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
     <string name="hw_keys_title">Hardware keys</string>
@@ -106,4 +108,10 @@
     <string name="volume_rocker_music_controls_title">Screen off playback control</string>
     <string name="volume_rocker_music_controls_summary">Hold volume keys to seek audio tracks when screen is off</string>
 
+    <!-- Torch Power button gestures -->
+    <string name="global_actions_screen_off_cat">Screen-off actions</string>
+    <string name="torch_power_button_gesture_title">Flashlight toggle</string>
+    <string name="torch_power_button_gesture_none">Disabled</string>
+    <string name="torch_power_button_gesture_dt">Double-tap power button (adds slight delay to single-tap)</string>
+    <string name="torch_power_button_gesture_lp">Long-press power button</string>
 </resources>
