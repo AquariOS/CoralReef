@@ -36,6 +36,7 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
     private static final String MISCELLANEOUS_CATEGORY = "miscellaneous_category";
     private static final String CHANGELOG_CATEGORY = "changelog";
     private static final String DISPLAY_OPTIONS_CATEGORY = "display_options";
+    private static final String DEVICE_CATEGORY = "device_extras_category";
 
     private LayoutPreference mRecents;
     private LayoutPreference mGestures;
@@ -62,6 +63,12 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
 
         mDisplay = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
         mDisplay.setTitle(R.string.gesture_options_title);
+
+        // Device extras show/hide
+        Preference DeviceExtras = findPreference(DEVICE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_device_extras)) {
+            getPreferenceScreen().removePreference(DeviceExtras);
+        }
     }
 
     @Override
