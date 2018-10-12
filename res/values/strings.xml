@@ -383,4 +383,8 @@
     <string name="show_brightness_summary_on">Showing brightness slider in QS panel</string>
     <string name="show_brightness_summary_off">Brightness slider is hidden</string>
 
+    <!-- Quick Settings -->
+    <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
+    <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lock screens</string>
+
 </resources>
