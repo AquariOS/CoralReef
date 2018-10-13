@@ -76,6 +76,14 @@
     <string name="empty_category_title">No extra features yet...</string>
     <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
 
+    <!-- Fruity Pebbles v2.0 -->
+    <string name="accent_picker_dialog_title">Select an accent color</string>
+    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_summary">Select system theme accent color</string>
+    <string name="theme_accent_picker_default">Default</string>
+    <string name="accent_picker_material_colors">Material palette</string>
+    <string name="accent_picker_custom_colors">User requested</string>
+
     <!-- Color Picker -->
 
 <!-- FEATURES -->
