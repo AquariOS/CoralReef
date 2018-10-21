@@ -18,10 +18,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+	<PreferenceCategory
+		android:title="@string/appearance_category">
+			<Preference
+				android:key="qs_rows_columns"
+				android:title="@string/qs_panel_layout_title"
+				android:summary="@string/qs_rows_columns_title_summary"
+				android:fragment="com.aquarios.coralreef.fragments.QsPanelLayout"/>
+
+	</PreferenceCategory>
 
 </PreferenceScreen>

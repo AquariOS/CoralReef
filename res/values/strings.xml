@@ -171,4 +171,14 @@
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Immediately unlock on correct PIN/Password entry</string>
 
+    <!-- QS rows and columns -->
+    <string name="qs_panel_view_title">Quick settings panel view</string>
+    <string name="qs_rows_columns_title_summary">Set columns/rows for tiles. Add/remove settings from panel</string>
+    <string name="category_qstiles_portrait">Adjust tile layout for portait view</string>
+    <string name="qs_rows_portrait_title">Number of rows</string>
+    <string name="qs_columns_portrait_title">Number of columns</string>
+    <string name="category_qstiles_landscape">Adjust tile layout for landscape view</string>
+    <string name="qs_rows_landscape_title">Number of rows</string>
+    <string name="qs_columns_landscape_title">Number of columns</string>
+
 </resources>
