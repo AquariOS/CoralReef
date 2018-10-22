@@ -51,7 +51,14 @@
     <string name="traffic_summary">Enable &amp; configure network indicator in status bar</string>
     <string name="quicksettings_title">Quick settings</string>
     <string name="quicksettings_summary">Customize the overall view &amp; functionality</string>
-		<string name="appearance_category">Appearance</string>
+	    <string name="appearance_category">Appearance</string>
+        <string name="behavior_category">Behavior</string>
+        <string name="brightness_control_category">Brightness control</string>
+        <string name="tile_panel_appearance_category">Tile panel appearance</string>
+        <string name="qs_panel_layout_title">QS panel layout</string>
+        <string name="tile_panel_view_category">Tile panel view</string>
+        <string name="category_qstiles_portrait">Adjust tile layout for portait view</string>
+        <string name="category_qstiles_landscape">Adjust tile layout for landscape view</string>
     <!-- Notifications -->
     <string name="led_notifications_title">LED notifications</string>
     <string name="led_notifications_summary">Enable/disable the LED light. Configure colors &amp; behavior</string>
@@ -175,15 +182,12 @@
     <!-- QS rows and columns -->
     <string name="qs_panel_view_title">Quick settings panel view</string>
     <string name="qs_rows_columns_title_summary">Set columns/rows for tiles. Add/remove settings from panel</string>
-    <string name="category_qstiles_portrait">Adjust tile layout for portait view</string>
     <string name="qs_rows_portrait_title">Number of rows</string>
     <string name="qs_columns_portrait_title">Number of columns</string>
-    <string name="category_qstiles_landscape">Adjust tile layout for landscape view</string>
     <string name="qs_rows_landscape_title">Number of rows</string>
     <string name="qs_columns_landscape_title">Number of columns</string>
 
     <!-- Option to show brightness bar in quick settings -->
-    <string name="brightness_control_category">Brightness control</string>
     <string name="show_brightness_title">Brightness slider</string>
     <string name="show_brightness_summary_on">Showing brightness slider in QS panel</string>
     <string name="show_brightness_summary_off">Brightness slider is hidden</string>
