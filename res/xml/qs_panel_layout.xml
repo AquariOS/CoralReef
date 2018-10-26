@@ -76,4 +76,15 @@
 				settings:units="" />
 	</PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/qs_panel_alpha_category">
+			<com.android.settings.aquarios.CustomSeekBarPreference
+				android:key="qs_panel_alpha"
+				android:title="@string/qs_panel_alpha_title"
+				android:max="255"
+				settings:min="0"
+				settings:units="" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
