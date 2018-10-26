@@ -31,6 +31,12 @@
 				android:title="@string/qs_footer_warnings_title"
 				android:summary="@string/qs_footer_warnings_summary"
 				android:defaultValue="true" />
+
+			<com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
+				android:key="qs_show_info_header"
+				android:title="@string/tuner_show_info_header_title"
+				android:summary="@string/tuner_show_info_header_category"
+				android:defaultValue="true" />
 	</PreferenceCategory>
 
 </PreferenceScreen>

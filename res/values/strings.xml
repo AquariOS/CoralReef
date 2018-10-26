@@ -208,4 +208,8 @@
     <string name="qs_panel_alpha_category">Advanced panel theming</string>
     <string name="qs_panel_alpha_title">QS panel opacity</string>
 
+    <!-- Hide header -->
+    <string name="tuner_show_info_header_title">Information header</string>
+    <string name="tuner_show_info_header_category">Enable to hide</string>
+
 </resources>
