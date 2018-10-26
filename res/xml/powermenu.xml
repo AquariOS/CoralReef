@@ -20,7 +20,7 @@
 
     <PreferenceCategory
         android:title="@string/global_actions_enable_cat">
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="advanced_reboot"
             android:title="@string/global_actions_advanced_reboot_title"
             android:summary="@string/global_actions_advanced_reboot_summary"
@@ -29,57 +29,57 @@
 
     <PreferenceCategory
         android:title="@string/global_actions_addremove_cat">
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="global_actions_power"
             android:title="@string/global_actions_power"
             android:dependency="advanced_reboot"
             android:defaultValue="true" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="global_actions_restart"
             android:title="@string/global_actions_restart"
             android:dependency="advanced_reboot"
             android:defaultValue="true" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="global_actions_lockdown"
             android:title="@string/global_actions_lockdown"
             android:dependency="advanced_reboot"
             android:defaultValue="false" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
 
             android:key="global_actions_screenshot"
             android:title="@string/global_actions_screenshot"
             android:dependency="advanced_reboot"
             android:defaultValue="true" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
 
             android:key="global_actions_screenrecord"
             android:title="@string/global_actions_screenrecord"
             android:dependency="advanced_reboot"
             android:defaultValue="false" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="global_actions_airplane"
             android:title="@string/global_actions_airplane"
             android:dependency="advanced_reboot"
             android:defaultValue="false" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="global_actions_settings"
             android:title="@string/global_actions_settings"
             android:dependency="advanced_reboot"
             android:defaultValue="false" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="global_actions_flashlight"
             android:title="@string/global_actions_flashlight"
             android:dependency="advanced_reboot"
             android:defaultValue="false" />
 
-        <com.android.settings.aquarios.SystemSettingSwitchPreference
+        <com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
             android:key="global_actions_users"
             android:title="@string/global_actions_users"
             android:dependency="advanced_reboot"

@@ -20,21 +20,21 @@
 
 	<PreferenceCategory
 		android:title="@string/brightness_control_category">
-			<com.android.settings.aquarios.SecureSettingSwitchPreference
+			<com.aquarios.coralreef.preferences.SecureSettingSwitchPreference
 				android:key="qs_show_brightness"
 				android:title="@string/show_brightness_title"
 				android:summaryOn="@string/show_brightness_summary_on"
 				android:summaryOff="@string/show_brightness_summary_off"
 				android:defaultValue="true" />
 
-			<com.android.settings.aquarios.SecureSettingSwitchPreference
+			<com.aquarios.coralreef.preferences.SecureSettingSwitchPreference
 				android:key="qs_brightness_position_bottom"
 				android:title="@string/qs_brightness_position_bottom_title"
 				android:summary="@string/qs_brightness_position_bottom_summary"
 				android:defaultValue="false"
 				android:dependency="qs_show_brightness" />
 
-			<com.android.settings.aquarios.SystemSettingSwitchPreference
+			<com.aquarios.coralreef.preferences.SystemSettingSwitchPreference
 				android:key="qs_show_brightness_icon"
 				android:title="@string/brightness_icon_title"
 				android:summary="@string/brightness_icon_summary"
@@ -44,14 +44,14 @@
 
 	<PreferenceCategory
         android:title="@string/category_qstiles_portrait">
-			<com.android.settings.aquarios.CustomSeekBarPreference
+			<com.aquarios.coralreef.preferences.CustomSeekBarPreference
 				android:key="qs_rows_portrait"
 				android:title="@string/qs_rows_portrait_title"
 				android:max="5"
 				settings:min="1"
 				settings:units="" />
 
-			<com.android.settings.aquarios.CustomSeekBarPreference
+			<com.aquarios.coralreef.preferences.CustomSeekBarPreference
 				android:key="qs_columns_portrait"
 				android:title="@string/qs_columns_portrait_title"
 				android:max="7"
@@ -61,14 +61,14 @@
 
 	<PreferenceCategory
         android:title="@string/category_qstiles_landscape">
-			<com.android.settings.aquarios.CustomSeekBarPreference
+			<com.aquarios.coralreef.preferences.CustomSeekBarPreference
 				android:key="qs_rows_landscape"
 				android:title="@string/qs_rows_landscape_title"
 				android:max="3"
 				settings:min="1"
 				settings:units="" />
 
-			<com.android.settings.aquarios.CustomSeekBarPreference
+			<com.aquarios.coralreef.preferences.CustomSeekBarPreference
 				android:key="qs_columns_landscape"
 				android:title="@string/qs_columns_landscape_title"
 				android:max="9"
@@ -78,7 +78,7 @@
 
     <PreferenceCategory
         android:title="@string/qs_panel_alpha_category">
-			<com.android.settings.aquarios.CustomSeekBarPreference
+			<com.aquarios.coralreef.preferences.CustomSeekBarPreference
 				android:key="qs_panel_alpha"
 				android:title="@string/qs_panel_alpha_title"
 				android:max="255"
