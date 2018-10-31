@@ -22,7 +22,7 @@ import android.os.UserHandle;
 import android.support.v7.preference.Preference;
 import android.provider.Settings;
 
-import com.aquarios.coralreef.preferences.CustomSeekBarPreference;
+import com.aquarios.support.preferences.CustomSeekBarPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
