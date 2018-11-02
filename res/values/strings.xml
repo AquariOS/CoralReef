@@ -202,4 +202,9 @@
     <string name="tuner_show_info_header_title">Information header</string>
     <string name="tuner_show_info_header_category">Enable to hide</string>
 
+    <string name="status_bar_quick_qs_pulldown">Quick pull-down</string>
+    <string name="quick_pulldown_none">Disabled</string>
+    <string name="quick_pulldown_right">Pull-down status bar from right side</string>
+    <string name="quick_pulldown_left">Pull-down status bar from left side</string>
+
 </resources>
