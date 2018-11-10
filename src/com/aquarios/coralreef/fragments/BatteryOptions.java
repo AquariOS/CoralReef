@@ -17,6 +17,7 @@
 package com.aquarios.coralreef.fragments;
 
 import android.app.AlertDialog;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
@@ -40,52 +41,60 @@ import com.android.settingslib.graph.BatteryMeterDrawableBase;
 
 public class BatteryOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String BATTERY_PERCENT = "show_battery_percent";
 
+    private static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+
+    private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 3;
+    private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
+
+    private ListPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarBattery;
-    private ListPreference mBatteryPercentage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         addPreferencesFromResource(R.xml.battery_options);
 
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mStatusBarBatteryShowPercent =
+                (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
+
+        int batteryShowPercent = Settings.System.getInt(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0);
+        mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
+        mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
+        mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
-        int batteryStyle = Settings.Secure.getInt(getActivity().getContentResolver(),
+         int batteryStyle = Settings.Secure.getInt(resolver,
                 Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0);
         mStatusBarBattery.setValue(String.valueOf(batteryStyle));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        enableStatusBarBatteryDependents(batteryStyle);
         mStatusBarBattery.setOnPreferenceChangeListener(this);
-         mBatteryPercentage = (ListPreference) findPreference(BATTERY_PERCENT);
-        int showPercent = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.SHOW_BATTERY_PERCENT, 1);
-        mBatteryPercentage.setValue(Integer.toString(showPercent));
-        int valueIndex = mBatteryPercentage.findIndexOfValue(String.valueOf(showPercent));
-        mBatteryPercentage.setSummary(mBatteryPercentage.getEntries()[valueIndex]);
-        mBatteryPercentage.setOnPreferenceChangeListener(this);
-        boolean hideForcePercentage = batteryStyle == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT;
-        mBatteryPercentage.setEnabled(!hideForcePercentage);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-         AlertDialog dialog;
-        if (preference == mStatusBarBattery) {
-            int battStyle = Integer.valueOf((String) newValue);
-            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
-            Settings.Secure.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.STATUS_BAR_BATTERY_STYLE, battStyle);
-            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
-            boolean hideForcePercentage = battStyle == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT;
-            mBatteryPercentage.setEnabled(!hideForcePercentage);
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mStatusBarBatteryShowPercent) {
+            int batteryShowPercent = Integer.valueOf((String) newValue);
+            int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    resolver, Settings.System.SHOW_BATTERY_PERCENT, batteryShowPercent);
+            mStatusBarBatteryShowPercent.setSummary(
+                    mStatusBarBatteryShowPercent.getEntries()[index]);
             return true;
-        } else  if (preference == mBatteryPercentage) {
-            int showPercent = Integer.valueOf((String) newValue);
-            int index = mBatteryPercentage.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.SHOW_BATTERY_PERCENT, showPercent);
-            mBatteryPercentage.setSummary(mBatteryPercentage.getEntries()[index]);
+        } else if (preference == mStatusBarBattery) {
+            int batteryStyle = Integer.valueOf((String) newValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE, batteryStyle);
+            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+            enableStatusBarBatteryDependents(batteryStyle);
             return true;
         }
         return false;
@@ -94,5 +103,14 @@ public class BatteryOptions extends SettingsPreferenceFragment implements Prefer
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    private void enableStatusBarBatteryDependents(int batteryIconStyle) {
+        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT
+                || batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN) {
+            mStatusBarBatteryShowPercent.setEnabled(false);
+        } else {
+            mStatusBarBatteryShowPercent.setEnabled(true);
+        }
     }
 }
