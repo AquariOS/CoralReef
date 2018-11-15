@@ -49,6 +49,7 @@ public class TrafficIndicators extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mShowArrows;
     private ListPreference mNetTrafficLocation;
+    private ListPreference mNetTrafficType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,13 @@ public class TrafficIndicators extends SettingsPreferenceFragment implements
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
         mShowArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_arrow");
+
+        int type = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
+        mNetTrafficType = (ListPreference) findPreference("network_traffic_type");
+        mNetTrafficType.setValue(String.valueOf(type));
+        mNetTrafficType.setSummary(mNetTrafficType.getEntry());
+        mNetTrafficType.setOnPreferenceChangeListener(this);
 
         int netMonitorEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
@@ -117,6 +125,14 @@ public class TrafficIndicators extends SettingsPreferenceFragment implements
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mNetTrafficType) {
+            int val = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_TYPE, val,
+                    UserHandle.USER_CURRENT);
+            int index = mNetTrafficType.findIndexOfValue((String) newValue);
+            mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
+            return true;
         }
         return false;
     }
@@ -126,11 +142,13 @@ public class TrafficIndicators extends SettingsPreferenceFragment implements
             case 0:
                 mThreshold.setEnabled(false);
                 mShowArrows.setEnabled(false);
+                mNetTrafficType.setEnabled(false);
                 break;
             case 1:
             case 2:
                 mThreshold.setEnabled(true);
                 mShowArrows.setEnabled(true);
+                mNetTrafficType.setEnabled(true);
                 break;
             default:
                 break;
