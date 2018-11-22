@@ -34,10 +34,12 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
     private static final String POWERMENU_CATEGORY = "powermenu_category";
     private static final String NAVIGATION_CATEGORY = "navigationbar_settings";
     private static final String VOLUME_ROCKER_CATEGORY = "volume_rocker_category";
+    private static final String HWKEY_CATEGORY = "hw_keys_category";
 
     private LayoutPreference mPowerMenu;
     private LayoutPreference mNavigation;
     private LayoutPreference mVolumeRocker;
+    private LayoutPreference mHwKeys;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,15 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
 
         mVolumeRocker = (LayoutPreference) findPreference(VOLUME_ROCKER_CATEGORY);
         mVolumeRocker.setTitle(R.string.volume_rocker_title);
+
+		mHwKeys = (LayoutPreference) findPreference(HWKEY_CATEGORY);
+
+		if (getResources().getInteger(com.android.internal.R.integer.config_deviceHardwareKeys) == 0) {
+			PreferenceScreen prefScreen = getPreferenceScreen();
+			prefScreen.removePreference(mHwKeys);
+		} else {
+			mHwKeys.setTitle(R.string.hw_keys_title);
+		}
     }
 
     @Override
