@@ -33,9 +33,10 @@
 				android:defaultValue="true" />
 
 			<com.aquarios.support.preferences.SystemSettingSwitchPreference
-				android:key="qs_show_info_header"
-				android:title="@string/tuner_show_info_header_title"
-				android:summary="@string/tuner_show_info_header_category"
+				android:key="qs_tile_title_visibility"
+				android:title="@string/qs_tile_title_visibility_title"
+				android:summaryOn="@string/qs_tile_titles_showing"
+				android:summaryOff="@string/qs_tile_titles_hidden"
 				android:defaultValue="true" />
 	</PreferenceCategory>
 
