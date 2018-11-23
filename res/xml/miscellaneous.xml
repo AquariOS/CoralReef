@@ -18,10 +18,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/miscellaneous_title" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <SwitchPreference
+        android:key="fingerprint_success_vib"
+        android:title="@string/fprint_sucess_vib_title"
+        android:summary="@string/fprint_sucess_vib_summary"
+        android:persistent="false" />
 
 </PreferenceScreen>

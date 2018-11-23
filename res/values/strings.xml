@@ -217,4 +217,8 @@
     <string name="qs_tile_titles_showing">Show quick tile names are showing</string>
     <string name="qs_tile_titles_hidden">Show quick tile names are hidden</string>
 
+    <!-- Fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
+
 </resources>
