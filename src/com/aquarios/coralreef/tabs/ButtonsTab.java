@@ -37,7 +37,7 @@ import com.android.internal.logging.nano.MetricsProto;
 public class ButtonsTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String POWERMENU_CATEGORY = "powermenu_category";
-    private static final String NAVIGATION_CATEGORY = "navigation_category";
+    private static final String NAVIGATION_CATEGORY = "navigationbar_settings";
     private static final String VOLUME_ROCKER_CATEGORY = "volume_rocker_category";
 
     private LayoutPreference mPowerMenu;
