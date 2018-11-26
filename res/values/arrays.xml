@@ -102,7 +102,9 @@
     <string-array name="entries_status_bar_battery" translatable="false">
         <item>@string/status_bar_battery_style_port</item>
         <item>@string/status_bar_battery_style_circle</item>
-        <item>@string/battery_style_dotted_circle</item>
+        <item>@string/status_bar_battery_style_dotted_circle</item>
+        <item>@string/status_bar_battery_style_big_circle</item>
+        <item>@string/status_bar_battery_style_big_dotted_circle</item>
         <item>@string/status_bar_battery_style_text</item>
         <item>@string/status_bar_battery_style_hidden</item>
     </string-array>
@@ -113,6 +115,8 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
+        <item>6</item>
     </string-array>
 
     <!-- Torch Power button gestures -->
