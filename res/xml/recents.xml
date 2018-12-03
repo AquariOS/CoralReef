@@ -18,10 +18,24 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/recents_title" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <PreferenceCategory
+        android:key="stock_recents"
+        android:title="@string/aosp_recents_category">
+
+			<com.aquarios.support.preferences.SystemSettingSwitchPreference
+			android:key="show_clear_all_recents"
+			android:title="@string/show_clear_all_recents_button_title"
+			android:summaryOn="@string/show_clear_all_recents_button_summary_on"
+			android:summaryOff="@string/show_clear_all_recents_button_summary_off"
+			android:defaultValue="true" />
+
+		<ListPreference
+			android:key="recents_clear_all_location"
+			android:title="@string/recents_clear_all_location_title"
+			android:entries="@array/recents_clear_all_location_entries"
+			android:entryValues="@array/recents_clear_all_location_values"
+			android:defaultValue="3"
+			android:dependency="show_clear_all_recents" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

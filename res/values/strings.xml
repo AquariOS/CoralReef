@@ -74,6 +74,7 @@
     <!-- System/ Misc -->
     <string name="recents_title">Recents</string>
     <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
+        <string name="aosp_recents_category">AOSP recents</string>
     <string name="device_extras_title">Device features</string>
     <string name="device_extras_summary">Tweaks specific to your device</string>
     <string name="gesture_options_title">Gestures</string>
@@ -226,5 +227,17 @@
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Show net activity in statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
+    <!-- Clear all recents -->
+    <string name="show_clear_all_recents_button_title">Clear-all FAB</string>
+    <string name="show_clear_all_recents_button_summary_on">Show clear all FAB</string>
+    <string name="show_clear_all_recents_button_summary_off">Show AOSP clear all</string>
+    <string name="recents_clear_all_location_title">Clear all FAB location</string>
+    <string name="recents_clear_all_location_top_right">Top right</string>
+    <string name="recents_clear_all_location_top_left">Top left</string>
+    <string name="recents_clear_all_location_top_center">Top center</string>
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 
 </resources>
