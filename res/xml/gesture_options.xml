@@ -19,8 +19,12 @@
     android:title="@string/gesture_options_title" >
 
    <SwitchPreference
-	android:key="double_tap_sleep_gesture"
-	android:title="@string/statusbar_dt2s_title"
-	android:summary="@string/statusbar_dt2s_summary" />
+		android:key="double_tap_sleep_gesture"
+		android:title="@string/statusbar_dt2s_title"
+		android:summary="@string/statusbar_dt2s_summary" />
 
+   <SwitchPreference
+		android:key="double_tap_sleep_anywhere"
+		android:title="@string/dt2s_lockscreen_title"
+		android:summary="@string/dt2s_lockscreen_summary" />
 </PreferenceScreen>
