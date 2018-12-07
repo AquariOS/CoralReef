@@ -16,7 +16,9 @@
 
 package com.aquarios.coralreef.fragments;
 
+import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -34,6 +36,7 @@ import com.android.internal.logging.nano.MetricsProto;
 public class GestureOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
      SwitchPreference mDoubleTapToSleepEnabled;
+     SwitchPreference mDoubleTapToSleepAnywhere;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,11 @@ public class GestureOptions extends SettingsPreferenceFragment implements Prefer
         mDoubleTapToSleepEnabled.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1);
         mDoubleTapToSleepEnabled.setOnPreferenceChangeListener(this);
+
+        mDoubleTapToSleepAnywhere = (SwitchPreference) findPreference("double_tap_sleep_anywhere");
+        mDoubleTapToSleepAnywhere.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0) == 1);
+        mDoubleTapToSleepAnywhere.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -52,6 +60,12 @@ public class GestureOptions extends SettingsPreferenceFragment implements Prefer
             boolean enabled = ((Boolean) newValue).booleanValue();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE, enabled ? 1 : 0);
+            return true;
+        }
+        if (preference.equals(mDoubleTapToSleepAnywhere)) {
+            boolean enabled = ((Boolean) newValue).booleanValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, enabled ? 1 : 0);
             return true;
         }
         return false;

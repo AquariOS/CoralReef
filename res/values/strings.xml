@@ -249,6 +249,10 @@
     <string name="statusbar_dt2s_title">Double Tap To Sleep</string>
     <string name="statusbar_dt2s_summary">Double tap on the status bar to sleep</string>
 
+    <!-- dt2s lockscreen -->
+    <string name="dt2s_lockscreen_title">Double Tap To Sleep LockScreen</string>
+    <string name="dt2s_lockscreen_summary">Double tap on the lock screen to sleep</string>
+
     <!-- Keyboard: Force Show ENTER key -->
     <string name="force_show_enter_key_title">Always show Enter key</string>
     <string name="force_show_enter_key_summary">Forces Enter key to be displayed, rather than Emoji key</string>
