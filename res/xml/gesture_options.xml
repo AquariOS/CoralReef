@@ -18,10 +18,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/gesture_options_title" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+   <SwitchPreference
+	android:key="double_tap_sleep_gesture"
+	android:title="@string/statusbar_dt2s_title"
+	android:summary="@string/statusbar_dt2s_summary" />
 
 </PreferenceScreen>

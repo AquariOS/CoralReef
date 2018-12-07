@@ -240,4 +240,7 @@
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 
+    <!-- dt2s statusbar -->
+    <string name="statusbar_dt2s_title">Double Tap To Sleep</string>
+    <string name="statusbar_dt2s_summary">Double tap on the status bar to sleep</string>
 </resources>

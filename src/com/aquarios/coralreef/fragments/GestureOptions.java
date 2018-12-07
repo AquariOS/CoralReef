@@ -33,14 +33,27 @@ import com.android.internal.logging.nano.MetricsProto;
 
 public class GestureOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+     SwitchPreference mDoubleTapToSleepEnabled;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.gesture_options);
+
+        mDoubleTapToSleepEnabled = (SwitchPreference) findPreference("double_tap_sleep_gesture");
+        mDoubleTapToSleepEnabled.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1);
+        mDoubleTapToSleepEnabled.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+		       if (preference.equals(mDoubleTapToSleepEnabled)) {
+            boolean enabled = ((Boolean) newValue).booleanValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE, enabled ? 1 : 0);
+            return true;
+        }
         return false;
     }
 
