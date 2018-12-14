@@ -24,4 +24,10 @@
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
 
+    <SwitchPreference
+        android:key="force_show_enter_key"
+        android:title="@string/force_show_enter_key_title"
+        android:summary="@string/force_show_enter_key_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

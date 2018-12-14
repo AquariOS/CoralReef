@@ -251,4 +251,9 @@
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Music visualizer</string>
     <string name="lockscreen_visualizer_summary">Toggles visualizer display on lockscreen</string>
+
+    <!-- Keyboard: Force Show ENTER key -->
+    <string name="force_show_enter_key_title">Always show Enter key</string>
+    <string name="force_show_enter_key_summary">Forces Enter key to be displayed, rather than Emoji key</string>
+
 </resources>
