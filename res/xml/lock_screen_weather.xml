@@ -17,10 +17,18 @@
     android:title="@string/lock_screen_weather_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <PreferenceCategory
+        android:key="weather_lockscreen_key"
+        android:title="@string/weather_title"
+        settings:controller="com.aquarios.coralreef.helpers.WeatherPreferenceController">
+        <com.aquarios.support.preferences.SystemSettingListPreference
+            android:key="weather_lockscreen_unit"
+            android:dialogTitle="@string/weather_unit"
+            android:title="@string/weather_unit"
+            android:summary="%s"
+            android:entries="@array/weather_unit_entries"
+            android:entryValues="@array/weather_unit_values"
+            android:defaultValue="0" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
