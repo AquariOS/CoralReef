@@ -38,7 +38,11 @@
 
     <com.android.settings.applications.LayoutPreference
         android:key="status_bar_items_category"
-        android:fragment="com.aquarios.coralreef.fragments.StatusBarItems"
-        android:layout="@layout/status_bar_items" />
+        android:persistent="false"
+        android:layout="@layout/status_bar_items" >
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
+    </com.android.settings.applications.LayoutPreference>
 
 </PreferenceScreen>

@@ -32,6 +32,15 @@
             android:summary="@string/media_art_summary"
             android:defaultValue="true" />
 
+        <Preference
+            android:key="bottom_shortcuts_category"
+            android:title="@string/lockscreen_bottom_shortcuts_title"
+            android:summary="@string/lockscreen_bottom_shortcuts_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
+        </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
