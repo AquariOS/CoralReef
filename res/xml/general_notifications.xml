@@ -18,10 +18,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/general_notifications_title" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+    <PreferenceCategory
+        android:title="@string/advanced_category">
+
+        <Preference
+            android:key="power_notifications"
+            android:title="@string/power_notification_title"
+            android:summary="@string/power_notification_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.PowerNotificationsTunerActivity" />
+        </Preference>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

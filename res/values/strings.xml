@@ -71,6 +71,7 @@
     <string name="headsup_summary">Configure heads-up options</string>
     <string name="general_notifications_title">General notifications</string>
     <string name="general_notifications_summary">Miscellaneous notification controls</string>
+    	    <string name="advanced_category">Advanced</string>
     <!-- System/ Misc -->
     <string name="recents_title">Recents</string>
     <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
@@ -261,5 +262,13 @@
     <string name="weather_unit">Temperature unit</string>
     <string name="weather_unit_metric" translatable="false">Celsius</string>
     <string name="weather_unit_imperial" translatable="false">Fahrenheit</string>
+
+    <!-- Bottom shortcuts -->
+    <string name="lockscreen_bottom_shortcuts_title">Bottom shortcuts</string>
+    <string name="lockscreen_bottom_shortcuts_summary">Configure the bottom shortcuts in the keyguard</string>
+
+    <!-- Power notification controls -->
+    <string name="power_notification_title">Power notification controls</string>
+    <string name="power_notification_summary">Enable/disable an AOSP advanced notification system based on the importance of an app</string>  
 
 </resources>
