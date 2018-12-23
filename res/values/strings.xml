@@ -244,4 +244,10 @@
     <string name="force_show_enter_key_title">Always show Enter key</string>
     <string name="force_show_enter_key_summary">Forces Enter key to be displayed, rather than Emoji key</string>
 
+    <!-- Weather -->
+    <string name="weather_title">Weather</string>
+    <string name="weather_unit">Temperature unit</string>
+    <string name="weather_unit_metric" translatable="false">Celsius</string>
+    <string name="weather_unit_imperial" translatable="false">Fahrenheit</string>
+
 </resources>
