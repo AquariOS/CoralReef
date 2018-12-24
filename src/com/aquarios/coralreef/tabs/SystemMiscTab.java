@@ -26,7 +26,6 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import com.android.settings.applications.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
 import com.android.internal.logging.nano.MetricsProto;
 
 public class SystemMiscTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
@@ -81,12 +80,10 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
         super.onPause();
     }
 
-
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
         return false;
     }
-
 
     @Override
     public int getMetricsCategory() {
