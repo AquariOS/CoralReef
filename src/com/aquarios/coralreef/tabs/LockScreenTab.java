@@ -63,12 +63,10 @@ public class LockScreenTab extends SettingsPreferenceFragment implements Prefere
         super.onPause();
     }
 
-
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
         return false;
     }
-
 
     @Override
     public int getMetricsCategory() {
