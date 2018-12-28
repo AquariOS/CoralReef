@@ -86,6 +86,8 @@
     <string name="changelog_summary">List of recent commits added to AquariOS</string>
     <string name="audio_display_options_title">Advanced audio &amp; display options</string>
     <string name="audio_display_options_summary">Control advanced audio options, system animations, and other general display settings</string>
+        <string name="audio_options_category">Audio options</string>
+        <string name="display_options_category">Display options</string>
 
     <!-- Empty Category -->
     <string name="empty_category_title">No extra features yet...</string>
@@ -258,5 +260,16 @@
     <!-- Power notification controls -->
     <string name="power_notification_title">Power notification controls</string>
     <string name="power_notification_summary">Enable/disable an AOSP advanced notification system based on the importance of an app</string>  
+
+    <!-- Audio Panel view  -->
+    <string name="advanced_volume_panel_title">Advanced volume panel</string>
+    <string name="advanced_volume_panel_summary">Select addional volume controls to be shown in main volume panel</string>
+    <string name="volume_panel_info_text">Please keep in mind that volume panel size increases with each additional volume element selected above. &#xD;TODO: Bring back expanding/collapsing volume panel, as seen in AquariOS 8.1.0.</string>
+    <string name="audio_panel_view_media_title">Media</string>
+    <string name="audio_panel_view_ringer_title">Ringer</string>
+    <string name="audio_panel_view_notification_title">Notification</string>
+    <string name="audio_panel_view_alarm_title">Alarm</string>
+    <string name="audio_panel_view_voice_title">In-call voice</string>
+    <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
 
 </resources>
