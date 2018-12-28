@@ -31,9 +31,9 @@
     </com.android.settings.applications.LayoutPreference>
 
     <com.android.settings.applications.LayoutPreference
-        android:key="display_options"
-        android:fragment="com.aquarios.coralreef.fragments.DisplayOptions"
-        android:layout="@layout/display_options" />
+        android:key="audio_display_options"
+        android:fragment="com.aquarios.coralreef.fragments.AudioDisplayOptions"
+        android:layout="@layout/audio_display_options" />
 
     <com.android.settings.applications.LayoutPreference
         android:key="gesture_options"
