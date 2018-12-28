@@ -84,8 +84,8 @@
     <string name="miscellaneous_summary">Uncategorized options</string>
     <string name="changelog_title">Changelog</string>
     <string name="changelog_summary">List of recent commits added to AquariOS</string>
-    <string name="display_options_title">Display options</string>
-    <string name="display_options_summary">Set animation preferences and other display settings</string>
+    <string name="audio_display_options_title">Advanced audio &amp; display options</string>
+    <string name="audio_display_options_summary">Control advanced audio options, system animations, and other general display settings</string>
 
     <!-- Empty Category -->
     <string name="empty_category_title">No extra features yet...</string>
