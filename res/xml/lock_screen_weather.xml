@@ -18,9 +18,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
     <PreferenceCategory
-        android:key="weather_lockscreen_key"
-        android:title="@string/weather_title"
-        settings:controller="com.aquarios.coralreef.helpers.WeatherPreferenceController">
+        android:title="@string/weather_title">
         <com.aquarios.support.preferences.SystemSettingListPreference
             android:key="weather_lockscreen_unit"
             android:dialogTitle="@string/weather_unit"
