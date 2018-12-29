@@ -59,13 +59,13 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
         int batteryShowPercent = Settings.System.getIntForUser(resolver,
-                Settings.System.SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+                Settings.System.SHOW_BATTERY_PERCENT, 2, UserHandle.USER_CURRENT);
         mStatusBarBatteryShowPercent.setValue(Integer.toString(batteryShowPercent));
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         int batteryStyle = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0, UserHandle.USER_CURRENT);
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 4, UserHandle.USER_CURRENT);
         mStatusBarBattery.setValue(Integer.toString(batteryStyle));
         mStatusBarBattery.setOnPreferenceChangeListener(this);
 
