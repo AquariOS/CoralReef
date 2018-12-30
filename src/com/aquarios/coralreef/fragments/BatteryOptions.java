@@ -82,6 +82,9 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.SHOW_BATTERY_PERCENT, batteryShowPercent,
                     UserHandle.USER_CURRENT);
+            int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
+            mStatusBarBatteryShowPercent.setSummary(
+                    mStatusBarBatteryShowPercent.getEntries()[index]);
             boolean hideForcePercentage = batteryShowPercent == 5
             || batteryShowPercent == 6; /*text or hidden style*/
             mStatusBarBatteryShowPercent.setEnabled(!hideForcePercentage);
@@ -91,6 +94,9 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE, batteryStyle,
                     UserHandle.USER_CURRENT);
+            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+            mStatusBarBattery.setSummary(
+                    mStatusBarBattery.getEntries()[index]);
             boolean hideForcePercentage = batteryStyle == 5
             || batteryStyle == 6; /*text or hidden style*/
             mStatusBarBatteryShowPercent.setEnabled(!hideForcePercentage);
