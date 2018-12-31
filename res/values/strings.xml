@@ -356,7 +356,7 @@
     <!-- Ambient display music ticker -->
     <string name="force_ambient_for_media_pref_title">Ambient music ticker</string>
     <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
-    <string name="ambient_ticker_footer">Ambient Music Ticker shows playing music track info within Ambient display screen.\n\nIt\'s triggered also if Ambient Display is disabled when a new track is started, forcing a clean ambient screen with track info in the middle of the screen.\n\nYou can also double tap on track info to skip track.</string>
+    <string name="ambient_ticker_footer">Ambient Music Ticker shows music track info on Ambient Display screen.\n\nIf Ambient Display is disabled, a clean ambient screen with track info will be shown instead.\n\nDouble-tapping on track info will skip ahead to next track.\n\nThis also works well with Pixel\'s Now Playing feature.</string>
     <string name="force_ambient_for_media_title">Enable</string>
 
 </resources>
