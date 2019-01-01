@@ -24,10 +24,16 @@
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
 
-    <SwitchPreference
+    <com.aquarios.support.preferences.SystemSettingSwitchPreference
         android:key="force_show_enter_key"
         android:title="@string/force_show_enter_key_title"
         android:summary="@string/force_show_enter_key_summary"
         android:defaultValue="true" />
+
+    <com.aquarios.support.preferences.GlobalSettingSwitchPreference
+        android:key="allow_signature_fake"
+        android:title="@string/allow_signature_fake"
+        android:summary="@string/allow_signature_fake_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
