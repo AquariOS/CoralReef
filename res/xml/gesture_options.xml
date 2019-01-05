@@ -27,4 +27,10 @@
 		android:key="double_tap_sleep_anywhere"
 		android:title="@string/dt2s_lockscreen_title"
 		android:summary="@string/dt2s_lockscreen_summary" />
-</PreferenceScreen>
+
+   <com.aquarios.support.preferences.SystemSettingSwitchPreference
+		android:key="status_bar_brightness_control"
+		android:title="@string/status_bar_toggle_brightness"
+		android:summary="@string/status_bar_toggle_brightness_summary"
+		android:defaultValue="false" />
+		</PreferenceScreen>
