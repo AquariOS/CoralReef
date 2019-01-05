@@ -190,18 +190,18 @@
     <string name="show_brightness_title">Brightness slider</string>
     <string name="show_brightness_summary_on">Showing brightness slider in QS panel</string>
     <string name="show_brightness_summary_off">Brightness slider is hidden</string>
-
-    <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
     <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
+    <string name="brightness_icon_title">Adaptive brightness button</string>
+    <string name="brightness_icon_summary">Show an icon to the right of brighness slider. Toggles adaptive brightness on/off</string>
+    <string name="show_auto_brightness_right">Right position for adaptive brightness button</string>
+    <string name="show_brightness_buttons">Brightness control buttons</string>
+
+    <string name="show_auto_brightness_button">Adaptive brightness button</string>
 
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at base of QS panel when network is monitored by external apps or VPN</string>
-
-    <!-- Brightness slider icon -->
-    <string name="brightness_icon_title">Auto Brightness Icon</string>
-    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
 
     <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_category">Advanced panel theming</string>
