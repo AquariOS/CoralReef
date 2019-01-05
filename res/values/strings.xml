@@ -80,6 +80,8 @@
     <string name="device_extras_summary">Tweaks specific to your device</string>
     <string name="gesture_options_title">Gestures</string>
     <string name="gesture_options_summary">Enable/disable device specific user actions</string>
+        <string name="custom_gestures_category">Custom</string>
+        <string name="aosp_gestures_category">Stock</string>
     <string name="miscellaneous_title">Miscellaneous</string>
     <string name="miscellaneous_summary">Uncategorized options</string>
     <string name="changelog_title">Changelog</string>
@@ -296,5 +298,9 @@
     <string name="aspect_ratio_apps_list_title">Apps allowed to use scaling</string>
     <string name="aspect_ratio_category_title">Legacy app scaling</string>
     <string name="aspect_ratio_apps_info">Applications need to be restarted after changes</string>
+
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
 </resources>
