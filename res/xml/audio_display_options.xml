@@ -16,6 +16,17 @@
     android:title="@string/audio_display_options_title" >
 
     <PreferenceCategory
+        android:title="@string/animations_options_category_title">
+        <ListPreference 
+            android:key="screen_off_animation" 
+            android:title="@string/screen_off_animation_title" 
+            android:entries="@array/screen_off_animation_entries" 
+            android:entryValues="@array/screen_off_animation_values"
+            android:defaultValue="0" /> 
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/audio_options_category">
         <Preference
             android:key="audio_panel"
