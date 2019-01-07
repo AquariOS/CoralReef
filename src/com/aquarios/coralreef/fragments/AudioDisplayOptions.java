@@ -17,6 +17,8 @@
 package com.aquarios.coralreef.fragments;
 
 import android.os.Bundle;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -48,14 +50,18 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements P
     private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
     private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
+    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation"; 
 
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
+    private ListPreference mScreenOffAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.audio_display_options);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
 
         final PreferenceCategory aspectRatioCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
@@ -81,6 +87,14 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements P
         mAspectRatioAppsSelect.setValues(valuesList);
         mAspectRatioAppsSelect.setOnPreferenceChangeListener(this);
         }
+
+       // Screen Off Animations 
+        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION); 
+        int screenOffStyle = Settings.System.getInt(resolver, 
+                 Settings.System.SCREEN_OFF_ANIMATION, 0); 
+        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle)); 
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry()); 
+        mScreenOffAnimation.setOnPreferenceChangeListener(this); 
     }
 
     @Override
@@ -98,6 +112,13 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements P
             }
             return true;
         }
+      if (preference == mScreenOffAnimation) { 
+            Settings.System.putInt(getContentResolver(), 
+                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
+            int valueIndex = mScreenOffAnimation.findIndexOfValue((String) newValue); 
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]); 
+            return true; 
+        } 
         return false;
     }
 
