@@ -112,4 +112,10 @@
         <string name="volume_steps_title">Volume steps</string>
         <string name="smart_pixels_title">Smart Pixels</string>
 
+    <!-- Screen Off animation --> 
+    <string name="animations_options_category_title">Animations</string>
+    <string name="screen_off_animation_title">Screen off animation</string> 
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string> 
+    <string name="screen_off_animation_scale">Scale</string> 
 </resources>
