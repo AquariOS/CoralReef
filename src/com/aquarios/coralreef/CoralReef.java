@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2017 The Dirty Unicorns Project
  * Copyright (C) 2018 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
