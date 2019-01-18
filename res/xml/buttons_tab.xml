@@ -31,9 +31,9 @@
         android:fragment="com.aquarios.coralreef.fragments.VolumeRocker"
         android:layout="@layout/volume_rocker" />
 
-    <!--Preference
+    <com.android.settings.applications.LayoutPreference
         android:key="hw_keys_category"
         android:fragment="com.aquarios.coralreef.fragments.HWKeys"
-        android:layout="@layout/hw_keys" /-->
+        android:layout="@layout/hw_keys" />
 
 </PreferenceScreen>
