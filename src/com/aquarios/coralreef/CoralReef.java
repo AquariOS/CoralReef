@@ -49,6 +49,12 @@ public class CoralReef extends SettingsPreferenceFragment {
 
     PagerAdapter mPagerAdapter;
 
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		setHasOptionsMenu(false);
+	}
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
