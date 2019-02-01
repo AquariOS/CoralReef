@@ -114,6 +114,11 @@
     <string name="powermenu_lockdown_title">Lockdown</string>
     <string name="powermenu_screenshot_title">Screenshot</string>
 
+    <!-- Pulse blacklisting -->
+    <string name="profile_choose_app">Choose app</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
+
     <!-- Volume rocker music control -->
     <string name="volume_rocker_music_controls_title">Screen off playback control</string>
     <string name="volume_rocker_music_controls_summary">Hold volume keys to seek audio tracks when screen is off</string>
@@ -312,7 +317,7 @@
     <string name="audio_panel_view_voice_title">In-call voice</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
 
-         <!-- Volume Steps -->
+    <!-- Volume Steps -->
     <string name="volume_steps_title">Volume steps</string>
     <string name="volume_steps_summary">Increasing values will improve precision for volume controls</string>
     <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
