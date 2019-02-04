@@ -28,7 +28,7 @@
     <string name="hw_keys_title">Buttons</string>
     <string name="hw_keys_summary">Configure hardware keys and/or volume rocker options</string>
     <string name="navigationbar_title">SmartNav</string>
-    <string name="navigationbar_summary">Configure SmartBar, Fling or Pulse</string>
+    <string name="navigationbar_summary">Configure Smartbar, Fling, AOSP Bar, and Pulse</string>
     <string name="powermenu_title">Power button</string>
     <string name="powermenu_summary">Configure additional options &amp; actions</string>
 	    <string name="global_actions_enable_cat">Enable customization</string>
