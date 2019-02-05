@@ -28,7 +28,7 @@
         android:key="force_show_enter_key"
         android:title="@string/force_show_enter_key_title"
         android:summary="@string/force_show_enter_key_summary"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <com.aquarios.support.preferences.GlobalSettingSwitchPreference
         android:key="allow_signature_fake"
