@@ -123,36 +123,6 @@
     <string name="volume_rocker_music_controls_title">Screen off playback control</string>
     <string name="volume_rocker_music_controls_summary">Hold volume keys to seek audio tracks when screen is off</string>
 
-    <!-- Status bar clock -->
-    <string name="status_bar_clock_category">Clock</string>
-    <string name="status_bar_clock">Show clock</string>
-    <string name="clock_seconds_display">Show seconds</string>
-    <string name="status_bar_clock_style_title">Clock style</string>
-    <string name="status_bar_clock_style_right">Right</string>
-    <string name="status_bar_clock_style_center">Center</string>
-    <string name="status_bar_clock_style_left">Left</string>
-    <string name="status_bar_am_pm_title">Show AM/PM</string>
-    <string name="status_bar_am_pm_info">Not available</string>
-    <string name="status_bar_am_pm_hidden">Hidden</string>
-    <string name="status_bar_am_pm_small">Small size</string>
-    <string name="status_bar_am_pm_normal">Normal size</string>
-    <string name="clock_date_display">Show date</string>
-    <string name="clock_date_display_summary">Display custom date</string>
-    <string name="clock_date_display_none">Hidden</string>
-    <string name="clock_date_display_small">Small size</string>
-    <string name="clock_date_display_normal">Normal size</string>
-    <string name="clock_date_style">Date style</string>
-    <string name="clock_date_position">Date position</string>
-    <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Lowercase</string>
-    <string name="clock_date_style_uppercase">Uppercase</string>
-    <string name="clock_date_format_custom">Custom java format</string>
-    <string name="clock_date_format">Date format</string>
-    <string name="clock_date_string_edittext_title">Format: MM/DD/YY</string>
-    <string name="clock_date_string_edittext_summary">Enter string</string>
-    <string name="clock_date_right">Right of time</string>
-    <string name="clock_date_left">Left of time</string>
-
     <!-- Statusbar battery styles -->
     <string name="battery_style_category_title">Battery icon</string>
     <string name="status_bar_battery_percentage_title">Battery percentage</string>
