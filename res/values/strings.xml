@@ -123,6 +123,16 @@
     <string name="volume_rocker_music_controls_title">Screen off playback control</string>
     <string name="volume_rocker_music_controls_summary">Hold volume keys to seek audio tracks when screen is off</string>
 
+    <!-- Status bar clock -->
+    <string name="status_bar_clock_title">Clock position</string>
+    <string name="status_bar_clock_hidden">Hidden</string>
+    <string name="status_bar_clock_right">Right side</string>
+    <string name="status_bar_clock_center">Centered</string>
+    <string name="status_bar_clock_left">Left side</string>
+    <string name="status_bar_clock_show_seconds_title">Show seconds</string>
+    <string name="status_bar_clock_show_am_pm_title">Show AM/PM</string>
+    <string name="status_bar_clock_show_day_title">Show day of the week</string>
+
     <!-- Statusbar battery styles -->
     <string name="battery_style_category_title">Battery icon</string>
     <string name="status_bar_battery_percentage_title">Battery percentage</string>
