@@ -15,6 +15,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Status bar clock -->
+    <string-array name="status_bar_clock_entries" translatable="false">
+        <item>@string/status_bar_clock_hidden</item>
+        <item>@string/status_bar_clock_left</item>
+        <item>@string/status_bar_clock_center</item>
+        <item>@string/status_bar_clock_right</item>
+    </string-array>
+
+    <string-array name="status_bar_clock_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Statusbar battery percentage -->
     <string-array name="status_bar_battery_percentage_entries" translatable="false">
         <item>@string/status_bar_battery_percentage_default</item>
