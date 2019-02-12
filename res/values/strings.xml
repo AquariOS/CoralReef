@@ -116,8 +116,9 @@
     <string name="powermenu_screenrecord_title">Screenrecord</string>
 
     <!-- Statusbar Clock options -->
-    <string name="status_bar_clock_title">Clock</string>
-    <string name="status_bar_clock_summary">Click for possible clock options</string>
+    <string name="status_bar_clock_title">Status bar clock</string>
+    <string name="status_bar_clock_summary_on">Showing status bar clock</string>
+    <string name="status_bar_clock_summary_off">Hiding status bar clock</string>
     <string name="status_bar_show_clock_title">Show clock &amp; date</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="status_bar_clock_seconds_title">Clock seconds</string>
@@ -128,6 +129,7 @@
     <string name="am_pm_clock_small">Small font size</string>
     <string name="am_pm_clock_none">Don\'t show</string>
     <string name="clock_date_display">Date</string>
+    <string name="status_bar_time_cat">Time</string>
     <string name="clock_date_display_summary">Display custom date before the clock</string>
     <string name="clock_date_style">Date style</string>
     <string name="clock_date_position">Date position</string>
@@ -143,6 +145,10 @@
     <string name="clock_date_style_lowercase">Lowercase</string>
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
+    <string name="clock_position">Clock position</string>
+    <string name="clock_position_right">Right clock</string>
+    <string name="clock_position_center">Center clock</string>
+    <string name="clock_position_left">Left clock</string>
     <string name="menu_cancel">Cancel</string>
     <string name="menu_save">Save</string>
 
