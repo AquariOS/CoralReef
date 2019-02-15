@@ -21,8 +21,8 @@
     <PreferenceCategory
         android:title="@string/status_bar_time_cat"/>
 
-            <!-- Clock hide/show -->
-            <com.aquarios.support.preferences.SecureSettingSwitchPreference
+        <!-- Clock hide/show -->
+        <com.aquarios.support.preferences.SecureSettingSwitchPreference
             android:key="status_bar_clock"
             android:title="@string/status_bar_clock_title"
             android:summaryOn="@string/status_bar_clock_summary_on"
@@ -30,7 +30,7 @@
             android:defaultValue="true" />
 
         <!-- Clock position -->
-        <com.aquarios.support.preferences.SecureSettingIntListPreference
+        <com.aquarios.support.preferences.SecureSettingListPreference
             android:key="status_bar_clock_position"
             android:entries="@array/clock_position_entries"
             android:entryValues="@array/clock_position_values"
@@ -39,7 +39,7 @@
             android:title="@string/clock_position" />
 
         <!-- Clock AM/PM -->
-        <com.aquarios.support.preferences.SecureSettingIntListPreference
+        <com.aquarios.support.preferences.SecureSettingListPreference
             android:key="statusbar_clock_am_pm_style"
             android:entries="@array/entries_status_bar_am_pm"
             android:entryValues="@array/values_status_bar_am_pm"
@@ -51,7 +51,7 @@
         android:title="@string/clock_date_display"/>
 
         <!-- Date before clock style -->
-        <com.aquarios.support.preferences.SecureSettingIntListPreference
+        <com.aquarios.support.preferences.SecureSettingListPreference
             android:key="statusbar_clock_date_display"
             android:entries="@array/clock_date_display_entries"
             android:entryValues="@array/clock_date_display_values"
@@ -60,7 +60,7 @@
             android:title="@string/clock_date_display" />
 
         <!-- Date before date style -->
-        <com.aquarios.support.preferences.SecureSettingIntListPreference
+        <com.aquarios.support.preferences.SecureSettingListPreference
             android:key="statusbar_clock_date_style"
             android:entries="@array/clock_date_style_entries"
             android:entryValues="@array/clock_date_style_values"
@@ -69,7 +69,7 @@
             android:title="@string/clock_date_style" />
 
         <!-- Date before date position -->
-        <com.aquarios.support.preferences.SecureSettingIntListPreference
+        <com.aquarios.support.preferences.SecureSettingListPreference
             android:key="statusbar_clock_date_position"
             android:entries="@array/clock_date_position_entries"
             android:entryValues="@array/clock_date_position_values"
