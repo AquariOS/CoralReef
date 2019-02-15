@@ -82,6 +82,8 @@
     <string name="gesture_options_summary">Enable/disable device specific user actions</string>
         <string name="custom_gestures_category">Custom</string>
         <string name="aosp_gestures_category">Stock</string>
+        <string name="active_edge_title">Active Edge</string>
+        <string name="active_edge_summary">Configure Active Edge options</string>
     <string name="miscellaneous_title">Miscellaneous</string>
     <string name="miscellaneous_summary">Uncategorized options</string>
     <string name="changelog_title">Changelog</string>
@@ -365,5 +367,27 @@
     <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
     <string name="ambient_ticker_footer">Ambient Music Ticker shows music track info on Ambient Display screen.\n\nIf Ambient Display is disabled, a clean ambient screen with track info will be shown instead.\n\nDouble-tapping on track info will skip ahead to next track.\n\nThis also works well with Pixel\'s Now Playing feature.</string>
     <string name="force_ambient_for_media_title">Enable</string>
+
+    <!-- Active edge -->
+    <string name="active_edge_actions_title">Squeeze action</string>
+    <string name="active_edge_sensitivity_title">Squeeze sensitivity</string>
+    <string name="active_edge_wake_title">Allow when screen is off</string>
+    <string name="active_edge_wake_summary">Trigger any action even when the screen is off</string>
+    <string name="action_nothing">No action</string>
+    <string name="action_menu">Menu</string>
+    <string name="action_app_switch">Recents</string>
+    <string name="action_search">Assistant</string>
+    <string name="action_voice_search">Voice search</string>
+    <string name="action_launch_camera">Camera</string>
+    <string name="action_last_app">Last app</string>
+    <string name="action_splitscreen">Split screen</string>
+    <string name="action_flashlight">Flashlight</string>
+    <string name="action_clear_notifications">Clear notifications</string>
+    <string name="action_volume_panel">Volume panel</string>
+    <string name="action_screen_off">Screen off</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="action_power_menu">Power menu</string>
+    <string name="action_screenshot">Screenshot</string>
+    <string name="action_qs_panel">QS panel</string>
 
 </resources>

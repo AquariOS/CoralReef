@@ -25,4 +25,7 @@
     <!-- Whether to display battery options -->
     <bool name="has_battery_options">true</bool>
 
+    <!-- Whether to display active edge category -->
+    <bool name="has_active_edge">false</bool>
+
 </resources>

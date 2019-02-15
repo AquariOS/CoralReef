@@ -25,12 +25,14 @@ import android.support.v14.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.gestures.GestureSettings;
+import com.android.settings.R;
 
 public class GestureOptions extends GestureSettings {
 
     private static final String TAG = "Gestures";
     private static final String DOUBLE_TAP_STATUS_BAR_TO_SLEEP = "double_tap_sleep_gesture";
     private static final String DOUBLE_TAP_LOCK_SCREEN_TO_SLEEP = "double_tap_sleep_anywhere";
+    private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
 
     private ContentResolver mContentResolver;
     private SwitchPreference mDoubleTapStatusBarToSleep;
@@ -47,7 +49,16 @@ public class GestureOptions extends GestureSettings {
         mContentResolver = getActivity().getContentResolver();
         mDoubleTapStatusBarToSleep = (SwitchPreference) findPreference(DOUBLE_TAP_STATUS_BAR_TO_SLEEP);
         mDoubleTapLockScreenToSleep = (SwitchPreference) findPreference(DOUBLE_TAP_LOCK_SCREEN_TO_SLEEP);
-        updatePreferences();
+
+        Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_active_edge)) {
+            getPreferenceScreen().removePreference(ActiveEdge);
+        } else {
+            if (!getContext().getPackageManager().hasSystemFeature(
+                    "android.hardware.sensor.assist")) {
+                getPreferenceScreen().removePreference(ActiveEdge);
+            }
+        }
     }
 
     @Override
