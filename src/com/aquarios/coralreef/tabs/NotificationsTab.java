@@ -32,11 +32,13 @@ import com.android.internal.logging.nano.MetricsProto;
 public class NotificationsTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String HEADSUP_CATEGORY = "headsup_category";
-    private static final String NOTIFICATIONS_CATEGORY = "notifications_category";
+    private static final String LED_NOTIFICATIONS_CATEGORY = "led_notifications_category";
+    private static final String LED_BATTERY_CATEGORY = "led_battery_category";
     private static final String GENERAL_NOTIFICATIONS = "general_notifications";
 
     private LayoutPreference mHeadsup;
     private LayoutPreference mLedNotifications;
+    private LayoutPreference mLedBattery;
     private LayoutPreference mGeneral;
 
     @Override
@@ -47,11 +49,26 @@ public class NotificationsTab extends SettingsPreferenceFragment implements Pref
         mHeadsup = (LayoutPreference) findPreference(HEADSUP_CATEGORY);
         mHeadsup.setTitle(R.string.headsup_title);
 
-        mLedNotifications = (LayoutPreference) findPreference(NOTIFICATIONS_CATEGORY);
+        mLedNotifications = (LayoutPreference) findPreference(LED_NOTIFICATIONS_CATEGORY);
         mLedNotifications.setTitle(R.string.led_notifications_title);
+
+        mLedBattery = (LayoutPreference) findPreference(LED_BATTERY_CATEGORY);
+        mLedBattery.setTitle(R.string.led_battery_title);
 
         mGeneral = (LayoutPreference) findPreference(GENERAL_NOTIFICATIONS);
         mGeneral.setTitle(R.string.general_notifications_title);
+
+        // Device supports LED notifications
+        Preference LedNotifications = findPreference(LED_NOTIFICATIONS_CATEGORY);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) {
+            getPreferenceScreen().removePreference(LedNotifications);
+        }
+
+        // Device supports LED battery
+        Preference LedBattery = findPreference(LED_BATTERY_CATEGORY);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            getPreferenceScreen().removePreference(LedBattery);
+        }
     }
 
     @Override

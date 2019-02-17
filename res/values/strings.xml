@@ -67,6 +67,8 @@
     <!-- Notifications -->
     <string name="led_notifications_title">LED notifications</string>
     <string name="led_notifications_summary">Enable/disable the LED light. Configure colors &amp; behavior</string>
+    <string name="led_battery_title">Battery LED</string>
+    <string name="led_battery_summary">Configure advanced battery LED options</string>
     <string name="headsup_title">Heads-up</string>
     <string name="headsup_summary">Configure heads-up options</string>
     <string name="general_notifications_title">General notifications</string>
@@ -365,5 +367,14 @@
     <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
     <string name="ambient_ticker_footer">Ambient Music Ticker shows music track info on Ambient Display screen.\n\nIf Ambient Display is disabled, a clean ambient screen with track info will be shown instead.\n\nDouble-tapping on track info will skip ahead to next track.\n\nThis also works well with Pixel\'s Now Playing feature.</string>
     <string name="force_ambient_for_media_title">Enable</string>
+
+    <!-- Battery light -->
+    <string name="battery_light_allow_on_dnd_title">Battery light in zen mode</string>
+    <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
+    <string name="battery_light_cat">Battery light color when charging</string>
+    <string name="battery_light_low_color">Low battery</string>
+    <string name="battery_light_medium_color">Medium battery</string>
+    <string name="battery_light_full_color">High battery</string>
+    <string name="battery_light_reallyfull_color">Full battery</string>
 
 </resources>
