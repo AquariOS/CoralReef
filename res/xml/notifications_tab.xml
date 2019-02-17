@@ -23,9 +23,18 @@
         android:layout="@layout/headsup" />
 
     <com.android.settings.applications.LayoutPreference
-        android:key="notifications_category"
-        android:fragment="com.aquarios.coralreef.fragments.LedNotifications"
-        android:layout="@layout/led_notifications" />
+        android:key="led_notifications_category"
+        android:layout="@layout/led_notifications"
+        android:fragment="com.android.settings.applications.manageapplications.ManageApplications">
+        <extra
+            android:name="classname"
+            android:value="com.android.settings.Settings$NotificationAppListActivity" />
+    </com.android.settings.applications.LayoutPreference>
+
+    <com.android.settings.applications.LayoutPreference
+        android:key="led_battery_category"
+        android:fragment="com.aquarios.coralreef.fragments.LedBattery"
+        android:layout="@layout/led_battery" />
 
     <com.android.settings.applications.LayoutPreference
         android:key="general_notifications"

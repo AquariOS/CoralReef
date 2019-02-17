@@ -67,6 +67,8 @@
     <!-- Notifications -->
     <string name="led_notifications_title">LED notifications</string>
     <string name="led_notifications_summary">Enable/disable the LED light. Configure colors &amp; behavior</string>
+    <string name="led_battery_title">Battery LED</string>
+    <string name="led_battery_summary">Configure advanced battery LED options</string>
     <string name="headsup_title">Heads-up</string>
     <string name="headsup_summary">Configure heads-up options</string>
     <string name="general_notifications_title">General notifications</string>
@@ -390,5 +392,14 @@
     <string name="action_power_menu">Power menu</string>
     <string name="action_screenshot">Screenshot</string>
     <string name="action_qs_panel">QS panel</string>
+
+    <!-- Battery light -->
+    <string name="battery_light_allow_on_dnd_title">Battery light in zen mode</string>
+    <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
+    <string name="battery_light_cat">Battery light color when charging</string>
+    <string name="battery_light_low_color">Low battery</string>
+    <string name="battery_light_medium_color">Medium battery</string>
+    <string name="battery_light_full_color">High battery</string>
+    <string name="battery_light_reallyfull_color">Full battery</string>
 
 </resources>
