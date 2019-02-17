@@ -284,8 +284,7 @@
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 
     <!-- dt2s statusbar -->
-    <string name="statusbar_dt2s_title">Double Tap To Sleep</string>
-    <string name="statusbar_dt2s_summary">Double tap on the status bar to sleep</string>
+    <string name="statusbar_dt2s_title">Double Tap Action</string>
 
     <!-- dt2s lockscreen -->
     <string name="dt2s_lockscreen_title">Double Tap To Sleep LockScreen</string>

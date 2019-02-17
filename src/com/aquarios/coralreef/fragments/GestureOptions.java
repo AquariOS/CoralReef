@@ -30,38 +30,28 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-
+import com.android.settings.smartnav.SimpleActionFragment;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.utils.ActionHandler;
 
-public class GestureOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class GestureOptions extends SimpleActionFragment implements Preference.OnPreferenceChangeListener {
+    public static final String STATUSBAR_DOUBLETAP_ACTION_KEY = "statusbar_doubletap_action";
 
-     SwitchPreference mDoubleTapToSleepEnabled;
      SwitchPreference mDoubleTapToSleepAnywhere;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.gesture_options);
-
-        mDoubleTapToSleepEnabled = (SwitchPreference) findPreference("double_tap_sleep_gesture");
-        mDoubleTapToSleepEnabled.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1);
-        mDoubleTapToSleepEnabled.setOnPreferenceChangeListener(this);
-
         mDoubleTapToSleepAnywhere = (SwitchPreference) findPreference("double_tap_sleep_anywhere");
         mDoubleTapToSleepAnywhere.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0) == 1);
         mDoubleTapToSleepAnywhere.setOnPreferenceChangeListener(this);
+        onPreferenceScreenLoaded(null);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-		       if (preference.equals(mDoubleTapToSleepEnabled)) {
-            boolean enabled = ((Boolean) newValue).booleanValue();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE, enabled ? 1 : 0);
-            return true;
-        }
         if (preference.equals(mDoubleTapToSleepAnywhere)) {
             boolean enabled = ((Boolean) newValue).booleanValue();
             Settings.System.putInt(getContentResolver(),
@@ -74,5 +64,16 @@ public class GestureOptions extends SettingsPreferenceFragment implements Prefer
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    @Override
+    protected ActionPreferenceInfo getActionPreferenceInfoForKey(String key) {
+        if (STATUSBAR_DOUBLETAP_ACTION_KEY.equals(key)) {
+            return new ActionPreferenceInfo(getActivity(),
+                    ActionPreferenceInfo.TYPE_SYSTEM,
+                    ActionHandler.SYSTEMUI_TASK_NO_ACTION,
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE_V2);
+        }
+        return null;
     }
 }

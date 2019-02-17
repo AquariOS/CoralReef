@@ -18,10 +18,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/gesture_options_title" >
 
-   <SwitchPreference
-		android:key="double_tap_sleep_gesture"
-		android:title="@string/statusbar_dt2s_title"
-		android:summary="@string/statusbar_dt2s_summary" />
+    <com.android.settings.smartnav.ActionPreference
+        android:key= "statusbar_doubletap_action"
+        android:title="@string/statusbar_dt2s_title" />
 
    <SwitchPreference
 		android:key="double_tap_sleep_anywhere"
