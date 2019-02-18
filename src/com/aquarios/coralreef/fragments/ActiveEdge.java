@@ -43,8 +43,8 @@ import com.aquarios.support.preferences.CustomSeekBarPreference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActiveEdge extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener, Indexable {
+public class ActiveEdge extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String KEY_SQUEEZE_VIDEO = "squeeze_video";
     private static final String KEY_VIDEO_PAUSED = "key_video_paused";

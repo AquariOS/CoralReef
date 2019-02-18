@@ -66,7 +66,8 @@ public class NotificationsTab extends SettingsPreferenceFragment implements Pref
 
         // Device supports LED battery
         Preference LedBattery = findPreference(LED_BATTERY_CATEGORY);
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed) && 
+           (!getResources().getBoolean(com.android.internal.R.bool.config_multiColorBatteryLed))) {
             getPreferenceScreen().removePreference(LedBattery);
         }
     }
