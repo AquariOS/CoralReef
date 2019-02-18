@@ -378,6 +378,7 @@
     <string name="hardware_keys_disable_title">Disable navigation buttons</string>
 
     <!-- Ambient display music ticker -->
+    <string name="ambient_music_display">Music ticker</string>
     <string name="force_ambient_for_media_pref_title">Ambient music ticker</string>
     <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
     <string name="ambient_ticker_footer">Ambient Music Ticker shows music track info on Ambient Display screen.\n\nIf Ambient Display is disabled, a clean ambient screen with track info will be shown instead.\n\nDouble-tapping on track info will skip ahead to next track.\n\nThis also works well with Pixel\'s Now Playing feature.</string>

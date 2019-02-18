@@ -28,8 +28,11 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.text.TextUtils;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
@@ -44,7 +47,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
-public class AudioDisplayOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class AudioDisplayOptions extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String KEY_ASPECT_RATIO_APPS_ENABLED = "aspect_ratio_apps_enabled";
     private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
@@ -126,4 +130,23 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements P
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.audio_display_options;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }
