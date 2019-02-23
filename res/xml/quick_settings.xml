@@ -26,6 +26,12 @@
 				android:summary="@string/qs_rows_columns_title_summary"
 				android:fragment="com.aquarios.coralreef.fragments.QsPanelLayout"/>
 
+            <Preference
+                android:key="custom_header"
+                android:fragment="com.aquarios.coralreef.fragments.CustomHeaders"
+                android:title="@string/custom_headers_title"
+                android:summary="@string/custom_headers_summary" />
+
 			<com.aquarios.support.preferences.SystemSettingSwitchPreference
 				android:key="qs_footer_warnings"
 				android:title="@string/qs_footer_warnings_title"
