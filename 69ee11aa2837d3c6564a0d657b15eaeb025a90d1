@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38bcc89d_a814424a",
+        "filename": "res/values/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-02-25T13:28:55Z",
+      "side": 1,
+      "message": "Empty line please :P",
+      "revId": "69ee11aa2837d3c6564a0d657b15eaeb025a90d1",
+      "serverId": "e852809f-cea0-4215-9787-0665f7b159ff",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "075cd379_4383316b",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-02-25T13:28:55Z",
+      "side": 1,
+      "message": "We always add a space before closing our custom resource files for ease of picking ;)",
+      "revId": "69ee11aa2837d3c6564a0d657b15eaeb025a90d1",
+      "serverId": "e852809f-cea0-4215-9787-0665f7b159ff",
+      "unresolved": true
+    }
+  ]
+}
