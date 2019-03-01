@@ -39,7 +39,7 @@
     <!-- Lockscreen -->
     <string name="lockscreen_date_and_time_title">Lockscreen clocks</string>
     <string name="lockscreen_date_and_time_summary">Customize your view of date &amp; time on the lockscreen</string>
-    <string name="lockscreen_display_title">Lockscreen display</string>
+    <string name="lockscreen_display_title">General options</string>
     <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
 	    <string name="lockscreen_display">Display</string>
 	    <string name="lock_screen_security_category">Security</string>
@@ -490,8 +490,8 @@
     <!-- Lockscreen items -->
     <string name="lockscreen_clock_title">Clock widget</string>
     <string name="lockscreen_clock_summary">Show the clock widget on the lockscreen</string>
-    <string name="lockscreen_info_title">Items underneath the clock</string>
-    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
+    <string name="lockscreen_info_title">Date strip</string>
+    <string name="lockscreen_info_summary">Also holds weather, next alarm, and zen info</string>
 
     <!-- Lockscreen clock styles -->
     <string name="lockscreen_clock_selection_title">Clock style</string>
