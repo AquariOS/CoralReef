@@ -26,6 +26,13 @@
             android:summary="@string/lockscreen_clock_summary"
             android:defaultValue="true" />
 
+		<com.aquarios.support.preferences.SystemSettingListPreference
+            android:key="lockscreen_clock_selection"
+            android:title="@string/lockscreen_clock_selection_title"
+            android:entries="@array/lockscreen_clock_selection_entries"
+            android:entryValues="@array/lockscreen_clock_selection_values"
+            android:defaultValue="0" />
+
 		<com.aquarios.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_info"
             android:title="@string/lockscreen_info_title"
