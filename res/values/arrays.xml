@@ -350,6 +350,10 @@
         <item>@string/lockscreen_clock_selection_digital</item>
         <item>@string/lockscreen_clock_selection_digital_bold</item>
         <item>@string/lockscreen_clock_selection_analog</item>
+        <item>@string/lockscreen_clock_selection_aqua_1</item>
+        <item>@string/lockscreen_clock_selection_aqua_2</item>
+        <item>@string/lockscreen_clock_selection_aqua_3</item>
+        <item>@string/lockscreen_clock_selection_aqua_4</item>
         <item>@string/lockscreen_clock_selection_sammy</item>
         <item>@string/lockscreen_clock_selection_sammy_bold</item>
     </string-array>
@@ -360,6 +364,10 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
 
 </resources>

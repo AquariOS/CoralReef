@@ -488,6 +488,10 @@
     <string name="lockscreen_clock_selection_digital">Default</string>
     <string name="lockscreen_clock_selection_digital_bold">Digital (bold)</string>
     <string name="lockscreen_clock_selection_analog">Analog</string>
+    <string name="lockscreen_clock_selection_aqua_1">AquaClock v1</string>
+    <string name="lockscreen_clock_selection_aqua_2">AquaClock v2</string>
+    <string name="lockscreen_clock_selection_aqua_3">AquaClock v3</string>
+    <string name="lockscreen_clock_selection_aqua_4">AquaClock v4</string>
     <string name="lockscreen_clock_selection_sammy">Sammy</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
 
