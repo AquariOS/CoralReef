@@ -35,13 +35,14 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
-//import com.android.internal.util.aquarios.AquaUtils;
+import com.android.internal.util.aquarios.AquaUtils;
 
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
+import com.aquarios.support.preferences.SecureSettingIntListPreference;
 import com.aquarios.support.preferences.SecureSettingListPreference;
 import com.android.settings.R;
 
@@ -63,7 +64,7 @@ public class ClockOptions extends SettingsPreferenceFragment implements
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
-    private SecureSettingListPreference mClockPosition;
+    private SecureSettingIntListPreference mClockPosition;
     private SecureSettingListPreference mClockDateFormat;
 
     @Override
@@ -73,9 +74,16 @@ public class ClockOptions extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mClockPosition = (SecureSettingListPreference) findPreference(CLOCK_POSITION);
-        mClockPosition.setEntries(R.array.clock_position_entries);
-        mClockPosition.setEntryValues(R.array.clock_position_values);
+        mClockPosition = (SecureSettingIntListPreference) findPreference(CLOCK_POSITION);
+
+        // Adjust status bar clock prefs for notched devices
+        if (AquaUtils.hasVisibleNotch(getActivity())) {
+            mClockPosition.setEntries(R.array.clock_position_entries_notch);
+            mClockPosition.setEntryValues(R.array.clock_position_values_notch);
+        } else {
+            mClockPosition.setEntries(R.array.clock_position_entries);
+            mClockPosition.setEntryValues(R.array.clock_position_values);
+        }
 
         mClockDateFormat = (SecureSettingListPreference) findPreference(CLOCK_DATE_FORMAT);
         mClockDateFormat.setOnPreferenceChangeListener(this);
@@ -85,17 +93,18 @@ public class ClockOptions extends SettingsPreferenceFragment implements
         parseClockDateFormats();
     }
 
-//  public void onResume(Context context) {
-//      super.onResume();
+    public void onResume(Context context) {
+        super.onResume();
+
         // Adjust status bar clock prefs for notched devices
-//      if (AquaUtils.hasVisibleNotch(mContext)) {
-//          mClockPosition.setEntries(R.array.clock_position_entries_notch);
-//          mClockPosition.setEntryValues(R.array.clock_position_values_notch);
-//      } else {
-//          mClockPosition.setEntries(R.array.clock_position_entries);
-//          mClockPosition.setEntryValues(R.array.clock_position_values);
-//      }
-//  }
+        if (AquaUtils.hasVisibleNotch(getActivity())) {
+            mClockPosition.setEntries(R.array.clock_position_entries_notch);
+            mClockPosition.setEntryValues(R.array.clock_position_values_notch);
+        } else {
+            mClockPosition.setEntries(R.array.clock_position_entries);
+            mClockPosition.setEntryValues(R.array.clock_position_values);
+        }
+    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {

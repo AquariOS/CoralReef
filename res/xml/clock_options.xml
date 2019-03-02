@@ -30,7 +30,7 @@
             android:defaultValue="true" />
 
         <!-- Clock position -->
-        <com.aquarios.support.preferences.SecureSettingListPreference
+        <com.aquarios.support.preferences.SecureSettingIntListPreference
             android:key="status_bar_clock_position"
             android:entries="@array/clock_position_entries"
             android:entryValues="@array/clock_position_values"
