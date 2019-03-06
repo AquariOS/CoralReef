@@ -80,7 +80,7 @@
         <string name="aosp_recents_category">AOSP recents</string>
     <string name="device_extras_title">Device features</string>
     <string name="device_extras_summary">Tweaks specific to your device</string>
-    <string name="gesture_options_title">Gestures</string>
+    <string name="gesture_options_title">Custom gestures</string>
     <string name="gesture_options_summary">Enable/disable device specific user actions</string>
         <string name="custom_gestures_category">Custom</string>
         <string name="aosp_gestures_category">Stock</string>

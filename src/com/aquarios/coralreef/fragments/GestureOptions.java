@@ -17,38 +17,51 @@
 package com.aquarios.coralreef.fragments;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.os.Bundle;
-import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.os.UserHandle;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.settings.gestures.GestureSettings;
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
-public class GestureOptions extends GestureSettings {
+import com.android.internal.logging.nano.MetricsProto;
 
-    private static final String TAG = "Gestures";
-    private static final String DOUBLE_TAP_STATUS_BAR_TO_SLEEP = "double_tap_sleep_gesture";
-    private static final String DOUBLE_TAP_LOCK_SCREEN_TO_SLEEP = "double_tap_sleep_anywhere";
+import java.util.ArrayList;
+import java.util.List;
+
+public class GestureOptions extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener, Indexable {
+
     private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
 
-    private ContentResolver mContentResolver;
-    private SwitchPreference mDoubleTapStatusBarToSleep;
-    private SwitchPreference mDoubleTapLockScreenToSleep;
+    SwitchPreference mDoubleTapToSleepEnabled;
+    SwitchPreference mDoubleTapToSleepAnywhere;
 
     @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.AQUA;
-    }
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.gesture_options);
 
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        super.onCreatePreferences(savedInstanceState, rootKey);
-        mContentResolver = getActivity().getContentResolver();
-        mDoubleTapStatusBarToSleep = (SwitchPreference) findPreference(DOUBLE_TAP_STATUS_BAR_TO_SLEEP);
-        mDoubleTapLockScreenToSleep = (SwitchPreference) findPreference(DOUBLE_TAP_LOCK_SCREEN_TO_SLEEP);
+        mDoubleTapToSleepEnabled = (SwitchPreference) findPreference("double_tap_sleep_gesture");
+        mDoubleTapToSleepEnabled.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1);
+        mDoubleTapToSleepEnabled.setOnPreferenceChangeListener(this);
+
+        mDoubleTapToSleepAnywhere = (SwitchPreference) findPreference("double_tap_sleep_anywhere");
+        mDoubleTapToSleepAnywhere.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0) == 1);
+        mDoubleTapToSleepAnywhere.setOnPreferenceChangeListener(this);
 
         Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
         if (!getResources().getBoolean(R.bool.has_active_edge)) {
@@ -62,45 +75,43 @@ public class GestureOptions extends GestureSettings {
     }
 
     @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (mDoubleTapStatusBarToSleep == preference) {
-            updateDoubleTapStatusBarToSleep(true);
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+		if (preference.equals(mDoubleTapToSleepEnabled)) {
+            boolean enabled = ((Boolean) newValue).booleanValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE, enabled ? 1 : 0);
             return true;
-        } else if (mDoubleTapLockScreenToSleep == preference) {
-            updateDoubleTapLockScreenToSleep(true);
+        }
+        if (preference.equals(mDoubleTapToSleepAnywhere)) {
+            boolean enabled = ((Boolean) newValue).booleanValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, enabled ? 1 : 0);
             return true;
         }
-        return super.onPreferenceTreeClick(preference);
+        return false;
     }
 
-    private void updateDoubleTapStatusBarToSleep(boolean clicked) {
-        if (clicked) {
-            Settings.System.putIntForUser(mContentResolver,
-                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE,
-                    (mDoubleTapStatusBarToSleep.isChecked() ? 1 : 0),
-                    UserHandle.USER_CURRENT);
-        }
-        boolean isDoubleTapStatusBarToSleep = (Settings.System.getIntForUser(
-                mContentResolver, Settings.System.DOUBLE_TAP_SLEEP_GESTURE,
-                0, UserHandle.USER_CURRENT) == 1);
-        mDoubleTapStatusBarToSleep.setChecked(isDoubleTapStatusBarToSleep);
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.AQUA;
     }
 
-    private void updateDoubleTapLockScreenToSleep(boolean clicked) {
-        if (clicked) {
-            Settings.System.putIntForUser(mContentResolver,
-                    Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE,
-                    (mDoubleTapLockScreenToSleep.isChecked() ? 1 : 0),
-                    UserHandle.USER_CURRENT);
-        }
-        boolean isDoubleTapLockScreenToSleep = (Settings.System.getIntForUser(
-                mContentResolver, Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE,
-                0, UserHandle.USER_CURRENT) == 1);
-        mDoubleTapLockScreenToSleep.setChecked(isDoubleTapLockScreenToSleep);
-    }
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.gesture_options;
+                    result.add(sir);
+                    return result;
+                }
 
-    private void updatePreferences() {
-        updateDoubleTapStatusBarToSleep(false);
-        updateDoubleTapLockScreenToSleep(false);
-    }
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }
