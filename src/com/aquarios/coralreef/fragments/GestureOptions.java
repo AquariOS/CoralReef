@@ -43,10 +43,12 @@ import java.util.List;
 public class GestureOptions extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
+    private static final String ACTIVE_EDGE_CATEGORY = "active_edge";
 
     SwitchPreference mDoubleTapToSleepEnabled;
     SwitchPreference mDoubleTapToSleepAnywhere;
+
+    private Preference mActiveEdge;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,13 +65,14 @@ public class GestureOptions extends SettingsPreferenceFragment implements
                 Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0) == 1);
         mDoubleTapToSleepAnywhere.setOnPreferenceChangeListener(this);
 
-        Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
-        if (!getResources().getBoolean(R.bool.has_active_edge)) {
-            getPreferenceScreen().removePreference(ActiveEdge);
+        mActiveEdge = (Preference) findPreference(ACTIVE_EDGE_CATEGORY);
+        PreferenceScreen preferenceScreen = getPreferenceScreen();
+            if (!getResources().getBoolean(com.android.internal.R.bool.config_hasActiveEdge)) {
+                getPreferenceScreen().removePreference(mActiveEdge);
         } else {
             if (!getContext().getPackageManager().hasSystemFeature(
                     "android.hardware.sensor.assist")) {
-                getPreferenceScreen().removePreference(ActiveEdge);
+                getPreferenceScreen().removePreference(mActiveEdge);
             }
         }
     }

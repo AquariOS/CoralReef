@@ -82,10 +82,11 @@
     <string name="device_extras_summary">Tweaks specific to your device</string>
     <string name="gesture_options_title">Custom gestures</string>
     <string name="gesture_options_summary">Enable/disable device specific user actions</string>
+        <string name="pixel_gestures_title">Pixel</string>
         <string name="custom_gestures_category">Custom</string>
         <string name="aosp_gestures_category">Stock</string>
         <string name="active_edge_title">Active Edge</string>
-        <string name="active_edge_summary">Configure Active Edge options</string>
+        <string name="active_edge_summary">An advanced version of the Pixel squeeze feature</string>
     <string name="miscellaneous_title">Miscellaneous</string>
     <string name="miscellaneous_summary">Uncategorized options</string>
     <string name="changelog_title">Changelog</string>

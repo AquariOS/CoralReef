@@ -19,13 +19,19 @@
     android:title="@string/gesture_options_title" >
 
 	<PreferenceCategory
-		android:title="@string/custom_gestures_category">
+        android:key="active_edge"
+        android:title="@string/pixel_gestures_title">
 
         <Preference
-            android:key="active_edge_category"
+            android:key="active_edge"
             android:title="@string/active_edge_title"
             android:summary="@string/active_edge_summary"
             android:fragment="com.aquarios.coralreef.fragments.ActiveEdge" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/custom_gestures_category">
 
         <SwitchPreference
 	        android:key="double_tap_sleep_gesture"
