@@ -82,4 +82,12 @@
         android:layout_gravity="fill_horizontal"
         android:background="#FFCC00" />
 
+    <Button
+        android:id="@+id/blackAccent"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal" />
+
 </LinearLayout>
