@@ -32,7 +32,7 @@
 			android:key="advanced_reboot_in_power_menu"
 			android:title="@string/powermenu_advanced_restart_title"
 			android:summary="@string/powermenu_advanced_restart_summary"
-			android:defaultValue="false" />
+			android:defaultValue="true" />
 
 		<com.aquarios.support.preferences.SecureSettingSwitchPreference
 			android:key="lockdown_in_power_menu"
