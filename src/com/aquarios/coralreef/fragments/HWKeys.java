@@ -38,6 +38,7 @@ import com.android.settings.smartnav.ActionFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.utils.ActionConstants;
+import com.android.internal.utils.ActionHandler;
 import com.android.internal.utils.ActionUtils;
 
 import java.util.ArrayList;
@@ -141,6 +142,13 @@ public class HWKeys extends ActionFragment implements Preference.OnPreferenceCha
 	protected boolean usesExtendedActionsList() {
 		return true;
 	}
+
+    @Override
+    protected ArrayList<String> getActionBlackListForPreference(String key) {
+        ArrayList<String> blacklist = new ArrayList<String>();
+        blacklist.add(ActionHandler.SYSTEMUI_TASK_EDITING_SMARTBAR);
+        return blacklist;
+    }
 
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
