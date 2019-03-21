@@ -270,8 +270,11 @@
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
     <!-- Statusbar net monitor -->
-    <string name="network_traffic_state_title">Show net activity in statusbar</string>
+    <string name="network_traffic_state_title">Network traffic display</string>
+    <string name="network_traffic_state_summary">Show upload &amp; download network speed</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+    <string name="network_traffic_location_title">Display indicator in expanded header</string>
+    <string name="network_traffic_location_summary">Great for freeing up space in status bar (recommended for displays with notch cutout)</string>
 
     <!-- Clear all recents -->
     <string name="show_clear_all_recents_button_title">Clear-all FAB</string>
