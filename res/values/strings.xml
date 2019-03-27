@@ -277,6 +277,8 @@
     <string name="network_traffic_location_summary">Place indicator in either status bar or expanded header (recommended for displays with notch cutouts)</string>
     <string name="network_traffic_statusbar">Status bar</string>
     <string name="network_traffic_header">Expanded header</string>
+    <string name="network_traffic_hidearrow">Hide arrows</string>
+    <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
 
     <!-- Clear all recents -->
     <string name="show_clear_all_recents_button_title">Clear-all FAB</string>
