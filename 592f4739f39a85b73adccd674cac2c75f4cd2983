@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b2e260f8_01e3f359",
+        "filename": "res/xml/traffic_indicators.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2019-03-27T02:54:41Z",
+      "side": 1,
+      "message": "should be false",
+      "revId": "592f4739f39a85b73adccd674cac2c75f4cd2983",
+      "serverId": "e852809f-cea0-4215-9787-0665f7b159ff",
+      "unresolved": true
+    }
+  ]
+}
