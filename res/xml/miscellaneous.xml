@@ -24,6 +24,12 @@
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
 
+    <com.aquarios.support.preferences.GlobalSettingSwitchPreference
+        android:key="wake_when_plugged_or_unplugged"
+        android:title="@string/wake_when_plugged_or_unplugged_title"
+        android:summary="@string/wake_when_plugged_or_unplugged_summary"
+        android:defaultValue="false"/>
+
     <com.aquarios.support.preferences.SystemSettingSwitchPreference
         android:key="force_show_enter_key"
         android:title="@string/force_show_enter_key_title"
