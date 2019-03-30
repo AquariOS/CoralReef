@@ -45,10 +45,12 @@ public class Recents extends SettingsPreferenceFragment implements
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+    private static final String CATEGORY_OREO_STYLE_OPTIONS = "category_oreo_style_options";
 
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mRecentsComponentType;
+    private PreferenceCategory mOreoStyleOptions;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,10 @@ public class Recents extends SettingsPreferenceFragment implements
         mRecentsComponentType.setValue(String.valueOf(type));
         mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
         mRecentsComponentType.setOnPreferenceChangeListener(this);
+
+        // Hide clear-all options if set to Pie/horizontal style
+        mOreoStyleOptions = (PreferenceCategory) findPreference("category_oreo_style_options");
+        updateOreoClearAll();
     }
 
     @Override
@@ -79,9 +85,10 @@ public class Recents extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.AQUA;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
+    private void updateOreoClearAll() {
+        boolean isPie = Integer.parseInt(mRecentsComponentType.getValue()) == 0;
+        mOreoStyleOptions.setEnabled(!isPie);
+        mOreoStyleOptions.setSelectable(!isPie);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -102,6 +109,7 @@ public class Recents extends SettingsPreferenceFragment implements
                Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
             }
+            updateOreoClearAll();
         return true;
         }
      return false;
