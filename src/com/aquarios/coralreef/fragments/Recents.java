@@ -36,6 +36,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.aquarios.AquaUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,10 +46,12 @@ public class Recents extends SettingsPreferenceFragment implements
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+    private static final String CATEGORY_OREO_STYLE_OPTIONS = "category_oreo_style_options";
 
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mRecentsComponentType;
+    private PreferenceCategory mOreoStyleOptions;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,15 @@ public class Recents extends SettingsPreferenceFragment implements
         mRecentsComponentType.setValue(String.valueOf(type));
         mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
         mRecentsComponentType.setOnPreferenceChangeListener(this);
+
+        // Hide clear-all options if set to 
+        mOreoStyleOptions = (PreferenceCategory) findPreference("category_oreo_style_options");
+
+        final PreferenceCategory mOreoStyleOptions = (PreferenceCategory) getPreferenceScreen()
+                .findPreference(CATEGORY_OREO_STYLE_OPTIONS);
+        if (isUsingPieRecents()) {
+			getPreferenceScreen().removePreference(mOreoStyleOptions);
+        }
     }
 
     @Override
@@ -79,9 +91,18 @@ public class Recents extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.AQUA;
     }
 
+    private boolean isUsingPieRecents() {
+        final ContentResolver resolver = getContext().getContentResolver();
+        return Settings.System.getIntForUser(resolver,
+               Settings.System.RECENTS_COMPONENT, 0, UserHandle.USER_CURRENT) == 0;
+    }
+
     @Override
     public void onResume() {
         super.onResume();
+            if (isUsingPieRecents()) {
+			    getPreferenceScreen().removePreference(mOreoStyleOptions);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -102,7 +123,7 @@ public class Recents extends SettingsPreferenceFragment implements
                Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
             }
-            Utils.showSystemUiRestartDialog(getContext());
+            AquaUtils.showSystemUiRestartDialog(getContext());
         return true;
         }
      return false;
