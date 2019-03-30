@@ -48,7 +48,7 @@
     <!-- System/Misc tab -->
     <bool name="animations_category_isVisible">true</bool>
     <bool name="general_notifications_category_isVisible">true</bool>
-    <bool name="miscellaneous_category_isVisible">false</bool>
+    <bool name="miscellaneous_category_isVisible">true</bool>
     <bool name="changelog_category_isVisible">false</bool>
     <bool name="led_settings_category_isVisible">false</bool>
 
