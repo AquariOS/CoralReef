@@ -31,10 +31,10 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="stock_recents"
+        android:key="category_oreo_style_options"
         android:title="@string/aosp_recents_category">
 
-			<com.aquarios.support.preferences.SystemSettingSwitchPreference
+		<com.aquarios.support.preferences.SystemSettingSwitchPreference
 			android:key="show_clear_all_recents"
 			android:title="@string/show_clear_all_recents_button_title"
 			android:summaryOn="@string/show_clear_all_recents_button_summary_on"
