@@ -36,8 +36,7 @@
 		 <SwitchPreference
             android:key="lockscreen_visualizer"
             android:title="@string/lockscreen_visualizer_title"
-            android:summary="@string/lockscreen_visualizer_summary"
-            android:defaultValue="false"/>
+            android:summary="@string/lockscreen_visualizer_summary" />
 
         <Preference
             android:key="bottom_shortcuts_category"
