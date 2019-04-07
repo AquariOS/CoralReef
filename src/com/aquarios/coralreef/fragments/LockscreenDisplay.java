@@ -50,7 +50,7 @@ public class LockscreenDisplay extends SettingsPreferenceFragment implements
 
         mLockscreenVisualizer = (SwitchPreference) findPreference("lockscreen_visualizer");
         mLockscreenVisualizer.setChecked(Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 0) == 1);
+                Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 1) == 1);
         mLockscreenVisualizer.setOnPreferenceChangeListener(this);
 
     }
