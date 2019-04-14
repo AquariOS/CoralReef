@@ -27,7 +27,7 @@
         android:layout_height="60dp"
         android:background="@color/preference_background_color">
 
-        <ImageView
+        <com.aquarios.coralreef.helpers.WhiteAccentHelperImageView
             android:id="@+id/headsup_imageview"
             android:layout_width="match_parent"
             android:layout_height="60dp"
