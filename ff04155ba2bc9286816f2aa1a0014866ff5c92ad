@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "54e26ff8_2f871a28",
+        "filename": "src/com/aquarios/coralreef/tabs/ButtonsTab.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2019-04-14T23:45:25Z",
+      "side": 1,
+      "message": "I tried :-(",
+      "revId": "ff04155ba2bc9286816f2aa1a0014866ff5c92ad",
+      "serverId": "e852809f-cea0-4215-9787-0665f7b159ff",
+      "unresolved": true
+    }
+  ]
+}
