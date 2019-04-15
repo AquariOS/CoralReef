@@ -233,9 +233,10 @@
     <string name="tuner_show_info_header_category">Enable to hide</string>
 
     <string name="status_bar_quick_qs_pulldown">Quick pull-down</string>
-    <string name="quick_pulldown_none">Disabled</string>
+    <string name="quick_pulldown_disabled">Disabled</string>
     <string name="quick_pulldown_right">Pull-down status bar from right side</string>
     <string name="quick_pulldown_left">Pull-down status bar from left side</string>
+    <string name="quick_pulldown_mode">Pull-down mode is set to %1$s</string>
 
     <!-- Tiles animation/interpolator style  -->
     <string name="qs_animation_options_title">Animations</string>
