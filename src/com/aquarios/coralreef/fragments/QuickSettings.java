@@ -44,11 +44,12 @@ import java.util.List;
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String PREF_QUICK_PULL_DOWN = "status_bar_quick_qs_pulldown";
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
 
-    ListPreference mQuickPulldown;
+    private ListPreference mQuickPulldown;
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
@@ -58,10 +59,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.quick_settings);
 
-        int qpmode = Settings.System.getIntForUser(getContentResolver(),
+        mQuickPulldown = (ListPreference) findPreference(PREF_QUICK_PULL_DOWN);
+        int pulldownMode = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
-        mQuickPulldown = (ListPreference) findPreference("status_bar_quick_qs_pulldown");
-        mQuickPulldown.setValue(String.valueOf(qpmode));
+        mQuickPulldown.setValue(String.valueOf(pulldownMode));
+        updateQuickPulldownSummary( pulldownMode);
         mQuickPulldown.setOnPreferenceChangeListener(this);
 
         mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
@@ -92,13 +94,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         if (preference == mQuickPulldown) {
-            int value = Integer.parseInt((String) newValue);
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, value,
-                    UserHandle.USER_CURRENT);
-            int index = mQuickPulldown.findIndexOfValue((String) newValue);
-            mQuickPulldown.setSummary(
-                    mQuickPulldown.getEntries()[index]);
+            int  pulldownMode = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                     pulldownMode, UserHandle.USER_CURRENT);
+            updateQuickPulldownSummary( pulldownMode);
             return true;
         } else if (preference == mTileAnimationStyle) {
             int tileAnimationStyle = Integer.valueOf((String) newValue);
@@ -122,6 +122,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements
        }
 
         return false;
+    }
+
+    private void updateQuickPulldownSummary(int value) {
+        if (value == 0) {
+            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_disabled));
+        } else if (value == 1) {
+            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_right));
+        } else if (value == 2) {
+            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_left));
+        }
     }
 
     private void updateTileAnimationStyleSummary(int tileAnimationStyle) {
