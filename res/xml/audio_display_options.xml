@@ -29,12 +29,6 @@
     <PreferenceCategory
         android:title="@string/audio_options_category">
         <Preference
-            android:key="audio_panel"
-            android:fragment="com.aquarios.coralreef.fragments.AudioPanel"
-            android:title="@string/advanced_volume_panel_title"
-            android:summary="@string/advanced_volume_panel_summary" />
-
-        <Preference
             android:key="volume_steps"
             android:fragment="com.aquarios.coralreef.fragments.VolumeSteps"
             android:title="@string/volume_steps_title"
