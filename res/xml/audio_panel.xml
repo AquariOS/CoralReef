@@ -49,4 +49,10 @@
             android:title="@string/audio_panel_view_bt_sco_title"
             android:defaultValue="false"/>
 
+        <com.aquarios.support.preferences.SystemSettingListPreference
+            android:key="audio_panel_animation_side"
+            android:title="@string/audio_panel_window_animation_side"
+            android:entries="@array/audio_panel_location_entries"
+            android:entryValues="@array/audio_panel_location_values" />
+
 </PreferenceScreen>
