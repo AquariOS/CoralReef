@@ -24,45 +24,16 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.applications.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 public class ButtonsTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private static final String POWERMENU_CATEGORY = "powermenu_category";
-    private static final String NAVIGATION_CATEGORY = "navigationbar_settings";
-    private static final String VOLUME_ROCKER_CATEGORY = "volume_rocker_category";
-    private static final String HWKEY_CATEGORY = "hw_keys_category";
-
-    private LayoutPreference mPowerMenu;
-    private LayoutPreference mNavigation;
-    private LayoutPreference mVolumeRocker;
-    private LayoutPreference mHwKeys;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.buttons_tab);
-
-        mPowerMenu = (LayoutPreference) findPreference(POWERMENU_CATEGORY);
-        mPowerMenu.setTitle(R.string.powermenu_title);
-
-        mNavigation = (LayoutPreference) findPreference(NAVIGATION_CATEGORY);
-        mNavigation.setTitle(R.string.navigationbar_title);
-
-        mVolumeRocker = (LayoutPreference) findPreference(VOLUME_ROCKER_CATEGORY);
-        mVolumeRocker.setTitle(R.string.volume_rocker_title);
-
-        mHwKeys = (LayoutPreference) findPreference(HWKEY_CATEGORY);
-
-        if (getResources().getInteger(com.android.internal.R.integer.config_deviceHardwareKeys) == 0) {
-            PreferenceScreen prefScreen = getPreferenceScreen();
-            prefScreen.removePreference(mHwKeys);
-        } else {
-            mHwKeys.setTitle(R.string.hw_keys_title);
-        }
     }
 
     @Override
@@ -75,10 +46,12 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
         super.onPause();
     }
 
+
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
         return false;
     }
+
 
     @Override
     public int getMetricsCategory() {
