@@ -17,8 +17,11 @@
 package com.aquarios.coralreef.fragments;
 
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -99,6 +102,9 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements
         mScreenOffAnimation.setValue(String.valueOf(screenOffStyle)); 
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry()); 
         mScreenOffAnimation.setOnPreferenceChangeListener(this); 
+
+        ListPreference locationPref = (ListPreference) findPreference("audio_panel_animation_side");
+        locationPref.setValue(getDefaultPanelLocationValue());
     }
 
     @Override
@@ -129,6 +135,23 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    private String getDefaultPanelLocationValue() {
+        try {
+            Context context = getActivity().createPackageContext("com.android.systemui", 0);
+            Resources systemuiRes = context.getResources();
+            int id = systemuiRes.getIdentifier("config_audioPanelOnLeftSide",
+                    "bool", "com.android.systemui");
+            boolean isDefaultLeft = systemuiRes.getBoolean(id);
+            boolean isLeft = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                    Settings.System.AUDIO_PANEL_ANIMATION_SIDE,
+                    isDefaultLeft ? 1 : 0,
+                    UserHandle.USER_CURRENT) == 1;
+            return isLeft ? "1" : "0";
+        } catch (PackageManager.NameNotFoundException e) {
+            return "0";
+        }
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

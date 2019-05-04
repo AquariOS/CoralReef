@@ -392,4 +392,15 @@
         <item>1</item>
     </string-array>
 
+    <!-- Volume panel positioning -->
+    <string-array name="audio_panel_location_entries" translatable="false">
+        <item>@string/audio_panel_window_side_right</item>
+        <item>@string/audio_panel_window_side_left</item>
+    </string-array>
+
+    <string-array name="audio_panel_location_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
 </resources>

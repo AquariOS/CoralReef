@@ -523,4 +523,9 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
+    <!-- Volume panel positioning -->
+    <string name="audio_panel_window_animation_side">Panel location</string>
+    <string name="audio_panel_window_side_right">Right side</string>
+    <string name="audio_panel_window_side_left">Left side</string>
+
 </resources>

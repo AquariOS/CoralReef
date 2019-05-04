@@ -34,6 +34,12 @@
             android:title="@string/volume_steps_title"
             android:summary="@string/volume_steps_summary" />
 
+       <com.aquarios.support.preferences.SystemSettingListPreference
+            android:key="audio_panel_animation_side"
+            android:title="@string/audio_panel_window_animation_side"
+            android:entries="@array/audio_panel_location_entries"
+            android:entryValues="@array/audio_panel_location_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
