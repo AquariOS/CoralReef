@@ -19,12 +19,16 @@ package com.aquarios.coralreef.preferences;
 import android.content.Context;
 import android.provider.Settings;
 import android.util.AttributeSet;
+
+import com.android.settings.R;
 import com.aquarios.support.preferences.IconPackPreference;
+
 
 public class RecentsIconPackPreference extends IconPackPreference {
 
     public RecentsIconPackPreference(Context context) {
         super(context, null);
+        setLayoutResource(R.layout.recents_iconpack_preference);
     }
 
     public RecentsIconPackPreference(Context context, AttributeSet attrs) {
