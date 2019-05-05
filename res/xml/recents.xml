@@ -50,4 +50,9 @@
 			android:dependency="show_clear_all_recents" />
     </PreferenceCategory>
 
+        <Preference
+            android:key="recents_icon_pack"
+            android:title="@string/recents_icon_pack_title"
+            android:summary="@string/recents_icon_pack_summary" />
+
 </PreferenceScreen>

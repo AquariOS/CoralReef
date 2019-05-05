@@ -528,4 +528,11 @@
     <string name="audio_panel_window_side_right">Right side</string>
     <string name="audio_panel_window_side_left">Left side</string>
 
+    <!-- Recents icon packs -->
+    <string name="recents_icon_pack_title">Icon Pack</string>
+    <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>
+    <string name="no_iconpacks_summary">No icon packs installed</string>
+    <string name="dialog_pick_iconpack_title">Pick icon pack</string>
+    <string name="default_iconpack_title">Default icons</string>
+
 </resources>
