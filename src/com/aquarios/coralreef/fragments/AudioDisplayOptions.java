@@ -69,6 +69,7 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.audio_display_options);
 
         final ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         final PreferenceCategory aspectRatioCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
@@ -105,6 +106,14 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements
 
         ListPreference locationPref = (ListPreference) findPreference("audio_panel_animation_side");
         locationPref.setValue(getDefaultPanelLocationValue());
+
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference SmartPixels = findPreference("smart_pixels");
+
+        if (!enableSmartPixels){
+            prefSet.removePreference(SmartPixels);
+        }
     }
 
     @Override
