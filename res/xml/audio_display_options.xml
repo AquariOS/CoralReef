@@ -16,17 +16,6 @@
     android:title="@string/audio_display_options_title" >
 
     <PreferenceCategory
-        android:title="@string/animations_options_category_title">
-        <ListPreference 
-            android:key="screen_off_animation" 
-            android:title="@string/screen_off_animation_title" 
-            android:entries="@array/screen_off_animation_entries" 
-            android:entryValues="@array/screen_off_animation_values"
-            android:defaultValue="0" /> 
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/audio_options_category">
         <Preference
             android:key="volume_steps"
@@ -34,11 +23,29 @@
             android:title="@string/volume_steps_title"
             android:summary="@string/volume_steps_summary" />
 
-       <com.aquarios.support.preferences.SystemSettingListPreference
+        <com.aquarios.support.preferences.SystemSettingListPreference
             android:key="audio_panel_animation_side"
             android:title="@string/audio_panel_window_animation_side"
             android:entries="@array/audio_panel_location_entries"
             android:entryValues="@array/audio_panel_location_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/display_options_category"/>
+
+        <Preference
+            android:key="smart_pixels"
+            android:title="@string/smart_pixels_title"
+            android:summary="@string/smart_pixels_summary"
+            android:fragment="com.aquarios.coralreef.fragments.SmartPixels" />
+
+        <ListPreference 
+            android:key="screen_off_animation" 
+            android:title="@string/screen_off_animation_title" 
+            android:entries="@array/screen_off_animation_entries" 
+            android:entryValues="@array/screen_off_animation_values"
+            android:defaultValue="0" /> 
 
     </PreferenceCategory>
 
