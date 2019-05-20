@@ -18,10 +18,22 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_items_title" >
 
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
-    <com.android.settings.applications.LayoutPreference
-        android:key="empty_category_message"
-        android:layout="@layout/empty_category_message" />
-<!-- EMPTY CATEGORY MESSAGE REMOVE This AFTER ADDING ELEMENTS! -->
+        <Preference
+            android:title="@string/status_bar_icon_blacklist_title"
+            android:summary="@string/status_bar_icon_blacklist_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
+        </Preference>
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="show_lte_fourgee"
+            android:title="@string/show_fourg_switch"
+            android:defaultValue="false"/>
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="show_volte_icon"
+            android:title="@string/status_bar_volte"
+            android:defaultValue="false"/>
 
 </PreferenceScreen>
