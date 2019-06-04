@@ -133,6 +133,9 @@
     <string name="status_bar_clock_title">Status bar clock</string>
     <string name="status_bar_clock_summary_on">Showing status bar clock</string>
     <string name="status_bar_clock_summary_off">Hiding status bar clock</string>
+    <string name="status_bar_clock_hide_on_home_title">Hide on Home</string>
+    <string name="status_bar_clock_hide_on_home_summary_on">Clock will hide when Home is showing</string>
+    <string name="status_bar_clock_hide_on_home_summary_off">Home does not affect clock</string>
     <string name="status_bar_show_clock_title">Show clock &amp; date</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="status_bar_clock_seconds_title">Clock seconds</string>
