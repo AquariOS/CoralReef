@@ -29,6 +29,15 @@
             android:summaryOff="@string/status_bar_clock_summary_off"
             android:defaultValue="true" />
 
+        <!-- HIde clock when Home showing -->
+        <com.aquarios.support.preferences.SecureSettingSwitchPreference
+            android:key="statusbar_clock_hidden_by_home"
+            android:title="@string/status_bar_clock_hide_on_home_title"
+            android:summaryOn="@string/status_bar_clock_hide_on_home_summary_on"
+            android:summaryOff="@string/status_bar_clock_hide_on_home_summary_off"
+            android:dependency="status_bar_clock"
+            android:defaultValue="false" />
+
         <!-- Clock position -->
         <com.aquarios.support.preferences.SecureSettingIntListPreference
             android:key="status_bar_clock_position"
