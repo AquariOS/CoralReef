@@ -435,6 +435,7 @@
     <string name="lockscreen_clock_selection_aqua_4">AquaClock v4</string>
     <string name="lockscreen_clock_selection_sammy">Sammy</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
+    <string name="lockscreen_clock_selection_text">Text</string>
     <!-- Turn on display when power connected; turn off display when power disconnected -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
     <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
@@ -482,4 +483,11 @@
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift_title">Burn-in protection</string>
     <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
+    <!-- Status bar stock icon blacklisting -->
+    <string name="status_bar_icon_blacklist_title">Status bar icon blacklisting</string>
+    <string name="status_bar_icon_blacklist_summary">Choose which stock icons to blacklist from status bar</string>
+    <!-- 4G/LTE toggle -->
+    <string name="show_fourg_switch">Show 4G (disable for LTE)</string>
+    <!-- VoLTE toggle -->
+    <string name="status_bar_volte">VoLTE</string>
 </resources>
