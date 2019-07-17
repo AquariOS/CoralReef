@@ -566,4 +566,8 @@
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
 
+    <!-- Volume keys control ringer volume -->
+    <string name="volume_keys_control_ring_tone_title">Control ring volume</string>
+    <string name="volume_keys_control_ring_tone_summary">Keys control media volume by default. Enable to switch to ringer slider</string>
+
 </resources>
