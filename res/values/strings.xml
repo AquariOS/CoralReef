@@ -105,6 +105,10 @@
     <string name="advanced_behavior_title">Advanced behavior</string>
     <string name="appearance_category">APPEARANCE</string>
     <string name="behavior_category">BEHAVIOR</string>
+    <string name="global_category">GLOBAL CONTROLS</string>
+    <string name="calls_and_texts_category">MESSAGES &amp; CALLS</string>
+    <string name="per_app_hiding_category">HIDE HEADS-UP WHILE USING THESE APPS</string>
+    <string name="per_app_blacklist_category">NEVER SHOW HEADS-UP FROM THESE APPS</string>
 
 <!-- FEATURES -->
     <!-- Screen Off animation -->
@@ -462,6 +466,10 @@
     <string name="heads_up_snooze_10min">10 minutes</string>
     <string name="heads_up_snooze_15min">15 minutes</string>
     <string name="heads_up_snooze_20min">20 minutes</string>
+
+    <!-- Less Boring Heads-up -->
+    <string name="smarter_heads_up_title">Smarter Heads-up</string>
+    <string name="smarter_heads_up_summary">Don\'t show Heads-up if already using messaging/calling app</string>
 
     <!-- Brightness control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>

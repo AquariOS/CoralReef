@@ -18,6 +18,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/headsup_title" >
 
+	<PreferenceCategory
+        android:title="@string/global_category">
+
     <com.aquarios.support.preferences.GlobalSettingSwitchPreference
         android:key="heads_up_notifications_enabled"
         android:title="@string/heads_up_notifications"
@@ -41,8 +44,23 @@
         android:dependency="heads_up_notifications_enabled"
         android:persistent="false" />
 
+    </PreferenceCategory>
+
+	<PreferenceCategory
+        android:title="@string/calls_and_texts_category">
+
+    <!-- Smarter Heads-up (Less boring)-->
+    <com.aquarios.support.preferences.SystemSettingSwitchPreference
+        android:key="less_boring_heads_up"
+        android:title="@string/smarter_heads_up_title"
+        android:summary="@string/smarter_heads_up_summary"
+        android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- Heads-up Stoplist -->
     <PreferenceCategory
-            android:title="@string/heads_up_stoplist_title"
+            android:title="@string/per_app_hiding_category"
             android:key="stoplist_applications"
             android:dependency="heads_up_notifications_enabled" >
         <Preference
@@ -52,8 +70,9 @@
             android:summary="@string/add_heads_up_stoplist_summary" />
     </PreferenceCategory>
 
+    <!-- Heads-up Blacklist -->
     <PreferenceCategory
-            android:title="@string/heads_up_blacklist_title"
+            android:title="@string/per_app_blacklist_category"
             android:key="blacklist_applications"
             android:dependency="heads_up_notifications_enabled" >
         <Preference
