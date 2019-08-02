@@ -41,28 +41,14 @@ import java.util.List;
 public class LockscreenDisplay extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-     SwitchPreference mLockscreenVisualizer;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_display);
-
-        mLockscreenVisualizer = (SwitchPreference) findPreference("lockscreen_visualizer");
-        mLockscreenVisualizer.setChecked(Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 1) == 1);
-        mLockscreenVisualizer.setOnPreferenceChangeListener(this);
-
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-		if (preference.equals(mLockscreenVisualizer)) {
-            boolean enabled = ((Boolean) newValue).booleanValue();
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, enabled ? 1 : 0);
-            return true;
-        }
         return false;
     }
 
