@@ -33,10 +33,11 @@
             android:summary="@string/media_art_summary"
             android:defaultValue="true" />
 
-        <SwitchPreference
+        <Preference
             android:key="lockscreen_visualizer"
             android:title="@string/lockscreen_visualizer_title"
-            android:summary="@string/lockscreen_visualizer_summary" />
+            android:summary="@string/lockscreen_visualizer_summary"
+            android:fragment="com.aquarios.coralreef.fragments.LockScreenVisualizer" />
 
         <Preference
             android:key="bottom_shortcuts_category"

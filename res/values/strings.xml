@@ -110,7 +110,8 @@
     <string name="accent_picker_custom_colors">User requested</string>
     <string name="qs_styles_dialog_title">Select a QS tile style</string>
 
-    <!-- Color Picker -->
+    <!-- Units -->
+    <string name="unit_milliseconds">milliseconds</string>
 
 <!-- FEATURES -->
     <!-- Power Menu -->
@@ -316,6 +317,13 @@
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Music visualizer</string>
     <string name="lockscreen_visualizer_summary">Toggles visualizer display on lockscreen</string>
+    <string name="lockscreen_autocolor_title">Automatic color</string>
+    <string name="lockscreen_autocolor_summary">Sync color with album art</string>
+    <string name="lockscreen_autocolor_mediametadata">Requires media cover art on lockscreen enabled</string>
+    <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
+    <string name="lockscreen_lavalamp_title">Lava lamp</string>
+    <string name="lockscreen_lavalamp_summary">Animate smooth lava lamp style color blend</string>
+    <string name="lockscreen_lavalamp_speed_title">Lava lamp color blend interval</string>
 
     <!-- Keyboard: Force Show ENTER key -->
     <string name="force_show_enter_key_title">Always show Enter key</string>
