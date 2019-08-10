@@ -105,7 +105,8 @@
     <string name="accent_picker_material_colors">Material palette</string>
     <string name="accent_picker_custom_colors">User requested</string>
     <string name="qs_styles_dialog_title">Select a QS tile style</string>
-    <!-- Color Picker -->
+    <!-- Units -->
+    <string name="unit_milliseconds"> ms</string>
     <!-- FEATURES -->
     <!-- Power Menu -->
     <string name="powermenu_reboot_title">Restart</string>
@@ -285,6 +286,13 @@
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Music visualizer</string>
     <string name="lockscreen_visualizer_summary">Toggles visualizer display on lockscreen</string>
+    <string name="lockscreen_autocolor_title">Automatic color</string>
+    <string name="lockscreen_autocolor_summary">Sync color with album art</string>
+    <string name="lockscreen_autocolor_mediametadata">Requires media cover art on lockscreen enabled</string>
+    <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
+    <string name="lockscreen_lavalamp_title">Lava lamp</string>
+    <string name="lockscreen_lavalamp_summary">Animate smooth lava lamp style color blend</string>
+    <string name="lockscreen_lavalamp_speed_title">Lava lamp color blend interval</string>
     <!-- Keyboard: Force Show ENTER key -->
     <string name="force_show_enter_key_title">Always show Enter key</string>
     <string name="force_show_enter_key_summary">Forces Enter key to be displayed, rather than Emoji key</string>
@@ -493,4 +501,13 @@
     <string name="show_fourg_switch">Show 4G (disable for LTE)</string>
     <!-- VoLTE toggle -->
     <string name="status_bar_volte">VoLTE</string>
+    <!-- Battery fully charged -->
+    <string name="battery_fully_charged_notif_title">Battery fully charged</string>
+    <string name="battery_fully_charged_notif_summary">Show a notification when the battery is fully charged</string>
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Force expanded notifications</string>
+    <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
+    <!-- Running Services shortcut -->
+    <string name="qs_running_services_title">Running Services Icon</string>
+    <string name="qs_running_services_summary">Enable the running services icon in the footer</string>
 </resources>
