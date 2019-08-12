@@ -21,6 +21,12 @@
 	<PreferenceCategory
 		android:title="@string/appearance_category">
 			<Preference
+				android:key="brightness_slider"
+				android:title="@string/brightness_slider_options"
+				android:summary="@string/brightness_slider_options_summary"
+				android:fragment="com.aquarios.coralreef.fragments.BrightnessSlider"/>
+
+			<Preference
 				android:key="qs_rows_columns"
 				android:title="@string/qs_panel_layout_title"
 				android:summary="@string/qs_rows_columns_title_summary"
