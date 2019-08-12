@@ -213,10 +213,13 @@
 
     <!-- Option to show brightness bar in quick settings -->
     <string name="show_brightness_title">Brightness slider</string>
+    <string name="brightness_slider_options">Brightness slider options</string>
+    <string name="brightness_slider_options_summary">Customize your brightness controls</string>
     <string name="show_brightness_summary_on">Showing brightness slider in QS panel</string>
     <string name="show_brightness_summary_off">Brightness slider is hidden</string>
-    <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
-    <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
+    <string name="qs_brightness_position_bottom_title">Brightness slider location</string>
+    <string name="brightness_slider_placement_summary_on">Showing above QS tiles</string>
+    <string name="brightness_slider_placement_summary_off">Showing below QS tiles</string>
     <string name="brightness_icon_title">Adaptive brightness button</string>
     <string name="brightness_icon_summary">Show an icon to the right of brighness slider. Toggles adaptive brightness on/off</string>
     <string name="show_auto_brightness_right">Right position for adaptive brightness button</string>
