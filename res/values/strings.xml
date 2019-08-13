@@ -101,6 +101,23 @@
     <string name="empty_category_title">No extra features yet...</string>
     <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
 
+    <!-- Backup/restore CoralReef user settings -->
+    <!-- Reset settings -->
+    <string name="aqua_factory_reset_title">Reset to stock</string>
+    <string name="aqua_factory_reset_confirm">Are you sure you want to reset this CoralReef fragment to stock settings?</string>
+    <string name="aqua_backup_current_config_title">Save profile</string>
+    <string name="aqua_restore_config_title">Restore profile</string>
+    <string name="aqua_reset_config_title">Reset settings</string>
+    <string name="aqua_reset_settings_message">This will reset most CoralReef settings to their default values. Would you like to continue?</string>
+    <string name="aqua_config_name_edit_dialog_title">CoralReef backup profile name</string>
+    <string name="aqua_config_name_edit_dialog_message">Enter name or leave blank</string>
+    <string name="aqua_config_dialog_title">CoralReef profiles</string>
+    <string name="aqua_config_backup_success_toast">CoralReef profile successfully saved!</string>
+    <string name="aqua_config_restore_success_toast">CoralReef profile successfully restored!</string>
+    <string name="aqua_config_backup_error_toast">Error saving CoralReef profile...</string>
+    <string name="aqua_config_restore_error_toast">Error restoring CoralReef profile...</string>
+
+
     <!-- Fruity Pebbles v2.0 -->
     <string name="accent_picker_dialog_title">Select an accent color</string>
     <string name="theme_accent_picker_title">Accent color</string>

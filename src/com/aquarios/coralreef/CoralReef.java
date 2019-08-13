@@ -17,14 +17,21 @@
 
 package com.aquarios.coralreef;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +55,10 @@ public class CoralReef extends SettingsPreferenceFragment {
     MenuItem menuitem;
 
     PagerAdapter mPagerAdapter;
+
+    protected Context Context;
+
+    private static final int MENU_RESET = Menu.FIRST;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -162,5 +173,62 @@ public class CoralReef extends SettingsPreferenceFragment {
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_RESET, 0, R.string.aqua_reset_config_title)
+                .setAlphabeticShortcut('r')
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
+                        MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+    }
+
+    public void resetAll(Context context) {
+        new ResetAllTask(context).execute();
+    }
+
+    public void showResetAllDialog(Context context) {
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.aqua_reset_config_title)
+                .setMessage(R.string.aqua_reset_settings_message)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        resetAll(context);
+                    }
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private class ResetAllTask extends AsyncTask<Void, Void, Void> {
+        private Context mContext;
+
+        public ResetAllTask(Context context) {
+            super();
+            mContext = context;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+//          ButtonsTab.resetSettings(mContext);
+//          LockScreenTab.resetSettings(mContext);
+            StatusBarTab.resetSettings(mContext);
+//          NotificationsTab.resetSettings(mContext);
+//          SystemMiscTab.resetSettings(mContext);
+            finish();
+            startActivity(getIntent());
+            return null;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_RESET:
+                 showResetAllDialog(getActivity());
+                return true;
+            default:
+                return false;
+        }
     }
 }
