@@ -96,6 +96,7 @@
     <string name="volume_steps_title">Volume steps</string>
     <string name="power_menu_category">Power menu</string>
     <string name="aware_settings_title">Motion Sense</string>
+    <string name="battery_style_statusbar">Statusbar battery</string>
 
     <!-- Reusable strings -->
     <string name="advanced_behavior_title">Advanced behavior</string>
@@ -228,5 +229,22 @@
     <string name="action_volume_panel">Volume panel</string>  
     <string name="action_screen_off">Screen off</string>
     <string name="action_screenshot">Screenshot</string>
-  
+
+    <!-- Battery Styles -->
+    <string name="battery_percent_title">Battery percent</string>
+
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Battery style</string>
+    <string name="status_bar_battery_style_q">Icon portrait (default)</string>
+    <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
+    <string name="status_bar_battery_style_circle">Filled circle</string>
+    <string name="status_bar_battery_style_text">Text</string>
+    <string name="status_bar_battery_style_hidden">Hidden</string>
+
+    <!-- Status bar - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden (default)</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
+
 </resources>
