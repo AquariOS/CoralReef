@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 The Dirty Unicorns Project
- * Copyright (C) 2018 AquariOS
+ * Copyright (C) 2019 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v14.preference.PreferenceFragment;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.applications.LayoutPreference;
+import com.android.settingslib.widget.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -33,11 +33,13 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
 
     private static final String POWERMENU_CATEGORY = "powermenu_category";
     private static final String NAVIGATION_CATEGORY = "navigationbar_settings";
+    private static final String GESTURE_OPTIONS_CATEGORY = "gesture_options";
     private static final String VOLUME_ROCKER_CATEGORY = "volume_rocker_category";
     private static final String HWKEY_CATEGORY = "hw_keys_category";
 
     private LayoutPreference mPowerMenu;
     private LayoutPreference mNavigation;
+    private LayoutPreference mGestures;
     private LayoutPreference mVolumeRocker;
     private LayoutPreference mHwKeys;
 
@@ -47,17 +49,29 @@ public class ButtonsTab extends SettingsPreferenceFragment implements Preference
         addPreferencesFromResource(R.xml.buttons_tab);
 
         mPowerMenu = (LayoutPreference) findPreference(POWERMENU_CATEGORY);
+        if (!getResources().getBoolean(R.bool.powermenu_category_isVisible)) {
         mPowerMenu.setTitle(R.string.powermenu_title);
+        } 
 
         mNavigation = (LayoutPreference) findPreference(NAVIGATION_CATEGORY);
+        if (!getResources().getBoolean(R.bool.navigationbar_category_isVisible)) {
         mNavigation.setTitle(R.string.navigationbar_title);
+        } 
+
+        mGestures = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.gestures_category_isVisible)) {
+        mGestures.setTitle(R.string.gesture_options_title);
+        } 
 
         mVolumeRocker = (LayoutPreference) findPreference(VOLUME_ROCKER_CATEGORY);
+        if (!getResources().getBoolean(R.bool.volumerocker_category_isVisible)) {
         mVolumeRocker.setTitle(R.string.volume_rocker_title);
+        } 
 
         mHwKeys = (LayoutPreference) findPreference(HWKEY_CATEGORY);
-
-        if (getResources().getInteger(com.android.internal.R.integer.config_deviceHardwareKeys) == 0) {
+        // COMMENTED OUT FOR BRING-UP
+        //((getResources().getInteger(com.android.internal.R.integer.config_deviceHardwareKeys) == 0) &&
+        if (!getResources().getBoolean(R.bool.hwkeys_category_isVisible)) {
             PreferenceScreen prefScreen = getPreferenceScreen();
             prefScreen.removePreference(mHwKeys);
         } else {

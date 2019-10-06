@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 AquariOS
+<!-- Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,50 +16,6 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/qs_panel_view_title" >
-
-	<PreferenceCategory
-        android:title="@string/category_qstiles_portrait">
-			<com.aquarios.support.preferences.CustomSeekBarPreference
-				android:key="qs_rows_portrait"
-				android:title="@string/qs_rows_portrait_title"
-				android:max="5"
-				settings:min="1"
-				settings:units="" />
-
-			<com.aquarios.support.preferences.CustomSeekBarPreference
-				android:key="qs_columns_portrait"
-				android:title="@string/qs_columns_portrait_title"
-				android:max="7"
-				settings:min="1"
-				settings:units="" />
-	</PreferenceCategory>
-
-	<PreferenceCategory
-        android:title="@string/category_qstiles_landscape">
-			<com.aquarios.support.preferences.CustomSeekBarPreference
-				android:key="qs_rows_landscape"
-				android:title="@string/qs_rows_landscape_title"
-				android:max="3"
-				settings:min="1"
-				settings:units="" />
-
-			<com.aquarios.support.preferences.CustomSeekBarPreference
-				android:key="qs_columns_landscape"
-				android:title="@string/qs_columns_landscape_title"
-				android:max="9"
-				settings:min="1"
-				settings:units="" />
-	</PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/qs_panel_alpha_category">
-			<com.aquarios.support.preferences.CustomSeekBarPreference
-				android:key="qs_panel_alpha"
-				android:title="@string/qs_panel_alpha_title"
-				android:max="255"
-				settings:min="0"
-				settings:units="" />
-    </PreferenceCategory>
+    android:title="@string/qs_panel_layout_category" >
 
 </PreferenceScreen>

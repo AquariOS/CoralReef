@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2017 The Dirty Unicorns Project
-     Copyright (C) 2018 AquariOS
+     Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,38 +17,33 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.android.settings.applications.LayoutPreference
+    <com.android.settingslib.widget.LayoutPreference
         android:key="recents_category"
         android:fragment="com.aquarios.coralreef.fragments.Recents"
         android:layout="@layout/recents" />
 
-    <com.android.settings.applications.LayoutPreference
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="audio_display_options"
+        android:fragment="com.aquarios.coralreef.fragments.AudioDisplayOptions"
+        android:layout="@layout/audio_display_options" />
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="miscellaneous_category"
+        android:fragment="com.aquarios.coralreef.fragments.Miscellaneous"
+        android:layout="@layout/miscellaneous" />
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="changelog"
+        android:fragment="com.aquarios.coralreef.fragments.Changelog"
+        android:layout="@layout/changelog" />
+
+    <com.android.settingslib.widget.LayoutPreference
         android:key="device_extras_category"
         android:persistent="false"
         android:layout="@layout/device_extras" >
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="org.omnirom.device"
             android:targetClass="org.omnirom.device.DeviceSettings" />
-    </com.android.settings.applications.LayoutPreference>
-
-    <com.android.settings.applications.LayoutPreference
-        android:key="audio_display_options"
-        android:fragment="com.aquarios.coralreef.fragments.AudioDisplayOptions"
-        android:layout="@layout/audio_display_options" />
-
-    <com.android.settings.applications.LayoutPreference
-        android:key="gesture_options"
-        android:fragment="com.aquarios.coralreef.fragments.GestureOptions"
-        android:layout="@layout/gesture_options" />
-
-    <com.android.settings.applications.LayoutPreference
-        android:key="miscellaneous_category"
-        android:fragment="com.aquarios.coralreef.fragments.Miscellaneous"
-        android:layout="@layout/miscellaneous" />
-
-    <com.android.settings.applications.LayoutPreference
-        android:key="changelog"
-        android:fragment="com.aquarios.coralreef.fragments.Changelog"
-        android:layout="@layout/changelog" />
+    </com.android.settingslib.widget.LayoutPreference>
 
 </PreferenceScreen>

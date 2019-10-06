@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2019 The Dirty Unicorns Project
+     Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/active_edge_title" >
-
+<!--
     <com.android.settings.widget.VideoPreference
         android:key="squeeze_video"
         app:animation="@raw/assist_gesture_settings_animation"
@@ -47,5 +48,5 @@
 
     <com.android.settingslib.widget.FooterPreference
         android:title="@string/active_edge_footer_info" />
-
+-->
 </PreferenceScreen>

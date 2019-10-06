@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 AquariOS
+<!-- Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,23 +17,5 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_items_title" >
-
-        <Preference
-            android:title="@string/status_bar_icon_blacklist_title"
-            android:summary="@string/status_bar_icon_blacklist_summary">
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
-        </Preference>
-
-        <com.aquarios.support.preferences.SystemSettingSwitchPreference
-            android:key="show_lte_fourgee"
-            android:title="@string/show_fourg_switch"
-            android:defaultValue="false"/>
-
-        <com.aquarios.support.preferences.SystemSettingSwitchPreference
-            android:key="show_volte_icon"
-            android:title="@string/status_bar_volte"
-            android:defaultValue="false"/>
 
 </PreferenceScreen>

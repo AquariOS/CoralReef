@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 AquariOS
+<!-- Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,42 +17,5 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/recents_title" >
-
-    <PreferenceCategory
-        android:title="@string/recents_style_category">
-
-        <ListPreference
-            android:key="recents_component"
-            android:title="@string/recents_component_type_title"
-            android:dialogTitle="@string/recents_component_type_title"
-            android:entries="@array/recents_component_type_title_entries"
-            android:defaultValue="0"
-            android:entryValues="@array/recents_component_type_title_values"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="category_oreo_style_options"
-        android:title="@string/aosp_recents_category">
-
-		<com.aquarios.support.preferences.SystemSettingSwitchPreference
-			android:key="show_clear_all_recents"
-			android:title="@string/show_clear_all_recents_button_title"
-			android:summaryOn="@string/show_clear_all_recents_button_summary_on"
-			android:summaryOff="@string/show_clear_all_recents_button_summary_off"
-			android:defaultValue="true" />
-
-		<ListPreference
-			android:key="recents_clear_all_location"
-			android:title="@string/recents_clear_all_location_title"
-			android:entries="@array/recents_clear_all_location_entries"
-			android:entryValues="@array/recents_clear_all_location_values"
-			android:defaultValue="3"
-			android:dependency="show_clear_all_recents" />
-    </PreferenceCategory>
-
-    <com.aquarios.coralreef.preferences.RecentsIconPackPreference
-            android:key="recents_icon_pack"
-            android:title="@string/recents_icon_pack_title"
-            android:summary="@string/recents_icon_pack_summary" />
 
 </PreferenceScreen>

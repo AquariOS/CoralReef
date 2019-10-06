@@ -1,14 +1,33 @@
-AquariOS Custom Settings
-========================
+# CoralReef
 
-This was originally taken from DU-Tweaks (Dirty Unicorns)
+### About
+Give your project the energy it needs to stand out with this bottom-tabbed, swipeable
+navigation system. CoralReef was originally started by the Dirty Unicorns leader, Alex Cruz,
+as their awesome new custom settings fragment called [DU-Tweaks](https://github.com/DirtyUnicorns/android_packages_apps_DU-Tweaks). @Calebcabob, the AquariOS
+team leader then forked, restructured and transformed the app. It has since developed a strong
+personality and life of it's own! Give this unique and sexy alternative to the commonly used
+AOSP __SettingsPreferenceFragment__ a try!
 
-A flexible, easy to use, all in one tweaks app for AOSP!
+### See it in action below
+![GIF](res/drawable/coralreef_navigation_demo_github.gif)
 
-## License
+Customizing certain elements of this app is quite straight-forward!
 
+| Key                                         | Type    | Description                                                        |
+| :-----------------------------------------: |:-------:| :-----------------------------------------------------------------:|
+| `bottom_nav_<tab_title>`                    |  string | See __CoralReef.java__ and adjust these strings and keys as needed |
+| `BottomBarBackgroundColor`                  |  color  | Accent color control for the background of bottom navigation tabs  |
+| `bottom_nav_text_icon_active`               |  color  | Accent color control for the active tab                            |
+| `bottom_nav_text_icon_inactive`             |  color  | Accent color control for the inactive tab                          |
+| `preference_background_color`               |  color  | Accent color control for the header background in each tab         |
+| `top_banner_icon_color_white_accent`        |  color  | Accent color control for icons in tab headers                      |
+| `design_bottom_navigation_text_size`        |  dimen  | Controls the size of text in all inactive tabs (not selected)      |
+| `design_bottom_navigation_active_text_size` |  dimen  | Controls the size of text for any selected/active tab              |
+
+## Licensing Info
+
+    Copyright (C) 2019 AquariOS
     Copyright (C) 2017 The Dirty Unicorns Project
-    Copyright (C) 2017 AquariOS
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2017 The Dirty Unicorns Project
- * Copyright (C) 2018 AquariOS
+ * Copyright (C) 2019 AquariOS
+ * Copyright (C) 2018 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,14 @@
 
 package com.aquarios.coralreef;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.NonNull;
+
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
