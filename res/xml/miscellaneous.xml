@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 AquariOS
+<!-- Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,29 +17,5 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/miscellaneous_title" >
-
-    <SwitchPreference
-        android:key="fingerprint_success_vib"
-        android:title="@string/fprint_sucess_vib_title"
-        android:summary="@string/fprint_sucess_vib_summary"
-        android:persistent="false" />
-
-    <com.aquarios.support.preferences.GlobalSettingSwitchPreference
-        android:key="wake_when_plugged_or_unplugged"
-        android:title="@string/wake_when_plugged_or_unplugged_title"
-        android:summary="@string/wake_when_plugged_or_unplugged_summary"
-        android:defaultValue="false"/>
-
-    <com.aquarios.support.preferences.SystemSettingSwitchPreference
-        android:key="force_show_enter_key"
-        android:title="@string/force_show_enter_key_title"
-        android:summary="@string/force_show_enter_key_summary"
-        android:defaultValue="false" />
-
-    <com.aquarios.support.preferences.GlobalSettingSwitchPreference
-        android:key="allow_signature_fake"
-        android:title="@string/allow_signature_fake"
-        android:summary="@string/allow_signature_fake_summary"
-        android:defaultValue="false" />
 
 </PreferenceScreen>

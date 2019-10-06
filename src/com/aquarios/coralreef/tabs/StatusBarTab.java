@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 The Dirty Unicorns Project
- * Copyright (C) 2018 AquariOS
+ * Copyright (C) 2019 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v14.preference.PreferenceFragment;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.applications.LayoutPreference;
+import com.android.settingslib.widget.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -49,19 +49,25 @@ public class StatusBarTab extends SettingsPreferenceFragment implements Preferen
         addPreferencesFromResource(R.xml.status_bar_tab);
 
         mBattery = (LayoutPreference) findPreference(BATTERY_CATEGORY);
+        if (!getResources().getBoolean(R.bool.battery_category_isVisible)) {
         mBattery.setTitle(R.string.battery_options_title);
-
+        } 
         mClockOptions = (LayoutPreference) findPreference(CLOCK_OPTIONS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.clock_category_isVisible)) {
         mClockOptions.setTitle(R.string.clock_options_title);
-
+        } 
         mTraffic = (LayoutPreference) findPreference(TRAFFIC_CATEGORY);
+        if (!getResources().getBoolean(R.bool.traffic_category_isVisible)) {
         mTraffic.setTitle(R.string.traffic_title);
-
+        } 
         mQuickSettings = (LayoutPreference) findPreference(QUICK_SETTINGS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.qs_settings_category_isVisible)) {
         mQuickSettings.setTitle(R.string.quicksettings_title);
-
+        } 
         mStatusBarItems = (LayoutPreference) findPreference(STATUS_BAR_ITEMS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.statusbar_icon_blacklist_category_isVisible)) {
         mStatusBarItems.setTitle(R.string.status_bar_items_title);
+        } 
     }
 
     @Override

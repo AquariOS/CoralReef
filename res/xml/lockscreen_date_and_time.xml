@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 AquariOS
+<!-- Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,25 +17,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_date_and_time_title" >
-
- 		<com.aquarios.support.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_clock"
-            android:title="@string/lockscreen_clock_title"
-            android:summary="@string/lockscreen_clock_summary"
-            android:defaultValue="true" />
-
-		<com.aquarios.support.preferences.SystemSettingListPreference
-            android:key="lockscreen_clock_selection"
-            android:title="@string/lockscreen_clock_selection_title"
-            android:entries="@array/lockscreen_clock_selection_entries"
-            android:entryValues="@array/lockscreen_clock_selection_values"
-            android:defaultValue="0" />
-
-		<com.aquarios.support.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_info"
-            android:title="@string/lockscreen_info_title"
-            android:summary="@string/lockscreen_info_summary"
-            android:defaultValue="true" />
 
 </PreferenceScreen>
 

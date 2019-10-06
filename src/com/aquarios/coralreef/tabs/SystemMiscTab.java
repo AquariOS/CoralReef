@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 The Dirty Unicorns Project
- * Copyright (C) 2018 AquariOS
+ * Copyright (C) 2019 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v14.preference.PreferenceFragment;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.applications.LayoutPreference;
+import com.android.settingslib.widget.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -43,6 +43,7 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
     private LayoutPreference mMiscellaneous;
     private LayoutPreference mChangelog;
     private LayoutPreference mAudioDisplay;
+    private LayoutPreference mDeviceExtras;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,24 +51,34 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
         addPreferencesFromResource(R.xml.system_misc_tab);
 
         mRecents = (LayoutPreference) findPreference(RECENTS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.recents_category_isVisible)) {
         mRecents.setTitle(R.string.recents_title);
-
+        } 
         mGestures = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.gestures_category_isVisible)) {
         mGestures.setTitle(R.string.gesture_options_title);
-
+        } 
         mMiscellaneous = (LayoutPreference) findPreference(MISCELLANEOUS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.miscellaneous_category_isVisible)) {
         mMiscellaneous.setTitle(R.string.miscellaneous_title);
-
+        } 
         mChangelog = (LayoutPreference) findPreference(CHANGELOG_CATEGORY);
+        if (!getResources().getBoolean(R.bool.changelog_category_isVisible)) {
         mChangelog.setTitle(R.string.changelog_title);
-
+        } 
         mAudioDisplay = (LayoutPreference) findPreference(AUDIO_DISPLAY_OPTIONS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.audio_display_category_isVisible)) {
         mAudioDisplay.setTitle(R.string.audio_display_options_title);
-
+        } 
         // Device extras show/hide
-        Preference DeviceExtras = findPreference(DEVICE_CATEGORY);
-        if (!getResources().getBoolean(R.bool.has_device_extras)) {
-            getPreferenceScreen().removePreference(DeviceExtras);
+        mDeviceExtras = (LayoutPreference) findPreference(DEVICE_CATEGORY);
+        if // COMMENTED OUT FOR BRING-UP
+          //((getResources().getInteger(com.android.internal.R.integer.has_device_extras) == 0) &&
+            (!getResources().getBoolean(R.bool.device_extras_category_isVisible)) {
+            PreferenceScreen prefScreen = getPreferenceScreen();
+            prefScreen.removePreference(mDeviceExtras);
+        } else {
+            mDeviceExtras.setTitle(R.string.hw_keys_title);
         }
     }
 

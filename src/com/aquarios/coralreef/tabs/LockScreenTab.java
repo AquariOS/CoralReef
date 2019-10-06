@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 The Dirty Unicorns Project
- * Copyright (C) 2018 AquariOS
+ * Copyright (C) 2019 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v14.preference.PreferenceFragment;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.applications.LayoutPreference;
+import com.android.settingslib.widget.LayoutPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -45,13 +45,17 @@ public class LockScreenTab extends SettingsPreferenceFragment implements Prefere
         addPreferencesFromResource(R.xml.lock_screen_tab);
 
         mLockscreenDateTime = (LayoutPreference) findPreference(LOCKSCREEN_DATE_AND_TIME_CATEGORY);
+        if (!getResources().getBoolean(R.bool.lockclocks_category_isVisible)) {
         mLockscreenDateTime.setTitle(R.string.lockscreen_date_and_time_title);
-
+        } 
         mLockscreenDisplay = (LayoutPreference) findPreference(LOCKSCREEN_DISPLAY_CATEGORY);
+        if (!getResources().getBoolean(R.bool.lockscreen_display_category_isVisible)) {
         mLockscreenDisplay.setTitle(R.string.lockscreen_display_title);
-
+        } 
         mLockscreenWeather = (LayoutPreference) findPreference(LOCKSCREEN_WEATHER);
+        if (!getResources().getBoolean(R.bool.lockscreen_weather_category_isVisible)) {
         mLockscreenWeather.setTitle(R.string.lock_screen_weather_settings_title);
+        } 
     }
 
     @Override

@@ -16,23 +16,21 @@
 
 package com.aquarios.coralreef.fragments;
 
-import android.os.Bundle;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -42,36 +40,19 @@ import java.util.List;
 public class GeneralNotifications extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
-
-    private SwitchPreference mForceExpanded;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.general_notifications);
-
-        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
-        mForceExpanded.setChecked((Settings.System.getInt(getContentResolver(),
-	        Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-	ContentResolver resolver = getActivity().getContentResolver();
-
-		if (preference == mForceExpanded) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FORCE_EXPANDED_NOTIFICATIONS, checked ? 1:0);
-            return true;
-	   }
-        return false;
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

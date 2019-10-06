@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 AquariOS
+ * Copyright (C) 2019 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,21 +19,18 @@ package com.aquarios.coralreef.fragments;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.os.UserHandle;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -43,60 +40,19 @@ import java.util.List;
 public class GestureOptions extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String ACTIVE_EDGE_CATEGORY = "active_edge";
-
-    SwitchPreference mDoubleTapToSleepEnabled;
-    SwitchPreference mDoubleTapToSleepAnywhere;
-
-    private Preference mActiveEdge;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.gesture_options);
-
-        mDoubleTapToSleepEnabled = (SwitchPreference) findPreference("double_tap_sleep_gesture");
-        mDoubleTapToSleepEnabled.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1);
-        mDoubleTapToSleepEnabled.setOnPreferenceChangeListener(this);
-
-        mDoubleTapToSleepAnywhere = (SwitchPreference) findPreference("double_tap_sleep_anywhere");
-        mDoubleTapToSleepAnywhere.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0) == 1);
-        mDoubleTapToSleepAnywhere.setOnPreferenceChangeListener(this);
-
-        mActiveEdge = (Preference) findPreference(ACTIVE_EDGE_CATEGORY);
-        PreferenceScreen preferenceScreen = getPreferenceScreen();
-            if (!getResources().getBoolean(com.android.internal.R.bool.config_hasActiveEdge)) {
-                getPreferenceScreen().removePreference(mActiveEdge);
-        } else {
-            if (!getContext().getPackageManager().hasSystemFeature(
-                    "android.hardware.sensor.assist")) {
-                getPreferenceScreen().removePreference(mActiveEdge);
-            }
-        }
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-		if (preference.equals(mDoubleTapToSleepEnabled)) {
-            boolean enabled = ((Boolean) newValue).booleanValue();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE, enabled ? 1 : 0);
-            return true;
-        }
-        if (preference.equals(mDoubleTapToSleepAnywhere)) {
-            boolean enabled = ((Boolean) newValue).booleanValue();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, enabled ? 1 : 0);
-            return true;
-        }
-        return false;
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

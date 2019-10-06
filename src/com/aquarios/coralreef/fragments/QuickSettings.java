@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 AquariOS
+ * Copyright (C) 2019 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,17 @@
 
 package com.aquarios.coralreef.fragments;
 
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -44,124 +42,14 @@ import java.util.List;
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String PREF_QUICK_PULL_DOWN = "status_bar_quick_qs_pulldown";
-    private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
-    private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
-    private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
-
-    private ListPreference mQuickPulldown;
-    private ListPreference mTileAnimationStyle;
-    private ListPreference mTileAnimationDuration;
-    private ListPreference mTileAnimationInterpolator;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.quick_settings);
-
-        mQuickPulldown = (ListPreference) findPreference(PREF_QUICK_PULL_DOWN);
-        int pulldownMode = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1, UserHandle.USER_CURRENT);
-        mQuickPulldown.setValue(String.valueOf(pulldownMode));
-        updateQuickPulldownSummary( pulldownMode);
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-
-        mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
-        int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
-        mTileAnimationStyle.setValue(String.valueOf(tileAnimationStyle));
-        updateTileAnimationStyleSummary(tileAnimationStyle);
-        updateAnimTileStyle(tileAnimationStyle);
-        mTileAnimationStyle.setOnPreferenceChangeListener(this);
-
-        mTileAnimationDuration = (ListPreference) findPreference(PREF_TILE_ANIM_DURATION);
-        int tileAnimationDuration = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
-        mTileAnimationDuration.setValue(String.valueOf(tileAnimationDuration));
-        updateTileAnimationDurationSummary(tileAnimationDuration);
-        mTileAnimationDuration.setOnPreferenceChangeListener(this);
-
-        mTileAnimationInterpolator = (ListPreference) findPreference(PREF_TILE_ANIM_INTERPOLATOR);
-        int tileAnimationInterpolator = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
-        mTileAnimationInterpolator.setValue(String.valueOf(tileAnimationInterpolator));
-        updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
-        mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
     }
 
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        if (preference == mQuickPulldown) {
-            int  pulldownMode = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                     pulldownMode, UserHandle.USER_CURRENT);
-            updateQuickPulldownSummary( pulldownMode);
-            return true;
-        } else if (preference == mTileAnimationStyle) {
-            int tileAnimationStyle = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_STYLE,
-                    tileAnimationStyle, UserHandle.USER_CURRENT);
-            updateTileAnimationStyleSummary(tileAnimationStyle);
-            updateAnimTileStyle(tileAnimationStyle);
-            return true;
-        } else if (preference == mTileAnimationDuration) {
-            int tileAnimationDuration = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_DURATION,
-                    tileAnimationDuration, UserHandle.USER_CURRENT);
-            updateTileAnimationDurationSummary(tileAnimationDuration);
-            return true;
-       } else if (preference == mTileAnimationInterpolator) {
-            int tileAnimationInterpolator = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_INTERPOLATOR,
-                    tileAnimationInterpolator, UserHandle.USER_CURRENT);
-            updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
-            return true;
-       }
-
         return false;
-    }
-
-    private void updateQuickPulldownSummary(int value) {
-        if (value == 0) {
-            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_disabled));
-        } else if (value == 1) {
-            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_right));
-        } else if (value == 2) {
-            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_left));
-        }
-    }
-
-    private void updateTileAnimationStyleSummary(int tileAnimationStyle) {
-        String prefix = (String) mTileAnimationStyle.getEntries()[mTileAnimationStyle.findIndexOfValue(String
-                .valueOf(tileAnimationStyle))];
-        mTileAnimationStyle.setSummary(getResources().getString(R.string.qs_set_animation_style, prefix));
-    }
-
-    private void updateTileAnimationDurationSummary(int tileAnimationDuration) {
-        String prefix = (String) mTileAnimationDuration.getEntries()[mTileAnimationDuration.findIndexOfValue(String
-                .valueOf(tileAnimationDuration))];
-        mTileAnimationDuration.setSummary(getResources().getString(R.string.qs_set_animation_duration, prefix));
-    }
-
-    private void updateTileAnimationInterpolatorSummary(int tileAnimationInterpolator) {
-        String prefix = (String) mTileAnimationInterpolator.getEntries()[mTileAnimationInterpolator.findIndexOfValue(String
-                .valueOf(tileAnimationInterpolator))];
-        mTileAnimationInterpolator.setSummary(getResources().getString(R.string.qs_set_animation_interpolator, prefix));
-    }
-
-    private void updateAnimTileStyle(int tileAnimationStyle) {
-        if (mTileAnimationDuration != null) {
-            if (tileAnimationStyle == 0) {
-                mTileAnimationDuration.setSelectable(false);
-                mTileAnimationInterpolator.setSelectable(false);
-            } else {
-                mTileAnimationDuration.setSelectable(true);
-                mTileAnimationInterpolator.setSelectable(true);
-            }
-        }
     }
 
     @Override

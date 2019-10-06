@@ -16,43 +16,6 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/brightness_slider_options" >
-
-    <PreferenceCategory
-        android:title="@string/brightness_control_category">
-        <com.aquarios.support.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_brightness"
-            android:title="@string/show_brightness_title"
-            android:summaryOn="@string/show_brightness_summary_on"
-            android:summaryOff="@string/show_brightness_summary_off"
-            android:defaultValue="true" />
-
-       <com.aquarios.support.preferences.SecureSettingSwitchPreference
-            android:key="qs_brightness_position_bottom"
-            android:title="@string/qs_brightness_position_bottom_title"
-            android:summaryOn="@string/brightness_slider_placement_summary_on"
-            android:summaryOff="@string/brightness_slider_placement_summary_off"
-            android:defaultValue="true"
-            android:dependency="qs_show_brightness" />
-
-       <com.aquarios.support.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_auto_brightness"
-            android:title="@string/brightness_icon_title"
-            android:summary="@string/brightness_icon_summary"
-            android:dependency="qs_show_brightness"
-            android:defaultValue="false"/>
-
-       <com.aquarios.support.preferences.SecureSettingSwitchPreference
-            android:key="qs_auto_brightness_right"
-            android:title="@string/show_auto_brightness_right"
-            android:dependency="qs_show_auto_brightness"
-            android:defaultValue="true" />
-
-       <com.aquarios.support.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_brightness_buttons"
-            android:title="@string/show_brightness_buttons"
-            android:dependency="qs_show_brightness"
-            android:defaultValue="true" />
-	</PreferenceCategory>
+    android:title="@string/brightness_control_category" >
 
 </PreferenceScreen>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 AquariOS
+<!-- Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,34 +18,5 @@
     android:title="@string/traffic_title"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-    <com.aquarios.support.preferences.SystemSettingSwitchPreference
-        android:key="network_traffic_state"
-        android:title="@string/network_traffic_state_title"
-        android:summary="@string/network_traffic_state_summary"
-        android:defaultValue="false" />
-
-    <com.aquarios.support.preferences.CustomSeekBarPreference
-        android:key="network_traffic_autohide_threshold"
-        android:title="@string/network_traffic_autohide_threshold_title"
-        android:dependency="network_traffic_state"
-        android:max="10"
-        settings:min="0"
-        settings:units="" />
-
-     <com.aquarios.support.preferences.SystemSettingSwitchPreference
-        android:key="network_traffic_hidearrow"
-        android:title="@string/network_traffic_hidearrow"
-        android:summary="@string/network_traffic_hidearrow_summary"
-        android:dependency="network_traffic_state"
-        android:defaultValue="false" />
-
-    <com.aquarios.support.preferences.SystemSettingListPreference
-        android:key="network_traffic_view_location"
-        android:title="@string/network_traffic_location_title"
-        android:summary="@string/network_traffic_location_summary"
-        android:entries="@array/network_traffic_location_entries"
-        android:entryValues="@array/network_traffic_location_values"
-        android:defaultValue="1" />
 
 </PreferenceScreen>

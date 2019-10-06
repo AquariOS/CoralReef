@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2017 The Dirty Unicorns Project
-     Copyright (C) 2018 AquariOS
+     Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,26 +17,28 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.android.settings.applications.LayoutPreference
+    <com.android.settingslib.widget.LayoutPreference
         android:key="headsup_category"
         android:fragment="com.aquarios.coralreef.fragments.HeadsUp"
         android:layout="@layout/headsup" />
 
-    <com.android.settings.applications.LayoutPreference
+<!-- COMMENT OUT FOR BRING-UP
+    <com.android.settingslib.widget.LayoutPreference
         android:key="led_notifications_category"
         android:layout="@layout/led_notifications"
         android:fragment="com.android.settings.applications.manageapplications.ManageApplications">
         <extra
             android:name="classname"
             android:value="com.android.settings.Settings$NotificationAppListActivity" />
-    </com.android.settings.applications.LayoutPreference>
+    </com.android.settingslib.widget.LayoutPreference> 
+-->
 
-    <com.android.settings.applications.LayoutPreference
+    <com.android.settingslib.widget.LayoutPreference
         android:key="led_battery_category"
         android:fragment="com.aquarios.coralreef.fragments.LedBattery"
         android:layout="@layout/led_battery" />
 
-    <com.android.settings.applications.LayoutPreference
+    <com.android.settingslib.widget.LayoutPreference
         android:key="general_notifications"
         android:fragment="com.aquarios.coralreef.fragments.GeneralNotifications"
         android:layout="@layout/general_notifications" />

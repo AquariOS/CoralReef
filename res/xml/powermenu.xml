@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 AquariOS
+<!-- Copyright (C) 2019 AquariOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,41 +17,5 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/powermenu_title" >
-
-    <PreferenceCategory
-        android:title="@string/global_actions_enable_cat">
-		<com.aquarios.support.preferences.SecureSettingSwitchPreference
-			android:key="reboot_in_power_menu"
-			android:title="@string/powermenu_reboot_title"
-			android:defaultValue="true" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/global_actions_addremove_cat">
-		<com.aquarios.support.preferences.SecureSettingSwitchPreference
-			android:key="advanced_reboot_in_power_menu"
-			android:title="@string/powermenu_advanced_restart_title"
-			android:summary="@string/powermenu_advanced_restart_summary"
-			android:defaultValue="true" />
-
-		<com.aquarios.support.preferences.SecureSettingSwitchPreference
-			android:key="lockdown_in_power_menu"
-			android:title="@string/powermenu_lockdown_title"
-			android:defaultValue="false" />
-
-		<com.aquarios.support.preferences.SecureSettingSwitchPreference
-			android:key="screenshot_in_power_menu"
-			android:title="@string/powermenu_screenshot_title"
-			android:defaultValue="true" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/global_actions_screen_off_cat">
-        <ListPreference
-            android:key="torch_power_button_gesture"
-            android:title="@string/torch_power_button_gesture_title"
-            android:entries="@array/torch_power_button_gesture_entries"
-            android:entryValues="@array/torch_power_button_gesture_values" />
-    </PreferenceCategory>
 
 </PreferenceScreen>
