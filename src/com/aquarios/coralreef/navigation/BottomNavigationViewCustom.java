@@ -89,6 +89,8 @@ public class BottomNavigationViewCustom extends FrameLayout {
     private static final int[] CHECKED_STATE_SET = {android.R.attr.state_checked};
     private static final int[] DISABLED_STATE_SET = {-android.R.attr.state_enabled};
 
+    public static final int MAX_ITEM_COUNT = 5;
+
     private final MenuBuilder mMenu;
     private final BottomNavigationMenuCustom mMenuView;
     private final BottomNavigationPresenter mPresenter = new BottomNavigationPresenter();
@@ -109,8 +111,8 @@ public class BottomNavigationViewCustom extends FrameLayout {
 
         // Create the menu
         mMenu = new BottomNavigationMenu(context);
-
         mMenuView = new BottomNavigationMenuCustom(context);
+
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
@@ -205,7 +207,7 @@ public class BottomNavigationViewCustom extends FrameLayout {
      * @return The maximum number of items that can be shown in BottomNavigationView.
      */
     public int getMaxItemCount() {
-        return BottomNavigationMenu.MAX_ITEM_COUNT;
+        return BottomNavigationViewCustom.MAX_ITEM_COUNT;
     }
 
     /**

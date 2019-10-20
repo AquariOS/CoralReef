@@ -89,7 +89,7 @@ public class BottomNavigationMenuCustom extends ViewGroup implements MenuView {
                 }
             }
         };
-        mTempChildWidths = new int[BottomNavigationMenu.MAX_ITEM_COUNT];
+        mTempChildWidths = new int[BottomNavigationViewCustom.MAX_ITEM_COUNT];
     }
 
     @Override
