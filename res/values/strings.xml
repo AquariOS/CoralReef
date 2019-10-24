@@ -291,4 +291,8 @@
     <string name="themer_title">Themer</string>
     <string name="themer_summary">Browse and select installed themes</string>
 
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_enable">Music Visualizer</string>
+    <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
+
 </resources>
