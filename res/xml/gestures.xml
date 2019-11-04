@@ -92,4 +92,10 @@
         android:fragment="com.android.settings.gestures.GlobalActionsPanelSettings"
         settings:controller="com.android.settings.gestures.GlobalActionsPanelPreferenceController" />
 
+    <Preference
+        android:key="gesture_doubletap_lockscreen_summary"
+        android:title="@string/doubletap_lockscreen_screen_title"
+        android:fragment="com.aquarios.coralreef.helpers.DoubleTapLockscreenSettings"
+        settings:controller="com.aquarios.coralreef.helpers.DoubleTapLockscreenPreferenceHelper" />
+
 </PreferenceScreen>
