@@ -119,6 +119,11 @@
     <string name="powermenu_flashlight_title">Flashlight</string>
     <string name="powermenu_screenrecord_title">Screenrecord</string>
 
+    <!-- Double-tap to sleep on lockscreen -->
+    <string name="doubletap_lockscreen_screen_title">Switch screen off</string>
+    <string name="doubletap_lockscreen_title">Double-tap to sleep on lockscreen</string>
+    <string name="doubletap_lockscreen_summary">Double-tap on empty areas of lockscreen to turn screen off</string>
+
     <!-- Statusbar Clock options -->
     <string name="status_bar_clock_title">Status bar clock</string>
     <string name="status_bar_clock_summary_on">Showing status bar clock</string>
@@ -164,7 +169,7 @@
     <string name="torch_power_button_gesture_dt_toast">Jump to camera gesture is now disabled</string>
     <string name="torch_power_button_gesture_lp">Long-press power button</string>
 
-    <!--Volume Rocker -->
+    <!-- Volume Rocker -->
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
     <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
     <string name="volume_rocker_music_controls_title">Track control</string>
@@ -228,5 +233,5 @@
     <string name="action_volume_panel">Volume panel</string>  
     <string name="action_screen_off">Screen off</string>
     <string name="action_screenshot">Screenshot</string>
-  
+
 </resources>
