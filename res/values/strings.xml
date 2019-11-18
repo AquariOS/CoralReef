@@ -229,4 +229,7 @@
     <string name="action_screen_off">Screen off</string>
     <string name="action_screenshot">Screenshot</string>
   
+    <!-- Configurable lockscreen media blur strength -->
+    <string name="lockscreen_media_blur_title">Lockscreen media art blur level</string>
+
 </resources>
