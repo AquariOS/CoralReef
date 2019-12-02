@@ -42,7 +42,7 @@ public class LockScreenTab extends SettingsPreferenceFragment implements Prefere
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.lock_screen_tab);
+        addPreferencesFromResource(R.xml.lockscreen_tab);
 
         mLockscreenDateTime = (LayoutPreference) findPreference(LOCKSCREEN_DATE_AND_TIME_CATEGORY);
         if (!getResources().getBoolean(R.bool.lockclocks_category_isVisible)) {
@@ -54,7 +54,7 @@ public class LockScreenTab extends SettingsPreferenceFragment implements Prefere
         } 
         mLockscreenWeather = (LayoutPreference) findPreference(LOCKSCREEN_WEATHER);
         if (!getResources().getBoolean(R.bool.lockscreen_weather_category_isVisible)) {
-        mLockscreenWeather.setTitle(R.string.lock_screen_weather_settings_title);
+        mLockscreenWeather.setTitle(R.string.lockscreen_weather_settings_title);
         } 
     }
 

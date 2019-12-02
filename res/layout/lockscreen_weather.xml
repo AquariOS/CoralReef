@@ -48,7 +48,7 @@
             android:layout_marginStart="22dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/lock_screen_weather_settings_title" />
+            android:text="@string/lockscreen_weather_settings_title" />
 
         <TextView
             android:id="@+id/textView2"
@@ -58,7 +58,7 @@
             android:layout_marginBottom="22dip"
             android:layout_below="@+id/textView1"
             android:textSize="13sp"
-            android:text="@string/lock_screen_weather_settings_summary" />
+            android:text="@string/lockscreen_weather_settings_summary" />
 
     </RelativeLayout>
 

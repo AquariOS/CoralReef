@@ -15,7 +15,10 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/empty_tab_title" >
 
     <com.android.settingslib.widget.LayoutPreference
         android:key="powermenu_category"
@@ -24,7 +27,7 @@
 
     <com.android.settingslib.widget.LayoutPreference
 		android:key="navigationbar_settings"
-		android:fragment="com.android.settings.smartnav.NavigationBarSettings"
+		android:fragment="com.android.settings.gestures.SystemNavigationPreferenceController"
         android:layout="@layout/navigationbar" />
 
     <com.android.settingslib.widget.LayoutPreference

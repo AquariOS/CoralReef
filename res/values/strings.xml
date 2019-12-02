@@ -18,7 +18,7 @@
 
 <!-- BOTTOM NAVIGATION -->
     <string name="bottom_nav_buttons_title">Buttons</string>
-    <string name="bottom_nav_lock_screen_title">Lock Screen</string>
+    <string name="bottom_nav_lockscreen_title">Lock Screen</string>
     <string name="bottom_nav_status_bar_title">Status Bar</string>
     <string name="bottom_nav_notifications_title">Notifications</string>
     <string name="bottom_nav_system_misc_title">System/Misc</string>
@@ -42,9 +42,9 @@
     <string name="lockscreen_display_title">General options</string>
     <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
 	    <string name="lockscreen_display">Display</string>
-	    <string name="lock_screen_security_category">Security</string>
-    <string name="lock_screen_weather_settings_title">Weather options</string>
-    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
+	    <string name="lockscreen_security_category">Security</string>
+    <string name="lockscreen_weather_settings_title">Weather options</string>
+    <string name="lockscreen_weather_settings_summary">Configure lockscreen weather</string>
     <!-- Status bar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize how battery is displayed</string>
@@ -103,5 +103,8 @@
     <!-- Empty Category -->
     <string name="empty_category_title">No extra features yet...</string>
     <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
+
+    <!-- Empty Tab -->
+    <string name="empty_tab_title"></string>
 
 </resources>

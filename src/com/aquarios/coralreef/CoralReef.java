@@ -77,7 +77,7 @@ public class CoralReef extends SettingsPreferenceFragment {
                     case R.id.buttons_tab:
                         viewPager.setCurrentItem(0);
                         return true;
-                    case R.id.lock_screen_tab:
+                    case R.id.lockscreen_tab:
                         viewPager.setCurrentItem(1);
                         return true;
                     case R.id.status_bar_tab:
@@ -152,7 +152,7 @@ public class CoralReef extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
                 getString(R.string.bottom_nav_buttons_title),
-                getString(R.string.bottom_nav_lock_screen_title),
+                getString(R.string.bottom_nav_lockscreen_title),
                 getString(R.string.bottom_nav_status_bar_title),
                 getString(R.string.bottom_nav_notifications_title),
                 getString(R.string.bottom_nav_system_misc_title)};

@@ -25,9 +25,9 @@
         app:showAsAction="ifRoom|withText"/>
 
     <item
-        android:id="@+id/lock_screen_tab"
-        android:icon="@drawable/bottomnav_lock_screen"
-        android:title="@string/bottom_nav_lock_screen_title"
+        android:id="@+id/lockscreen_tab"
+        android:icon="@drawable/bottomnav_lockscreen"
+        android:title="@string/bottom_nav_lockscreen_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
