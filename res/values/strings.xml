@@ -488,4 +488,8 @@
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
 
+    <!-- Suppress notification sounds while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Notification sound while screen is on</string>
+    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when the screen is on</string>
+
 </resources>
