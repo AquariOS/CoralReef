@@ -476,5 +476,7 @@
     <string name="navbar_gestures_summary">Choose buttons or gestures to navigate your device</string>
     <string name="navigation_tuner_title">Navigation Tuner</string>
     <string name="navigation_tuner_summary">Further adjust more elements of system navigation</string>
+    <string name="navigation_bar_menu_arrow_keys_title">Arrow keys while typing</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">Display left and right cursor buttons while typing</string>
 
 </resources>
