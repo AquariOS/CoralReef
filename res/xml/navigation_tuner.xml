@@ -32,4 +32,10 @@
             android:targetClass="com.android.systemui.tuner.NavBarActivity" />
     </Preference>
 
+    <com.aquarios.support.preferences.SystemSettingSwitchPreference
+        android:key="navigation_bar_menu_arrow_keys"
+        android:title="@string/navigation_bar_menu_arrow_keys_title"
+        android:summary="@string/navigation_bar_menu_arrow_keys_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>
