@@ -24,6 +24,11 @@
         android:fragment="com.android.settings.gestures.AssistGestureSettings"
         settings:controller="com.android.settings.gestures.AssistGestureSettingsPreferenceController" />
 
+    <com.google.android.settings.aware.AwareSettingsDialogPreference
+        android:key="aware_settings"
+        android:title="@string/aware_settings_title"
+        android:summary="@string/aware_settings_summary" />
+
     <Preference
         android:key="gesture_swipe_down_fingerprint_input_summary"
         android:title="@string/fingerprint_swipe_for_notifications_title"

@@ -19,6 +19,7 @@ package com.aquarios.coralreef.fragments;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
@@ -41,6 +42,7 @@ public class GestureOptions extends GestureSettings implements
 
     private static final String TAG = "Gestures";
 
+    // AOSP
     private static final String KEY_ASSIST = "gesture_assist_input_summary";
     private static final String KEY_SWIPE_DOWN = "gesture_swipe_down_fingerprint_input_summary";
     private static final String KEY_DOUBLE_TAP_POWER = "gesture_double_tap_power_input_summary";
@@ -51,6 +53,8 @@ public class GestureOptions extends GestureSettings implements
     private static final String KEY_PICK_UP = "gesture_pick_up_input_summary";
     private static final String KEY_PREVENT_RINGING = "gesture_prevent_ringing_summary";
     private static final String KEY_GESTURE_GLOBAL_ACTIONS_PANEL = "gesture_global_actions_panel_summary";
+    // Custom
+    private static final String AWARE_CATEGORY = "aware_settings";
 
     private ContentResolver mContentResolver;
     private SwitchPreference mDoubleTapStatusBarToSleep;
@@ -64,6 +68,16 @@ public class GestureOptions extends GestureSettings implements
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         super.onCreatePreferences(savedInstanceState, rootKey);
+
+        Preference Aware = findPreference(AWARE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_aware)) {
+            getPreferenceScreen().removePreference(Aware);
+        } else {
+            if (!SystemProperties.getBoolean(
+                    "ro.vendor.aware_available", false)) {
+                getPreferenceScreen().removePreference(Aware);
+            }
+        }
     }
 
     @Override
