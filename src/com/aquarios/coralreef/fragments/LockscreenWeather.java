@@ -36,19 +36,16 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.aquarios.support.colorpicker.ColorPickerPreference;
-import com.aquarios.support.preferences.SystemSettingSwitchPreference;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class LedBattery extends SettingsPreferenceFragment implements
+public class LockscreenWeather extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.led_battery);
+        addPreferencesFromResource(R.xml.lockscreen_weather);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -67,7 +64,7 @@ public class LedBattery extends SettingsPreferenceFragment implements
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.led_battery;
+                    sir.xmlResId = R.xml.lockscreen_weather;
                     result.add(sir);
                     return result;
                 }

@@ -19,34 +19,5 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/active_edge_title" >
-<!--
-    <com.android.settings.widget.VideoPreference
-        android:key="squeeze_video"
-        app:animation="@raw/assist_gesture_settings_animation"
-        app:preview="@drawable/gesture_assist" />
 
-    <com.android.settings.smartnav.ActionPreference
-        android:key="squeeze_selection_smart_action"
-        android:title="@string/active_edge_actions_title"/>
-
-    <com.android.settings.smartnav.ActionPreference
-        android:key="long_squeeze_selection_smart_action"
-        android:title="@string/active_edge_long_squeeze_actions_title"/>
-
-    <com.aquarios.support.preferences.CustomSeekBarPreference
-        android:key="gesture_assist_sensitivity"
-        android:title="@string/active_edge_sensitivity_title"
-        android:max="8"
-        settings:min="0"
-        settings:units="" />
-
-    <SwitchPreference
-        android:key="gesture_assist_wake"
-        android:title="@string/active_edge_wake_title"
-        android:summary="@string/active_edge_wake_summary"
-        android:defaultValue="true" />
-
-    <com.android.settingslib.widget.FooterPreference
-        android:title="@string/active_edge_footer_info" />
--->
 </PreferenceScreen>

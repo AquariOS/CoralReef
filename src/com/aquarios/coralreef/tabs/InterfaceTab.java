@@ -28,36 +28,36 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
-public class LockScreenTab extends SettingsPreferenceFragment implements
+public class InterfaceTab extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
-    private static final String LOCKSCREEN_DATE_AND_TIME_CATEGORY = "lockscreen_date_and_time_category";
-    private static final String LOCKSCREEN_DISPLAY_CATEGORY = "lockscreen_display_category";
-    private static final String LOCKSCREEN_WEATHER_CATEGORY = "lockscreen_weather";
+    private static final String QUICK_SETTINGS_CATEGORY = "quick_settings_category";
+    private static final String HEADSUP_CATEGORY = "headsup_category";
+    private static final String RECENTS_CATEGORY = "recents_category";
 
-    private LayoutPreference mLockscreenDateTime;
-    private LayoutPreference mLockscreenDisplay;
-    private LayoutPreference mLockscreenWeather;
+    private LayoutPreference mQuickSettings;
+    private LayoutPreference mHeadsup;
+    private LayoutPreference mRecents;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.lock_screen_tab);
+        addPreferencesFromResource(R.xml.interface_tab);
 
-        mLockscreenDateTime = (LayoutPreference) findPreference(LOCKSCREEN_DATE_AND_TIME_CATEGORY);
-        if (!getResources().getBoolean(R.bool.lockclocks_category_isVisible)) {
-        mLockscreenDateTime.setTitle(R.string.lockscreen_date_and_time_title);
-        } 
+        mQuickSettings = (LayoutPreference) findPreference(QUICK_SETTINGS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.quick_settings_category_isVisible)) {
+        mQuickSettings.setTitle(R.string.quick_settings_title);
+        }
 
-        mLockscreenDisplay = (LayoutPreference) findPreference(LOCKSCREEN_DISPLAY_CATEGORY);
-        if (!getResources().getBoolean(R.bool.lockscreen_display_category_isVisible)) {
-        mLockscreenDisplay.setTitle(R.string.lockscreen_display_title);
-        } 
+        mHeadsup = (LayoutPreference) findPreference(HEADSUP_CATEGORY);
+        if (!getResources().getBoolean(R.bool.headsup_category_isVisible)) {
+        mQuickSettings.setTitle(R.string.headsup_title);
+        }
 
-        mLockscreenWeather = (LayoutPreference) findPreference(LOCKSCREEN_WEATHER_CATEGORY);
-        if (!getResources().getBoolean(R.bool.lockscreen_weather_category_isVisible)) {
-        mLockscreenWeather.setTitle(R.string.lock_screen_weather_title);
-        } 
+        mRecents = (LayoutPreference) findPreference(RECENTS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.recents_category_isVisible)) {
+        mQuickSettings.setTitle(R.string.recents_title);
+        }
     }
 
     @Override

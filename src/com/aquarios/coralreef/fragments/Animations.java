@@ -39,13 +39,13 @@ import com.android.internal.logging.nano.MetricsProto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AudioDisplayOptions extends SettingsPreferenceFragment implements
+public class Animations extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.audio_display_options);
+        addPreferencesFromResource(R.xml.animations);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -64,7 +64,7 @@ public class AudioDisplayOptions extends SettingsPreferenceFragment implements
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.audio_display_options;
+                    sir.xmlResId = R.xml.animations;
                     result.add(sir);
                     return result;
                 }

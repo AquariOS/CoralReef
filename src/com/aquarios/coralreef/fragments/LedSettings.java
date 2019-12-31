@@ -36,16 +36,19 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.aquarios.support.colorpicker.ColorPickerPreference;
+import com.aquarios.support.preferences.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class LedNotifications extends SettingsPreferenceFragment implements
+public class LedSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.led_notifications);
+        addPreferencesFromResource(R.xml.led_settings);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -64,7 +67,7 @@ public class LedNotifications extends SettingsPreferenceFragment implements
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.led_notifications;
+                    sir.xmlResId = R.xml.led_settings;
                     result.add(sir);
                     return result;
                 }

@@ -33,11 +33,6 @@
         android:layout="@layout/traffic" />
 
     <com.android.settingslib.widget.LayoutPreference
-        android:key="quick_settings_category"
-        android:fragment="com.aquarios.coralreef.fragments.QuickSettings"
-        android:layout="@layout/quicksettings" />
-
-    <com.android.settingslib.widget.LayoutPreference
         android:key="status_bar_items_category"
         android:fragment="com.aquarios.coralreef.fragments.StatusBarItems"
         android:layout="@layout/status_bar_items" />

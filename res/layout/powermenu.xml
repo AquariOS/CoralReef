@@ -16,7 +16,6 @@
 -->
 
 <LinearLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="112dp"
@@ -28,7 +27,7 @@
         android:layout_height="60dp"
         android:background="@color/preference_background_color">
 
-        <com.aquarios.coralreef.helpers.WhiteAccentHelperImageView
+        <ImageView
             android:id="@+id/powermenu_imageview"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -42,7 +41,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
@@ -52,12 +51,12 @@
             android:text="@string/powermenu_title" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:layout_marginBottom="22dip"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/title"
             android:textSize="13sp"
             android:text="@string/powermenu_summary" />
 

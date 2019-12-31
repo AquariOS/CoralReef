@@ -27,13 +27,6 @@
         android:layout_height="1dp"
         android:background="@color/preference_background_color">
 
-    <!--ImageView
-            android:id="@+id/lockscreen_weather_imageview"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/dt_lockscreen_weather"
-            android:scaleType="center"/-->
-
     </LinearLayout>
 
     <RelativeLayout
@@ -41,24 +34,24 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             android:layout_marginStart="22dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/lock_screen_weather_settings_title" />
+            android:text="@string/lock_screen_weather_title" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:layout_marginBottom="22dip"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/title"
             android:textSize="13sp"
-            android:text="@string/lock_screen_weather_settings_summary" />
+            android:text="@string/lock_screen_weather_summary" />
 
     </RelativeLayout>
 

@@ -18,21 +18,14 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="112dp"
+    android:layout_height="22dp"
     android:orientation="vertical"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="22dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="1dp"
         android:background="@color/preference_background_color">
-
-        <com.aquarios.coralreef.helpers.WhiteAccentHelperImageView
-            android:id="@+id/recents_imageview"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:src="@drawable/dolphin_icon_vector"
-            android:scaleType="center"/>
 
     </LinearLayout>
 
@@ -41,7 +34,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
@@ -51,12 +44,12 @@
             android:text="@string/recents_title" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:layout_marginBottom="22dip"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/title"
             android:textSize="13sp"
             android:text="@string/recents_summary" />
 

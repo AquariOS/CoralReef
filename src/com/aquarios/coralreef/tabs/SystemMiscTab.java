@@ -31,52 +31,56 @@ import com.android.internal.logging.nano.MetricsProto;
 
 public class SystemMiscTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private static final String RECENTS_CATEGORY = "recents_category";
-    private static final String AUDIO_DISPLAY_OPTIONS_CATEGORY = "audio_display_options";
+    private static final String ANIMATIONS_CATEGORY = "animations_category";
+    private static final String GENERAL_NOTIFICATIONS = "general_notifications";
     private static final String MISCELLANEOUS_CATEGORY = "miscellaneous_category";
     private static final String CHANGELOG_CATEGORY = "changelog";
-    private static final String DEVICE_CATEGORY = "device_extras_category";
+    private static final String LED_SETTINGS_CATEGORY = "led_settings";
 
-    private LayoutPreference mRecents;
+    private LayoutPreference mAnimations;
+    private LayoutPreference mGeneral;
     private LayoutPreference mMiscellaneous;
     private LayoutPreference mChangelog;
-    private LayoutPreference mAudioDisplay;
-    private LayoutPreference mDeviceExtras;
+    private LayoutPreference mLedSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_misc_tab);
 
-        mRecents = (LayoutPreference) findPreference(RECENTS_CATEGORY);
-        if (!getResources().getBoolean(R.bool.recents_category_isVisible)) {
-        mRecents.setTitle(R.string.recents_title);
-        } 
+        mAnimations = (LayoutPreference) findPreference(ANIMATIONS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.animations_category_isVisible)) {
+        mAnimations.setTitle(R.string.animations_category_title);
+        }
+
+        mGeneral = (LayoutPreference) findPreference(GENERAL_NOTIFICATIONS);
+        if (!getResources().getBoolean(R.bool.general_notifications_category_isVisible)) {
+        mGeneral.setTitle(R.string.general_notifications_title);
+        }
 
         mMiscellaneous = (LayoutPreference) findPreference(MISCELLANEOUS_CATEGORY);
         if (!getResources().getBoolean(R.bool.miscellaneous_category_isVisible)) {
         mMiscellaneous.setTitle(R.string.miscellaneous_title);
-        } 
+        }
 
         mChangelog = (LayoutPreference) findPreference(CHANGELOG_CATEGORY);
         if (!getResources().getBoolean(R.bool.changelog_category_isVisible)) {
         mChangelog.setTitle(R.string.changelog_title);
-        } 
-
-        mAudioDisplay = (LayoutPreference) findPreference(AUDIO_DISPLAY_OPTIONS_CATEGORY);
-        if (!getResources().getBoolean(R.bool.audio_display_category_isVisible)) {
-        mAudioDisplay.setTitle(R.string.audio_display_options_title);
-        } 
-
-        mDeviceExtras = (LayoutPreference) findPreference(DEVICE_CATEGORY);
-        if // COMMENTED OUT FOR BRING-UP
-          //((getResources().getInteger(com.android.internal.R.integer.has_device_extras) == 0) &&
-            (!getResources().getBoolean(R.bool.device_extras_category_isVisible)) {
-            PreferenceScreen prefScreen = getPreferenceScreen();
-            prefScreen.removePreference(mDeviceExtras);
-        } else {
-            mDeviceExtras.setTitle(R.string.hw_keys_title);
         }
+
+        mLedSettings = (LayoutPreference) findPreference(LED_SETTINGS_CATEGORY);
+        if (!getResources().getBoolean(R.bool.led_settings_category_isVisible)) {
+        mLedSettings.setTitle(R.string.led_settings_title);
+        }
+
+/* COMMENT OUT UNTIL SUPPORT IS ADDED
+        // Only show if device supports either notification or battery LED
+        Preference mLedSettings = findPreference(LED_SETTINGS_CATEGORY);
+        if ((!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) || 
+            (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed))) {
+            //Make sure Notification LED category is also visible with the following check
+            getPreferenceScreen().removePreference(mLedSettings);
+        }*/
     }
 
     @Override
