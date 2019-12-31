@@ -20,36 +20,34 @@
 		 Once you add a new feature, check to make sure the category
 		 is already set visible. HIDDEN="false", VISIBLE="true". -->
 		
-    <!-- Buttons tab -->
+    <!-- Actions tab -->
     <bool name="powermenu_category_isVisible">true</bool>
-    <bool name="navigationbar_category_isVisible">false</bool>
-    <bool name="volumerocker_category_isVisible">false</bool>
-    <bool name="hwkeys_category_isVisible">false</bool>
+    <bool name="navigationbar_category_isVisible">true</bool>
+    <bool name="gestures_category_isVisible">true</bool>
+    <bool name="volumerocker_category_isVisible">true</bool>
+    <bool name="hwkeys_category_isVisible">true</bool>
 
-    <!-- LockScreen tab -->
-    <bool name="lockclocks_category_isVisible">true</bool>
-    <bool name="lockscreen_display_category_isVisible">false</bool>
-    <bool name="lockscreen_weather_category_isVisible">false</bool>
-
-    <!-- Notifications tab -->
+    <!-- Interface tab -->
     <bool name="headsup_category_isVisible">true</bool>
-    <bool name="led_notifications_category_isVisible">false</bool>
-    <bool name="led_battery_category_isVisible">false</bool>
-    <bool name="general_notifications_category_isVisible">false</bool>
+    <bool name="recents_category_isVisible">true</bool>
+    <bool name="quick_settings_category_isVisible">true</bool>
 
     <!-- StatusBar tab -->
     <bool name="battery_category_isVisible">true</bool>
-    <bool name="clock_category_isVisible">false</bool>
-    <bool name="traffic_category_isVisible">false</bool>
-    <bool name="qs_settings_category_isVisible">false</bool>
-    <bool name="statusbar_icon_blacklist_category_isVisible">false</bool>
+    <bool name="clock_category_isVisible">true</bool>
+    <bool name="traffic_category_isVisible">true</bool>
+    <bool name="statusbar_icon_blacklist_category_isVisible">true</bool>
+
+    <!-- LockScreen tab -->
+    <bool name="lockclocks_category_isVisible">true</bool>
+    <bool name="lockscreen_display_category_isVisible">true</bool>
+    <bool name="lockscreen_weather_category_isVisible">true</bool>
 
     <!-- System/Misc tab -->
-    <bool name="recents_category_isVisible">true</bool>
-    <bool name="gestures_category_isVisible">false</bool>
-    <bool name="miscellaneous_category_isVisible">false</bool>
-    <bool name="changelog_category_isVisible">false</bool>
-    <bool name="audio_display_category_isVisible">false</bool>
-    <bool name="device_extras_category_isVisible">false</bool>
+    <bool name="animations_category_isVisible">true</bool>
+    <bool name="general_notifications_category_isVisible">true</bool>
+    <bool name="miscellaneous_category_isVisible">true</bool>
+    <bool name="changelog_category_isVisible">true</bool>
+    <bool name="led_settings_category_isVisible">true</bool>
 
 </resources>

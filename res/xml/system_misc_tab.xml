@@ -18,14 +18,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.android.settingslib.widget.LayoutPreference
-        android:key="recents_category"
-        android:fragment="com.aquarios.coralreef.fragments.Recents"
-        android:layout="@layout/recents" />
+        android:key="animations_category"
+        android:fragment="com.aquarios.coralreef.fragments.Animations"
+        android:layout="@layout/animations" />
 
     <com.android.settingslib.widget.LayoutPreference
-        android:key="audio_display_options"
-        android:fragment="com.aquarios.coralreef.fragments.AudioDisplayOptions"
-        android:layout="@layout/audio_display_options" />
+        android:key="general_notifications"
+        android:fragment="com.aquarios.coralreef.fragments.GeneralNotifications"
+        android:layout="@layout/general_notifications" />
 
     <com.android.settingslib.widget.LayoutPreference
         android:key="miscellaneous_category"
@@ -38,12 +38,8 @@
         android:layout="@layout/changelog" />
 
     <com.android.settingslib.widget.LayoutPreference
-        android:key="device_extras_category"
-        android:persistent="false"
-        android:layout="@layout/device_extras" >
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="org.omnirom.device"
-            android:targetClass="org.omnirom.device.DeviceSettings" />
-    </com.android.settingslib.widget.LayoutPreference>
+        android:key="led_settings"
+        android:fragment="com.aquarios.coralreef.fragments.LEDSettings"
+        android:layout="@layout/led_settings" />
 
 </PreferenceScreen>

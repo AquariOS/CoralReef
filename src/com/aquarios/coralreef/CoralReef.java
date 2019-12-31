@@ -35,10 +35,10 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.aquarios.coralreef.navigation.BottomNavigationViewCustom;
-import com.aquarios.coralreef.tabs.ButtonsTab;
-import com.aquarios.coralreef.tabs.LockScreenTab;
+import com.aquarios.coralreef.tabs.ActionsTab;
+import com.aquarios.coralreef.tabs.InterfaceTab;
 import com.aquarios.coralreef.tabs.StatusBarTab;
-import com.aquarios.coralreef.tabs.NotificationsTab;
+import com.aquarios.coralreef.tabs.LockScreenTab;
 import com.aquarios.coralreef.tabs.SystemMiscTab;
 
 public class CoralReef extends SettingsPreferenceFragment {
@@ -74,16 +74,16 @@ public class CoralReef extends SettingsPreferenceFragment {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.buttons_tab:
+                    case R.id.actions_tab:
                         viewPager.setCurrentItem(0);
                         return true;
-                    case R.id.lock_screen_tab:
+                    case R.id.interface_tab:
                         viewPager.setCurrentItem(1);
                         return true;
                     case R.id.status_bar_tab:
                         viewPager.setCurrentItem(2);
                         return true;
-                    case R.id.notifications_tab:
+                    case R.id.lock_screen_tab:
                         viewPager.setCurrentItem(3);
                         return true;
                     case R.id.system_misc_tab:
@@ -125,10 +125,10 @@ public class CoralReef extends SettingsPreferenceFragment {
 
         public PagerAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new ButtonsTab();
-            frags[1] = new LockScreenTab();
+            frags[0] = new ActionsTab();
+            frags[1] = new InterfaceTab();
             frags[2] = new StatusBarTab();
-            frags[3] = new NotificationsTab();
+            frags[3] = new LockScreenTab();
             frags[4] = new SystemMiscTab();
         }
 
@@ -151,10 +151,10 @@ public class CoralReef extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                getString(R.string.bottom_nav_buttons_title),
-                getString(R.string.bottom_nav_lock_screen_title),
+                getString(R.string.bottom_nav_actions_title),
+                getString(R.string.bottom_nav_interface_title),
                 getString(R.string.bottom_nav_status_bar_title),
-                getString(R.string.bottom_nav_notifications_title),
+                getString(R.string.bottom_nav_lock_screen_title),
                 getString(R.string.bottom_nav_system_misc_title)};
 
         return titleString;

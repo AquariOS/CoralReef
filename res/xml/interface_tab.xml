@@ -18,29 +18,18 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.android.settingslib.widget.LayoutPreference
+        android:key="quick_settings_category"
+        android:fragment="com.aquarios.coralreef.fragments.QuickSettings"
+        android:layout="@layout/quick_settings" />
+
+    <com.android.settingslib.widget.LayoutPreference
         android:key="headsup_category"
         android:fragment="com.aquarios.coralreef.fragments.HeadsUp"
         android:layout="@layout/headsup" />
 
-<!-- COMMENT OUT FOR BRING-UP
     <com.android.settingslib.widget.LayoutPreference
-        android:key="led_notifications_category"
-        android:layout="@layout/led_notifications"
-        android:fragment="com.android.settings.applications.manageapplications.ManageApplications">
-        <extra
-            android:name="classname"
-            android:value="com.android.settings.Settings$NotificationAppListActivity" />
-    </com.android.settingslib.widget.LayoutPreference> 
--->
-
-    <com.android.settingslib.widget.LayoutPreference
-        android:key="led_battery_category"
-        android:fragment="com.aquarios.coralreef.fragments.LedBattery"
-        android:layout="@layout/led_battery" />
-
-    <com.android.settingslib.widget.LayoutPreference
-        android:key="general_notifications"
-        android:fragment="com.aquarios.coralreef.fragments.GeneralNotifications"
-        android:layout="@layout/general_notifications" />
+        android:key="recents_category"
+        android:fragment="com.aquarios.coralreef.fragments.Recents"
+        android:layout="@layout/recents" />
 
 </PreferenceScreen>

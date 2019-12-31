@@ -20,96 +20,81 @@
     <!-- AquariOS -->
     <string name="coralreef_title">CoralReef</string>
     <string name="coralreef_summary">Dive deep into the custom waters</string>
-    <!-- Bottom Navigation Tabs -->
-    <string name="bottom_nav_buttons_title">Actions</string>
-    <string name="bottom_nav_lock_screen_title">Lockscreen</string>
+
+    <!-- Bottom Tabs -->
+    <string name="bottom_nav_actions_title">Actions</string>
+    <string name="bottom_nav_interface_title">Interface</string>
     <string name="bottom_nav_status_bar_title">Statusbar</string>
-    <string name="bottom_nav_notifications_title">Notifications</string>
+    <string name="bottom_nav_lock_screen_title">Lockscreen</string>
     <string name="bottom_nav_system_misc_title">System/Misc</string>
-    <!-- General/Misc -->
-    <string name="empty_category_title">No extra features yet...</string>
-    <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
-    <string name="dummy_string"></string>
 
 <!-- CATEGORIES -->
-    <!-- Buttons -->
-    <string name="hw_keys_title">Buttons</string>
-    <string name="hw_keys_summary">Configure hardware keys tap assignments and actions</string>
-    <string name="navigationbar_title">Navigation</string>
-    <string name="navigationbar_summary">Configure system navigation options</string>
+    <!-- Actions -->
     <string name="powermenu_title">Power button</string>
     <string name="powermenu_summary">Configure additional options &amp; actions</string>
-	    <string name="global_actions_enable_cat">Enable customization</string>
-		<string name="global_actions_addremove_cat">Add/remove power menu items</string>
-	    <string name="global_actions_screen_off_cat">Screen-off actions</string>
+    <string name="navigationbar_title">Navigation</string>
+    <string name="navigationbar_summary">Configure system navigation options</string>
+    <string name="gesture_options_title">Custom gestures</string>
+    <string name="gesture_options_summary">Enable/disable device specific user actions</string>
     <string name="volume_rocker_title">Volume rocker</string>
     <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
+    <string name="hw_keys_title">Hardware keys</string>
+    <string name="hw_keys_summary">Assign actions for physical navigation buttons</string>
 
-    <!-- Lockscreen -->
-    <string name="lockscreen_date_and_time_title">Lockscreen clocks</string>
-    <string name="lockscreen_date_and_time_summary">Customize your view of date &amp; time on the lockscreen</string>
-    <string name="lockscreen_display_title">General options</string>
-    <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
-	    <string name="lockscreen_display">Display</string>
-	    <string name="lock_screen_security_category">Security</string>
-    <string name="lock_screen_weather_settings_title">Weather options</string>
-    <string name="lock_screen_weather_settings_summary">Configure lockscreen weather</string>
+    <!-- Interface -->
+    <string name="quick_settings_title">Quick settings</string>
+    <string name="quick_settings_summary">Customize the overall view &amp; functionality</string>
+    <string name="headsup_title">Heads-up</string>
+    <string name="headsup_summary">Configure heads-up options</string>
+    <string name="recents_title">Recents</string>
+    <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
 
     <!-- Statusbar -->
     <string name="battery_options_title">Battery options</string>
     <string name="battery_options_summary">Customize how battery is displayed</string>
     <string name="clock_options_title">Clock options</string>
     <string name="clock_options_summary">Set view options of time &amp; date in statusbar</string>
-    <string name="status_bar_items_title">Statusbar items</string>
-    <string name="status_bar_items_summary">Configure statusbar indicators</string>
     <string name="traffic_title">Network indicator</string>
     <string name="traffic_summary">Enable &amp; configure network indicator in statusbar</string>
-    <string name="quicksettings_title">Quick settings</string>
-    <string name="quicksettings_summary">Customize the overall view &amp; functionality</string>
-	    <string name="appearance_category">Appearance</string>
-        <string name="behavior_category">Behavior</string>
-        <string name="brightness_control_category">Brightness control</string>
-        <string name="tile_panel_appearance_category">Tile panel appearance</string>
-        <string name="qs_panel_layout_category">QS panel layout</string>
-        <string name="tile_panel_view_category">Tile panel view</string>
-        <string name="category_qstiles_portrait">Adjust tile layout for portait view</string>
-        <string name="category_qstiles_landscape">Adjust tile layout for landscape view</string>
+    <string name="status_bar_items_title">Statusbar items</string>
+    <string name="status_bar_items_summary">Configure statusbar indicators</string>
 
-    <!-- Notifications -->
-    <string name="general_notifications_title">General notifications</string>
-    <string name="led_notifications_title">LED notifications</string>
-    <string name="led_notifications_summary">Enable/disable the LED light. Configure colors &amp; behavior</string>
-    <string name="led_battery_title">Battery LED</string>
-    <string name="led_battery_summary">Configure advanced battery LED options</string>
-    <string name="headsup_title">Heads-up</string>
-    <string name="headsup_summary">Configure heads-up options</string>
-    <string name="general_notifications_summary">Miscellaneous notification controls</string>
-    	<string name="advanced_category">Advanced</string>
-        <string name="ambient_music_display">Music ticker</string>
+    <!-- Lockscreen -->
+    <string name="lockscreen_date_and_time_title">Lockscreen clocks</string>
+    <string name="lockscreen_date_and_time_summary">Customize your view of date &amp; time on the lockscreen</string>
+    <string name="lockscreen_display_title">General options</string>
+    <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
+    <string name="lock_screen_weather_title">Weather options</string>
+    <string name="lock_screen_weather_summary">Configure lockscreen weather</string>
 
     <!-- System/ Misc -->
-    <string name="recents_title">Recents</string>
-    <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
-        <string name="recents_style_category">Recents style</string>
-        <string name="aosp_recents_category">AOSP recents options</string>
-    <string name="device_extras_title">Device features</string>
-    <string name="device_extras_summary">Tweaks specific to your device</string>
-    <string name="gesture_options_title">Custom gestures</string>
-    <string name="gesture_options_summary">Enable/disable device specific user actions</string>
-        <string name="pixel_gestures_title">Pixel</string>
-        <string name="custom_gestures_category">Custom</string>
-        <string name="aosp_gestures_category">Stock</string>
-        <string name="active_edge_title">Active Edge</string>
-        <string name="active_edge_summary">An advanced version of the Pixel squeeze feature</string>
+    <string name="animations_category_title">Animations</string>
+    <string name="animations_category_summary">Set custom animations for certain transitions</string>
+    <string name="general_notifications_title">General notifications</string>
+    <string name="general_notifications_summary">Miscellaneous notification controls</string>
     <string name="miscellaneous_title">Miscellaneous</string>
     <string name="miscellaneous_summary">Uncategorized options</string>
     <string name="changelog_title">Changelog</string>
     <string name="changelog_summary">List of recent commits added to AquariOS</string>
-    <string name="audio_display_options_title">Audio &amp; display</string>
-    <string name="audio_display_options_summary">Control advanced audio options, system animations, and other general display settings</string>
-        <string name="audio_options_category">Audio options</string>
-        <string name="display_options_category">Display options</string>
-        <string name="volume_steps_title">Volume steps</string>
-        <string name="smart_pixels_title">Smart Pixels</string>
+    <string name="led_settings_title">LED settings</string>
+    <string name="led_settings_summary">Configure the LED light for supported options</string>
+
+<!-- OTHER -->
+    <!-- Empty Preference Screen (if applicable) -->
+    <string name="empty_category_title">No extra features yet...</string>
+    <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
+    <string name="dummy_string"> </string>
+
+    <!-- Sub-Categorized XMLs - DO NOT REMOVE -->
+    <string name="active_edge_title">Active Edge</string>
+    <string name="ambient_music_display">Music ticker</string>
+    <string name="brightness_control_category">Brightness control</string>
+    <string name="led_notifications_title">LED notifications</string>
+    <string name="led_battery_title">Battery LED</string>
+    <string name="qs_panel_layout_category">QS panel layout</string>
+    <string name="smart_pixels_title">Smart Pixels</string>
+    <string name="volume_steps_title">Volume steps</string>
+
+<!-- FEATURES -->
 
 </resources>

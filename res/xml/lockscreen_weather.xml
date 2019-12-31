@@ -13,17 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
 
-    <declare-styleable name="CircularImageView">
-        <attr name="civ_border" format="boolean"/>
-        <attr name="civ_border_width" format="dimension"/>
-        <attr name="civ_border_color" format="color"/>
-    </declare-styleable>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/lock_screen_weather_title" >
 
-    <declare-styleable name="RowLayout">
-        <attr name="android:verticalSpacing" />
-        <attr name="android:horizontalSpacing" />
-    </declare-styleable>
-
-</resources>
+</PreferenceScreen>

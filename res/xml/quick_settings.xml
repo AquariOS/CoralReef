@@ -16,6 +16,6 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/quicksettings_title" >
+    android:title="@string/quick_settings_title" >
 
 </PreferenceScreen>
