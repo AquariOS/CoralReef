@@ -18,4 +18,56 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/powerbutton_title" >
 
+    <PreferenceCategory
+        android:key="global_actions"
+        android:title="@string/power_menu_category" >
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_power"
+            android:title="@string/powermenu_power_title"
+            android:defaultValue="true" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_restart"
+            android:title="@string/powermenu_reboot_title"
+            android:defaultValue="true" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="advanced_reboot"
+            android:title="@string/powermenu_advanced_restart_title"
+            android:summary="@string/powermenu_advanced_restart_summary"
+            android:dependency="global_actions_restart"
+            android:defaultValue="false" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_lockdown"
+            android:title="@string/powermenu_lockdown_title"
+            android:defaultValue="false" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_airplane"
+            android:title="@string/powermenu_airplane_title"
+            android:defaultValue="false" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_emergency"
+            android:title="@string/powermenu_emergency_title"
+            android:defaultValue="false" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_flashlight"
+            android:title="@string/powermenu_flashlight_title"
+            android:defaultValue="false" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_screenshot"
+            android:title="@string/powermenu_screenshot_title"
+            android:defaultValue="true" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_screenrecord"
+            android:title="@string/powermenu_screenrecord_title"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
