@@ -159,12 +159,14 @@
     <string name="global_actions_screen_off_cat">Screen-off actions</string>
     <string name="torch_power_button_gesture_title">Flashlight toggle</string>
     <string name="torch_power_button_gesture_none">Disabled</string>
-    <string name="torch_power_button_gesture_dt">Double tap power button (slower single tap response)</string>
+    <string name="torch_power_button_gesture_dt">Double-tap power button (slower single-tap response)</string>
     <string name="torch_power_button_gesture_dt_toast">Jump to camera gesture is now disabled</string>
-    <string name="torch_power_button_gesture_lp">Long press power button</string>
+    <string name="torch_power_button_gesture_lp">Long-press power button</string>
 
-    <!--Volume Rocker Wake -->
+    <!--Volume Rocker -->
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
     <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
+    <string name="volume_rocker_music_controls_title">Track control</string>
+    <string name="volume_rocker_music_controls_summary">Long-press volume buttons to seek tracks while screen off</string>
 
 </resources>

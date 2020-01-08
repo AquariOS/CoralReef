@@ -22,9 +22,17 @@
         android:title="@string/advanced_behavior_title">
 
         <com.aquarios.support.preferences.SystemSettingSwitchPreference
+	        android:key="volume_button_music_control"
+            android:summary="@string/volume_rocker_music_controls_summary"
+            android:title="@string/volume_rocker_music_controls_title"
+            android:defaultValue="true"
+            android:dependency="volume_rocker_wake" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
             android:key="volume_rocker_wake"
             android:summary="@string/volume_rocker_wake_summary"
             android:title="@string/volume_rocker_wake_title"
+            android:disableDependentsState="true"
             android:defaultValue="false" />
     </PreferenceCategory>
 
