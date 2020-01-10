@@ -30,8 +30,8 @@
 
 <!-- CATEGORIES -->
     <!-- Actions -->
-    <string name="powermenu_title">Power button</string>
-    <string name="powermenu_summary">Configure additional options &amp; actions</string>
+    <string name="powerbutton_title">Power button</string>
+    <string name="powerbutton_summary">Configure additional options &amp; actions</string>
     <string name="navigationbar_title">Navigation</string>
     <string name="navigationbar_summary">Configure system navigation options</string>
     <string name="gesture_options_title">Custom gestures</string>

@@ -31,7 +31,7 @@
             android:id="@+id/miscellaneous_imageview"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:src="@drawable/dt_miscellaneous"
+            android:src="@drawable/miscellaneous"
             android:scaleType="center"/-->
 
     </LinearLayout>

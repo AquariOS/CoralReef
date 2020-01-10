@@ -16,7 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/powermenu_title" >
+    android:title="@string/powerbutton_title" >
 
     <PreferenceCategory
         android:key="global_actions"

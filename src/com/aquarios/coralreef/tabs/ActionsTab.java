@@ -31,13 +31,13 @@ import com.android.internal.logging.nano.MetricsProto;
 public class ActionsTab extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
-    private static final String POWERMENU_CATEGORY = "powermenu_category";
+    private static final String POWERBUTTON_CATEGORY = "powerbutton_category";
     private static final String NAVIGATION_CATEGORY = "navigationbar_settings";
     private static final String GESTURE_OPTIONS_CATEGORY = "gesture_options";
     private static final String VOLUME_ROCKER_CATEGORY = "volume_rocker_category";
     private static final String HWKEY_CATEGORY = "hw_keys_category";
 
-    private LayoutPreference mPowerMenu;
+    private LayoutPreference mPowerButton;
     private LayoutPreference mNavigation;
     private LayoutPreference mGestures;
     private LayoutPreference mVolumeRocker;
@@ -48,9 +48,9 @@ public class ActionsTab extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.actions_tab);
 
-        mPowerMenu = (LayoutPreference) findPreference(POWERMENU_CATEGORY);
-        if (!getResources().getBoolean(R.bool.powermenu_category_isVisible)) {
-        mPowerMenu.setTitle(R.string.powermenu_title);
+        mPowerButton = (LayoutPreference) findPreference(POWERBUTTON_CATEGORY);
+        if (!getResources().getBoolean(R.bool.powerbutton_category_isVisible)) {
+        mPowerButton.setTitle(R.string.powerbutton_title);
         } 
 
         mNavigation = (LayoutPreference) findPreference(NAVIGATION_CATEGORY);

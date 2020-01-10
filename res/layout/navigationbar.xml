@@ -31,7 +31,7 @@
             android:id="@+id/navigationbar_imageview"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:src="@drawable/dt_navigationbar"
+            android:src="@drawable/navigationbar"
             android:scaleType="center"/-->
 
     </LinearLayout>

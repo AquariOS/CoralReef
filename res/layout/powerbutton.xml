@@ -28,7 +28,7 @@
         android:background="@color/preference_background_color">
 
         <ImageView
-            android:id="@+id/powermenu_imageview"
+            android:id="@+id/powerbutton_imageview"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:src="@drawable/seahorse_icon_vector"
@@ -48,7 +48,7 @@
             android:layout_marginStart="22dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/powermenu_title" />
+            android:text="@string/powerbutton_title" />
 
         <TextView
             android:id="@+id/summary"
@@ -58,7 +58,7 @@
             android:layout_marginBottom="22dip"
             android:layout_below="@+id/title"
             android:textSize="13sp"
-            android:text="@string/powermenu_summary" />
+            android:text="@string/powerbutton_summary" />
 
     </RelativeLayout>
 
