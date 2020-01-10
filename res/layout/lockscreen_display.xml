@@ -31,7 +31,7 @@
             android:id="@+id/lockscreen_display_imageview"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:src="@drawable/dt_lockscreen_display"
+            android:src="@drawable/lockscreen_display"
             android:scaleType="center"/-->
 
     </LinearLayout>

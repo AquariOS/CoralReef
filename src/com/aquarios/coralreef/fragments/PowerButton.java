@@ -39,13 +39,16 @@ import com.android.internal.logging.nano.MetricsProto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenu extends SettingsPreferenceFragment implements
+public class PowerButton extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.powermenu);
+        addPreferencesFromResource(R.xml.powerbutton);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -64,7 +67,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.powermenu;
+                    sir.xmlResId = R.xml.powerbutton;
                     result.add(sir);
                     return result;
                 }

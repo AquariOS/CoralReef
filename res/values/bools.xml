@@ -21,7 +21,7 @@
 		 is already set visible. HIDDEN="false", VISIBLE="true". -->
 		
     <!-- Actions tab -->
-    <bool name="powermenu_category_isVisible">true</bool>
+    <bool name="powerbutton_category_isVisible">true</bool>
     <bool name="navigationbar_category_isVisible">true</bool>
     <bool name="gestures_category_isVisible">true</bool>
     <bool name="volumerocker_category_isVisible">true</bool>

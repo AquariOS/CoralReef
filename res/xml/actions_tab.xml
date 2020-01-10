@@ -18,9 +18,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.android.settingslib.widget.LayoutPreference
-        android:key="powermenu_category"
-        android:fragment="com.aquarios.coralreef.fragments.PowerMenu"
-        android:layout="@layout/powermenu" />
+        android:key="powerbutton_category"
+        android:fragment="com.aquarios.coralreef.fragments.PowerButton"
+        android:layout="@layout/powerbutton" />
 
     <com.android.settingslib.widget.LayoutPreference
 		android:key="navigationbar_settings"
