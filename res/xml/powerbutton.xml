@@ -37,7 +37,7 @@
             android:title="@string/powermenu_advanced_restart_title"
             android:summary="@string/powermenu_advanced_restart_summary"
             android:dependency="global_actions_restart"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.aquarios.support.preferences.SystemSettingSwitchPreference
             android:key="global_actions_lockdown"
