@@ -26,6 +26,8 @@
     <bool name="gestures_category_isVisible">true</bool>
         <!-- Whether to display Motion Sense setting -->
         <bool name="has_aware">false</bool>
+        <!-- Whether to display active edge category -->
+        <bool name="has_active_edge">false</bool>
     <bool name="volumerocker_category_isVisible">true</bool>
     <bool name="hwkeys_category_isVisible">true</bool>
 
