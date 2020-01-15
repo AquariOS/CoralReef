@@ -37,7 +37,7 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.internal.util.aquarios.AquaUtils;
+import com.aquarios.support.utils.AquaUtils;
 import com.android.internal.logging.nano.MetricsProto;
 
 import java.util.ArrayList;
