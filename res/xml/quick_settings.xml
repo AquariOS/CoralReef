@@ -57,6 +57,12 @@
             android:summary="@string/qs_edit_summary"
             android:defaultValue="true" />
 
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="setting_button_toggle"
+            android:title="@string/qs_setting_button_title"
+            android:summary="@string/qs_setting_button_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

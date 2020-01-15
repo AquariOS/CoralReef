@@ -395,4 +395,8 @@
     <string name="quick_pulldown_right">Pulldown statusbar from right side</string>
     <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
 
+    <!-- Setting Button -->
+    <string name="qs_setting_button_title">Enable Setting Button Icon</string>
+    <string name="qs_setting_button_summary">Enable settings button in non exapanded panel</string>
+
 </resources>
