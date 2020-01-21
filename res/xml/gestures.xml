@@ -98,6 +98,12 @@
         android:fragment="com.android.settings.gestures.GlobalActionsPanelSettings"
         settings:controller="com.android.settings.gestures.GlobalActionsPanelPreferenceController" />
 
+    <com.aquarios.support.preferences.SystemSettingSwitchPreference
+        android:key="gesture_doubletap_sleep_statusbar"
+        android:title="@string/gesture_doubletap_sleep_statusbar_title"
+        android:summary="@string/gesture_doubletap_sleep_statusbar_summary"
+        android:defaultValue="false" />
+
     <Preference
         android:key="gesture_doubletap_lockscreen_summary"
         android:title="@string/doubletap_lockscreen_screen_title"

@@ -278,7 +278,7 @@
     <string name="lockscreen_battery_info_summary">Display negotiated charger max current-voltage and battery temperature on lockscreen while charging</string>
 
     <!-- Double-tap to sleep on lockscreen -->
-    <string name="doubletap_lockscreen_screen_title">Double-tap to sleep</string>
+    <string name="doubletap_lockscreen_screen_title">Lockscreen tap to sleep</string>
     <string name="doubletap_lockscreen_title">Double-tap anywhere on lockscreen to sleep</string>
     <string name="doubletap_lockscreen_summary">Double-tap on empty areas of lockscreen to turn screen off</string> 
 
@@ -495,5 +495,9 @@
     <!-- Option to hide multi-user switch in qs footer -->
     <string name="qs_multiuser_switch_title">MultiUser switch</string>
     <string name="qs_multiuser_switch_summary">Show the user avatar in the footer</string>
+
+    <!-- Double-tap to sleep on statusbar -->
+    <string name="gesture_doubletap_sleep_statusbar_title">Statusbar tap to sleep</string>
+    <string name="gesture_doubletap_sleep_statusbar_summary">Double-tap statusbar to put device to sleep</string>
 
 </resources>
