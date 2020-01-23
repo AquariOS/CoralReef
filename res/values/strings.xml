@@ -34,7 +34,7 @@
     <string name="powerbutton_summary">Configure additional options &amp; actions</string>
     <string name="navigationbar_title">Navigation</string>
     <string name="navigationbar_summary">Configure system navigation options</string>
-    <string name="gesture_options_title">Custom gestures</string>
+    <string name="gesture_options_title">Gestures</string>
     <string name="gesture_options_summary">Enable/disable device specific user actions</string>
     <string name="volume_rocker_title">Volume rocker</string>
     <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
