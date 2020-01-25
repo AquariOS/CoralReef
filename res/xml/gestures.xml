@@ -24,10 +24,19 @@
         android:fragment="com.android.settings.gestures.AssistGestureSettings"
         settings:controller="com.android.settings.gestures.AssistGestureSettingsPreferenceController" />
 
-    <com.google.android.settings.aware.AwareSettingsDialogPreference
+    <Preference
+        android:key="active_edge_settings"
+        android:title="@string/active_edge_title"
+        android:summary="@string/active_edge_summary"
+        android:fragment="com.aquarios.coralreef.fragments.ActiveEdge"
+        settings:controller="com.aquarios.coralreef.helpers.ActiveEdgeSettingsPreferenceHelper" />
+
+    <Preference
         android:key="aware_settings"
         android:title="@string/aware_settings_title"
-        android:summary="@string/aware_settings_summary" />
+        android:summary="@string/aware_settings_summary"
+        android:fragment="com.google.android.settings.aware.AwareSettings"
+        settings:controller="com.aquarios.coralreef.helpers.MotionSensePreferenceHelper" />
 
     <Preference
         android:key="gesture_swipe_down_fingerprint_input_summary"

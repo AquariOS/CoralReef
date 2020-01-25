@@ -211,6 +211,7 @@
     <string name="wake_screen_aware_off_dialog_title">Reach to check phone is off</string>
 
     <!-- Active edge -->
+    <string name="active_edge_summary">Assign SmartActions to Pixel\'s squeeze feature</string>
     <string name="active_edge_short_actions_title">Short squeeze action</string>
     <string name="active_edge_long_actions_title">Long squeeze action</string>
     <string name="active_edge_sensitivity_title">Squeeze sensitivity</string>
