@@ -34,14 +34,17 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.aquarios.support.preferences.SystemSettingListPreference;
+import com.aquarios.support.preferences.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BatteryOptions extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
-    private static final String KEY_BATTERY_PERCENTAGE = "battery_percentage";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
     private static final String BATTERY_PERCENTAGE_HIDDEN = "0";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
 
@@ -53,6 +56,7 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
+    private SwitchPreference mBatteryCharging;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,17 +65,11 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mBatteryPercent = (ListPreference) findPreference(KEY_BATTERY_PERCENTAGE);
-        int percentstyle = Settings.System.getInt(resolver,
-                Settings.System.SHOW_BATTERY_PERCENT, 0);
-        mBatteryPercent.setValue(String.valueOf(percentstyle));
-        mBatteryPercent.setSummary(mBatteryPercent.getEntry());
-        mBatteryPercent.setOnPreferenceChangeListener(this);
-
+        mBatteryPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+        mBatteryCharging = (SwitchPreference) findPreference(STATUS_BAR_BATTERY_TEXT_CHARGING);
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
-        int batterystyle = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_Q,
-                UserHandle.USER_CURRENT);
+        int batterystyle = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_Q);
         mBatteryStyle.setOnPreferenceChangeListener(this);
 
         updateBatteryOptions(batterystyle);
@@ -83,19 +81,24 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mBatteryPercent) {
-            int value = Integer.parseInt((String) newValue);
-            int index = mBatteryPercent.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SHOW_BATTERY_PERCENT, value);
-            mBatteryPercent.setSummary(mBatteryPercent.getEntries()[index]);
-            return true;
-        } else if (preference == mBatteryStyle) {
+        if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
             updateBatteryOptions(value);
             return true;
         }
         return false;
+    }
+
+    private void updateBatteryOptions(int batterystyle) {
+        boolean enabled = batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN;
+        if (batterystyle == BATTERY_STYLE_HIDDEN) {
+            mBatteryPercent.setValue(BATTERY_PERCENTAGE_HIDDEN);
+            mBatteryPercent.setSummary(mBatteryPercent.getEntry());
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+        }
+        mBatteryCharging.setEnabled(enabled);
+        mBatteryPercent.setEnabled(enabled);
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
