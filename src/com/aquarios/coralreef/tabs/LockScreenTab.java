@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 AquariOS
+ * Copyright (C) 2020 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,47 +17,69 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settingslib.widget.LayoutPreference;
+import androidx.preference.Preference;
+
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.widget.CardPreference;
+import com.android.settingslib.widget.LayoutPreference;
 
 public class LockScreenTab extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
+    private static final String HEADER_IMAGE_KEY = "top_header_image";
     private static final String LOCKSCREEN_DATE_AND_TIME_CATEGORY = "lockscreen_date_and_time_category";
-    private static final String LOCKSCREEN_DISPLAY_CATEGORY = "lockscreen_display_category";
+    private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
     private static final String LOCKSCREEN_WEATHER_CATEGORY = "lockscreen_weather";
 
-    private LayoutPreference mLockscreenDateTime;
-    private LayoutPreference mLockscreenDisplay;
-    private LayoutPreference mLockscreenWeather;
+    private LayoutPreference mHeaderImage;
+    private CardPreference mLockscreenDateTime;
+    private CardPreference mLockscreenGeneral;
+    private CardPreference mLockscreenWeather;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.lock_screen_tab);
+        addPreferencesFromResource(R.xml.tab_lock_screen);
 
-        mLockscreenDateTime = (LayoutPreference) findPreference(LOCKSCREEN_DATE_AND_TIME_CATEGORY);
+        /**
+         * Header image in tab
+         */
+        mHeaderImage = (LayoutPreference) findPreference(HEADER_IMAGE_KEY);
+        mHeaderImage.setEnabled(false);
+
+        /**
+         * Lockscreen date & time
+         */
+        CardPreference mLockscreenDateTime = findPreference("lockscreen_date_and_time_category");
         if (!getResources().getBoolean(R.bool.lockclocks_category_isVisible)) {
-        mLockscreenDateTime.setTitle(R.string.lockscreen_date_and_time_title);
-        } 
+            getPreferenceScreen().removePreference(mLockscreenDateTime);
+        } else {
+            mLockscreenDateTime = (CardPreference) findPreference(LOCKSCREEN_DATE_AND_TIME_CATEGORY);
+        }
 
-        mLockscreenDisplay = (LayoutPreference) findPreference(LOCKSCREEN_DISPLAY_CATEGORY);
-        if (!getResources().getBoolean(R.bool.lockscreen_display_category_isVisible)) {
-        mLockscreenDisplay.setTitle(R.string.lockscreen_display_title);
-        } 
+        /**
+         * General lockscreen options
+         */
+        CardPreference mLockscreenGeneral = findPreference("lockscreen_general_category");
+        if (!getResources().getBoolean(R.bool.lockscreen_general_category_isVisible)) {
+            getPreferenceScreen().removePreference(mLockscreenGeneral);
+        } else {
+            mLockscreenGeneral = (CardPreference) findPreference(LOCKSCREEN_GENERAL_CATEGORY);
+        }
 
-        mLockscreenWeather = (LayoutPreference) findPreference(LOCKSCREEN_WEATHER_CATEGORY);
+        /**
+         * Lockscreen weather
+         */
+        CardPreference mLockscreenWeather = findPreference("lockscreen_weather");
         if (!getResources().getBoolean(R.bool.lockscreen_weather_category_isVisible)) {
-        mLockscreenWeather.setTitle(R.string.lock_screen_weather_title);
-        } 
+            getPreferenceScreen().removePreference(mLockscreenWeather);
+        } else {
+            mLockscreenWeather = (CardPreference) findPreference(LOCKSCREEN_WEATHER_CATEGORY);
+        }
     }
 
     @Override

@@ -19,31 +19,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/actions_tab"
+        android:id="@+id/tab_actions"
         android:icon="@drawable/bottomnav_actions"
         android:title="@string/bottom_nav_actions_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
-        android:id="@+id/interface_tab"
+        android:id="@+id/tab_interface"
         android:icon="@drawable/bottomnav_interface"
         android:title="@string/bottom_nav_interface_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
-        android:id="@+id/status_bar_tab"
+        android:id="@+id/tab_status_bar"
         android:icon="@drawable/bottomnav_status_bar"
         android:title="@string/bottom_nav_status_bar_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
-        android:id="@+id/lock_screen_tab"
+        android:id="@+id/tab_lock_screen"
         android:icon="@drawable/bottomnav_lock_screen"
         android:title="@string/bottom_nav_lock_screen_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
-        android:id="@+id/system_misc_tab"
+        android:id="@+id/tab_system_misc"
         android:icon="@drawable/bottomnav_system_misc"
         android:title="@string/bottom_nav_system_misc_title"
         app:showAsAction="ifRoom|withText"/>

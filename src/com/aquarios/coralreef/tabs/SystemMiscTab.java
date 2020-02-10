@@ -18,69 +18,95 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settingslib.widget.LayoutPreference;
+import androidx.preference.Preference;
+
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.widget.CardPreference;
+import com.android.settingslib.widget.LayoutPreference;
 
 public class SystemMiscTab extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+    private static final String HEADER_IMAGE_KEY = "top_header_image";
     private static final String ANIMATIONS_CATEGORY = "animations_category";
     private static final String GENERAL_NOTIFICATIONS = "general_notifications";
     private static final String MISCELLANEOUS_CATEGORY = "miscellaneous_category";
     private static final String CHANGELOG_CATEGORY = "changelog";
     private static final String LED_SETTINGS_CATEGORY = "led_settings";
 
-    private LayoutPreference mAnimations;
-    private LayoutPreference mGeneral;
-    private LayoutPreference mMiscellaneous;
-    private LayoutPreference mChangelog;
-    private LayoutPreference mLedSettings;
+    private LayoutPreference mHeaderImage;
+    private CardPreference mAnimations;
+    private CardPreference mGeneral;
+    private CardPreference mMiscellaneous;
+    private CardPreference mChangelog;
+    private CardPreference mLedSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.system_misc_tab);
+        addPreferencesFromResource(R.xml.tab_system_misc);
 
-        mAnimations = (LayoutPreference) findPreference(ANIMATIONS_CATEGORY);
+        /**
+         * Header image in tab
+         */
+        mHeaderImage = (LayoutPreference) findPreference(HEADER_IMAGE_KEY);
+        mHeaderImage.setEnabled(false);
+
+        /**
+         * Animations
+         */
+        CardPreference mAnimations = findPreference("animations_category");
         if (!getResources().getBoolean(R.bool.animations_category_isVisible)) {
-        mAnimations.setTitle(R.string.animations_category_title);
+            getPreferenceScreen().removePreference(mAnimations);
+        } else {
+            mAnimations = (CardPreference) findPreference(ANIMATIONS_CATEGORY);
         }
 
-        mGeneral = (LayoutPreference) findPreference(GENERAL_NOTIFICATIONS);
+        /**
+         * General notifications
+         */
+        CardPreference mGeneral = findPreference("general_notifications");
         if (!getResources().getBoolean(R.bool.general_notifications_category_isVisible)) {
-        mGeneral.setTitle(R.string.general_notifications_title);
+            getPreferenceScreen().removePreference(mGeneral);
+        } else {
+            mGeneral = (CardPreference) findPreference(GENERAL_NOTIFICATIONS);
         }
 
-        mMiscellaneous = (LayoutPreference) findPreference(MISCELLANEOUS_CATEGORY);
+        /**
+         * Miscellaneous settings
+         */
+        CardPreference mMiscellaneous = findPreference("miscellaneous_category");
         if (!getResources().getBoolean(R.bool.miscellaneous_category_isVisible)) {
-        mMiscellaneous.setTitle(R.string.miscellaneous_title);
+            getPreferenceScreen().removePreference(mMiscellaneous);
+        } else {
+            mMiscellaneous = (CardPreference) findPreference(MISCELLANEOUS_CATEGORY);
         }
 
-        mChangelog = (LayoutPreference) findPreference(CHANGELOG_CATEGORY);
+        /**
+         * Changelog 
+         */
+        CardPreference mChangelog = findPreference("changelog");
         if (!getResources().getBoolean(R.bool.changelog_category_isVisible)) {
-        mChangelog.setTitle(R.string.changelog_title);
+            getPreferenceScreen().removePreference(mChangelog);
+        } else {
+            mChangelog = (CardPreference) findPreference(CHANGELOG_CATEGORY);
         }
 
-        mLedSettings = (LayoutPreference) findPreference(LED_SETTINGS_CATEGORY);
+        /**
+         * Only show LED category if device supports LED options for either
+         * battery OR notifications. Also needs boolean set "true" in device
+         */
+        CardPreference mLedSettings = findPreference("led_settings");
         if (!getResources().getBoolean(R.bool.led_settings_category_isVisible)) {
-        mLedSettings.setTitle(R.string.led_settings_title);
-        }
-
-/* COMMENT OUT UNTIL SUPPORT IS ADDED
-        // Only show if device supports either notification or battery LED
-        Preference mLedSettings = findPreference(LED_SETTINGS_CATEGORY);
-        if ((!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) || 
-            (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed))) {
-            //Make sure Notification LED category is also visible with the following check
+//            (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) ||
+//            (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed))) {
             getPreferenceScreen().removePreference(mLedSettings);
-        }*/
+        } else {
+            mLedSettings = (CardPreference) findPreference(LED_SETTINGS_CATEGORY);
+        }
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 AquariOS
+ * Copyright (C) 2020 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,53 +17,80 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settingslib.widget.LayoutPreference;
+import androidx.preference.Preference;
+
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.widget.CardPreference;
+import com.android.settingslib.widget.LayoutPreference;
 
 public class StatusBarTab extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
+    private static final String HEADER_IMAGE_KEY = "top_header_image";
     private static final String BATTERY_CATEGORY = "battery_options_category";
     private static final String CLOCK_OPTIONS_CATEGORY = "clock_options_category";
     private static final String TRAFFIC_CATEGORY = "traffic_category";
     private static final String STATUS_BAR_ITEMS_CATEGORY = "status_bar_items_category";
 
-    private LayoutPreference mBattery;
-    private LayoutPreference mClockOptions;
-    private LayoutPreference mTraffic;
-    private LayoutPreference mStatusBarItems;
+    private LayoutPreference mHeaderImage;
+    private CardPreference mBattery;
+    private CardPreference mClockOptions;
+    private CardPreference mTraffic;
+    private CardPreference mStatusBarItems;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.status_bar_tab);
+        addPreferencesFromResource(R.xml.tab_status_bar);
 
-        mBattery = (LayoutPreference) findPreference(BATTERY_CATEGORY);
+        /**
+         * Header image in tab
+         */
+        mHeaderImage = (LayoutPreference) findPreference(HEADER_IMAGE_KEY);
+        mHeaderImage.setEnabled(false);
+
+        /**
+         * Battery options
+         */
+        CardPreference mBattery = findPreference("battery_options_category");
         if (!getResources().getBoolean(R.bool.battery_category_isVisible)) {
-        mBattery.setTitle(R.string.battery_options_title);
+            getPreferenceScreen().removePreference(mBattery);
+        } else {
+            mBattery = (CardPreference) findPreference(BATTERY_CATEGORY);
         } 
 
-        mClockOptions = (LayoutPreference) findPreference(CLOCK_OPTIONS_CATEGORY);
+        /**
+         * Clock options
+         */
+        CardPreference mClockOptions = findPreference("clock_options_category");
         if (!getResources().getBoolean(R.bool.clock_category_isVisible)) {
-        mClockOptions.setTitle(R.string.clock_options_title);
-        } 
+            getPreferenceScreen().removePreference(mClockOptions);
+        } else {
+            mClockOptions = (CardPreference) findPreference(CLOCK_OPTIONS_CATEGORY);
+        }
 
-        mTraffic = (LayoutPreference) findPreference(TRAFFIC_CATEGORY);
+        /**
+         * Network traffic
+         */
+        CardPreference mTraffic = findPreference("traffic_category");
         if (!getResources().getBoolean(R.bool.traffic_category_isVisible)) {
-        mTraffic.setTitle(R.string.traffic_title);
-        } 
+            getPreferenceScreen().removePreference(mTraffic);
+        } else {
+            mTraffic = (CardPreference) findPreference(TRAFFIC_CATEGORY);
+        }
 
-        mStatusBarItems = (LayoutPreference) findPreference(STATUS_BAR_ITEMS_CATEGORY);
+        /**
+         * Statusbar item blacklisting
+         */
+        CardPreference mStatusBarItems = findPreference("status_bar_items_category");
         if (!getResources().getBoolean(R.bool.statusbar_icon_blacklist_category_isVisible)) {
-        mStatusBarItems.setTitle(R.string.status_bar_items_title);
+            getPreferenceScreen().removePreference(mStatusBarItems);
+        } else {
+            mStatusBarItems = (CardPreference) findPreference(STATUS_BAR_ITEMS_CATEGORY);
         } 
     }
 

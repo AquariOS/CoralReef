@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 AquariOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="top_header_image"
+        android:layout="@layout/tab_header_status_bar" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="battery_options_category"
+        android:fragment="com.aquarios.coralreef.fragments.BatteryOptions"
+        android:icon="@drawable/ic_battery_background"
+        android:title="@string/battery_options_title"
+        android:summary="@string/battery_options_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="clock_options_category"
+        android:fragment="com.aquarios.coralreef.fragments.ClockOptions"
+        android:icon="@drawable/ic_clock_background"
+        android:title="@string/clock_options_title"
+        android:summary="@string/clock_options_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="traffic_category"
+        android:fragment="com.aquarios.coralreef.fragments.TrafficIndicators"
+        android:icon="@drawable/ic_network_traffic_background"
+        android:title="@string/traffic_title"
+        android:summary="@string/traffic_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="status_bar_items_category"
+        android:fragment="com.aquarios.coralreef.fragments.StatusBarItems"
+        android:icon="@drawable/ic_status_bar_items_background"
+        android:title="@string/status_bar_items_title"
+        android:summary="@string/status_bar_items_summary" />
+
+</PreferenceScreen>

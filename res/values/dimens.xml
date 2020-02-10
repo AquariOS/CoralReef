@@ -18,4 +18,7 @@
 
     <dimen name="alert_dialog_padding_material">20dp</dimen>
 
+    <!-- Where the category icon will start (from the left) -->
+    <dimen name="coralreef_cat_icon_image_inset">6dp</dimen>
+
 </resources>

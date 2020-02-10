@@ -62,8 +62,8 @@
     <!-- Lockscreen -->
     <string name="lockscreen_date_and_time_title">Lockscreen clocks</string>
     <string name="lockscreen_date_and_time_summary">Customize your view of date &amp; time on the lockscreen</string>
-    <string name="lockscreen_display_title">General options</string>
-    <string name="lockscreen_display_summary">Add or remove visual elements of your lockscreen</string>
+    <string name="lockscreen_general_title">General options</string>
+    <string name="lockscreen_general_summary">Add or remove visual elements of your lockscreen</string>
     <string name="lock_screen_weather_title">Weather options</string>
     <string name="lock_screen_weather_summary">Configure lockscreen weather</string>
 

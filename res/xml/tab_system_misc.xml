@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 AquariOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="top_header_image"
+        android:layout="@layout/tab_header_system" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="animations_category"
+        android:fragment="com.aquarios.coralreef.fragments.Animations"
+        android:icon="@drawable/ic_animations_background"
+        android:title="@string/animations_category_title"
+        android:summary="@string/animations_category_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="general_notifications"
+        android:fragment="com.aquarios.coralreef.fragments.GeneralNotifications"
+        android:icon="@drawable/ic_notifications_general_background"
+        android:title="@string/general_notifications_title"
+        android:summary="@string/general_notifications_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="miscellaneous_category"
+        android:fragment="com.aquarios.coralreef.fragments.Miscellaneous"
+        android:icon="@drawable/ic_miscellaneous_background"
+        android:title="@string/miscellaneous_title"
+        android:summary="@string/miscellaneous_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="changelog"
+        android:fragment="com.aquarios.coralreef.fragments.Changelog"
+        android:icon="@drawable/ic_changelog_background"
+        android:title="@string/changelog_title"
+        android:summary="@string/changelog_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="led_settings"
+        android:fragment="com.aquarios.coralreef.fragments.LedSettings"
+        android:icon="@drawable/ic_led_notifications_background"
+        android:title="@string/led_settings_title"
+        android:summary="@string/led_settings_summary" />
+
+</PreferenceScreen>

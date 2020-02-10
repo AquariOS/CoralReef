@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 AquariOS
+ * Copyright (C) 2020 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,65 +17,92 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settingslib.widget.LayoutPreference;
+import androidx.preference.Preference;
+
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.widget.CardPreference;
+import com.android.settingslib.widget.LayoutPreference;
 
 public class ActionsTab extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
+    private static final String HEADER_IMAGE_KEY = "top_header_image";
     private static final String POWERBUTTON_CATEGORY = "powerbutton_category";
     private static final String NAVIGATION_CATEGORY = "navigationbar_settings";
     private static final String GESTURE_OPTIONS_CATEGORY = "gesture_options";
     private static final String VOLUME_ROCKER_CATEGORY = "volume_rocker_category";
     private static final String HWKEY_CATEGORY = "hw_keys_category";
 
-    private LayoutPreference mPowerButton;
-    private LayoutPreference mNavigation;
-    private LayoutPreference mGestures;
-    private LayoutPreference mVolumeRocker;
-    private LayoutPreference mHwKeys;
+    private LayoutPreference mHeaderImage;
+    private CardPreference mPowerButton;
+    private CardPreference mNavigation;
+    private CardPreference mGestures;
+    private CardPreference mVolumeRocker;
+    private CardPreference mHwKeys;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.actions_tab);
+        addPreferencesFromResource(R.xml.tab_actions);
 
-        mPowerButton = (LayoutPreference) findPreference(POWERBUTTON_CATEGORY);
+        /**
+         * Header image in tab
+         */
+        mHeaderImage = (LayoutPreference) findPreference(HEADER_IMAGE_KEY);
+        mHeaderImage.setEnabled(false);
+
+        /**
+         * Power button options
+         */
+        CardPreference mPowerButton = findPreference("powerbutton_category");
         if (!getResources().getBoolean(R.bool.powerbutton_category_isVisible)) {
-        mPowerButton.setTitle(R.string.powerbutton_title);
-        } 
-
-        mNavigation = (LayoutPreference) findPreference(NAVIGATION_CATEGORY);
-        if (!getResources().getBoolean(R.bool.navigationbar_category_isVisible)) {
-        mNavigation.setTitle(R.string.navigationbar_title);
-        } 
-
-        mGestures = (LayoutPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
-        if (!getResources().getBoolean(R.bool.gestures_category_isVisible)) {
-        mGestures.setTitle(R.string.gesture_options_title);
-        } 
-
-        mVolumeRocker = (LayoutPreference) findPreference(VOLUME_ROCKER_CATEGORY);
-        if (!getResources().getBoolean(R.bool.volumerocker_category_isVisible)) {
-        mVolumeRocker.setTitle(R.string.volume_rocker_title);
-        } 
-
-        mHwKeys = (LayoutPreference) findPreference(HWKEY_CATEGORY);
-        // COMMENTED OUT FOR BRING-UP
-        //((getResources().getInteger(com.android.internal.R.integer.config_deviceHardwareKeys) == 0) &&
-        if (!getResources().getBoolean(R.bool.hwkeys_category_isVisible)) {
-            PreferenceScreen prefScreen = getPreferenceScreen();
-            prefScreen.removePreference(mHwKeys);
+            getPreferenceScreen().removePreference(mPowerButton);
         } else {
-            mHwKeys.setTitle(R.string.hw_keys_title);
+            mPowerButton = (CardPreference) findPreference(POWERBUTTON_CATEGORY);
+        }
+
+        /**
+         * System navigation
+         */
+        CardPreference mNavigation = findPreference("navigationbar_settings");
+        if (!getResources().getBoolean(R.bool.navigationbar_category_isVisible)) {
+            getPreferenceScreen().removePreference(mNavigation);
+        } else {
+            mNavigation = (CardPreference) findPreference(NAVIGATION_CATEGORY);
+        }
+
+        /**
+         * Gestures
+         */
+        CardPreference mGestures = findPreference("gesture_options");
+        if (!getResources().getBoolean(R.bool.gestures_category_isVisible)) {
+            getPreferenceScreen().removePreference(mGestures);
+        } else {
+            mGestures = (CardPreference) findPreference(GESTURE_OPTIONS_CATEGORY);
+        }
+
+        /**
+         * Volume rocker options
+         */
+        CardPreference mVolumeRocker = findPreference("volume_rocker_category");
+        if (!getResources().getBoolean(R.bool.volumerocker_category_isVisible)) {
+            getPreferenceScreen().removePreference(mVolumeRocker);
+        } else {
+            mVolumeRocker = (CardPreference) findPreference(VOLUME_ROCKER_CATEGORY);
+        }
+
+        /**
+         * Hardware key controls
+         */
+        CardPreference mHwKeys = findPreference("hw_keys_category");
+        if (!getResources().getBoolean(R.bool.hwkeys_category_isVisible)) {
+            getPreferenceScreen().removePreference(mHwKeys);
+        } else {
+            mHwKeys = (CardPreference) findPreference(HWKEY_CATEGORY);
         }
     }
 

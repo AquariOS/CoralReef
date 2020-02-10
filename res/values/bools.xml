@@ -15,21 +15,17 @@
 -->
 
 <resources>
-
+<!-- CORALREEF TAB CATEGORIES -->
 	<!-- Below is a list of all tabs and categories of CoralReef.
 		 Once you add a new feature, check to make sure the category
 		 is already set visible. HIDDEN="false", VISIBLE="true". -->
-		
+
     <!-- Actions tab -->
     <bool name="powerbutton_category_isVisible">true</bool>
     <bool name="navigationbar_category_isVisible">true</bool>
     <bool name="gestures_category_isVisible">true</bool>
-        <!-- Whether to display Motion Sense setting -->
-        <bool name="has_aware">false</bool>
-        <!-- Whether to display active edge category -->
-        <bool name="has_active_edge">false</bool>
     <bool name="volumerocker_category_isVisible">true</bool>
-    <bool name="hwkeys_category_isVisible">true</bool>
+    <bool name="hwkeys_category_isVisible">false</bool>
 
     <!-- Interface tab -->
     <bool name="headsup_category_isVisible">true</bool>
@@ -39,19 +35,26 @@
     <!-- StatusBar tab -->
     <bool name="battery_category_isVisible">true</bool>
     <bool name="clock_category_isVisible">true</bool>
-    <bool name="traffic_category_isVisible">true</bool>
-    <bool name="statusbar_icon_blacklist_category_isVisible">true</bool>
+    <bool name="traffic_category_isVisible">false</bool>
+    <bool name="statusbar_icon_blacklist_category_isVisible">false</bool>
 
     <!-- LockScreen tab -->
-    <bool name="lockclocks_category_isVisible">true</bool>
-    <bool name="lockscreen_display_category_isVisible">true</bool>
-    <bool name="lockscreen_weather_category_isVisible">true</bool>
+    <bool name="lockclocks_category_isVisible">false</bool>
+    <bool name="lockscreen_weather_category_isVisible">false</bool>
+    <bool name="lockscreen_general_category_isVisible">true</bool>
 
     <!-- System/Misc tab -->
     <bool name="animations_category_isVisible">true</bool>
     <bool name="general_notifications_category_isVisible">true</bool>
-    <bool name="miscellaneous_category_isVisible">true</bool>
-    <bool name="changelog_category_isVisible">true</bool>
-    <bool name="led_settings_category_isVisible">true</bool>
+    <bool name="miscellaneous_category_isVisible">false</bool>
+    <bool name="changelog_category_isVisible">false</bool>
+    <bool name="led_settings_category_isVisible">false</bool>
+
+<!-- BOOLEANS FOR FEATURES -->
+    <!-- Whether to display Motion Sense setting -->
+    <bool name="has_aware">false</bool>
+
+    <!-- Whether to display active edge category -->
+    <bool name="has_active_edge">false</bool>
 
 </resources>

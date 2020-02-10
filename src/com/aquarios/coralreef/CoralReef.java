@@ -74,19 +74,19 @@ public class CoralReef extends SettingsPreferenceFragment {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.actions_tab:
+                    case R.id.tab_actions:
                         viewPager.setCurrentItem(0);
                         return true;
-                    case R.id.interface_tab:
+                    case R.id.tab_interface:
                         viewPager.setCurrentItem(1);
                         return true;
-                    case R.id.status_bar_tab:
+                    case R.id.tab_status_bar:
                         viewPager.setCurrentItem(2);
                         return true;
-                    case R.id.lock_screen_tab:
+                    case R.id.tab_lock_screen:
                         viewPager.setCurrentItem(3);
                         return true;
-                    case R.id.system_misc_tab:
+                    case R.id.tab_system_misc:
                         viewPager.setCurrentItem(4);
                         return true;
                 }

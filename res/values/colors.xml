@@ -23,4 +23,27 @@
     <color name="preference_background_color">@*android:color/accent_device_default_light</color>
     <color name="top_banner_icon_color_white_accent">#6d6d6d</color>
 
+    <!-- Coralreef icon background colors -->
+    <color name="coralreef_animations_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_battery_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_changelog_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_clock_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_display_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_gestures_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_headsup_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_hw_keys_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_led_settings_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_lockscreen_clocks_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_lockscreen_general_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_lockscreen_weather_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_miscellaneous_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_traffic_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_navigationbar_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_notifications_general_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_powerbutton_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_quick_settings_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_recents_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_statusbar_items_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_volume_rocker_background">@*android:color/accent_device_default_light</color>
+
 </resources>

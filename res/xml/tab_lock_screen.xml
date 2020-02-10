@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 AquariOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="top_header_image"
+        android:layout="@layout/tab_header_lockscreen" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="lockscreen_date_and_time_category"
+        android:fragment="com.aquarios.coralreef.fragments.LockscreenDateTime"
+        android:icon="@drawable/ic_lockscreen_clock_background"
+        android:title="@string/lockscreen_date_and_time_title"
+        android:summary="@string/lockscreen_date_and_time_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="lockscreen_weather"
+        android:fragment="com.aquarios.coralreef.fragments.LockscreenWeather"
+        android:icon="@drawable/ic_lockscreen_weather_background"
+        android:title="@string/lock_screen_weather_title"
+        android:summary="@string/lock_screen_weather_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="lockscreen_general_category"
+        android:fragment="com.aquarios.coralreef.fragments.LockscreenGeneral"
+        android:icon="@drawable/ic_lockscreen_general_background"
+        android:title="@string/lockscreen_general_title"
+        android:summary="@string/lockscreen_general_summary" />
+
+</PreferenceScreen>

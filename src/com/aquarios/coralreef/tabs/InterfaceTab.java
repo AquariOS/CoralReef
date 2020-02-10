@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 AquariOS
+ * Copyright (C) 2020 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,46 +17,68 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceFragment;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settingslib.widget.LayoutPreference;
+import androidx.preference.Preference;
+
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.widget.CardPreference;
+import com.android.settingslib.widget.LayoutPreference;
 
 public class InterfaceTab extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
+    private static final String HEADER_IMAGE_KEY = "top_header_image";
     private static final String QUICK_SETTINGS_CATEGORY = "quick_settings_category";
     private static final String HEADSUP_CATEGORY = "headsup_category";
     private static final String RECENTS_CATEGORY = "recents_category";
 
-    private LayoutPreference mQuickSettings;
-    private LayoutPreference mHeadsup;
-    private LayoutPreference mRecents;
+    private LayoutPreference mHeaderImage;
+    private CardPreference mQuickSettings;
+    private CardPreference mHeadsup;
+    private CardPreference mRecents;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.interface_tab);
+        addPreferencesFromResource(R.xml.tab_interface);
 
-        mQuickSettings = (LayoutPreference) findPreference(QUICK_SETTINGS_CATEGORY);
+        /**
+         * Header image in tab
+         */
+        mHeaderImage = (LayoutPreference) findPreference(HEADER_IMAGE_KEY);
+        mHeaderImage.setEnabled(false);
+
+        /**
+         * Quick settings
+         */
+        CardPreference mQuickSettings = findPreference("quick_settings_category");
         if (!getResources().getBoolean(R.bool.quick_settings_category_isVisible)) {
-        mQuickSettings.setTitle(R.string.quick_settings_title);
+            getPreferenceScreen().removePreference(mQuickSettings);
+        } else {
+            mQuickSettings = (CardPreference) findPreference(QUICK_SETTINGS_CATEGORY);
         }
 
-        mHeadsup = (LayoutPreference) findPreference(HEADSUP_CATEGORY);
+        /**
+         * Heads-up controls
+         */
+        CardPreference mHeadsup = findPreference("headsup_category");
         if (!getResources().getBoolean(R.bool.headsup_category_isVisible)) {
-        mQuickSettings.setTitle(R.string.headsup_title);
+            getPreferenceScreen().removePreference(mHeadsup);
+        } else {
+            mHeadsup = (CardPreference) findPreference(HEADSUP_CATEGORY);
         }
 
-        mRecents = (LayoutPreference) findPreference(RECENTS_CATEGORY);
+        /**
+         * Recents options
+         */
+        CardPreference mRecents = findPreference("recents_category");
         if (!getResources().getBoolean(R.bool.recents_category_isVisible)) {
-        mQuickSettings.setTitle(R.string.recents_title);
+            getPreferenceScreen().removePreference(mRecents);
+        } else {
+            mRecents = (CardPreference) findPreference(RECENTS_CATEGORY);
         }
     }
 
