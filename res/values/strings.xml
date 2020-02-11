@@ -238,6 +238,10 @@
     <string name="action_volume_panel">Volume panel</string>  
     <string name="action_screen_off">Screen off</string>
     <string name="action_screenshot">Screenshot</string>
+    <string name="action_app_action">Application</string>
+    <string name="active_edge_ss_app_select_title">Select short squeeze app</string>
+    <string name="active_edge_ls_app_select_title">Select long squeeze app</string>
+    <string name="active_edge_app_select_summary">Select an app to launch with the squeeze action</string>
 
     <!-- Battery Styles -->
     <string name="battery_percent_title">Battery percent</string>
