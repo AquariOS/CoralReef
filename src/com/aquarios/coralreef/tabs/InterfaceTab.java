@@ -34,11 +34,13 @@ public class InterfaceTab extends SettingsPreferenceFragment implements
     private static final String QUICK_SETTINGS_CATEGORY = "quick_settings_category";
     private static final String HEADSUP_CATEGORY = "headsup_category";
     private static final String RECENTS_CATEGORY = "recents_category";
+    private static final String THEMER_CATEGORY = "themer_category";
 
     private LayoutPreference mHeaderImage;
     private CardPreference mQuickSettings;
     private CardPreference mHeadsup;
     private CardPreference mRecents;
+    private CardPreference mThemer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,16 @@ public class InterfaceTab extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mRecents);
         } else {
             mRecents = (CardPreference) findPreference(RECENTS_CATEGORY);
+        }
+
+        /**
+         * Theming options
+         */
+        CardPreference mThemer = findPreference("themer_category");
+        if (!getResources().getBoolean(R.bool.themer_category_isVisible)) {
+            getPreferenceScreen().removePreference(mThemer);
+        } else {
+            mThemer = (CardPreference) findPreference(THEMER_CATEGORY);
         }
     }
 

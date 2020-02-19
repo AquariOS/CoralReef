@@ -32,8 +32,8 @@
         android:key="lockscreen_weather"
         android:fragment="com.aquarios.coralreef.fragments.LockscreenWeather"
         android:icon="@drawable/ic_lockscreen_weather_background"
-        android:title="@string/lock_screen_weather_title"
-        android:summary="@string/lock_screen_weather_summary" />
+        android:title="@string/lockscreen_weather_title"
+        android:summary="@string/lockscreen_weather_summary" />
 
     <com.android.settings.widget.CardPreference
         android:key="lockscreen_tuner"
