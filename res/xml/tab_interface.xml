@@ -29,6 +29,13 @@
         android:summary="@string/quick_settings_summary" />
 
     <com.android.settings.widget.CardPreference
+        android:key="themer_category"
+        android:fragment="com.aquarios.coralreef.fragments.Themer"
+        android:icon="@drawable/ic_themer_background"
+        android:title="@string/themer_title"
+        android:summary="@string/themer_summary" />
+
+    <com.android.settings.widget.CardPreference
         android:key="headsup_category"
         android:fragment="com.aquarios.coralreef.fragments.HeadsUp"
         android:icon="@drawable/ic_headsup_background"

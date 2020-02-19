@@ -35,8 +35,10 @@
     <color name="coralreef_led_settings_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_lockscreen_clocks_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_lockscreen_general_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_lockscreen_tuner_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_lockscreen_weather_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_miscellaneous_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_themer_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_traffic_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_navigationbar_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_notifications_general_background">@*android:color/accent_device_default_light</color>
