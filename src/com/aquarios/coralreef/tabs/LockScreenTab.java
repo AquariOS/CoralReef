@@ -33,11 +33,13 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
     private static final String HEADER_IMAGE_KEY = "top_header_image";
     private static final String LOCKSCREEN_DATE_AND_TIME_CATEGORY = "lockscreen_date_and_time_category";
     private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
+    private static final String LOCKSCREEN_TUNER_CATEGORY = "lockscreen_tuner_category";
     private static final String LOCKSCREEN_WEATHER_CATEGORY = "lockscreen_weather";
 
     private LayoutPreference mHeaderImage;
     private CardPreference mLockscreenDateTime;
     private CardPreference mLockscreenGeneral;
+    private CardPreference mLockscreenTuner;
     private CardPreference mLockscreenWeather;
 
     @Override
@@ -69,6 +71,16 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mLockscreenGeneral);
         } else {
             mLockscreenGeneral = (CardPreference) findPreference(LOCKSCREEN_GENERAL_CATEGORY);
+        }
+
+        /**
+         * Lockscreen tuner
+         */
+        CardPreference mLockscreenTuner = findPreference("lockscreen_tuner_category");
+        if (!getResources().getBoolean(R.bool.lockscreen_tuner_category_isVisible)) {
+            getPreferenceScreen().removePreference(mLockscreenTuner);
+        } else {
+            mLockscreenTuner = (CardPreference) findPreference(LOCKSCREEN_TUNER_CATEGORY);
         }
 
         /**
