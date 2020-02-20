@@ -30,10 +30,14 @@
 
     <com.android.settings.widget.CardPreference
         android:key="themer_category"
-        android:fragment="com.aquarios.coralreef.fragments.Themer"
         android:icon="@drawable/ic_themer_background"
         android:title="@string/themer_title"
-        android:summary="@string/themer_summary" />
+        android:summary="@string/themer_summary"
+        android:persistent="false" >
+        <intent android:action="android.intent.action.SET_WALLPAPER"
+                android:targetPackage="com.android.wallpaper"
+                android:targetClass="com.android.customization.picker.CustomizationPickerActivity" />
+    </com.android.settings.widget.CardPreference>
 
     <com.android.settings.widget.CardPreference
         android:key="headsup_category"
