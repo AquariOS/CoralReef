@@ -17,6 +17,8 @@
 package com.aquarios.coralreef.tabs;
 
 import android.os.Bundle;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.preference.Preference.OnPreferenceChangeListener;
 
 import androidx.preference.Preference;
@@ -87,10 +89,13 @@ public class InterfaceTab extends SettingsPreferenceFragment implements
          * Theming options
          */
         CardPreference mThemer = findPreference("themer_category");
-        if (!getResources().getBoolean(R.bool.themer_category_isVisible)) {
+        // The following 2 checks need to pass in order for Themer to show
+        if ((!hasCustomThemesAvailable()) &&
+            (!getResources().getBoolean(R.bool.themer_category_isVisible))) {
             getPreferenceScreen().removePreference(mThemer);
         } else {
             mThemer = (CardPreference) findPreference(THEMER_CATEGORY);
+            mThemer.setEnabled(hasCustomThemesAvailable());
         }
     }
 
@@ -102,6 +107,14 @@ public class InterfaceTab extends SettingsPreferenceFragment implements
     @Override
     public void onPause() {
         super.onPause();
+    }
+
+    private boolean hasCustomThemesAvailable() {
+        PackageManager pm = getPackageManager();
+        Intent browse = new Intent();
+        browse.setClassName("com.android.wallpaper",
+                "com.android.customization.picker.theme.CustomThemeActivity");
+        return pm.resolveActivity(browse, 0) != null;
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
