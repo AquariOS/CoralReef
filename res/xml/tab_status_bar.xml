@@ -43,10 +43,11 @@
         android:summary="@string/traffic_summary" />
 
     <com.android.settings.widget.CardPreference
-        android:key="status_bar_items_category"
-        android:fragment="com.aquarios.coralreef.fragments.StatusBarItems"
+        android:key="status_bar_icons"
         android:icon="@drawable/ic_status_bar_items_background"
         android:title="@string/status_bar_items_title"
-        android:summary="@string/status_bar_items_summary" />
+        android:summary="@string/status_bar_items_summary">
+            <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
+    </com.android.settings.widget.CardPreference>
 
 </PreferenceScreen>
