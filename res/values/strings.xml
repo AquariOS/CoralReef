@@ -64,8 +64,10 @@
     <string name="lockscreen_date_and_time_summary">Customize your view of date &amp; time on the lockscreen</string>
     <string name="lockscreen_general_title">General options</string>
     <string name="lockscreen_general_summary">Add or remove visual elements of your lockscreen</string>
-    <string name="lock_screen_weather_title">Weather options</string>
-    <string name="lock_screen_weather_summary">Configure lockscreen weather</string>
+    <string name="lockscreen_tuner_title">Lockscreen tuner</string>
+    <string name="lockscreen_tuner_summary">Add or remove tuner parts of your lockscreen</string>
+    <string name="lockscreen_weather_title">Weather options</string>
+    <string name="lockscreen_weather_summary">Configure lockscreen weather</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animations</string>

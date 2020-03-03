@@ -36,6 +36,16 @@
         android:summary="@string/lock_screen_weather_summary" />
 
     <com.android.settings.widget.CardPreference
+        android:key="lockscreen_tuner"
+        android:icon="@drawable/ic_lockscreen_tuner_background"
+        android:title="@string/lockscreen_tuner_title"
+        android:summary="@string/lockscreen_tuner_summary">
+        <intent android:action="com.android.settings.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
+    </com.android.settings.widget.CardPreference>
+
+    <com.android.settings.widget.CardPreference
         android:key="lockscreen_general_category"
         android:fragment="com.aquarios.coralreef.fragments.LockscreenGeneral"
         android:icon="@drawable/ic_lockscreen_general_background"
