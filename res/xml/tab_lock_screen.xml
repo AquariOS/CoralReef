@@ -37,10 +37,12 @@
 
     <com.android.settings.widget.CardPreference
         android:key="lockscreen_tuner"
-        android:fragment="com.aquarios.coralreef.fragments.LockscreenTuner"
         android:icon="@drawable/ic_lockscreen_tuner_background"
-        android:title="@string/lockscreen_tuner_title"
-        android:summary="@string/lockscreen_tuner_summary" />
+        android:title="@string/lockscreen_tuner_title">
+        <intent android:action="com.android.settings.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
+    </com.android.settings.widget.CardPreference>
 
     <com.android.settings.widget.CardPreference
         android:key="lockscreen_general_category"
