@@ -23,7 +23,7 @@
 
     <com.android.settings.widget.CardPreference
         android:key="lockscreen_date_and_time_category"
-        android:fragment="com.aquarios.coralreef.fragments.LockscreenDateTime"
+        android:fragment="com.android.settings.security.LockscreenDashboardFragment"
         android:icon="@drawable/ic_lockscreen_clock_background"
         android:title="@string/lockscreen_date_and_time_title"
         android:summary="@string/lockscreen_date_and_time_summary" />
