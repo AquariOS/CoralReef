@@ -31,13 +31,13 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
     private static final String HEADER_IMAGE_KEY = "top_header_image";
-    private static final String LOCKSCREEN_DATE_AND_TIME_CATEGORY = "lockscreen_date_and_time_category";
+    private static final String LOCKSCREEN_AOSP_CATEGORY = "lockscreen_aosp_category";
     private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
     private static final String LOCKSCREEN_TUNER_CATEGORY = "lockscreen_tuner_category";
     private static final String LOCKSCREEN_WEATHER_CATEGORY = "lockscreen_weather";
 
     private LayoutPreference mHeaderImage;
-    private CardPreference mLockscreenDateTime;
+    private CardPreference mLockscreenAosp;
     private CardPreference mLockscreenGeneral;
     private CardPreference mLockscreenTuner;
     private CardPreference mLockscreenWeather;
@@ -54,13 +54,13 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
         mHeaderImage.setEnabled(false);
 
         /**
-         * Lockscreen date & time
+         * AOSP lockscreen options
          */
-        CardPreference mLockscreenDateTime = findPreference("lockscreen_date_and_time_category");
-        if (!getResources().getBoolean(R.bool.lockclocks_category_isVisible)) {
-            getPreferenceScreen().removePreference(mLockscreenDateTime);
+        CardPreference mLockscreenAosp = findPreference("lockscreen_aosp_category");
+        if (!getResources().getBoolean(R.bool.lockscreen_aosp_category_isVisible)) {
+            getPreferenceScreen().removePreference(mLockscreenAosp);
         } else {
-            mLockscreenDateTime = (CardPreference) findPreference(LOCKSCREEN_DATE_AND_TIME_CATEGORY);
+            mLockscreenAosp = (CardPreference) findPreference(LOCKSCREEN_AOSP_CATEGORY);
         }
 
         /**

@@ -40,7 +40,7 @@
     <bool name="statusbar_icon_blacklist_category_isVisible">true</bool>
 
     <!-- LockScreen tab -->
-    <bool name="lockclocks_category_isVisible">false</bool>
+    <bool name="lockscreen_aosp_category_isVisible">true</bool>
     <bool name="lockscreen_weather_category_isVisible">false</bool>
     <bool name="lockscreen_tuner_category_isVisible">true</bool>
     <bool name="lockscreen_general_category_isVisible">true</bool>

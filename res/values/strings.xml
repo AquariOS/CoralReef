@@ -60,8 +60,8 @@
     <string name="status_bar_items_summary">Configure statusbar indicators</string>
 
     <!-- Lockscreen -->
-    <string name="lockscreen_date_and_time_title">Lockscreen clocks</string>
-    <string name="lockscreen_date_and_time_summary">Customize your view of date &amp; time on the lockscreen</string>
+    <string name="lockscreen_aosp_title">Native controls</string>
+    <string name="lockscreen_aosp_summary">Configure AOSP options for lockscreen &amp; ambient display</string>
     <string name="lockscreen_general_title">General options</string>
     <string name="lockscreen_general_summary">Add or remove visual elements of your lockscreen</string>
     <string name="lockscreen_tuner_title">Lockscreen tuner</string>

@@ -33,7 +33,7 @@
     <color name="coralreef_headsup_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_hw_keys_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_led_settings_background">@*android:color/accent_device_default_light</color>
-    <color name="coralreef_lockscreen_clocks_background">@*android:color/accent_device_default_light</color>
+    <color name="coralreef_lockscreen_aosp_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_lockscreen_general_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_lockscreen_tuner_background">@*android:color/accent_device_default_light</color>
     <color name="coralreef_lockscreen_weather_background">@*android:color/accent_device_default_light</color>

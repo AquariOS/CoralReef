@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 AquariOS
+ * Copyright (C) 2020 AquariOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,13 +39,13 @@ import com.android.internal.logging.nano.MetricsProto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LockscreenDateTime extends SettingsPreferenceFragment implements
+public class LockscreenAosp extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.lockscreen_date_and_time);
+        addPreferencesFromResource(R.xml.lockscreen_aosp);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -64,7 +64,7 @@ public class LockscreenDateTime extends SettingsPreferenceFragment implements
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.lockscreen_date_and_time;
+                    sir.xmlResId = R.xml.lockscreen_aosp;
                     result.add(sir);
                     return result;
                 }
