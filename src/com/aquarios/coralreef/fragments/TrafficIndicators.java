@@ -82,7 +82,7 @@ public class TrafficIndicators extends SettingsPreferenceFragment implements
         mNetTrafficType.setOnPreferenceChangeListener(this);
 
         int NetTrafficSize = Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 42);
+                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 36);
         mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
         mNetTrafficSize.setValue(NetTrafficSize / 1);
         mNetTrafficSize.setOnPreferenceChangeListener(this);
