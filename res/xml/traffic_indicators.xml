@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <ListPreference
-        android:key="network_traffic_location"
+        android:key="network_traffic_state"
         android:title="@string/network_traffic_location"
         android:summary="%s"
         android:entries="@array/network_traffic_location_entries"
