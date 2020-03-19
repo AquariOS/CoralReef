@@ -27,6 +27,14 @@
             android:summaryOff="@string/show_brightness_summary_off"
             android:defaultValue="true" />
 
+        <com.aquarios.support.preferences.SecureSettingListPreference
+            android:key="qs_brightness_position_bottom"
+            android:title="@string/qs_brightness_location_title"
+            android:entries="@array/qs_brightness_location_entries"
+            android:entryValues="@array/qs_brightness_location_values"
+            android:defaultValue="0"
+            android:dependency="qs_show_brightness" />
+
 	</PreferenceCategory>
 
 </PreferenceScreen>

@@ -341,4 +341,15 @@
         <item>3</item>
     </string-array>
 
+    <!-- Brightness slider position -->
+    <string-array name="qs_brightness_location_entries">
+       <item>@string/qs_brightness_location_top</item>
+       <item>@string/qs_brightness_location_bottom</item>
+    </string-array>
+
+    <string-array name="qs_brightness_location_values" translatable="false">
+       <item>0</item>
+       <item>1</item>
+    </string-array>
+
 </resources>
