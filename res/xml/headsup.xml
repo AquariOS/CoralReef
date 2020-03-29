@@ -19,17 +19,18 @@
     android:title="@string/headsup_title" >
 
     <com.aquarios.support.preferences.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"
-            android:summaryOn="@string/summary_heads_up_enabled"
-            android:summaryOff="@string/summary_heads_up_disabled"
-            android:defaultValue="true" />
+        android:key="heads_up_notifications_enabled"
+        android:title="@string/heads_up_notifications"
+        android:summaryOn="@string/summary_heads_up_enabled"
+        android:summaryOff="@string/summary_heads_up_disabled"
+        android:defaultValue="true" />
 
     <ListPreference
         android:key="heads_up_time_out"
         android:title="@string/heads_up_time_out_title"
         android:entries="@array/heads_up_time_out_entries"
         android:entryValues="@array/heads_up_time_out_values"
+        android:dependency="heads_up_notifications_enabled"
         android:persistent="false" />
 
     <ListPreference
@@ -37,6 +38,7 @@
         android:title="@string/heads_up_snooze_title"
         android:entries="@array/heads_up_snooze_entries"
         android:entryValues="@array/heads_up_snooze_values"
+        android:dependency="heads_up_notifications_enabled"
         android:persistent="false" />
 
     <PreferenceCategory
