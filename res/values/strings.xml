@@ -45,7 +45,7 @@
     <string name="quick_settings_title">Quick settings</string>
     <string name="quick_settings_summary">Customize the overall view &amp; functionality</string>
     <string name="headsup_title">Heads-up</string>
-    <string name="headsup_summary">Configure heads-up options</string>
+    <string name="headsup_summary">Configure Heads-up options</string>
     <string name="recents_title">Recents</string>
     <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
 
@@ -188,7 +188,7 @@
     <string name="aware_disabled_preference_dialog_content">To use this feature, turn on Motion Sense</string>
     <string name="aware_disabled_preference_dialog_title">This feature is turned off</string>
     <string name="aware_disabled_preference_neutral">Not now</string>
-    <string name="aware_display_settings_title">Idle lock screen</string>
+    <string name="aware_display_settings_title">Idle lockscreen</string>
     <string name="aware_settings_description">With new sensors, Pixel can recognize distance and movement around the phone</string>
     <string name="aware_settings_disabled_info_dialog_content">Motion Sense features like Quick Gestures, show display when nearby, and reach to check phone are not supported in this country</string>
     <string name="aware_settings_disabled_info_dialog_title">Motion Sense is off</string>
@@ -312,22 +312,19 @@
 
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_enable">Music Visualizer</string>
-    <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
+    <string name="lockscreen_visualizer_enable_summary">Show active Visualizer while playing music</string>
     <string name="lockscreen_autocolor_title">Automatic color</string>
     <string name="lockscreen_autocolor_summary">Sync color with lockscreen background</string>
-    <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
+    <string name="lockscreen_autocolor_lavalamp">Requires lava lamp to be disabled</string>
     <string name="lockscreen_lavalamp_title">Lava lamp</string>
-    <string name="lockscreen_lavalamp_summary">Use a smooth lava lamp style color blend animation</string>
+    <string name="lockscreen_lavalamp_summary">Animate a smooth lava lamp style blend of colors</string>
     <string name="lockscreen_lavalamp_speed_title">Color blend interval</string>
-    <string name="lockscreen_solid_lines_category">Solid Lines</string>
+    <string name="lockscreen_solid_lines_category">Solid lines</string>
     <string name="lockscreen_solid_units_count_title">Lines count</string>
     <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
     <string name="lockscreen_solid_units_opacity_title">Lines opacity</string>
 
     <!-- Battery bar -->
-    <string name="battery_icon">Battery icon style</string>
-    <string name="battery_not_title">Battery icon in notifications</string>
-    <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
     <string name="battery_bar_title">Battery bar</string>
     <string name="battery_bar_location">Battery bar location</string>
     <string name="battery_bar_color">Battery bar color</string>
@@ -351,7 +348,7 @@
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
-    <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+    <string name="quick_settings_vibrate_summary">Feel a vibration upon touching quick tiles</string>
 
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_title">Animations</string>
@@ -385,7 +382,7 @@
 
     <!-- Quick Settings -->
     <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
-    <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lock screens</string>
+    <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lockscreens</string>
     <string name="qs_edit_title">Edit Icon</string>
     <string name="qs_edit_summary">Enable the tile edit icon in the footer</string>
 
@@ -396,8 +393,8 @@
     <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
 
     <!-- Setting Button -->
-    <string name="qs_setting_button_title">Enable Setting Button Icon</string>
-    <string name="qs_setting_button_summary">Enable settings button in non exapanded panel</string>
+    <string name="qs_setting_button_title">Enable setting button icon</string>
+    <string name="qs_setting_button_summary">Enable settings button in non-expanded panel</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_location_title">Brightness slider location</string>
@@ -413,9 +410,9 @@
     <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
     <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
     <string name="smart_pulldown_off">Off</string>
-    <string name="smart_pulldown_none">no notifications</string>
-    <string name="smart_pulldown_dismissable">no dismissable</string>
-    <string name="smart_pulldown_ongoing">no ongoing</string>
+    <string name="smart_pulldown_none">No notifications</string>
+    <string name="smart_pulldown_dismissable">No dismissable</string>
+    <string name="smart_pulldown_ongoing">No ongoing</string>
 
     <!-- Quick Settings brightness icon -->
     <string name="brightness_icon_title">Adaptive brightness button</string>
@@ -423,22 +420,22 @@
 
     <!-- Quick Settings brightness side buttons -->
     <string name="brightness_side_buttons_title">Brightness control buttons</string>
-    <string name="brightness_side_buttons_summary">Show buttons to increase or decrease the brightness</string>
+    <string name="brightness_side_buttons_summary">Show buttons for manually raising or lowering brightness</string>
 
     <!-- QS tile titles -->
     <string name="qs_tile_title_visibility_title">Display quick tile names</string>
-    <string name="qs_tile_titles_showing">Show quick tile names are showing</string>
-    <string name="qs_tile_titles_hidden">Show quick tile names are hidden</string>
+    <string name="qs_tile_titles_showing">Show quick tile names</string>
+    <string name="qs_tile_titles_hidden">Hide quick tile names</string>
 
     <!-- Heads up -->
-    <string name="headsup_category">HeadsUp Settings</string>
-    <string name="heads_up_notifications">Heads up</string>
-    <string name="heads_up_notifications_summary">Customise heads up notifications settings</string>
+    <string name="headsup_category">Heads-up Settings</string>
+    <string name="heads_up_notifications">Heads-up</string>
+    <string name="heads_up_notifications_summary">Customise heads-up notifications settings</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
     <string name="add_heads_up_package">Add app</string>
-    <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
-    <string name="add_heads_up_blacklist_summary">Disable heads up from these applications</string>
+    <string name="add_heads_up_stoplist_summary">Disable Heads-up notifications in these applications</string>
+    <string name="add_heads_up_blacklist_summary">Disable Heads-up from these applications</string>
     <string name="heads_up_stoplist_title">Stoplist</string>
     <string name="heads_up_blacklist_title">Blacklist</string>
     <string name="profile_choose_app">Choose app</string>
@@ -457,8 +454,8 @@
 
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Snooze timer</string>
-    <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
-    <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
+    <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze Heads-up from that application for 1 minute</string>
+    <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze Heads-up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
     <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
     <string name="heads_up_snooze_1min">1 minute</string>
     <string name="heads_up_snooze_5min">5 minutes</string>
