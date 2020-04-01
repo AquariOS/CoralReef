@@ -345,6 +345,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements
         pref.setTitle(info.applicationInfo.loadLabel(mPackageManager));
         pref.setIcon(info.applicationInfo.loadIcon(mPackageManager));
         pref.setPersistent(false);
+        pref.setLayoutResource(R.layout.headsup_preference_applist);
         pref.setOnPreferenceClickListener(this);
         return pref;
     }
