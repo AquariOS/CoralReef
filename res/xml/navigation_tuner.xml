@@ -24,4 +24,12 @@
         android:title="@string/navbar_gestures_title"
         android:summary="@string/navbar_gestures_summary" />
 
+    <Preference
+        android:title="@string/navigation_tuner_title"
+        android:summary="@string/navigation_tuner_summary" >
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.android.systemui.tuner.NavBarActivity" />
+    </Preference>
+
 </PreferenceScreen>
