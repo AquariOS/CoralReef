@@ -30,7 +30,7 @@
 
     <com.android.settings.widget.CardPreference
         android:key="navigationbar_settings"
-        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
+        android:fragment="com.aquarios.coralreef.fragments.NavigationTuner"
         android:icon="@drawable/ic_navigation_background"
         android:title="@string/navigationbar_title"
         android:summary="@string/navigationbar_summary" />
