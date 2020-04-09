@@ -61,13 +61,13 @@
         android:title="@string/double_twist_for_camera_mode_title"
         android:fragment="com.android.settings.gestures.DoubleTwistGestureSettings"
         settings:controller="com.android.settings.gestures.DoubleTwistPreferenceController" />
-
+<!-- We have this in navigation_tuner.xml
     <Preference
         android:key="gesture_system_navigation_input_summary"
         android:title="@string/system_navigation_title"
         android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
         settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
-
+-->
     <Preference
         android:key="gesture_tap_screen_input_summary"
         android:title="@string/ambient_display_tap_screen_title"
