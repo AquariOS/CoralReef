@@ -484,4 +484,8 @@
     <string name="navigation_bar_menu_arrow_keys_title">Arrow keys while typing</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Display left and right cursor buttons while typing</string>
 
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Force expanded notifications</string>
+    <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
+
 </resources>
