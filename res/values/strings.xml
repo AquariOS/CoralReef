@@ -492,4 +492,8 @@
     <string name="notification_sound_vib_screen_on_title">Notification sound while screen is on</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when the screen is on</string>
 
+    <!-- Option to hide multi-user switch in qs footer -->
+    <string name="qs_multiuser_switch_title">MultiUser switch</string>
+    <string name="qs_multiuser_switch_summary">Show the user avatar in the footer</string>
+
 </resources>

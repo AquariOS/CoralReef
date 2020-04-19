@@ -72,6 +72,12 @@
             android:defaultValue="false" />
 
         <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_multiuser_switch_visibility"
+            android:title="@string/qs_multiuser_switch_title"
+            android:summary="@string/qs_multiuser_switch_summary"
+            android:defaultValue="true" />
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
