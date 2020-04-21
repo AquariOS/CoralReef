@@ -500,4 +500,9 @@
     <string name="gesture_doubletap_sleep_statusbar_title">Statusbar tap to sleep</string>
     <string name="gesture_doubletap_sleep_statusbar_summary">Double-tap statusbar to put device to sleep</string>
 
+    <!-- Lockscreen charge temperature unit -->
+    <string name="lockscreen_charge_temp_unit_title">Temperature unit</string>
+    <string name="lockscreen_charge_temp_unit_farhenheit">Farhenheit</string>
+    <string name="lockscreen_charge_temp_unit_celsius">Celsius</string>
+
 </resources>
