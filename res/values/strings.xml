@@ -159,8 +159,13 @@
     <string name="clock_position_right">Right clock</string>
     <string name="clock_position_center">Center clock</string>
     <string name="clock_position_left">Left clock</string>
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
     <string name="menu_cancel">Cancel</string>
     <string name="menu_save">Save</string>
+    <string name="unit_percent">\u0025</string>
 
     <!-- Torch Power button gestures -->
     <string name="global_actions_screen_off_cat">Screen-off actions</string>
@@ -508,5 +513,27 @@
     <!-- Turn on display when power connected; turn off display when power disconnected -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
     <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
+
+    <!-- Custom header -->
+    <string name="custom_header_title">Custom header</string>
+    <string name="custom_header_summary">Display image at top of the notification panel</string>
+    <string name="daylight_header_pack_title">Header image collection</string>
+    <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
+    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
+    <string name="static_header_provider" translatable="false">static</string>
+    <string name="daylight_header_provider" translatable="false">daylight</string>
+    <string name="static_header_provider_title">Static image</string>
+    <string name="daylight_header_provider_title">Image collection</string>
+    <string name="custom_header_provider_title">Header provider</string>
+    <string name="custom_header_browse_title">Browse installed headers</string>
+    <string name="custom_header_browse_summary">Click on any image to use for static mode</string>
+    <string name="custom_header_browse_summary_new">Browse all available header collections</string>
+    <string name="custom_header_pick_title">Select header image</string>
+    <string name="custom_header_pick_summary">Select an image to use for static mode</string>
+    <string name="header_provider_disabled">Disabled</string>
+    <string name="file_header_select_title">Select image</string>
+    <string name="file_header_select_summary">Select custom image</string>
+    <string name="file_header_provider_title">Custom image</string>
+    <string name="file_header_provider" translatable="false">file</string>
 
 </resources>

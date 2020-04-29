@@ -54,6 +54,12 @@
 		android:title="@string/appearance_category">
 
         <Preference
+             android:key="category_custom_header"
+             android:title="@string/custom_header_title"
+             android:summary="@string/custom_header_summary"
+             android:fragment="com.aquarios.coralreef.fragments.CustomHeaders" />
+
+        <Preference
             android:key="brightness_slider"
             android:title="@string/brightness_slider_options"
             android:summary="@string/brightness_slider_options_summary"
