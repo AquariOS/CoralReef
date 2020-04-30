@@ -31,6 +31,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -183,10 +184,13 @@ public class CustomHeaders extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mFileHeader) {
-            Intent intent = new Intent(Intent.ACTION_PICK);
-            intent.setType("image/*");
-            startActivityForResult(intent, REQUEST_PICK_IMAGE);
-            return true;
+            try {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            } catch(Exception e) {
+                Toast.makeText(getContext(), R.string.custom_header_needs_gallary, Toast.LENGTH_LONG).show();
+            }
         }
         return super.onPreferenceTreeClick(preference);
     }
