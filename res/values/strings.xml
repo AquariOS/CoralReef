@@ -537,4 +537,8 @@
     <string name="file_header_provider" translatable="false">file</string>
     <string name="custom_header_needs_gallary">You must install a gallery app!</string>
 
+    <!-- AOD on charge -->
+    <string name="doze_on_charge_title">Always On when charging</string>
+    <string name="doze_on_charge_summary">Show Always On Ambient display when charging</string>
+
 </resources>

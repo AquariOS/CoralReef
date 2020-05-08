@@ -18,7 +18,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_general_title" >
 
-     <com.aquarios.support.preferences.SystemSettingSwitchPreference
+    <com.aquarios.support.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
@@ -32,7 +32,13 @@
         android:defaultValue="0"
         android:dependency="lockscreen_battery_info" />
 
-     <com.aquarios.support.preferences.CustomSystemSeekBarPreference
+    <com.aquarios.support.preferences.SecureSettingSwitchPreference
+        android:key="doze_on_charge"
+        android:title="@string/doze_on_charge_title"
+        android:summary="@string/doze_on_charge_summary"
+        android:defaultValue="false" />
+
+    <com.aquarios.support.preferences.CustomSystemSeekBarPreference
         android:key="lockscreen_media_blur"
         android:title="@string/lockscreen_media_blur_title"
         settings:allowEditText="true"
@@ -41,9 +47,10 @@
         android:defaultValue="25"
         settings:units="dp" />
 
-     <Preference
+    <Preference
         android:key="lockscreen_visualizer"
         android:fragment="com.aquarios.coralreef.fragments.Visualizer"
         android:title="@string/lockscreen_visualizer_enable"
         android:summary="@string/lockscreen_visualizer_enable_summary" />
+
 </PreferenceScreen>

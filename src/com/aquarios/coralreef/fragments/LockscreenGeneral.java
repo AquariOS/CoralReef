@@ -19,6 +19,7 @@ package com.aquarios.coralreef.fragments;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -37,7 +38,9 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.aquarios.support.preferences.SecureSettingSwitchPreference;
 import com.aquarios.support.preferences.SystemSettingListPreference;
+import com.aquarios.support.utils.AquaUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,8 +49,10 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String BATTERY_TEMP_UNIT = "lockscreen_charge_temp_unit";
+    private static final String DOZE_ON_CHARGE = "doze_on_charge";
 
     private SystemSettingListPreference mBatteryTempUnit;
+    private SecureSettingSwitchPreference mDozeOnCharge;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +67,13 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         mBatteryTempUnit.setValue(String.valueOf(unitMode));
         mBatteryTempUnit.setSummary(mBatteryTempUnit.getEntry());
         mBatteryTempUnit.setOnPreferenceChangeListener(this);
+
+        SecureSettingSwitchPreference mDozeOnCharge = findPreference("doze_on_charge");
+        if (!AquaUtils.isOlderPixelDevice()) {
+            getPreferenceScreen().removePreference(mDozeOnCharge);
+        } else {
+            mDozeOnCharge = (SecureSettingSwitchPreference) findPreference(DOZE_ON_CHARGE);
+        } 
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
