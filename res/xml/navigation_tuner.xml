@@ -25,6 +25,12 @@
         android:summary="@string/navbar_gestures_summary" />
 
     <Preference
+        android:key="pulse"
+        android:title="@string/pulse_settings"
+        android:summary="@string/pulse_settings_summary"
+        android:fragment="com.aquarios.coralreef.fragments.PulseSettings" />
+
+    <Preference
         android:title="@string/navigation_tuner_title"
         android:summary="@string/navigation_tuner_summary" >
         <intent android:action="android.intent.action.MAIN"

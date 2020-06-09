@@ -23,13 +23,15 @@ import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.gestures.SystemNavigationGestureSettings;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.internal.logging.nano.MetricsProto;
+import com.aquarios.support.utils.AquaUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +39,24 @@ import java.util.List;
 public class NavigationTuner extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String NAVBAR_PULSE_KEY = "pulse";
+
+    private Preference mPulse;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.navigation_tuner);
-    }
+
+        mPulse = findPreference(NAVBAR_PULSE_KEY);
+
+        // Check for conditional availability
+        if (!AquaUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            mPulse.setSelectable(false);
+	    } else {
+            mPulse.setSelectable(true);
+        }
+	}
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
