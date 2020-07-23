@@ -17,151 +17,175 @@
 
 package com.aquarios.coralreef;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-import android.graphics.drawable.ColorDrawable;
+import android.app.ActionBar;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-
+import android.util.TypedValue;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.aquarios.coralreef.navigation.BottomNavigationViewCustom;
 import com.aquarios.coralreef.tabs.ActionsTab;
 import com.aquarios.coralreef.tabs.InterfaceTab;
 import com.aquarios.coralreef.tabs.StatusBarTab;
 import com.aquarios.coralreef.tabs.LockScreenTab;
 import com.aquarios.coralreef.tabs.SystemMiscTab;
 
+import github.com.st235.lib_expandablebottombar.ExpandableBottomBar;
+import github.com.st235.lib_expandablebottombar.ExpandableBottomBarMenuItem;
+
 public class CoralReef extends SettingsPreferenceFragment {
 
-    public CoralReef() {
-    }
-
-    MenuItem menuitem;
-
-    PagerAdapter mPagerAdapter;
-
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		setHasOptionsMenu(false);
-	}
+    Context mContext;
+    View view;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.coralreef, container, false);
+        super.onCreate(savedInstanceState);
 
-        final BottomNavigationViewCustom navigation = view.findViewById(R.id.navigation);
+        mContext = getActivity();
+        Resources res = getResources();
+        Window win = getActivity().getWindow();
 
-        final ViewPager viewPager = view.findViewById(R.id.viewpager);
+        win.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        win.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        win.setNavigationBarColor(res.getColor(R.color.coralreef_navbar_color));
+        win.setNavigationBarDividerColor(res.getColor(R.color.coralreef_navbar_color));
 
-        navigation.setBackground(new ColorDrawable(getResources().getColor(R.color.BottomBarBackgroundColor)));
+        view = inflater.inflate(R.layout.coralreef, container, false);
 
-        mPagerAdapter = new PagerAdapter(getFragmentManager());
-        viewPager.setAdapter(mPagerAdapter);
+        ActionBar actionBar = getActivity().getActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(R.string.coralreef_title);
+        }
 
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationViewCustom.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.tab_actions:
-                        viewPager.setCurrentItem(0);
-                        return true;
-                    case R.id.tab_interface:
-                        viewPager.setCurrentItem(1);
-                        return true;
-                    case R.id.tab_status_bar:
-                        viewPager.setCurrentItem(2);
-                        return true;
-                    case R.id.tab_lock_screen:
-                        viewPager.setCurrentItem(3);
-                        return true;
-                    case R.id.tab_system_misc:
-                        viewPager.setCurrentItem(4);
-                        return true;
-                }
-                return false;
+        ExpandableBottomBar bottomBar = view.findViewById(R.id.expandable_bottom_bar);
+
+        Fragment tab_actions = new ActionsTab();
+        Fragment tab_interface = new InterfaceTab();
+        Fragment tab_status_bar = new StatusBarTab();
+        Fragment tab_lock_screen = new LockScreenTab();
+        Fragment tab_system_misc = new SystemMiscTab();
+
+        Fragment fragment = (Fragment) getFragmentManager().findFragmentById(R.id.fragmentContainer);
+        if (fragment == null) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragmentContainer, tab_actions);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+
+        bottomBar.addItems(mContext.getResources().getBoolean(
+                R.bool.has_active_edge) ? new ExpandableBottomBarMenuItem.Builder(mContext)
+                .addItem(R.id.tab_actions,
+                        R.drawable.bottomnav_actions,
+                        R.string.bottom_nav_actions_title, getThemeAccentColor(mContext))
+                .addItem(R.id.tab_interface,
+                        R.drawable.bottomnav_interface,
+                        R.string.bottom_nav_interface_title, getThemeAccentColor(mContext))
+                .addItem(R.id.tab_status_bar,
+                        R.drawable.bottomnav_lock_screen,
+                        R.string.bottom_nav_status_bar_title, getThemeAccentColor(mContext))
+                .addItem(R.id.tab_lock_screen,
+                        R.drawable.bottomnav_status_bar,
+                        R.string.bottom_nav_lock_screen_title, getThemeAccentColor(mContext))
+                .addItem(R.id.tab_system_misc,
+                        R.drawable.bottomnav_system_misc,
+                        R.string.bottom_nav_system_misc_title, getThemeAccentColor(mContext))
+                .build() : new ExpandableBottomBarMenuItem.Builder(mContext)
+                .addItem(R.id.tab_actions,
+                        R.drawable.bottomnav_actions,
+                        R.string.bottom_nav_actions_title, getThemeAccentColor(mContext))
+                .addItem(R.id.tab_interface,
+                        R.drawable.bottomnav_interface,
+                        R.string.bottom_nav_interface_title, getThemeAccentColor(mContext))
+                .addItem(R.id.tab_status_bar,
+                        R.drawable.bottomnav_lock_screen,
+                        R.string.bottom_nav_status_bar_title, getThemeAccentColor(mContext))
+                .addItem(R.id.tab_lock_screen,
+                        R.drawable.bottomnav_status_bar,
+                        R.string.bottom_nav_lock_screen_title, getThemeAccentColor(mContext))
+                .build()
+        );
+
+        bottomBar.setOnItemSelectedListener((view, menuItem) -> {
+            int id = menuItem.getItemId();
+            switch (id){
+                case R.id.tab_actions:
+                    launchFragment(tab_actions);
+                    break;
+                case R.id.tab_interface:
+                    launchFragment(tab_interface);
+                    break;
+                case R.id.tab_status_bar:
+                    launchFragment(tab_status_bar);
+                    break;
+                case R.id.tab_lock_screen:
+                    launchFragment(tab_lock_screen);
+                    break;
+                case R.id.tab_system_misc:
+                    launchFragment(tab_system_misc);
+                    break;
             }
-        });
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                if(menuitem != null) {
-                    menuitem.setChecked(false);
-                } else {
-                    navigation.getMenu().getItem(0).setChecked(false);
-                }
-                navigation.getMenu().getItem(position).setChecked(true);
-                menuitem = navigation.getMenu().getItem(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
+            return null;
         });
 
         return view;
     }
 
-    class PagerAdapter extends FragmentPagerAdapter {
-
-        String titles[] = getTitles();
-        private Fragment frags[] = new Fragment[titles.length];
-
-        public PagerAdapter(FragmentManager fm) {
-            super(fm);
-            frags[0] = new ActionsTab();
-            frags[1] = new InterfaceTab();
-            frags[2] = new StatusBarTab();
-            frags[3] = new LockScreenTab();
-            frags[4] = new SystemMiscTab();
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return frags[position];
-        }
-
-        @Override
-        public int getCount() {
-            return frags.length;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
-        }
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     }
 
-    private String[] getTitles() {
-        String titleString[];
-        titleString = new String[]{
-                getString(R.string.bottom_nav_actions_title),
-                getString(R.string.bottom_nav_interface_title),
-                getString(R.string.bottom_nav_status_bar_title),
-                getString(R.string.bottom_nav_lock_screen_title),
-                getString(R.string.bottom_nav_system_misc_title)};
-
-        return titleString;
+    private void launchFragment(Fragment fragment) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        view = getView();
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener((v, keyCode, event) -> {
+            if (event.getAction() == KeyEvent.ACTION_UP &&
+                    keyCode == KeyEvent.KEYCODE_BACK) {
+                getActivity().finish();
+                return true;
+            }
+            return false;
+        });
+    }
+
+    public static int getThemeAccentColor (final Context context) {
+        final TypedValue value = new TypedValue ();
+        context.getTheme ().resolveAttribute (android.R.attr.colorAccent, value, true);
+        return value.data;
     }
 }

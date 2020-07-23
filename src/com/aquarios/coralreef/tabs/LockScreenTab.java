@@ -95,6 +95,11 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
     }
 
     @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
     }

@@ -18,29 +18,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/expandable_bottom_bar"/>
 
-    </FrameLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
+    <github.com.st235.lib_expandablebottombar.ExpandableBottomBar
+        android:id="@+id/expandable_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigation"/>
-
-    <com.aquarios.coralreef.navigation.BottomNavigationViewCustom
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        app:itemIconTint="@drawable/icon_selector"
-        app:itemTextColor="@drawable/icon_selector"
-        app:menu="@menu/main" />
+        app:exb_backgroundColor="@color/coralreef_navbar_color"
+        app:exb_itemInactiveColor="?android:attr/textColorPrimary"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

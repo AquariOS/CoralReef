@@ -110,6 +110,11 @@ public class SystemMiscTab extends SettingsPreferenceFragment implements Prefere
     }
 
     @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
     }

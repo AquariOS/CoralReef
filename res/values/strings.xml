@@ -27,6 +27,8 @@
     <string name="bottom_nav_status_bar_title">Statusbar</string>
     <string name="bottom_nav_lock_screen_title">Lockscreen</string>
     <string name="bottom_nav_system_misc_title">System/Misc</string>
+    <string name="accessibility_description">Screen menu</string>
+    <string name="accessibility_item_description">%1$s menu item</string>
 
 <!-- CATEGORIES -->
     <!-- Actions -->

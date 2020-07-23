@@ -15,6 +15,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- CoralReef -->
+    <item name="tab_actions" type="id" />
+    <item name="tab_interface" type="id" />
+    <item name="tab_status_bar" type="id" />
+    <item name="tab_lock_screen" type="id" />
+    <item name="tab_system_misc" type="id" />
+
     <item type="id" name="info_button" />
   
 </resources>

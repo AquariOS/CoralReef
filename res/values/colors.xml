@@ -22,6 +22,7 @@
     <color name="bottom_nav_text_icon_inactive">@*android:color/hint_foreground_light</color>
     <color name="preference_background_color">@*android:color/accent_device_default_light</color>
     <color name="top_banner_icon_color_white_accent">#6d6d6d</color>
+    <color name="coralreef_navbar_color">@*android:color/notification_material_background_color</color>
 
     <!-- Coralreef icon background colors -->
     <color name="coralreef_animations_background">@*android:color/accent_device_default_light</color>
