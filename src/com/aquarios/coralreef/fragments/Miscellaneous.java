@@ -18,38 +18,52 @@ package com.aquarios.coralreef.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.UserHandle;
+import android.os.Handler;
 import android.provider.SearchIndexableResource;
-import android.provider.Settings;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
 
+import androidx.preference.Preference;
+
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
-import com.android.internal.logging.nano.MetricsProto;
-
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String PREF_ADBLOCK = "persist.adaway.hosts_block";
+
+    private Handler mHandler = new Handler();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.miscellaneous);
-    }
 
+        addPreferencesFromResource(R.xml.miscellaneous);
+
+        findPreference(PREF_ADBLOCK).setOnPreferenceChangeListener(this);
+	}
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
+        if (PREF_ADBLOCK.equals(preference.getKey())) {
+            // Flush the java VM DNS cache to re-read the hosts file.
+            // Delay to ensure the value is persisted before we refresh
+            mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        InetAddress.clearDnsCache();
+                    }
+            }, 1000);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override

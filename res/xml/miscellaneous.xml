@@ -24,4 +24,10 @@
         android:summary="@string/wake_when_plugged_or_unplugged_summary"
         android:defaultValue="false"/>
 
+    <com.aquarios.support.preferences.SystemPropSwitchPreference
+        android:key="persist.adaway.hosts_block"
+        android:title="@string/hosts_block_title"
+        android:summary="@string/hosts_block_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

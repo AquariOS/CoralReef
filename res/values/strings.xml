@@ -573,4 +573,9 @@
     <string name="pulse_custom_div">Bar spacing</string>
     <string name="pulse_filled_block_size">Block size</string>
     <string name="pulse_empty_block_size">Block spacing</string>
+
+    <!-- AdAway -->
+    <string name="hosts_block_title">Ad-blocking</string>
+    <string name="hosts_block_summary">Block ads with a modified hosts file. Disable if using another ad blocker or if apps encounter issues.</string>
+
 </resources>
