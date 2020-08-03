@@ -66,9 +66,11 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
 
     private static final int BATTERY_STYLE_Q = 0;
     private static final int BATTERY_STYLE_DOTTED_CIRCLE = 1;
-    private static final int BATTERY_STYLE_CIRCLE = 2;
-    private static final int BATTERY_STYLE_TEXT = 3;
-    private static final int BATTERY_STYLE_HIDDEN = 4;
+    private static final int BATTERY_STYLE_PA_CIRCLE = 2;
+    private static final int BATTERY_STYLE_CIRCLE = 3;
+    private static final int BATTERY_STYLE_BIG_CIRCLE = 4;
+    private static final int BATTERY_STYLE_TEXT = 5;
+    private static final int BATTERY_STYLE_HIDDEN = 6;
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
@@ -97,8 +99,12 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         int batterystyle = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_Q);
-        mBatteryStyle.setOnPreferenceChangeListener(this);
-
+        if (batterystyle != BATTERY_STYLE_HIDDEN) {
+            mBatteryStyle.setOnPreferenceChangeListener(this);
+        } else {
+            mBatteryStyle.setEnabled(false);
+            mBatteryStyle.setSummary(R.string.enable_first);
+        }
         updateBatteryOptions(batterystyle);
                 int intColor;
         String hexColor;
@@ -180,6 +186,8 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
 		ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_BATTERY_STYLE, value);
             updateBatteryOptions(value);
             return true;
         } else if (preference == mBatteryBarColor) {
@@ -257,7 +265,8 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
             return true;
          } else if (preference == mBatteryBarUseGradient) {
             value = mBatteryBarUseGradient.isChecked();
-            Settings.System.putInt(getContentResolver(), Settings.System.BATTERY_BAR_USE_GRADIENT_COLOR, value ? 1 : 0);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.BATTERY_BAR_USE_GRADIENT_COLOR, value ? 1 : 0);
             return true;
         }
         return false;
@@ -271,8 +280,7 @@ public class BatteryOptions extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
         }
-        mBatteryCharging.setEnabled(enabled);
-        mBatteryPercent.setEnabled(enabled);
+        mBatteryCharging.setEnabled(batterystyle != BATTERY_STYLE_TEXT);
     }
 
     private void updateBatteryBarOptions() {
