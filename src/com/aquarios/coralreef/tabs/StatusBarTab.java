@@ -28,7 +28,7 @@ import com.android.settings.widget.CardPreference;
 import com.android.settingslib.widget.LayoutPreference;
 
 public class StatusBarTab extends SettingsPreferenceFragment implements
-    Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener {
 
     private static final String HEADER_IMAGE_KEY = "top_header_image";
     private static final String BATTERY_CATEGORY = "battery_options_category";

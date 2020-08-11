@@ -92,8 +92,7 @@ public class CoralReef extends SettingsPreferenceFragment {
             transaction.commit();
         }
 
-        bottomBar.addItems(mContext.getResources().getBoolean(
-                R.bool.has_active_edge) ? new ExpandableBottomBarMenuItem.Builder(mContext)
+        bottomBar.addItems(new ExpandableBottomBarMenuItem.Builder(mContext)
                 .addItem(R.id.tab_actions,
                         R.drawable.bottomnav_actions,
                         R.string.bottom_nav_actions_title, getThemeAccentColor(mContext))
@@ -109,25 +108,12 @@ public class CoralReef extends SettingsPreferenceFragment {
                 .addItem(R.id.tab_system_misc,
                         R.drawable.bottomnav_system_misc,
                         R.string.bottom_nav_system_misc_title, getThemeAccentColor(mContext))
-                .build() : new ExpandableBottomBarMenuItem.Builder(mContext)
-                .addItem(R.id.tab_actions,
-                        R.drawable.bottomnav_actions,
-                        R.string.bottom_nav_actions_title, getThemeAccentColor(mContext))
-                .addItem(R.id.tab_interface,
-                        R.drawable.bottomnav_interface,
-                        R.string.bottom_nav_interface_title, getThemeAccentColor(mContext))
-                .addItem(R.id.tab_status_bar,
-                        R.drawable.bottomnav_lock_screen,
-                        R.string.bottom_nav_status_bar_title, getThemeAccentColor(mContext))
-                .addItem(R.id.tab_lock_screen,
-                        R.drawable.bottomnav_status_bar,
-                        R.string.bottom_nav_lock_screen_title, getThemeAccentColor(mContext))
                 .build()
         );
 
         bottomBar.setOnItemSelectedListener((view, menuItem) -> {
             int id = menuItem.getItemId();
-            switch (id){
+            switch (id) {
                 case R.id.tab_actions:
                     launchFragment(tab_actions);
                     break;
@@ -147,6 +133,8 @@ public class CoralReef extends SettingsPreferenceFragment {
             return null;
         });
 
+        setHasOptionsMenu(true);
+
         return view;
     }
 
@@ -164,6 +152,14 @@ public class CoralReef extends SettingsPreferenceFragment {
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AQUA;
+    }
+
+    // Clears the ActionTab options menu
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        menu.clear();
+        super.onPrepareOptionsMenu(menu);
+    // Should be able to add desired options here if wanted
     }
 
     @Override
